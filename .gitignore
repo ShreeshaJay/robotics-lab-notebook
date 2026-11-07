@@ -1,0 +1,25 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*-key.json
+# python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# large artifacts: datasets, weights, videos stay out of git
+data/
+checkpoints/
+*.safetensors
+*.ckpt
+*.pt
+*.bin
+*.mp4
+*.mov
+*.usd
+*.usdz
+# third-party clones live outside this repo
+vendor/
