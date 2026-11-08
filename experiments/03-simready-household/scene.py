@@ -1,6 +1,6 @@
 """Small "rental turnover" room built from SimReady assets, rendered headless in Isaac Sim.
 
-STATUS: written, NOT YET RUN. Targets Isaac Sim 6.1.0 (pip `isaacsim` or the
+STATUS: ran end to end on 2026-11-08 (container, one L4; see README Run results). Targets Isaac Sim 6.1.0 (pip `isaacsim` or the
 nvcr.io/nvidia/isaac-sim:6.1.0 container) on one NVIDIA L4 (24 GB). API names were
 checked against the 6.1 docs; every version-sensitive call has a fallback, but expect
 small fixes on the first real run.
@@ -19,7 +19,7 @@ What it does
   5. Writes PNG/NPY outputs plus metrics.json (timings, GPU memory via nvidia-smi,
      collider counts, asset masses).
 
-Run (on the VM, after the founder has accepted NVIDIA's EULA themselves):
+Run (on the VM, after you have read and accepted NVIDIA's EULA yourself):
   python scene.py --download-only --assets /data/simready
   OMNI_KIT_ACCEPT_EULA=YES python scene.py --assets /data/simready --out /data/out
   # container: /isaac-sim/python.sh scene.py --assets ... --out ...
@@ -67,7 +67,7 @@ ASSETS = [
     nv("cleaning_towel_a01", cls="towel", on="bedding_a01", xy=(0.3, 0.0), yaw=15),
     nv("serviceTool_vacuum_cleaner_a01", cls="vacuum", xy=(-0.3, 1.0), yaw=30),
     # kitchen (back-right)
-    nv("fixture_counter_a01", cls="counter", xy=(1.6, 2.1), yaw=0, static=True),
+    nv("fixture_counter_a01", cls="counter", xy=(1.48, 2.1), yaw=90, static=True),  # 3.0 m long axis is +y in the asset
     nv("kitchenware_kettle_a01", cls="kettle", on="fixture_counter_a01", xy=(-0.5, 0.0), yaw=0),
     nv("kitchenware_pan_a01", cls="pan", on="fixture_counter_a01", xy=(-0.15, 0.05), yaw=40),
     nv("kitchenware_mug_a01", cls="mug", on="fixture_counter_a01", xy=(0.15, -0.05), yaw=0),
@@ -78,7 +78,7 @@ ASSETS = [
     nv("cleaning_sponge_b01", cls="sponge", on="fixture_counter_a01", xy=(-0.35, -0.12), yaw=0),
     nv("cleaning_windowSpray_a01", cls="spray_bottle", on="fixture_counter_a01", xy=(0.7, -0.05), yaw=0),
     nv("consumable_paperTowel_roll_a01", cls="paper_towel", on="fixture_counter_a01", xy=(-0.75, 0.0), yaw=0),
-    fc("pedal_trash_can", cls="trash_bin", xy=(0.4, 2.1), yaw=0, static=True),
+    fc("pedal_trash_can", cls="trash_bin", xy=(-0.25, 2.1), yaw=0, static=True),
     # bathroom corner (front-right)
     nv("toilet_a01", cls="toilet", xy=(2.5, -1.2), yaw=-90, static=True),
     nv("washBasin_a01", cls="sink", xy=(2.65, -0.1), yaw=-90, static=True, mount_top=0.85),
@@ -98,12 +98,28 @@ def local_usd(root: Path, a: dict) -> Path:
 
 def download(root: Path) -> None:
     """Plain Python: needs only `huggingface_hub`. Run before starting Isaac Sim."""
-    from huggingface_hub import snapshot_download
+    # snapshot_download(allow_patterns=...) lists the WHOLE dataset tree (hundreds of thousands of files)
+    # for every package and hits HF's 429 rate limit; list only the package folder instead.
+    from huggingface_hub import HfApi, hf_hub_download
+    from huggingface_hub.hf_api import RepoFile
+    api = HfApi()
     for a in ASSETS:
         dst = root / a["repo"].replace("/", "__")
         t = time.time()
-        snapshot_download(a["repo"], repo_type="dataset", revision=a["rev"], local_dir=dst,
-                          allow_patterns=[f"{a['name']}/*"], ignore_patterns=["*/.thumbs/*"])
+        files = [f.path for f in api.list_repo_tree(a["repo"], path_in_repo=a["name"], recursive=True,
+                                                    revision=a["rev"], repo_type="dataset")
+                 if isinstance(f, RepoFile) and "/.thumbs/" not in f.path]
+        def get(fp):  # anonymous HF API calls are rate-limited (429): back off and retry
+            for k in range(6):
+                try:
+                    return hf_hub_download(a["repo"], fp, repo_type="dataset", revision=a["rev"], local_dir=dst)
+                except Exception as e:  # noqa: BLE001
+                    if "429" not in str(e) or k == 5:
+                        raise
+                    time.sleep(15 * (k + 1))
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(4) as ex:
+            list(ex.map(get, files))
         ok = local_usd(root, a).exists()
         print(f"{'ok ' if ok else 'MISSING'} {a['name']:<36} {time.time()-t:6.1f}s")
 
@@ -146,9 +162,12 @@ def main() -> int:
     if args.download_only:
         download(args.assets)
         return 0
-    if os.environ.get("OMNI_KIT_ACCEPT_EULA", "").strip().lower() not in ("yes", "y", "1"):
+    # pip route: OMNI_KIT_ACCEPT_EULA=YES; container route: -e ACCEPT_EULA=Y. Either must come from the runner.
+    if not any(os.environ.get(v, "").strip().lower() in ("yes", "y", "1")
+               for v in ("OMNI_KIT_ACCEPT_EULA", "ACCEPT_EULA")):
         sys.exit("Refusing to start: a person must read and accept the NVIDIA Isaac Sim EULA and then set "
-                 "OMNI_KIT_ACCEPT_EULA=YES themselves. This script never accepts it.")
+                 "OMNI_KIT_ACCEPT_EULA=YES (pip) or pass -e ACCEPT_EULA=Y (container) themselves. "
+                 "This script never accepts it.")
 
     metrics: dict = {"args": {k: str(v) for k, v in vars(args).items()}, "gpu": {}, "t": {}, "assets": {}}
     t0 = time.time()
@@ -347,7 +366,7 @@ def main() -> int:
     def make_camera(name, pos, look):
         try:
             cam = rep.functional.create.camera(position=pos, look_at=look, parent="/World", name=name)
-        except AttributeError:
+        except (AttributeError, TypeError):
             cam = rep.create.camera(position=pos, look_at=look, name=name)
         return str(cam.GetPath()) if hasattr(cam, "GetPath") else cam
 

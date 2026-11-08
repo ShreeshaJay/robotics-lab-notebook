@@ -1,6 +1,6 @@
 # 03 · SimReady Central assets for household scenes
 
-**Track:** Simulation · **Status:** metadata survey done (CPU, $0); Isaac Sim run planned, not run · **Date:** 2026-11-07
+**Track:** Simulation · **Status:** metadata survey done (CPU, $0); Isaac Sim 6.1 scene ran on one Spot L4 on 2026-11-08 (0.84 VM-hours, about $0.46), VM and disk deleted · **Date:** 2026-11-07, run 2026-11-08
 
 ## Goal
 Find out whether NVIDIA's SimReady Central library (free OpenUSD assets that ship with collision, mass, friction and semantic labels) covers what a small home needs: bedroom, bathroom and kitchen, plus the things a cleaner touches during a short-term-rental changeover. Then plan the cheapest sensible first run of a small Isaac Sim scene on one cloud NVIDIA L4.
@@ -13,8 +13,9 @@ I downloaded metadata only. No USD geometry or textures were pulled in bulk. I i
 | `analyze_catalog.py` | Fetches the catalog metadata and prints counts by dataset and category plus the turnover checklist. Writes `coverage.csv` |
 | `coverage.csv` | Checklist output: hits per item, by source, with example names |
 | `inspect_physics.py` | Prints the colliders, mass, friction and semantic labels of one asset, with `usd-core` and no Isaac Sim |
-| `scene.py` | Isaac Sim 6.1 headless scene: 23 assets, convex-hull colliders, RGB + depth + instance segmentation. **Not yet run** |
+| `scene.py` | Isaac Sim 6.1 headless scene: 23 assets, convex-hull colliders, RGB + depth + instance segmentation. Ran on 2026-11-08 (see Run results) |
 | `requirements.txt` | Pinned local venv (Python 3.12.13, `huggingface-hub==0.36.0`, `usd-core==25.8`) |
+| `results/` | Small outputs of the 2026-11-08 run: `metrics_*.json`, `gpu_*.csv` (nvidia-smi every 2 s), Isaac logs, RGB / depth / instance PNGs, and the VM scripts (`vm_setup_all.sh`, `vm_run.sh`) |
 
 Reproduce: `uv venv --python 3.12`, `uv pip install -r requirements.txt`, then `python -I analyze_catalog.py --data-dir <somewhere-outside-repo> --fetch`.
 
@@ -101,7 +102,7 @@ Other things I noticed:
 - **Isaac Sim 6.1.0**: the version the assets' benchmarks use. It needs Python 3.12, Ubuntu 22.04/24.04 (glibc ≥ 2.35) and an NVIDIA driver ≥ **595.58.03** on Linux ([requirements](https://docs.isaacsim.omniverse.nvidia.com/6.1.0/installation/requirements.html)).
 - **Recommended: the container** `nvcr.io/nvidia/isaac-sim:6.1.0`. It isolates Isaac's pinned dependencies, needs no NGC login, and has documented cache mounts ([container docs](https://docs.isaacsim.omniverse.nvidia.com/6.1.0/installation/install_container.html)). Run `scene.py` with `/isaac-sim/python.sh`.
 - **Alternative: pip** in a fresh venv: `pip install "isaacsim[all,extscache]==6.1.0.0" --extra-index-url https://pypi.nvidia.com` ([pip docs](https://docs.isaacsim.omniverse.nvidia.com/6.1.0/installation/install_python.html)).
-- **EULA:** both routes require accepting the NVIDIA Omniverse/Isaac Sim license: `-e ACCEPT_EULA=Y` for the container, `OMNI_KIT_ACCEPT_EULA=YES` for pip. **I have not accepted it.** The person running the VM must read and accept it themselves. `scene.py` refuses to start unless that variable is already set, and never sets it. Leave `PRIVACY_CONSENT` unset (that flag opts in to data collection).
+- **EULA:** both routes require accepting the NVIDIA Omniverse/Isaac Sim license: `-e ACCEPT_EULA=Y` for the container, `OMNI_KIT_ACCEPT_EULA=YES` for pip. **I read and accepted it on 2026-11-08 and passed `-e ACCEPT_EULA=Y` to the container on that one VM only.** It is not in any committed default. `scene.py` refuses to start unless `OMNI_KIT_ACCEPT_EULA` or `ACCEPT_EULA` is already set by the runner, and never sets it. Leave `PRIVACY_CONSENT` unset (that flag opts in to data collection).
 
 ### VM
 | Choice | Pick | Why |
@@ -114,7 +115,7 @@ Other things I noticed:
 | Headless | No display. `SimulationApp({"headless": True})`. Optional WebRTC livestream (`runheadless.sh`, ports 49100/tcp and 47998/udp) only if I want to look. Otherwise SSH through IAP and copy PNGs back | Smaller attack surface, no open ports |
 | Guardrails | Billing budget alert, `--max-run-duration` / auto-delete on the VM, delete the disk afterwards (or snapshot it) | A stopped VM still bills its disk |
 
-### The scene (`scene.py`, not yet run)
+### The scene (`scene.py`, ran 2026-11-08)
 - **6 × 5 m room** (floor + 3 walls + lights) with 23 assets: bedding block (as the bed), nightstand, chest of drawers, sofa, coffee table, dining chair, towel on the bed, vacuum, kitchen counter with kettle, pan, mug, tumbler, plate, fork, knife, sponge, spray bottle and paper-towel roll, a pedal trash can, a toilet, a wash basin and bar soap. 20 NVIDIA + 3 ForgeCAD packages at pinned commits, 3.72 GB without thumbnails.
 - **Colliders:** after referencing each asset, the script de-instances it and sets `physics:approximation = convexHull` on every collision mesh, removes `PhysxSDFMeshCollisionAPI`, and caps hulls at 64 vertices. I tested this override offline with `usd-core` on the sample mug: `sdf` became `convexHull`. Reason: SDF is NVIDIA's PhysX default, and a public LinkedIn stress test reported SDF colliders exhausting GPU memory at scale (I did not verify that report). `--collider sdf` is there for an A/B memory comparison.
 - Furniture is kinematic. Small items are dynamic and are placed onto their supports from runtime bounding boxes, then settle for 240 updates.
@@ -144,12 +145,86 @@ Prices are from Google's [accelerator-optimized pricing page](https://cloud.goog
 
 **Expected spend for the first session:** about **$0.55–0.80 on Spot** ($0.538/h all-in) or **$0.90–1.35 on-demand** ($0.881/h all-in), then about $0.05–0.15 per re-run. Add $0.027/h for any idle hours the disk is kept. VRAM estimate: 6–10 GB for the RTX renderer, two 720p render products and textures, so it should fit 24 GB with convex hulls. The SDF A/B run is where memory could spike. This is an estimate, not a measurement.
 
+## Run results (2026-11-08)
+
+**Verdict:** the scene runs headless on one L4. 23 SimReady assets (208 collision meshes), physics settle, and two 720p cameras with RGB, depth and instance segmentation. Peak GPU memory was **7.0–7.3 GB of 23 GB**. A re-run with a warm Kit cache takes **under 2.5 minutes**.
+
+### Setup
+- **VM:** `g2-standard-8` Spot (1× L4 24 GB, 8 vCPU, 32 GB RAM), 200 GB pd-balanced, created with `tools/gpu-vm/create_vm.sh` (3 h hard cap, auto-delete). Image `common-cu129-ubuntu-2404-nvidia-580` (Ubuntu 24.04, kernel 7.0.0-1014-gcp). Headless. No firewall ports opened, no livestream.
+- **Driver:** the image ships 580.178.04. I purged it and installed Ubuntu's signed `nvidia-headless-no-dkms-595-server-open` plus `linux-modules-nvidia-595-server-open-$(uname -r)` (precompiled, no DKMS), `libnvidia-gl-595-server` and `libnvidia-extra-595-server` from `noble-updates`, then rebooted. `nvidia-smi` showed **595.91.07** (CUDA 13.2). The EGL, GLX and Vulkan ICD files were present.
+- **Docker CE** 29.9.3 came from Docker's signed apt repo. The image already had NVIDIA Container Toolkit 1.19.1 from NVIDIA's signed repo (apt-held). It was wired in with `nvidia-ctk runtime configure`.
+- **Container:** `nvcr.io/nvidia/isaac-sim:6.1.0`, pulled without an NGC login, run as uid 1234 with `-e ACCEPT_EULA=Y` (my own acceptance, this VM only) and no `PRIVACY_CONSENT`. Assets were mounted read-only. Exact commands: `results/vm_setup_all.sh` and `results/vm_run.sh`. The committed copy has no EULA default.
+- **Assets:** 23 packages at pinned commits, **3.72 GB** (3,720,248,729 bytes), downloaded on the VM only.
+
+### Timings
+| Phase | Time |
+|-|-|
+| VM create (`gcloud`, until RUNNING) | 17–20 s |
+| Driver swap 580 → 595 (apt) | 67 s |
+| Reboot until `nvidia-smi` showed 595 | < 90 s |
+| Docker CE + toolkit wiring | 55 s |
+| `docker pull` Isaac Sim 6.1.0 | **248 s**. Image is **32.3 GB on disk, 10.6 GB compressed** |
+| Asset download, 3.72 GB (after the fix below) | ~75 s |
+| VM create to first scene launch | ~10 min |
+
+| Scene phase (`metrics.json`) | Cold Kit cache | Warm Kit cache |
+|-|-|-|
+| `SimulationApp` start | 55 s | 38 s |
+| Load 23 assets | 48 s | 5 s |
+| Settle, 240 updates (the first rendered frames compile RTX shaders) | **328 s** (GPU idle, ~7 CPU cores busy) | **23 s** |
+| Capture: 2 cams × 720p × 4 RT subframes, plus saving PNG/NPY | 1.8–1.9 s first, then ~1.35–1.5 s per frame | same |
+| Whole script / container wall | 452 s / 503 s | 87 s / 145 s |
+
+### GPU memory (nvidia-smi, sampled every 2 s, whole GPU)
+| Run | Colliders | Peak | After settle | After render |
+|-|-|-|-|-|
+| convexHull, cold (`gpu_convexhull.csv`) | 208 meshes → convex hull, ≤64 verts | 7,212 MiB | 7,141 MiB | 7,180 MiB |
+| convexHull, warm cache (`gpu_convexhull_warmcache.csv`) | same | 7,335 MiB | 7,264 MiB | 7,303 MiB |
+| **SDF A/B** (`--collider sdf`, `gpu_sdf.csv`) | same 208 meshes → SDF | 7,232 MiB | 7,161 MiB | 7,200 MiB |
+
+- **SDF vs convex hull, VRAM:** no measurable difference at this scale (+20 MiB). Physics runs on the CPU (`--gpu-dynamics` was off), so SDF data does not live on the GPU here. Renderer and textures take about 7 GB, and physics is noise next to that. The reported SDF memory blow-up remains unverified. It would need GPU dynamics and hundreds of SDF bodies to test.
+- **SDF vs convex hull, behaviour:** this is the real difference. Convex hulls fill concave shapes: the counter's sink cutout became solid, so the mug, tumbler, plate and knife rested **over** the sink at counter height (`final_min_z` ≈ 0.92 m). With SDF they fell **into** the sink (0.12–0.17 m), and the spray bottle stayed upright. SDF settle took about 26 s longer (cooking; PhysX warned that several meshes are not watertight).
+
+### Render outputs (`results/`)
+- `convexhull_cam_{kitchen,living}_009_rgb.png`: final RGB frames. `sdf_cam_*_009_rgb.png`: the same views with SDF colliders.
+- `convexhull_cam_*_000_depth_mm.png`: 16-bit depth in mm. `*_instance_vis.png` with `*_instance_info.json`: instance segmentation (hash-coloured) and the id-to-prim map.
+- `run1_counter_bug_kitchen_rgb.png`: the first run, before the counter fix (below).
+- Not kept: per-frame NPY (3.7 MB each) and the other 9 frames, which are near-identical.
+
+### Problems and fixes
+| # | Problem | Fix |
+|-|-|-|
+| 1 | First Spot VM (`us-central1-a`) was **preempted after ~10 min**, during setup. The VM and disk were auto-deleted (`--instance-termination-action=DELETE`) | Recreated in `us-central1-b`, which ran 41 min without preemption. Folded all setup into one script (`vm_setup_all.sh`) so a preemption costs less. Driver, Docker, pull and download all run before the single reboot |
+| 2 | `snapshot_download(allow_patterns=…)` lists the **whole** `nvidia/simready-assets` tree for every package. Anonymous calls hit **HTTP 429** on the second package | `scene.py --download-only` now lists only the package folder (`list_repo_tree(path_in_repo=…)`) and fetches files with `hf_hub_download` (4 threads, back-off retry on 429) |
+| 3 | `scene.py` checked only `OMNI_KIT_ACCEPT_EULA` (pip route). The container convention is `ACCEPT_EULA` | Accept either variable, still only if the runner set it. The script never sets it |
+| 4 | `fixture_counter_a01` is 3.0 m long along the asset's **+y**, not x. At yaw 0 it ran through the back wall, and 8 of 10 counter items fell to the floor | Counter `yaw=90`, centre x 1.48. Trash can moved to x −0.25 to make room. After the fix all 10 items rest on the counter |
+| 5 | `rep.functional.create.camera` fallback only caught `AttributeError` | Also catch `TypeError` (defensive; the 6.1 call itself worked) |
+| 6 | The Kit shader cache was not persisted, so the "warm" re-run still spent 320 s compiling | The cache lives in `/isaac-sim/kit/cache` (4.4 GB after one run). That path is now mounted in `vm_run.sh` |
+| 7 | (runner error) I replaced `run.sh` while a run was reading it. Bash reads scripts lazily, so that run's log was clobbered. Its `metrics.json` and images were intact | Do not edit a running script. The cold-run log (`run_convexhull_run1.log`) covers the same steps |
+
+**Known issues left open** (not fixed, to keep changes minimal):
+- **Articulated assets as kinematic.** The bedside table, counter, toilet and trash can have joints between their parts. Making every body kinematic triggers `CreateJoint - cannot create a joint between static bodies` (harmless). The ForgeCAD **chest of drawers' drawers render ~1.5 m away from its carcass**: the drawer bodies don't follow the parent transform. This needs a proper articulation path (fixed root plus jointed drawers), not a blanket kinematic override.
+- **Vacuum** (13 dynamic bodies) sinks 0.2 m into the floor with convex hulls, but not with SDF.
+- **Bar soap** falls through the wall-mounted wash basin to the floor in both collider modes. The basin's collider or its mount needs a look.
+- The sofa (`sofa_soft_b01`) is armchair-sized (0.71 m wide).
+
+### Spend
+| Item | Amount |
+|-|-|
+| VM 1 (preempted) | 9.7 min |
+| VM 2 | 40.8 min |
+| Total | **0.84 VM-hours × $0.5108/h Spot = $0.43**, + 200 GB pd-balanced × 0.84 h = $0.02, + ephemeral IPv4 (a few cents at most) → **≈ $0.46** |
+
+Both VMs and their disks are deleted. `gcloud compute instances list` and `gcloud compute disks list` for the project both returned 0 items, and no static addresses remain.
+
 ## Next steps
-1. Before any GPU spend, sanity-filter masses across the household subset (authored mass vs. bounding-box volume × density) and list outliers.
-2. Get the GPU quota and the person's own EULA acceptance, then run `scene.py` once on Spot. Record `metrics.json`, peak VRAM, and convexHull vs. SDF memory.
-3. Fill the bedroom and bathroom gaps from outside the catalog: mattresses, pillows, toiletries, toilet paper, bath towels, a shower or tub. Candidates to scout: Objaverse/procedural generation, Infinigen-Indoors, or Isaac Sim's own residential sample assets. Check each one's license.
-4. Decide how to handle cloth (towels, sheets). Rigid stand-ins are fine for navigation and pick-and-place but useless for folding or bed-making.
-5. Try the 90 articulated Palatial appliances (microwave, cabinets) for door and drawer tasks.
+1. Persist `/isaac-sim/kit/cache` (and the image) on a small reusable disk or image. Cold shader compilation is about 5 of the 8.5 minutes per fresh VM.
+2. Handle articulated SimReady assets properly: a fixed base and jointed drawers or doors instead of all-kinematic. Then the chest, nightstand and counter shelves become door and drawer tasks.
+3. Sanity-filter masses across the household subset (authored mass vs. bounding-box volume × density). The mug is still 1.33 kg and the counter 357 kg.
+4. An SDF memory test that could actually stress it: `--gpu-dynamics`, then 10× the small dynamic items, then compare against convex hull.
+5. Fill the bedroom and bathroom gaps from outside the catalog: mattresses, pillows, toiletries, toilet paper, bath towels, a shower or tub. Candidates to scout: Objaverse/procedural generation, Infinigen-Indoors, or Isaac Sim's own residential sample assets. Check each one's license.
+6. Decide how to handle cloth (towels, sheets). Rigid stand-ins are fine for navigation and pick-and-place but useless for folding or bed-making.
+7. Try the 90 articulated Palatial appliances (microwave, cabinets) for door and drawer tasks.
 
 ## Notes on sources
 - [SimReady Central Space](https://huggingface.co/spaces/nvidia/simready-central) · [HF blog post](https://huggingface.co/blog/nvidia/simready-central-assets-robotics-ai-factories) · [catalog repo](https://github.com/NVIDIA-Omniverse/simready-central)

@@ -1,0 +1,322 @@
+{
+ "args": {
+  "assets": "/assets",
+  "out": "/out",
+  "download_only": "False",
+  "collider": "sdf",
+  "hull_vertex_limit": "64",
+  "gpu_dynamics": "False",
+  "width": "1280",
+  "height": "720",
+  "frames": "10",
+  "settle_steps": "240",
+  "steps_between": "6",
+  "rt_subframes": "4"
+ },
+ "gpu": {
+  "before_app": {
+   "used_mib": 0,
+   "total_mib": 23034,
+   "util_pct": 0
+  },
+  "after_load": {
+   "used_mib": 484,
+   "total_mib": 23034,
+   "util_pct": 0
+  },
+  "after_settle": {
+   "used_mib": 7161,
+   "total_mib": 23034,
+   "util_pct": 27
+  },
+  "after_render": {
+   "used_mib": 7200,
+   "total_mib": 23034,
+   "util_pct": 0
+  }
+ },
+ "t": {
+  "app_start_s": 40.3,
+  "room_s": 0.58,
+  "asset_load_s": 47.0,
+  "setup_s": 89.3,
+  "settle_s": 353.7,
+  "frame_s": [
+   1.963,
+   1.405,
+   1.474,
+   1.497,
+   1.402,
+   1.431,
+   1.418,
+   1.405,
+   1.406,
+   1.434
+  ],
+  "total_s": 465.0
+ },
+ "assets": {
+  "bedding_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 3.7754175662994385,
+   "qcode": "Q1762457",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "size_m": [
+    2.032,
+    0.87,
+    0.399
+   ],
+   "final_min_z": 0.002
+  },
+  "table_bedside_b01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 38.155615508556366,
+   "qcode": "Q667999",
+   "colliders": 14,
+   "rigid_bodies": 14,
+   "size_m": [
+    0.463,
+    0.575,
+    0.894
+   ],
+   "final_min_z": 0.002
+  },
+  "chest_of_drawers": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 48.59507942199707,
+   "qcode": "Q14169227",
+   "colliders": 24,
+   "rigid_bodies": 5,
+   "size_m": [
+    0.777,
+    0.8,
+    0.994
+   ],
+   "final_min_z": 0.002
+  },
+  "sofa_soft_b01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 24.229082107543945,
+   "qcode": "Q131514",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "size_m": [
+    0.708,
+    0.713,
+    0.728
+   ],
+   "final_min_z": 0.002
+  },
+  "furniture_table_coffee_low_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 52.00091552734375,
+   "qcode": "Q2407432",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "size_m": [
+    0.6,
+    1.2,
+    0.443
+   ],
+   "final_min_z": 0.002
+  },
+  "dining_chair": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 6.512368679046631,
+   "qcode": "Q15026",
+   "colliders": 35,
+   "rigid_bodies": 1,
+   "size_m": [
+    0.57,
+    0.593,
+    0.85
+   ],
+   "final_min_z": 0.002
+  },
+  "cleaning_towel_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 0.2375715672969818,
+   "qcode": "Q131696",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "final_min_z": 0.201
+  },
+  "serviceTool_vacuum_cleaner_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 13.01170774595812,
+   "qcode": "Q101674",
+   "colliders": 13,
+   "rigid_bodies": 13,
+   "size_m": [
+    0.87,
+    0.748,
+    0.929
+   ],
+   "final_min_z": -0.003
+  },
+  "fixture_counter_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 356.88896560668945,
+   "qcode": "Q1420266",
+   "colliders": 9,
+   "rigid_bodies": 9,
+   "size_m": [
+    3.023,
+    0.68,
+    0.927
+   ],
+   "final_min_z": 0.002
+  },
+  "kitchenware_kettle_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 5.402611239813268,
+   "qcode": "Q107444",
+   "colliders": 4,
+   "rigid_bodies": 4,
+   "final_min_z": 0.929
+  },
+  "kitchenware_pan_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 2.9565393924713135,
+   "qcode": "Q127666",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "final_min_z": 0.927
+  },
+  "kitchenware_mug_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 1.333577275276184,
+   "qcode": "Q386215",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "final_min_z": 0.167
+  },
+  "dishware_glass_tumbler_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 0.5678324699401855,
+   "qcode": "Q16180001",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "final_min_z": 0.162
+  },
+  "dishware_plastic_bigPlate_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 0.18586775660514832,
+   "qcode": "Q67690823",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "final_min_z": 0.12
+  },
+  "kitchenware_fork_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 0.27728748321533203,
+   "qcode": "Q81881",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "final_min_z": 0.504
+  },
+  "kitchenware_knife_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 0.5890251398086548,
+   "qcode": "Q32489",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "final_min_z": 0.126
+  },
+  "cleaning_sponge_b01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 0.021032558754086494,
+   "qcode": "Q1210980",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "final_min_z": 0.928
+  },
+  "cleaning_windowSpray_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 0.8291036959271878,
+   "qcode": "Q131402301",
+   "colliders": 4,
+   "rigid_bodies": 4,
+   "final_min_z": 0.929
+  },
+  "consumable_paperTowel_roll_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 0.07042624801397324,
+   "qcode": "Q1151042",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "final_min_z": 0.929
+  },
+  "pedal_trash_can": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 4.365743212401867,
+   "qcode": "Q2368358",
+   "colliders": 88,
+   "rigid_bodies": 6,
+   "size_m": [
+    0.293,
+    0.387,
+    0.654
+   ],
+   "final_min_z": 0.002
+  },
+  "toilet_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 18.862063460052013,
+   "qcode": "Q7857",
+   "colliders": 3,
+   "rigid_bodies": 3,
+   "size_m": [
+    0.405,
+    0.706,
+    1.038
+   ],
+   "final_min_z": 0.002
+  },
+  "washBasin_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 15.4621000289917,
+   "qcode": "Q140565",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "size_m": [
+    0.576,
+    0.35,
+    0.461
+   ],
+   "final_min_z": 0.389
+  },
+  "cleaning_barSoap_a01": {
+   "up": "Z",
+   "metersPerUnit": 1.0,
+   "authored_mass_kg": 0.8048236966133118,
+   "qcode": "Q27883554",
+   "colliders": 1,
+   "rigid_bodies": 1,
+   "final_min_z": -0.002
+  }
+ }
+}

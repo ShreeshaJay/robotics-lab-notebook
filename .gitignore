@@ -21,6 +21,9 @@ checkpoints/
 *.mov
 *.usd
 *.usdz
+*.usdc
+# per-frame sim outputs (depth / segmentation arrays)
+*.npy
 # third-party clones live outside this repo
 vendor/
 # more model weights and caches (never commit)
