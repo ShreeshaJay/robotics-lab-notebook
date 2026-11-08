@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 7222,
+    "output_tokens": 4513,
+    "cache_read_input_tokens": 0
+  },
+  "cost_usd_list_price": 0.00298,
+  "latency_s": 20.1,
+  "haiku_program": {
+    "lines": 85,
+    "sandbox_validator": "pass",
+    "tool_calls": [
+      "close_gripper",
+      "estimate_geometry",
+      "get_robot_state",
+      "get_task_context",
+      "mask_to_point_cloud",
+      "move_to_pose",
+      "open_gripper",
+      "segment_text"
+    ],
+    "unknown_bare_calls": [],
+    "uses_perception": true,
+    "assigns_result": true
+  },
+  "reference_program_open_middle_drawer": {
+    "lines": 127,
+    "sandbox_validator": "pass",
+    "tool_calls": [
+      "get_robot_state",
+      "libero.get_task_metadata",
+      "mask_to_point_cloud",
+      "move_to_pose",
+      "open_gripper",
+      "segment_text",
+      "set_gripper"
+    ],
+    "unknown_bare_calls": [],
+    "uses_perception": true,
+    "assigns_result": true
+  },
+  "note": "Static gate only (sandbox AST validator + tool allowlist). No simulator rollout."
+}

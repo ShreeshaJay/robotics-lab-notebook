@@ -1,0 +1,16 @@
+ASPIRE commit fa00f0ef2bc1d91d594b9aa502c22133c9f538f7, Windows 11, Python 3.11.9, CPU only, pip install -e .[dev] + agent/libero light deps
+34 failed, 486 passed, 6 skipped, 68 errors in 33.35s
+
+Error causes (counted E lines):
+     56 E   ModuleNotFoundError: No module named 'mink'
+     14 E   ModuleNotFoundError: No module named 'resource'
+      8 E           ValueError: calibration manifest SHA-256 does not match station profile
+      6 E         ?   ^     ^     ^       ^     ^    ^               ^         ^
+      3 E       assert False
+      3 E               AttributeError: module 'os' has no attribute 'pread'
+      3 E         
+      2 E   ModuleNotFoundError: No module named 'mujoco'
+      2 E       OSError: [WinError 1314] A required privilege is not held by the client: '2026-11-08_15-25-25' -> 'C:\
+      2 E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\shree\\AppData\\Local\\Temp\\pytes
+      2 E       FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\shree\
+      1 E   ModuleNotFoundError: No module named 'msgspec'

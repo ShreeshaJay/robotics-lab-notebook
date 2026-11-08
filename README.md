@@ -13,6 +13,10 @@ Each experiment folder has a README with the goal, the exact steps, pinned versi
 | 04 | Flora: open models for labeling egocentric video | Data labeling | done (A100 80 GB, ~$3.30) | Captions track human narrations closely; outcome score separates success (5) from a negative control (1); dense reward noisy on human video |
 | 05 | G0.5 VLA vs SmolVLA in LeRobot | Robot learning | done (L4, ~$0.40) | LIBERO-10 smoke test: G0.5 6/6, SmolVLA 2/6; SmolVLA ~10x faster and 0.9 GB VRAM; small open labeler hallucinates steps |
 | 06 | Driving a Colab GPU from a coding agent (colab-mcp) | Agentic tooling | done (Colab Pro+) | 7 notebook tools; A100 40 GB at 239 TFLOPS bf16; GPU must be picked by hand in the UI |
+| 07 | GATOR: room video to posed sim objects | Simulation | read (paper only, $0) | Code "coming soon"; outputs posed GLB meshes with no physics or articulation |
+| 08 | ASPIRE: LLM coding agents write robot skills | Agentic tooling | partly (CPU + one API call, $0.003) | $12.11/task with Sonnet 5.5 confirmed; Haiku-written drawer program passes the static check; sim run needs a GPU |
+| 09 | RoboColosseum: blind real-robot evals | Evals | read ($0) | Reusable protocol (blind A/B, milestones, Rasch ranking); 20 LeRobot v3.0 demo sets, eval rollouts not found |
+| 10 | Nebius Physical AI Workbench: agent-run sim-to-real loop | Agentic tooling | read ($0) | Solid 14-stage plumbing but their own run scored 0/64; repo tells agents not to add cost limits |
 
 ## Ground rules
 - Public sample data only; each experiment notes its data source and license.
