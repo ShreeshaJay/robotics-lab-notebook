@@ -7,6 +7,7 @@ never inside this notebook repo.
 
 Stages (run in order; each can be re-run on its own):
   fetch     download the public EPIC-KITCHENS clip and make a Flora-compatible MP4 (<=120 s, <=256 MiB)
+  prefetch  download all weights up front (~185 GB) so model timings exclude downloads
   validate  CPU-only checks: captioner --validate-only, rewarder --dry-run (downloads ~30 MB of processor files)
   caption   TempSeg -> Captioner pipeline (downloads ~130 GB on first run)
   reward    dense (process) reward every 0.5 s + outcome reward with progress (downloads ~56 GB)
@@ -71,6 +72,8 @@ def env() -> dict[str, str]:
     e.setdefault("FLORA_MODEL_CACHE", str(WORK / "flora-models"))
     e["FLORA_REWARDER_REPO"] = REWARDER_REPO
     e.setdefault("TOKENIZERS_PARALLELISM", "false")
+    # vLLM 0.33.0 JIT-builds a FlashInfer sampler that needs ninja + a CUDA 13 nvcc (lesson from experiment 05).
+    e.setdefault("VLLM_USE_FLASHINFER_SAMPLER", "0")
     return e
 
 
@@ -81,18 +84,23 @@ def run(cmd: list[str], *, cwd: Path, logfile: Path) -> int:
     peak = {"mib": 0}
     stop = threading.Event()
 
+    trace = logfile.with_suffix(".gpu.csv")  # UTC time, MiB used: lets us split peak VRAM per model
+
     def sample() -> None:
-        while not stop.is_set():
-            try:
-                out = subprocess.run(
-                    ["nvidia-smi", "--query-gpu=memory.used", "--format=csv,noheader,nounits"],
-                    capture_output=True, text=True, timeout=10,
-                ).stdout.split()
-                if out:
-                    peak["mib"] = max(peak["mib"], int(out[0]))
-            except Exception:
-                pass
-            stop.wait(2.0)
+        with trace.open("w") as tf:
+            while not stop.is_set():
+                try:
+                    out = subprocess.run(
+                        ["nvidia-smi", "--query-gpu=memory.used", "--format=csv,noheader,nounits"],
+                        capture_output=True, text=True, timeout=10,
+                    ).stdout.split()
+                    if out:
+                        peak["mib"] = max(peak["mib"], int(out[0]))
+                        tf.write(f"{time.strftime('%Y-%m-%dT%H:%M:%S', time.gmtime())},{out[0]}\n")
+                        tf.flush()
+                except Exception:
+                    pass
+                stop.wait(2.0)
 
     t = threading.Thread(target=sample, daemon=True)
     t.start()
@@ -163,6 +171,35 @@ def stage_fetch(_: argparse.Namespace) -> None:
         P08_02 from EPIC-KITCHENS-55 (Damen et al., 2018), {CLIP_URL}
         DOI 10.5523/bris.3h91syskeag572hl6tvuovwv4d. Non-commercial licence. Re-encoded to 720p H.264, audio removed.
         """))
+
+
+PREFETCH = '''\
+"""Download all weights up front with Flora's own snapshot() helper and the same revisions/patterns,
+so the timed model stages measure loading + inference, not downloads."""
+import os, sys, time
+sys.path.insert(0, os.path.join(sys.argv[1], "captioner"))
+from huggingface_hub import snapshot_download
+from batch_utils.config import MODELS
+from batch_utils.models import snapshot
+for kind in ("tempseg", "captioner"):
+    t = time.monotonic(); p = snapshot(kind); print("PREFETCH", kind, p, round(time.monotonic() - t, 1), "s", flush=True)
+b = MODELS["tempseg_base"]
+t = time.monotonic()
+p = snapshot_download(b["repo"], revision=b["revision"], allow_patterns=["*.safetensors", "*.json", "*.jinja"])
+print("PREFETCH tempseg_base", p, round(time.monotonic() - t, 1), "s", flush=True)
+t = time.monotonic(); p = snapshot_download(sys.argv[2], revision=sys.argv[3])
+print("PREFETCH rewarder", p, round(time.monotonic() - t, 1), "s", flush=True)
+'''
+
+
+def stage_prefetch(_: argparse.Namespace) -> None:
+    require_ack()
+    PATCHES.mkdir(parents=True, exist_ok=True)
+    (PATCHES / "prefetch.py").write_text(PREFETCH)
+    code = run([str(VENV_ANN), "-I", str(PATCHES / "prefetch.py"), str(FLORA), REWARDER_REPO, REWARDER_REV],
+               cwd=WORK, logfile=RESULTS / "logs" / "prefetch.log")
+    if code != 0:
+        sys.exit("prefetch failed (if this is a 401/403, the repos are gated: stop, do not sign in)")
 
 
 def stage_validate(_: argparse.Namespace) -> None:
@@ -318,7 +355,7 @@ def stage_summary(a: argparse.Namespace) -> None:
     log(f"wrote {out}. Copy this JSON (not the video) into the notebook's results/ folder.")
 
 
-STAGES = {"fetch": stage_fetch, "validate": stage_validate, "caption": stage_caption,
+STAGES = {"fetch": stage_fetch, "prefetch": stage_prefetch, "validate": stage_validate, "caption": stage_caption,
           "reward": stage_reward, "summary": stage_summary}
 
 

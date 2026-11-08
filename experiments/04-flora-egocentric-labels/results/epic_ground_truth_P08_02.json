@@ -1,0 +1,180 @@
+{
+ "source": "EPIC-KITCHENS-100 annotations, EPIC_100_train.csv (github.com/epic-kitchens/epic-kitchens-100-annotations), CC BY-NC 4.0",
+ "video_id": "P08_02",
+ "narrations": [
+  {
+   "start_s": 0.99,
+   "end_s": 3.05,
+   "narration": "enter kitchen"
+  },
+  {
+   "start_s": 3.7,
+   "end_s": 5.23,
+   "narration": "put plates on counter"
+  },
+  {
+   "start_s": 4.92,
+   "end_s": 6.61,
+   "narration": "open dishwasher"
+  },
+  {
+   "start_s": 7.16,
+   "end_s": 9.07,
+   "narration": "place fork"
+  },
+  {
+   "start_s": 13.46,
+   "end_s": 16.14,
+   "narration": "place plate"
+  },
+  {
+   "start_s": 16.33,
+   "end_s": 19.48,
+   "narration": "arrange bin"
+  },
+  {
+   "start_s": 19.36,
+   "end_s": 20.85,
+   "narration": "open drawer"
+  },
+  {
+   "start_s": 20.66,
+   "end_s": 23.72,
+   "narration": "arrange mug"
+  },
+  {
+   "start_s": 23.82,
+   "end_s": 27.33,
+   "narration": "arrange glass"
+  },
+  {
+   "start_s": 27.43,
+   "end_s": 31.73,
+   "narration": "arrange bowls in drawer"
+  },
+  {
+   "start_s": 31.09,
+   "end_s": 32.7,
+   "narration": "close drawer"
+  },
+  {
+   "start_s": 32.77,
+   "end_s": 34.22,
+   "narration": "close drawer"
+  },
+  {
+   "start_s": 34.01,
+   "end_s": 35.94,
+   "narration": "close dishwasher"
+  },
+  {
+   "start_s": 35.44,
+   "end_s": 36.49,
+   "narration": "open cupboard"
+  },
+  {
+   "start_s": 36.55,
+   "end_s": 38.77,
+   "narration": "get dishwasher"
+  },
+  {
+   "start_s": 40.56,
+   "end_s": 43.68,
+   "narration": "unwrap"
+  },
+  {
+   "start_s": 44.28,
+   "end_s": 45.42,
+   "narration": "close lid"
+  },
+  {
+   "start_s": 48.55,
+   "end_s": 54.25,
+   "narration": "start dishwasher"
+  },
+  {
+   "start_s": 51.68,
+   "end_s": 54.17,
+   "narration": "start dishwasher"
+  },
+  {
+   "start_s": 53.2,
+   "end_s": 55.77,
+   "narration": "close dishwater"
+  },
+  {
+   "start_s": 56.11,
+   "end_s": 57.91,
+   "narration": "throw away wrap"
+  },
+  {
+   "start_s": 58.17,
+   "end_s": 59.96,
+   "narration": "get sponge"
+  },
+  {
+   "start_s": 59.99,
+   "end_s": 61.07,
+   "narration": "open tap water"
+  },
+  {
+   "start_s": 61.17,
+   "end_s": 65.21,
+   "narration": "clean sponge"
+  },
+  {
+   "start_s": 65.5,
+   "end_s": 67.83,
+   "narration": "clean counter top"
+  },
+  {
+   "start_s": 67.45,
+   "end_s": 70.2,
+   "narration": "clean around sink"
+  },
+  {
+   "start_s": 71.29,
+   "end_s": 82.43,
+   "narration": "clean counter top"
+  },
+  {
+   "start_s": 82.79,
+   "end_s": 83.54,
+   "narration": "turn on water"
+  },
+  {
+   "start_s": 83.74,
+   "end_s": 85.71,
+   "narration": "clean sponge"
+  },
+  {
+   "start_s": 84.38,
+   "end_s": 89.88,
+   "narration": "clean sink"
+  },
+  {
+   "start_s": 89.71,
+   "end_s": 91.47,
+   "narration": "turn off water"
+  },
+  {
+   "start_s": 91.42,
+   "end_s": 95.31,
+   "narration": "squeeze sponge"
+  },
+  {
+   "start_s": 95.41,
+   "end_s": 97.43,
+   "narration": "place sponge back"
+  },
+  {
+   "start_s": 98.28,
+   "end_s": 102.59,
+   "narration": "wipe off hands"
+  }
+ ],
+ "stats": {
+  "count": 34,
+  "mean_duration_s": 2.76
+ }
+}

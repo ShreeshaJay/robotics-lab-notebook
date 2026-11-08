@@ -16,6 +16,7 @@ set -euo pipefail
 WORK="${WORK:-$HOME/flora-lab}"
 FLORA_COMMIT="d8b755ec9a990418b1f31c7f48c75341c7229ea6"   # NVlabs/Flora main, 2026-11-05
 BNB_VERSION="0.50.2"                                       # only for the experimental 4-bit L4 path
+WITH_BNB="${WITH_BNB:-1}"                                  # set WITH_BNB=0 on an 80 GB GPU (full precision, no bitsandbytes)
 
 mkdir -p "$WORK"
 cd "$WORK"
@@ -40,13 +41,13 @@ python3.12 -m venv "$WORK/.venv-annotation"
 "$WORK/.venv-annotation/bin/python" -m pip install --upgrade "pip==25.3"
 "$WORK/.venv-annotation/bin/pip" install torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cu128
 "$WORK/.venv-annotation/bin/pip" install -r Flora/captioner/batch_utils/requirements.txt
-"$WORK/.venv-annotation/bin/pip" install "bitsandbytes==${BNB_VERSION}"
+if [ "$WITH_BNB" = "1" ]; then "$WORK/.venv-annotation/bin/pip" install "bitsandbytes==${BNB_VERSION}"; fi
 
 echo "== venv 2: rewarder (vLLM), pins from rewarder/batch_utils/requirements.txt"
 python3.12 -m venv "$WORK/.venv-rewarder"
 "$WORK/.venv-rewarder/bin/python" -m pip install --upgrade "pip==25.3"
 "$WORK/.venv-rewarder/bin/pip" install -r Flora/rewarder/batch_utils/requirements.txt
-"$WORK/.venv-rewarder/bin/pip" install "bitsandbytes==${BNB_VERSION}"
+if [ "$WITH_BNB" = "1" ]; then "$WORK/.venv-rewarder/bin/pip" install "bitsandbytes==${BNB_VERSION}"; fi
 
 echo "== freeze (for the write-up)"
 mkdir -p "$WORK/results"

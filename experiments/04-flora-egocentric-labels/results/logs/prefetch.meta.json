@@ -1,0 +1,13 @@
+{
+  "cmd": [
+    "/home/shree/flora-lab/.venv-annotation/bin/python",
+    "-I",
+    "/home/shree/flora-lab/patches/prefetch.py",
+    "/home/shree/flora-lab/Flora",
+    "nvidia/Flora-Rewarder",
+    "b64cee902fd6937184d9bea5afa043cd55650e45"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 900.2,
+  "peak_gpu_mib": 6
+}

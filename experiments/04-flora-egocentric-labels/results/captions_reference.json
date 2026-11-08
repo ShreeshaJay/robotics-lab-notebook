@@ -1,0 +1,313 @@
+{
+  "schema_version": "flora_demo_annotation_v1",
+  "duration_s": 107.423983,
+  "segments": [
+    {
+      "start_s": 0.0,
+      "end_s": 5.2,
+      "caption": "place plate on counter with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 5.2,
+      "end_s": 7.0,
+      "caption": "open dishwasher with right hand, pull dishwasher rack with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 7.0,
+      "end_s": 9.2,
+      "caption": "pick up knife and fork with right hand, place knife and fork in dishwasher with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 9.2,
+      "end_s": 12.4,
+      "caption": "pick up plate with right hand, pass plate to left hand, place plate in dishwasher with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 12.35,
+      "end_s": 13.55,
+      "caption": "hold plate with left hand, pull dishwasher rack with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 13.55,
+      "end_s": 14.55,
+      "caption": "pass plate from left hand to right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 14.55,
+      "end_s": 16.05,
+      "caption": "place plate in dishwasher rack with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 16.05,
+      "end_s": 18.55,
+      "caption": "reposition spoon in dishwasher with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 18.55,
+      "end_s": 20.05,
+      "caption": "lift dishwasher rack with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 20.05,
+      "end_s": 22.35,
+      "caption": "pull dishwasher rack with both hands, reposition mug in dishwasher rack with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 22.35,
+      "end_s": 23.85,
+      "caption": "shift mug in dishwasher rack with left hand, shift wooden spoon in dishwasher rack with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 23.85,
+      "end_s": 27.3,
+      "caption": "pick up glass with left hand, place glass in dishwasher rack with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 27.3,
+      "end_s": 30.8,
+      "caption": "place bowl in dishwasher with right hand, reposition bowls in dishwasher with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 30.8,
+      "end_s": 32.0,
+      "caption": "shift wooden spoon in dishwasher rack with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 32.0,
+      "end_s": 33.2,
+      "caption": "push dishwasher rack with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 33.2,
+      "end_s": 36.0,
+      "caption": "push dishwasher rack with right hand, close dishwasher door with right hand, open cabinet door with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 36.25,
+      "end_s": 39.6,
+      "caption": "pick up foil with left hand, close cabinet door with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 39.6,
+      "end_s": 43.6,
+      "caption": "open dishwasher door with right hand, unwrap soap with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 43.6,
+      "end_s": 45.2,
+      "caption": "place detergent in dishwasher with right hand, close detergent compartment with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 45.2,
+      "end_s": 55.65,
+      "caption": "hold debris with left hand, close dishwasher door with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 55.65,
+      "end_s": 59.4,
+      "caption": "place debris in trash can with left hand, pick up cloth with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 59.25,
+      "end_s": 62.0,
+      "caption": "pass cloth to right hand, turn on faucet with left hand, turn off faucet with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 62.0,
+      "end_s": 63.0,
+      "caption": "fold sponge with both hands, squeeze sponge with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 63.0,
+      "end_s": 64.4,
+      "caption": "squeeze cloth with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 64.4,
+      "end_s": 65.4,
+      "caption": "unfold cloth with both hands, place cloth on counter with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 65.4,
+      "end_s": 67.6,
+      "caption": "place cloth on counter with right hand, wipe counter with cloth in right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 67.6,
+      "end_s": 69.6,
+      "caption": "wipe counter with cloth in right hand, wipe sink with cloth in right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 69.6,
+      "end_s": 70.6,
+      "caption": "pick up sponge with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 69.8,
+      "end_s": 82.4,
+      "caption": "wipe counter with cloth in right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 70.6,
+      "end_s": 82.4,
+      "caption": "wipe counter with sponge in right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 82.4,
+      "end_s": 89.65,
+      "caption": "turn on faucet with left hand, rinse cloth under faucet with both hands, wipe sink with cloth in right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 82.6,
+      "end_s": 84.4,
+      "caption": "hold cloth with right hand, turn on faucet with left hand, rinse cloth under faucet with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 84.4,
+      "end_s": 89.8,
+      "caption": "wipe sink with sponge in right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 89.8,
+      "end_s": 91.4,
+      "caption": "rinse cloth under faucet with right hand, turn off faucet with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 91.4,
+      "end_s": 92.8,
+      "caption": "fold cloth with both hands, squeeze cloth with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 92.8,
+      "end_s": 94.2,
+      "caption": "squeeze sponge with right hand, turn on faucet with left hand, turn off faucet with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 94.2,
+      "end_s": 95.8,
+      "caption": "wring cloth with both hands, unfold cloth with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 95.8,
+      "end_s": 97.55,
+      "caption": "place cloth on counter with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 97.5,
+      "end_s": 101.2,
+      "caption": "pick up cloth with right hand, fold cloth with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 101.2,
+      "end_s": 107.423983,
+      "caption": "place cloth on oven handle with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    }
+  ],
+  "elapsed_s": 1730.2,
+  "source_clock": "seconds relative to the first native source presentation timestamp",
+  "camera_roles": [
+    "main"
+  ],
+  "profile": "Human",
+  "model_revisions": {
+    "tempseg": {
+      "repo": "nvidia/Flora-TempSeg",
+      "revision": "114a1076f70eb53f4a58ac045505db3087e79347",
+      "sha256": "1d80fe544e4cd1a7ff6b0ea4be71e988972408dab81d4c8af72e3a628739d6c3",
+      "repo_env": "FLORA_TEMPSEG_REPO"
+    },
+    "captioner": {
+      "repo": "nvidia/Flora-Captioner",
+      "revision": "fef0bbfe11829ca7f3539d58da7a6a2c2f109dc6",
+      "source_manifest_identity": "2ab6cafd286df7f446bfb84fbc4af7c54773d5e890dd277ac5a0453d0d4fb778",
+      "repo_env": "FLORA_CAPTIONER_REPO"
+    },
+    "tempseg_base": {
+      "repo": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+    }
+  },
+  "input_sha256": {
+    "main": "175c01ca20420df01cb440225d30b1d1bb724e7cdde1bf232d28b61471b83b01"
+  }
+}

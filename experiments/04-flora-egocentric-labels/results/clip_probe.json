@@ -1,0 +1,15 @@
+{
+  "programs": [],
+  "streams": [
+    {
+      "width": 1280,
+      "height": 720,
+      "avg_frame_rate": "60000/1001",
+      "nb_read_packets": "6439"
+    }
+  ],
+  "format": {
+    "duration": "107.423983",
+    "size": "77922397"
+  }
+}

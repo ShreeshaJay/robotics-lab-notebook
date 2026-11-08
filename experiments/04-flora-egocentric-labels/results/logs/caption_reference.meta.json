@@ -1,0 +1,16 @@
+{
+  "cmd": [
+    "/home/shree/flora-lab/.venv-annotation/bin/python",
+    "captioner/infer.py",
+    "--video",
+    "/home/shree/flora-lab/data/P08_02_720p.mp4",
+    "--profile",
+    "human",
+    "--output",
+    "/home/shree/flora-lab/results/captions_reference.json",
+    "--overwrite"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 1763.6,
+  "peak_gpu_mib": 65628
+}
