@@ -2,13 +2,13 @@
 # Create one time-capped GPU VM on GCP for a short experiment.
 # Safeguards: hard max run duration (VM is DELETED when it expires),
 # idle shutdown (GPU idle for IDLE_MIN minutes -> power off), and labels for cost tracking.
-# Usage: PROJECT=my-project NAME=exp-01 [HOURS=4] [ZONE=us-central1-a] [SPOT=1] ./create_vm.sh
+# Usage: PROJECT=my-project NAME=exp-01 [HOURS=4] [ZONE=us-central1-a] [SPOT=1] [MACHINE=a2-ultragpu-1g] ./create_vm.sh
 set -euo pipefail
 : "${PROJECT:?set PROJECT}"; : "${NAME:?set NAME}"
 ZONE="${ZONE:-us-central1-a}"
 HOURS="${HOURS:-4}"           # hard cap; VM is deleted after this
 IDLE_MIN="${IDLE_MIN:-30}"
-MACHINE="${MACHINE:-g2-standard-8}"   # 8 vCPU, 32 GB RAM, 1x NVIDIA L4 24 GB
+MACHINE="${MACHINE:-g2-standard-8}"   # g2-standard-8: 1x L4 24 GB; a2-ultragpu-1g: 1x A100 80 GB (GPU is bundled with both)
 DISK_GB="${DISK_GB:-200}"
 IMAGE_FAMILY="${IMAGE_FAMILY:-common-cu129-ubuntu-2204-nvidia-580}"
 IMAGE_PROJECT="${IMAGE_PROJECT:-deeplearning-platform-release}"
@@ -21,7 +21,6 @@ if [ "${SPOT:-0}" = "1" ]; then PROVISIONING=(--provisioning-model=SPOT); fi
 gcloud compute instances create "$NAME" \
   --project="$PROJECT" --zone="$ZONE" \
   --machine-type="$MACHINE" \
-  --accelerator=type=nvidia-l4,count=1 \
   --maintenance-policy=TERMINATE \
   --image-family="$IMAGE_FAMILY" --image-project="$IMAGE_PROJECT" \
   --boot-disk-size="${DISK_GB}GB" --boot-disk-type=pd-balanced \
@@ -32,3 +31,4 @@ gcloud compute instances create "$NAME" \
   --metadata-from-file=startup-script="$(dirname "$0")/idle_shutdown.sh"
 
 echo "Created $NAME. Hard stop + delete in ${HOURS}h; idle power-off after ${IDLE_MIN} min."
+echo "Delete when done:  gcloud compute instances delete $NAME --project=$PROJECT --zone=$ZONE --quiet"
