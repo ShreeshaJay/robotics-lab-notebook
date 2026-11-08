@@ -1,0 +1,82 @@
+[
+ {
+  "event": "first_call",
+  "result": true
+ },
+ {
+  "event": "tools",
+  "names": [
+   "open_colab_browser_connection",
+   "add_code_cell",
+   "add_text_cell",
+   "delete_cell",
+   "get_cells",
+   "move_cell",
+   "run_code_cell",
+   "update_cell"
+  ]
+ },
+ {
+  "id": "c4",
+  "is_error": false,
+  "content": [
+   "{\"outputs\":[{\"output_type\":\"stream\",\"name\":\"stdout\",\"text\":[\"no GPU attached\\n\",\"python 3.13.18 | cpus 2 | ram_gb 12.7 | disk_free_gb 225.7\\n\"]}]}"
+  ],
+  "data": {
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "no GPU attached\n",
+      "python 3.13.18 | cpus 2 | ram_gb 12.7 | disk_free_gb 225.7\n"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": "c5",
+  "is_error": false,
+  "content": [
+   "{\"outputs\":[{\"output_type\":\"stream\",\"name\":\"stdout\",\"text\":[\"name, memory.total [MiB], driver_version\\n\",\"NVIDIA A100-SXM4-40GB, 40960 MiB, 580.82.07\\n\",\"\\n\",\"python 3.13.16 | cpus 12 | ram_gb 83.5 | disk_free_gb 235.6\\n\"]}]}"
+  ],
+  "data": {
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "name, memory.total [MiB], driver_version\n",
+      "NVIDIA A100-SXM4-40GB, 40960 MiB, 580.82.07\n",
+      "\n",
+      "python 3.13.16 | cpus 12 | ram_gb 83.5 | disk_free_gb 235.6\n"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": "c7",
+  "is_error": false,
+  "content": [
+   "{\"outputs\":[{\"output_type\":\"stream\",\"name\":\"stdout\",\"text\":[\"torch 2.14.1+cu130 | cuda 13.0\\n\",\"bf16 matmul: 239 TFLOPS\\n\",\"long cell finished after 45 s\\n\"]}]}"
+  ],
+  "data": {
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "torch 2.14.1+cu130 | cuda 13.0\n",
+      "bf16 matmul: 239 TFLOPS\n",
+      "long cell finished after 45 s\n"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "event": "quit"
+ }
+]

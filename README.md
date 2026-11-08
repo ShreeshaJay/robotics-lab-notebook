@@ -11,7 +11,8 @@ Each experiment folder has a README with the goal, the exact steps, pinned versi
 | 02 | Inspect Robots: running an open robot-eval harness with frontier LLMs | Evals | done (CPU mock) | Haiku 5.5 agent 3/3 on toy reach task, ~$0.007 |
 | 03 | SimReady Central assets for household scenes | Simulation | done (L4, ~$0.46) | 23-asset room renders headless in Isaac Sim 6.1 at 7.2 GB VRAM; re-runs ~2.5 min with a warm shader cache; articulated drawers and some colliders need fixes |
 | 04 | Flora: open models for labeling egocentric video | Data labeling | done (A100 80 GB, ~$3.30) | Captions track human narrations closely; outcome score separates success (5) from a negative control (1); dense reward noisy on human video |
-| 05 | G0.5 VLA in LeRobot: subtasks and boxes before acting | Robot learning | planned (GPU) | Inference fits a 24 GB L4; non-commercial license |
+| 05 | G0.5 VLA vs SmolVLA in LeRobot | Robot learning | done (L4, ~$0.40) | LIBERO-10 smoke test: G0.5 6/6, SmolVLA 2/6; SmolVLA ~10x faster and 0.9 GB VRAM; small open labeler hallucinates steps |
+| 06 | Driving a Colab GPU from a coding agent (colab-mcp) | Agentic tooling | done (Colab Pro+) | 7 notebook tools; A100 40 GB at 239 TFLOPS bf16; GPU must be picked by hand in the UI |
 
 ## Ground rules
 - Public sample data only; each experiment notes its data source and license.
