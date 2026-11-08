@@ -1,0 +1,112 @@
+{
+  "scripted": [
+    {
+      "scene": "layout-0",
+      "status": "success",
+      "termination": "success",
+      "scores": {
+        "success_at_end": 1.0,
+        "episode_length": 10.0,
+        "min_distance_to_goal": 0.037219414559978944
+      },
+      "llm_usage": {},
+      "duration_s": 0.05,
+      "steps": 10,
+      "error": null
+    },
+    {
+      "scene": "layout-1",
+      "status": "success",
+      "termination": "success",
+      "scores": {
+        "success_at_end": 1.0,
+        "episode_length": 8.0,
+        "min_distance_to_goal": 0.0
+      },
+      "llm_usage": {},
+      "duration_s": 0.01,
+      "steps": 8,
+      "error": null
+    },
+    {
+      "scene": "layout-2",
+      "status": "success",
+      "termination": "success",
+      "scores": {
+        "success_at_end": 1.0,
+        "episode_length": 8.0,
+        "min_distance_to_goal": 0.0
+      },
+      "llm_usage": {},
+      "duration_s": 0.01,
+      "steps": 8,
+      "error": null
+    }
+  ],
+  "agent": [
+    {
+      "scene": "layout-0",
+      "status": "success",
+      "termination": "success",
+      "scores": {
+        "success_at_end": 1.0,
+        "episode_length": 15.0,
+        "min_distance_to_goal": 0.0001503740765987343
+      },
+      "llm_usage": {
+        "llm_calls": 8,
+        "input_tokens": 32,
+        "cache_creation_input_tokens": 2798,
+        "cache_read_input_tokens": 24226,
+        "output_tokens": 1977
+      },
+      "duration_s": 11.5,
+      "steps": 15,
+      "error": null,
+      "cost_usd": 0.001584
+    },
+    {
+      "scene": "layout-1",
+      "status": "success",
+      "termination": "success",
+      "scores": {
+        "success_at_end": 1.0,
+        "episode_length": 11.0,
+        "min_distance_to_goal": 0.0005679846313099103
+      },
+      "llm_usage": {
+        "llm_calls": 6,
+        "input_tokens": 24,
+        "cache_creation_input_tokens": 2393,
+        "cache_read_input_tokens": 15960,
+        "output_tokens": 1689
+      },
+      "duration_s": 10.12,
+      "steps": 11,
+      "error": null,
+      "cost_usd": 0.001306
+    },
+    {
+      "scene": "layout-2",
+      "status": "success",
+      "termination": "success",
+      "scores": {
+        "success_at_end": 1.0,
+        "episode_length": 11.0,
+        "min_distance_to_goal": 0.000823575157255666
+      },
+      "llm_usage": {
+        "llm_calls": 6,
+        "input_tokens": 24,
+        "cache_creation_input_tokens": 2441,
+        "cache_read_input_tokens": 16543,
+        "output_tokens": 1699
+      },
+      "duration_s": 9.46,
+      "steps": 11,
+      "error": null,
+      "cost_usd": 0.001322
+    }
+  ],
+  "agent_total_cost_usd": 0.004212
+}

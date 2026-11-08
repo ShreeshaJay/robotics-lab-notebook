@@ -23,3 +23,19 @@ checkpoints/
 *.usdz
 # third-party clones live outside this repo
 vendor/
+# more model weights and caches (never commit)
+*.gguf
+*.onnx
+*.h5
+*.pth
+*.npz
+*.parquet
+*.arrow
+*.tar
+*.zip
+models/
+weights/
+hf_cache/
+.cache/
+huggingface/
+outputs/**/*.mp4

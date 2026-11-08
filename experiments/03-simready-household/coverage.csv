@@ -1,0 +1,38 @@
+item,hits,by_source,examples
+bed (frame),2,"{""nvidia"": 2}",bed_hospital_standard_a01; bed_hospital_standard_a02
+mattress,0,{},
+pillow / cushion,0,{},
+bed linens / bedding,1,"{""nvidia"": 1}",bedding_a01
+towel,16,"{""PalatialSim"": 7, ""nvidia"": 9}",Cookware Towel; Dish Towel; Paper Towel; Paper Towel Holder; Paper Towel Roll; Towel; Towel Dishcloth; cleaning_towel_a01
+nightstand / bedside,2,"{""nvidia"": 2}",lamp_table_bedside_a01; table_bedside_b01
+wardrobe / dresser,1,"{""ForgeCAD"": 1}",chest_of_drawers
+lamp,11,"{""ForgeCAD"": 1, ""PalatialSim"": 1, ""nvidia"": 9}",Decorative Lamp; desk_lamp; lamp_ceiling_1m_rectangle_a01; lamp_ceiling_1m_rectangle_a02; lamp_ceiling_50cm_square_a01; lamp_ceiling_50cm_square_a02; lamp_ceiling_corner_a01; lamp_table_bedside_a01
+clothes hanger,0,{},
+curtain / blinds,10,"{""nvidia"": 10}",blinds_window_2m_closed_a01; blinds_window_2m_closed_a02; blinds_window_2m_closed_a03; blinds_window_2m_open_a01; blinds_window_2m_open_a02; blinds_window_4m_closed_a01; blinds_window_4m_closed_a02; blinds_window_4m_closed_a03
+rug / mat,4,"{""PalatialSim"": 4}",Cloth Mat; Kitchen Mat; Mat; Table Mat
+sofa,4,"{""nvidia"": 4}",sofa_soft_b01; sofa_soft_b02; sofa_soft_b03; sofa_visitor_a01
+chair / stool,14,"{""ForgeCAD"": 2, ""nvidia"": 12}",chair_hospital_a01; chair_hospital_b01; chair_hospital_b02; chair_hospital_b03; chair_office_amf_black_a01; chair_office_fabric_manager_a01; chair_patient_mobile_a01; chair_surgical_a01
+table / desk,3,"{""nvidia"": 3}",desk_a01; furniture_table_coffee_low_a01; table_bedside_b01
+tv remote,0,{},
+cup / mug / glass,141,"{""ALLSIDES"": 1, ""ForgeCAD"": 2, ""PalatialSim"": 77, ""nvidia"": 61}",Blue Mug; Bottle Glass Jar; Bowl Cup; Bowl Cup Bottle; Canister Mug; Ceramic Cup; Ceramic Mug; Champagne Flute
+plate,28,"{""ALLSIDES"": 1, ""ForgeCAD"": 2, ""PalatialSim"": 23, ""nvidia"": 2}",Bowl Plate; Cup Plate; Decorative Plate; Dish Plate; Plate; Plate Board; Plate Bowl; Plate Butter Dish
+bowl,94,"{""ALLSIDES"": 1, ""ForgeCAD"": 1, ""PalatialSim"": 73, ""nvidia"": 19}",Bamboo Bowl; Basket Bowl; Black Bowl; Bottle Bowl; Bowl; Bowl Cup; Bowl Cup Bottle; Bowl Dish
+cutlery (fork/knife/spoon),136,"{""ALLSIDES"": 1, ""ForgeCAD"": 1, ""PalatialSim"": 80, ""nvidia"": 54}",Bar Spoon; Black Dessert Spoon; Butter Knife; Carving Fork; Carving Knife; Ceramic Spoon Rest; Cheese Knife; Cooking Knife
+pot / pan,98,"{""ForgeCAD"": 1, ""PalatialSim"": 74, ""nvidia"": 23}",Black Pot; Bowl Muffin Pan; Bowl Pan; Bowl Pot; Bowl Pot Strainer; Box Pot; Carbon Steel Wok; Casserole
+kettle,38,"{""ForgeCAD"": 1, ""PalatialSim"": 12, ""nvidia"": 25}",Coffee Kettle; Electric Kettle; Kettle; Kettle Coffee Maker; Kettle Food Processor; Onion Kettle; Pitcher Kettle; Pot Kettle Pan
+dish rack,3,"{""ALLSIDES"": 1, ""ForgeCAD"": 1, ""PalatialSim"": 1}",Dish Rack; dish_drying_rack; dish_rack_RHVLDJ6WJF
+toilet,2,"{""nvidia"": 2}",sanitary_toilet_wallMounted_a01; toilet_a01
+sink / basin,6,"{""ForgeCAD"": 1, ""nvidia"": 5}",fixture_sink_basin_a01; sanitary_sink_wallMounted_a01; sink_surgical_a01; vanity_sink_faucet; washBasin_a01; washBasin_long_a01
+soap (bar/dispenser/dish),15,"{""ALLSIDES"": 1, ""PalatialSim"": 4, ""nvidia"": 10}",Dish Soap; Dish Soap Bottle; Dish Soap Dispenser; Hand Soap; cleaning_barSoap_a01; cleaning_barSoap_b01; cleaning_barSoap_c01; cleaning_barSoap_d01
+toilet paper (roll),0,{},
+toilet paper holder,1,"{""nvidia"": 1}",fixture_toiletPaperHolder_double_a01
+"toiletries (shampoo, toothbrush, ...)",0,{},
+shower / bathtub,1,"{""ForgeCAD"": 1}",shower_seat
+mirror,3,"{""nvidia"": 3}",fixture_mirror_wallMounted_a01; instrument_mirror_a01; mirror_bathroom_a01
+spray bottle / disinfectant,6,"{""PalatialSim"": 1, ""nvidia"": 5}",Spray Bottle; cleaning_windowSpray_a01; disinfectant_a01; disinfectant_b01; disinfectant_c01; disinfectant_d01
+trash bin,3,"{""ForgeCAD"": 2, ""PalatialSim"": 1}",Compost Bin; pedal_trash_can; wheelie_bin
+vacuum,2,"{""nvidia"": 2}",serviceTool_vacuum_cleaner_a01; serviceTool_vacuum_cleaner_b01
+mop / bucket,13,"{""ALLSIDES"": 1, ""nvidia"": 12}",bucket_RMK5F7MQ4A; bucket_mop_a01; bucket_mop_yellow_b01; bucket_utility_gray_a01; bucket_utility_gray_a02; bucket_utility_red_a01; bucket_utility_red_a02; cleaning_bucket_iron_a01
+sponge / cloth / brush,15,"{""PalatialSim"": 5, ""nvidia"": 10}",Cloth; Cloth Mat; Kitchen Sponge; Sponge; Sponge Holder; cleaning_brush_a01; cleaning_cloth_a01; cleaning_cloth_a02
+paper towel roll,4,"{""PalatialSim"": 3, ""nvidia"": 1}",Paper Towel; Paper Towel Holder; Paper Towel Roll; consumable_paperTowel_roll_a01
+laundry basket,0,{},

@@ -1,0 +1,5 @@
+# Local metadata survey (CPU, Windows/Linux). Python 3.12.13, created with uv 0.12.3.
+huggingface-hub==0.36.0
+usd-core==25.8
+# scene.py runs inside Isaac Sim 6.1.0 (its own Python 3.12), not this venv.
+# scene.py --download-only needs only huggingface-hub.
