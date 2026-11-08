@@ -1,0 +1,11 @@
+{
+  "cmd": [
+    "/home/shree/g05-lab/.venv-lerobot/bin/python",
+    "-I",
+    "-c",
+    "\nfrom huggingface_hub import snapshot_download\nsnapshot_download('lerobot/g05_libero', revision='9b7ee7d7286b2744e7cfae855dd71aa3cf4c075a', local_dir='/home/shree/g05-lab/checkpoints/g05_libero')\nsnapshot_download('lerobot/smolvla_libero', revision='a24f1f380461b665158d52acd140152c79e8b36d', local_dir='/home/shree/g05-lab/checkpoints/smolvla_libero')\nsnapshot_download('lerobot/libero-assets', repo_type='dataset', revision='0b3ea86be5fe169d0fd036ae63d1070ec09e90f6',\n                  local_dir='/home/shree/.libero/assets')\nsnapshot_download('lerobot/svla_so101_pickplace', repo_type='dataset', revision='f641879e22172be7e8161d5e6c1503c2d2feb657', local_dir='/home/shree/g05-lab/datasets/svla_so101_pickplace')\nprint('fetched')\n"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 153.3,
+  "peak_gpu_mib": 0
+}

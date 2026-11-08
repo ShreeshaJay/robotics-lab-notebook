@@ -1,16 +1,18 @@
 # 05 · G0.5 VLA in LeRobot: subtasks and boxes before acting
 
-**Date:** 2026-11-07 · **Track:** Robot learning · **Status:** planned, not yet run · **Spend so far:** $0 (research and scripts on a laptop CPU)
+**Date:** planned 2026-11-07, run 2026-11-08 · **Track:** Robot learning · **Status:** run, results below · **Spend:** about $0.40 (0.74 h of one Spot L4 VM)
 
 ## Goal
 
-Two things on one 24 GB NVIDIA L4:
+Three things on one 24 GB NVIDIA L4:
 
-1. Run Galaxea's G0.5 vision-language-action model in simulation through LeRobot. One rollout in LIBERO,
+1. Run Galaxea's G0.5 vision-language-action model in simulation through LeRobot. A few LIBERO episodes,
    video saved, with no training on my side.
 2. Try LeRobot's auto-annotation pipeline (`lerobot-annotate`), which writes timestamped subtasks and
    bounding boxes into a LeRobot dataset. That is the data G0.5's "System 2" reasoning is trained on. Run it on
-   2 to 3 episodes of a small public dataset.
+   3 episodes of a small public dataset.
+3. Run SmolVLA, LeRobot's small Apache-2.0 VLA, on the same LIBERO episodes for a side-by-side: success rate,
+   latency per action chunk, VRAM.
 
 Sources: [LeRobot G0.5 docs](https://huggingface.co/docs/lerobot/main/en/g05) ·
 [G0.5 blog](https://opengalaxea.github.io/G05/) (renders client-side; I could not read its body, so no numbers here come from it) ·
@@ -18,6 +20,113 @@ Sources: [LeRobot G0.5 docs](https://huggingface.co/docs/lerobot/main/en/g05) ·
 [walkthrough Space "Prompting Robots with LeRobot"](https://huggingface.co/spaces/lerobot/language-conditioned-policies)
 (I read its chapters `06-annotation-pipeline.mdx` and `g05-case-study.mdx` from the Space repo) ·
 LeRobot source at `v0.7.0` / main `d490e472`.
+
+## Results (run on 2026-11-08)
+
+### Side by side on LIBERO-10 (same episodes)
+
+Both policies ran on `libero_10` tasks 0, 1 and 2, two episodes each (6 episodes), `--seed=0`,
+`--env.init_states=true` (fixed LIBERO initial states), batch size 1, on one L4. Each used its own documented
+camera setup: G0.5 at 512x512 with its camera-name mapping, SmolVLA at the default 360x360 with LeRobot's
+`--rename_map`. Both use relative control.
+
+| | G0.5 (`lerobot/g05_libero`) | SmolVLA (`lerobot/smolvla_libero`) |
+|-|-|-|
+| Params | 2.86 B | about 0.45 B (SmolVLM2-500M backbone) |
+| License | G0.5 Community License (non-commercial) | Apache-2.0 |
+| Success, 6 episodes | **6/6 (100%)**, 95% CI 61 to 100% | **2/6 (33%)**, 95% CI 10 to 70% |
+| Per task (0 / 1 / 2) | 2/2, 2/2, 2/2 | 0/2, 0/2, 2/2 |
+| Latency per action chunk (median, steady state) | **641 ms** (p90 655 ms) | **336 ms** (p90 341 ms) |
+| Actions predicted / executed per chunk | 32 / 10 | 50 / 50 |
+| Amortized policy time per executed action | about 64 ms | about 6.7 ms |
+| First call (compile and warm-up) | 45 s (Triton kernels of `flash-linear-attention`) | 1.0 s |
+| Peak VRAM, policy process (`torch.cuda.max_memory_allocated`) | **11.0 GiB** (reserved 11.7 GiB) | **0.9 GiB** |
+| Peak VRAM, whole GPU (`nvidia-smi`, includes EGL rendering) | 12.6 GiB | 1.8 GiB |
+| Wall time per episode (sim + render + policy) | 41 s | 23 s |
+
+- 6 episodes is a smoke test, not a benchmark: the confidence intervals overlap only barely. G0.5 wins on all three
+  tasks; SmolVLA fails tasks 0 and 1 in both episodes.
+- "Zero-shot" means no fine-tuning by me. Both checkpoints were themselves trained on LIBERO data.
+- Latency is the policy call that refills the action queue (`G05Policy._run_inference`,
+  `SmolVLAPolicy._get_action_chunk`), bracketed with `torch.cuda.synchronize()`, first call excluded.
+  G0.5 ran in BF16 with the `fla` linear-attention backend (confirmed in the log).
+- G0.5's peak (11 GiB) is far above the 6 GB weight estimate I made in the plan. I did not dig into why
+  (load-time FP32 copy, or KV/activation buffers at 512x512); it still leaves about 11 GiB free on an L4.
+- Videos: `results/g05_libero10_task0_ep0.mp4` (success) and `results/smolvla_libero10_task0_ep0.mp4` (failure on
+  the same task and initial state), each under 0.6 MB. They are excluded by the repo's `*.mp4` rule in `.gitignore`.
+- Raw numbers: `results/eval_info_{g05,smolvla}.json`, `results/timing_{g05,smolvla}.json`, `results/logs/`.
+
+### Auto-annotation with Qwen3.5-4B (3 episodes of `lerobot/svla_so101_pickplace`)
+
+- `lerobot-annotate`, `plan` and `vqa` modules, `interjections` off, camera `observation.images.up`, episodes 0 to 2,
+  no Hub push. The VLM was `Qwen/Qwen3.5-4B` on vLLM 0.33.0 in BF16 (8.6 GiB of weights, 19 GB whole-GPU peak
+  at `--gpu-memory-utilization 0.85`).
+- **Time:** 5.3 min end to end. Most of that is vLLM start-up (weight load 44 s, `torch.compile` 32 s, CUDA graph
+  capture). The work itself: `plan` 40 s and `vqa` 9 s for the 3 episodes. The validator reported 0 errors and 0 warnings.
+- **Subtasks:**
+  - Episode 0 (10 s): "pick up the pink lego brick" (0 s), then "place the pink lego brick in the box" (5.5 s). Correct.
+  - Episode 1 (8.8 s): 7 segments alternating pick and place, as if the robot did it 3.5 times. It did it once. **Wrong.**
+  - Episode 2 (7.6 s): 4 segments, two pick-and-place cycles, calls the brick "the pink object". **Wrong.**
+- **Boxes and other VQA:** 28 grounded Q/A pairs (about 1 per second). Of those, only 6 were bounding boxes; the rest
+  were counts, colors, keypoints and spatial relations. The boxes I drew are tight and on the right
+  object: the brick on the table, the brick in the box, the transparent box (see `results/annotated/*.png`).
+  There was also one clear hallucination: "Where is the tip of the pipette located?" (there is no pipette).
+- **Take-away:** a 4B model gets object grounding mostly right, but its temporal segmentation over-segments short clips.
+  That matches the walkthrough's own caveat that even the 27B model is for bootstrapping, not human-quality labels.
+  Anyone using this would need human review of the subtask boundaries.
+- Files: `results/annotated/subtasks.json` (all subtasks and sample Q/A per episode), 4 annotated PNGs,
+  `results/annotations_raw.json`, `results/logs/annotate.log`.
+
+### Steps actually run
+
+1. `create_vm.sh` with `PROJECT=… NAME=scout-vla-l4 HOURS=3 SPOT=1 ZONE=us-central1-a` and
+   **`IMAGE_FAMILY=common-cu129-ubuntu-2404-nvidia-580`**. The script's default image family is Ubuntu 22.04, which
+   has no `python3.12` in its archive, while `setup.sh` needs one. Spot capacity was available on the first try.
+2. `setup.sh` with `G05_LICENSE_ACK` set (about 15 min, mostly the vLLM venv). I added the `smolvla` extra.
+3. `run.py fetch`, plus `smolvla_libero` and a pre-download of `Qwen3.5-4B` (about 2.5 min, run during setup).
+4. `run.py rollout` (G0.5) and `run.py rollout_smolvla`, both through the new `timed_eval.py` wrapper.
+5. `run.py annotate`, then `draw_boxes.py` for the PNGs and subtask dump.
+6. Copied the small results back, deleted the VM, and checked that no instance or disk was left.
+
+### Pinned versions (as installed)
+
+- lerobot 0.7.0, torch 2.11.0+cu128, transformers 5.22.2, flash-linear-attention 0.6.0, mujoco 3.3.1,
+  robosuite 1.4.0, hf-libero 0.1.4, huggingface_hub 2.4.0 (`results/freeze-lerobot.txt`).
+- vLLM 0.33.0 (pulls torch 2.14.0 and transformers 5.20.2 in its own venv; `results/freeze-vllm.txt`).
+- NVIDIA driver 580.178.04 (open kernel module), plus `libnvidia-gl-580-server=580.178.04-0ubuntu0.24.04.1` from the Ubuntu archive.
+- Image `common-cu129-ubuntu-2404-nvidia-580-v20261029`, Python 3.12.3.
+- Hub revisions: `g05_libero@9b7ee7d7`, `smolvla_libero@a24f1f38` (the pin in LeRobot's `simulation.mdx`),
+  `libero-assets@0b3ea86b`, `svla_so101_pickplace@f641879e`, `Qwen3.5-4B@851bf6e8`.
+
+### Problems hit and fixes
+
+| Problem | Cause | Fix |
+|-|-|-|
+| `ImportError: Cannot initialize a EGL device display` in robosuite | The Deep Learning VM's driver install has the compute libraries but no NVIDIA GL/EGL vendor library; only Mesa's EGL was registered | `sudo apt-get install libnvidia-gl-580-server=580.178.04-0ubuntu0.24.04.1` (exact match to the running driver). After that `MUJOCO_GL=egl` worked |
+| G0.5: `Checkpoint feature shape mismatch for observation.state: expected (7,), got (8,)` with the documented `lerobot-eval` command | lerobot 0.7.0's `validate_checkpoint` compares LIBERO's 8-D state with the checkpoint's 7-D state, although G0.5's own preprocessor drops the second gripper value (`raw_state[..., :7]`) | `timed_eval.py` tolerates exactly that one error for `policy.type=g05` and re-raises everything else. Worth an upstream issue |
+| vLLM server died at start-up: `FileNotFoundError: 'ninja'` | vLLM 0.33.0 JIT-builds a FlashInfer top-k/top-p sampler, which needs `ninja` on `PATH` and a CUDA 13 `nvcc` | `env VLLM_USE_FLASHINFER_SAMPLER=0` in front of the serve command (`run.py`) |
+| `draw_boxes.py` first run: `KeyError: 'timestamp'` | `language_events` rows carry no timestamp; it comes from the frame row they sit on | Take the timestamp from the frame |
+| `run.py` refuses every stage until the vLLM venv exists | Start-up check in `main()` | I ran `fetch` and the rollouts by importing the stage functions, so they overlapped with the vLLM install |
+
+### Cost
+
+- VM lifetime 19:08:09 to 19:52:23 UTC = **0.74 h**. At the g2-standard-8 Spot rate of $0.5108/h, that is **about $0.38**.
+- The 200 GB pd-balanced disk adds about $0.02 for that time. Egress was under 2 MB.
+- **Total: about $0.40**, against a $10 cap. On-demand ($0.8536/h) it would have been about $0.65.
+
+### What it teaches
+
+- G0.5's LIBERO checkpoint is strong but heavy for an L4. It finished all 6 long-horizon episodes, but it needs
+  about 11 GiB, takes 0.64 s per chunk, and replans every 10 actions. That rules out a cheap edge
+  deployment and fits "evaluate on a cloud GPU" better.
+  The non-commercial license also covers its outputs.
+- SmolVLA is about 12x lighter in memory and about 10x cheaper per executed action. It is Apache-2.0, so it is the
+  practical baseline for anything you ship or redistribute. On the hardest LIBERO suite it fails 2 of these 3 tasks.
+- `lerobot-eval` with fixed init states plus a small timing wrapper is enough for an apples-to-apples policy
+  comparison in about 7 minutes of GPU time. The harness, not the models, is the reusable part.
+- The open annotation pipeline runs on one L4 with a 4B VLM in about 5 minutes for 3 short episodes. Boxes are
+  usable; subtask boundaries are not trustworthy without review. A bigger VLM, an A100 or the H200 job route,
+  or `subtask_seeded_relabel` are the next things to try.
 
 ## What G0.5 is
 
@@ -40,7 +149,7 @@ The original release is [`OpenGalaxea/G05`](https://huggingface.co/OpenGalaxea/G
 checkpoints, also a `g05-droid` variant). That repo is **gated** (`gated: auto`: you sign in and accept the
 conditions). I did not open it. The `lerobot/g05_*` copies are **not gated**, but they carry the same license.
 
-### Memory (estimates; nothing measured yet)
+### Memory (planning estimates; measured numbers are in Results)
 
 - **Inference:** about 6 GB of BF16 weights (`policy.dtype=bfloat16` by default) plus activations. That **fits an L4
   easily.** The docs strongly recommend `flash-linear-attention` (pure Triton). Without it, the Gated DeltaNet
@@ -155,7 +264,8 @@ Smoke test:
 export G05_LICENSE_ACK=reviewed-g05-community-license   # only after a human has read and accepted the license
 bash setup.sh         # OS pkgs, lerobot[g05,libero,annotations]==0.7.0 + flash-linear-attention, vLLM venv, ~/.libero/config.yaml
 python3 run.py fetch      # pinned: g05_libero, LIBERO assets, svla_so101_pickplace
-python3 run.py rollout    # one LIBERO episode, MP4 saved
+python3 run.py rollout          # G0.5: libero_10 tasks 0-2 x 2 episodes, MP4s saved
+python3 run.py rollout_smolvla  # SmolVLA on the same episodes (timed_eval.py records chunk latency + VRAM)
 python3 run.py annotate   # subtasks + boxes on episodes 0-2
 python3 run.py summary    # -> $WORK/results/summary.json (copy back here; no MP4s in git)
 # delete the VM and the disk afterwards
@@ -174,7 +284,7 @@ What I expect to learn:
 3. Whether a 4B VLM produces sane subtask boundaries and boxes on 8 s pick-and-place clips.
 4. How many VLM calls and minutes the annotation takes per episode.
 
-## Cost estimate (not yet spent)
+## Cost estimate (from planning; the actual cost is in Results)
 
 Prices: us-central1 from gcloud-compute.com (built from Google SKU data, updated 2026-11-01). `g2-standard-8`
 costs $0.8536/h on-demand or $0.5108/h spot. pd-balanced is about $0.12/GB-month at the regional-average list price.
@@ -195,11 +305,15 @@ Check the live [GCP pricing](https://cloud.google.com/compute/vm-instance-pricin
 
 ## Status
 
-Planned, not yet run. Before it can run:
+Run on 2026-11-08 (results above). The G0.5 Community License was accepted for personal, non-commercial learning
+use before `G05_LICENSE_ACK` was set. The VM and its disk were deleted afterwards, and I checked that no instance
+or disk was left.
 
-- GPU quota for `NVIDIA_L4_GPUS` in us-central1 must be granted, and the project's budget alerts and caps must be in place.
-- A human must decide on the G0.5 Community License. Its download-equals-acceptance clause applies to both
-  `pip install lerobot` and the checkpoints, and the for-profit evaluation lane depends on undefined
-  "Authorized Hardware". Neither script proceeds without `G05_LICENSE_ACK`.
-- To inspect the code, I shallow-cloned LeRobot at main `d490e472`. That clone includes `src/lerobot/policies/g05`.
-  I also fetched only the `LICENSE` and `NOTICE` text files from `lerobot/g05_libero`, not the weights.
+Not done:
+
+- A G0.5 System 2 (subtask and box) rollout. The LIBERO checkpoint has no System 2.
+- RoboTwin.
+- Any fine-tune.
+- Annotation with a larger VLM.
+
+New files: `timed_eval.py` (chunk latency and VRAM around `lerobot-eval`) and `draw_boxes.py` (annotated PNGs and a subtask dump).

@@ -1,0 +1,145 @@
+WARNING 2026-11-08 19:33:28 figs/eval.py:73 No job name provided, using 'libero_smolvla' as job name.
+INFO 2026-11-08 19:33:28 bot_eval.py:813 {'env': {'camera_name': 'agentview_image,robot0_eye_in_hand_image',
+         'camera_name_mapping': None,
+         'control_mode': 'relative',
+         'disable_env_checker': True,
+         'episode_length': None,
+         'features': {},
+         'features_map': {},
+         'fps': 20,
+         'hard_reset': True,
+         'init_states': True,
+         'is_libero_plus': False,
+         'max_parallel_tasks': 1,
+         'obs_type': 'pixels_agent_pos',
+         'observation_height': 360,
+         'observation_width': 360,
+         'render_mode': 'rgb_array',
+         'server': None,
+         'task': 'libero_10',
+         'task_ids': [0, 1, 2]},
+ 'eval': {'batch_size': 1,
+          'max_episode_steps': None,
+          'n_episodes': 2,
+          'recording': False,
+          'recording_private': False,
+          'recording_repo_id': None,
+          'use_async_envs': True},
+ 'job_name': 'libero_smolvla',
+ 'output_dir': PosixPath('/home/shree/g05-lab/results/rollout_smolvla'),
+ 'policy': {'adapt_to_pi_aloha': False,
+            'add_image_special_tokens': False,
+            'attention_mode': 'cross_attn',
+            'chunk_size': 50,
+            'compile_mode': 'max-autotune',
+            'compile_model': False,
+            'device': 'cuda',
+            'dtype': None,
+            'empty_cameras': 0,
+            'expert_width_multiplier': 0.75,
+            'freeze_vision_encoder': False,
+            'input_features': {'observation.images.camera1': {'shape': (3,
+                                                                        256,
+                                                                        256),
+                                                              'type': <FeatureType.VISUAL: 'VISUAL'>},
+                               'observation.images.camera2': {'shape': (3,
+                                                                        256,
+                                                                        256),
+                                                              'type': <FeatureType.VISUAL: 'VISUAL'>},
+                               'observation.state': {'shape': (8,),
+                                                     'type': <FeatureType.STATE: 'STATE'>}},
+            'license': None,
+            'load_vlm_weights': True,
+            'max_action_dim': 32,
+            'max_period': 4.0,
+            'max_state_dim': 32,
+            'min_period': 0.004,
+            'n_action_steps': 50,
+            'n_obs_steps': 1,
+            'normalization_mapping': {'ACTION': <NormalizationMode.MEAN_STD: 'MEAN_STD'>,
+                                      'STATE': <NormalizationMode.MEAN_STD: 'MEAN_STD'>,
+                                      'VISUAL': <NormalizationMode.IDENTITY: 'IDENTITY'>},
+            'num_expert_layers': 0,
+            'num_steps': 10,
+            'num_vlm_layers': 16,
+            'optimizer_betas': (0.9, 0.95),
+            'optimizer_eps': 1e-08,
+            'optimizer_fused': None,
+            'optimizer_grad_clip_norm': 10.0,
+            'optimizer_lr': 0.0001,
+            'optimizer_weight_decay': 1e-10,
+            'output_features': {'action': {'shape': (7,),
+                                           'type': <FeatureType.ACTION: 'ACTION'>}},
+            'pad_language_to': 'max_length',
+            'prefix_length': 0,
+            'pretrained_path': PosixPath('/home/shree/g05-lab/checkpoints/smolvla_libero'),
+            'pretrained_revision': None,
+            'private': None,
+            'push_to_hub': True,
+            'repo_id': 'pepijn223/smolvla_libero',
+            'resize_imgs_with_padding': (512, 512),
+            'rtc_config': None,
+            'scheduler_decay_lr': 2.5e-06,
+            'scheduler_decay_steps': 25000,
+            'scheduler_warmup_steps': 1000,
+            'self_attn_every_n_layers': 2,
+            'tags': None,
+            'tokenizer_max_length': 48,
+            'train_expert_only': False,
+            'train_state_proj': True,
+            'use_amp': False,
+            'use_cache': True,
+            'use_delta_joint_actions_aloha': False,
+            'use_peft': False,
+            'vlm_model_name': 'HuggingFaceTB/SmolVLM2-500M-Video-Instruct'},
+ 'rename_map': {'observation.images.image': 'observation.images.camera1',
+                'observation.images.image2': 'observation.images.camera2'},
+ 'seed': 0,
+ 'tf32': True,
+ 'trust_remote_code': False}
+INFO 2026-11-08 19:33:28 bot_eval.py:835 Output dir: /home/shree/g05-lab/results/rollout_smolvla
+INFO 2026-11-08 19:33:28 bot_eval.py:837 Making environment (batch_size=1, async=True).
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+WARNING 2026-11-08 19:33:28 e/__init__.py:7 No private macro file found!
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+WARNING 2026-11-08 19:33:28 e/__init__.py:8 It is recommended to use a private macro file
+[robosuite WARNING] To setup, run: python /home/shree/g05-lab/.venv-lerobot/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+WARNING 2026-11-08 19:33:28 e/__init__.py:9 To setup, run: python /home/shree/g05-lab/.venv-lerobot/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py
+INFO 2026-11-08 19:33:28 pesloader.py:70 Failed to load library ( 'libOpenGL.so.0' ): libOpenGL.so.0: cannot open shared object file: No such file or directory
+INFO 2026-11-08 19:33:28 tesupport.py:24 No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+INFO 2026-11-08 19:33:28 pesloader.py:70 Failed to load library ( 'libOpenGL.so.0' ): libOpenGL.so.0: cannot open shared object file: No such file or directory
+INFO 2026-11-08 19:33:28 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-08 19:33:28 s/libero.py:517 Restricting to task_ids=[0, 1, 2]
+INFO 2026-11-08 19:33:28 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-08 19:33:28 s/libero.py:517 Restricting to task_ids=[0, 1, 2]
+INFO 2026-11-08 19:33:28 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-08 19:33:28 s/libero.py:517 Restricting to task_ids=[0, 1, 2]
+INFO 2026-11-08 19:33:28 bot_eval.py:862 Making policy.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Loading  HuggingFaceTB/SmolVLM2-500M-Video-Instruct weights ...
+Reducing the number of VLM layers to 16 ...
+Loading weights from local directory
+Assets already downloaded at /home/shree/.cache/libero/assets
+                                                                                                                    [A
+                                                                                                                    [A
+                                                                                                                    [A
+                                                                                                                    [A
+                                                                                                                      [A
+                                                                                                                      [A
+INFO 2026-11-08 19:36:11 bot_eval.py:908 Overall Aggregated Metrics:
+INFO 2026-11-08 19:36:11 bot_eval.py:909 {'avg_sum_reward': 0.3333333333333333, 'avg_max_reward': 0.3333333333333333, 'pc_success': 33.33333333333333, 'n_episodes': 6, 'n_success': 2, 'pc_success_ci95': [9.677141110578047, 70.0006684861608], 'eval_s': 140.25551199913025, 'eval_ep_s': 23.375918825467426, 'video_paths': ['/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_0/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_0/eval_episode_1.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_1/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_1/eval_episode_1.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_2/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_2/eval_episode_1.mp4'], 'predicted_video_paths': []}
+INFO 2026-11-08 19:36:11 bot_eval.py:911 Success rate 33.3% (2/6 episodes, 95% Wilson interval 9.7% to 70.0%)
+INFO 2026-11-08 19:36:11 bot_eval.py:922 
+Aggregated Metrics for per_task:
+INFO 2026-11-08 19:36:11 bot_eval.py:923 [{'task_group': 'libero_10', 'task_id': 0, 'metrics': {'sum_rewards': [0.0, 0.0], 'max_rewards': [0.0, 0.0], 'successes': [False, False], 'video_paths': ['/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_0/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_0/eval_episode_1.mp4'], 'predicted_video_paths': []}, 'n_episodes': 2, 'n_success': 0, 'pc_success': 0.0, 'pc_success_ci95': [0.0, 65.76197724933468]}, {'task_group': 'libero_10', 'task_id': 1, 'metrics': {'sum_rewards': [0.0, 0.0], 'max_rewards': [0.0, 0.0], 'successes': [False, False], 'video_paths': ['/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_1/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_1/eval_episode_1.mp4'], 'predicted_video_paths': []}, 'n_episodes': 2, 'n_success': 0, 'pc_success': 0.0, 'pc_success_ci95': [0.0, 65.76197724933468]}, {'task_group': 'libero_10', 'task_id': 2, 'metrics': {'sum_rewards': [1.0, 1.0], 'max_rewards': [1.0, 1.0], 'successes': [True, True], 'video_paths': ['/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_2/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_2/eval_episode_1.mp4'], 'predicted_video_paths': []}, 'n_episodes': 2, 'n_success': 2, 'pc_success': 100.0, 'pc_success_ci95': [34.23802275066532, 100.0]}]
+INFO 2026-11-08 19:36:11 bot_eval.py:922 
+Aggregated Metrics for per_group:
+INFO 2026-11-08 19:36:11 bot_eval.py:923 {'libero_10': {'avg_sum_reward': 0.3333333333333333, 'avg_max_reward': 0.3333333333333333, 'pc_success': 33.33333333333333, 'n_episodes': 6, 'n_success': 2, 'pc_success_ci95': [9.677141110578047, 70.0006684861608], 'video_paths': ['/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_0/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_0/eval_episode_1.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_1/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_1/eval_episode_1.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_2/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_2/eval_episode_1.mp4'], 'predicted_video_paths': []}}
+INFO 2026-11-08 19:36:11 bot_eval.py:922 
+Aggregated Metrics for overall:
+INFO 2026-11-08 19:36:11 bot_eval.py:923 {'avg_sum_reward': 0.3333333333333333, 'avg_max_reward': 0.3333333333333333, 'pc_success': 33.33333333333333, 'n_episodes': 6, 'n_success': 2, 'pc_success_ci95': [9.677141110578047, 70.0006684861608], 'eval_s': 140.25551199913025, 'eval_ep_s': 23.375918825467426, 'video_paths': ['/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_0/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_0/eval_episode_1.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_1/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_1/eval_episode_1.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_2/eval_episode_0.mp4', '/home/shree/g05-lab/results/rollout_smolvla/videos/libero_10_2/eval_episode_1.mp4'], 'predicted_video_paths': []}
+INFO 2026-11-08 19:36:11 bot_eval.py:941 End of eval
+[timed_eval] {"n_chunk_calls": 54, "first_call_s": 1.0225, "chunk_latency_ms_mean": 339.3, "chunk_latency_ms_median": 336.3, "chunk_latency_ms_p90": 340.9, "torch_max_allocated_mib": 922, "torch_max_reserved_mib": 956, "gpu": "NVIDIA L4"}

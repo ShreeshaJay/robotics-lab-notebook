@@ -6,7 +6,8 @@ venvs that setup.sh built. Weights, datasets, videos and outputs live under $WOR
 
 Stages:
   fetch     pinned downloads: lerobot/g05_libero (11.6 GB), LIBERO assets, lerobot/svla_so101_pickplace (86 MB)
-  rollout   lerobot-eval: G0.5-LIBERO, libero_10 task 0, 1 episode, MP4 saved under results/rollout/videos/
+  rollout   lerobot-eval via timed_eval.py: G0.5-LIBERO, libero_10 tasks 0-2 x 2 episodes, MP4s under results/rollout_g05/
+  rollout_smolvla  same episodes with lerobot/smolvla_libero (Apache-2.0), MP4s under results/rollout_smolvla/
   annotate  lerobot-annotate on episodes 0-2: subtasks (plan module) + bounding boxes (vqa module),
             served by an open VLM through a local vLLM server (no paid API, no Hub push)
   summary   small results/summary.json (success, timings, peak GPU memory, subtasks, boxes)
@@ -35,16 +36,21 @@ BIN = WORK / ".venv-lerobot" / "bin"
 VLLM = WORK / ".venv-vllm" / "bin" / "vllm"
 RESULTS = WORK / "results"
 CKPT = WORK / "checkpoints" / "g05_libero"
+CKPT_SMOLVLA = WORK / "checkpoints" / "smolvla_libero"
 DATASET = WORK / "datasets" / "svla_so101_pickplace"
 
 # Pinned revisions (HF main on 2026-11-07).
 G05_LIBERO = ("lerobot/g05_libero", "9b7ee7d7286b2744e7cfae855dd71aa3cf4c075a")
+# SmolVLA (Apache-2.0) fine-tuned by LeRobot on lerobot/libero (all 4 suites); pin = LeRobot's simulation.mdx pin.
+SMOLVLA_LIBERO = ("lerobot/smolvla_libero", "a24f1f380461b665158d52acd140152c79e8b36d")
 LIBERO_ASSETS = ("lerobot/libero-assets", "0b3ea86be5fe169d0fd036ae63d1070ec09e90f6")  # same pin as lerobot's Dockerfile.sim
 DATASET_REPO = ("lerobot/svla_so101_pickplace", "f641879e22172be7e8161d5e6c1503c2d2feb657")  # Apache-2.0, v3.0, 50 eps
 # Annotation VLM. The upstream default, Qwen/Qwen3.6-27B (BF16, ~55 GB), does not fit a 24 GB L4,
 # and neither does Qwen3.5-27B-GPTQ-Int4 (30 GB on disk). Qwen3.5-4B (Apache-2.0, 9.3 GB) does.
 VLM = ("Qwen/Qwen3.5-4B", "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a")
 EPISODES = [0, 1, 2]
+# Same LIBERO suite, tasks, seed and fixed initial states for both policies (side-by-side comparison).
+SUITE, TASK_IDS, N_EPISODES_PER_TASK = "libero_10", [0, 1, 2], 2
 ACK_VALUE = "reviewed-g05-community-license"
 
 
@@ -119,6 +125,7 @@ def stage_fetch(_: argparse.Namespace) -> None:
     code = f"""
 from huggingface_hub import snapshot_download
 snapshot_download({G05_LIBERO[0]!r}, revision={G05_LIBERO[1]!r}, local_dir={str(CKPT)!r})
+snapshot_download({SMOLVLA_LIBERO[0]!r}, revision={SMOLVLA_LIBERO[1]!r}, local_dir={str(CKPT_SMOLVLA)!r})
 snapshot_download({LIBERO_ASSETS[0]!r}, repo_type='dataset', revision={LIBERO_ASSETS[1]!r},
                   local_dir={str(Path.home() / '.libero' / 'assets')!r})
 snapshot_download({DATASET_REPO[0]!r}, repo_type='dataset', revision={DATASET_REPO[1]!r}, local_dir={str(DATASET)!r})
@@ -132,36 +139,55 @@ print('fetched')
         shutil.copytree(DATASET, pristine, ignore=shutil.ignore_patterns(".cache"))
 
 
-def stage_rollout(_: argparse.Namespace) -> None:
-    require_ack()
-    out = RESULTS / "rollout"
+def _eval(name: str, policy_args: list[str]) -> None:
+    out = RESULTS / f"rollout_{name}"
     if out.exists():
         shutil.rmtree(out)  # lerobot-eval refuses to reuse an output dir
-    # The documented G0.5 LIBERO command, cut down to one task and one episode.
     cmd = [
-        str(BIN / "lerobot-eval"),
-        f"--policy.path={CKPT}",
+        str(PY), "-I", str(Path(__file__).resolve().parent / "timed_eval.py"), str(RESULTS / f"timing_{name}.json"),
+        *policy_args,
         "--policy.device=cuda",
         "--env.type=libero",
-        "--env.task=libero_10",
-        "--env.task_ids=[0]",
+        f"--env.task={SUITE}",
+        f"--env.task_ids=[{','.join(map(str, TASK_IDS))}]",
+        "--env.init_states=true",
+        "--eval.batch_size=1",
+        f"--eval.n_episodes={N_EPISODES_PER_TASK}",
+        "--seed=0",
+        f"--output_dir={out}",
+    ]
+    if run(cmd, logfile=RESULTS / "logs" / f"rollout_{name}.log") != 0:
+        log(f"rollout {name} failed; see log")
+    videos = sorted(out.rglob("*.mp4"))
+    log(f"rollout {name} videos: {[str(v) for v in videos] or 'none found'}")
+
+
+def stage_rollout(_: argparse.Namespace) -> None:
+    """G0.5: the documented LIBERO command (512x512 cameras, relative control, camera mapping)."""
+    require_ack()
+    _eval("g05", [
+        f"--policy.path={CKPT}",
         "--env.control_mode=relative",
         "--env.observation_height=512",
         "--env.observation_width=512",
         '--env.camera_name_mapping={"agentview_image": "image", "robot0_eye_in_hand_image": "wrist_image"}',
-        "--eval.batch_size=1",
-        "--eval.n_episodes=1",
-        "--seed=0",
-        f"--output_dir={out}",
-    ]
-    if run(cmd, logfile=RESULTS / "logs" / "rollout.log") != 0:
-        log("rollout failed; see log")
-    videos = sorted(out.rglob("*.mp4"))
-    log(f"rollout videos: {[str(v) for v in videos] or 'none found'}")
+    ])
+
+
+def stage_rollout_smolvla(_: argparse.Namespace) -> None:
+    """SmolVLA: LeRobot's documented LIBERO command (default 360x360 cameras, relative control, rename map)."""
+    _eval("smolvla", [
+        f"--policy.path={CKPT_SMOLVLA}",
+        "--env.control_mode=relative",
+        '--rename_map={"observation.images.image": "observation.images.camera1", '
+        '"observation.images.image2": "observation.images.camera2"}',
+    ])
 
 
 def stage_annotate(_: argparse.Namespace) -> None:
-    serve = (f"{VLLM} serve {VLM[0]} --revision {VLM[1]} --tensor-parallel-size 1 "
+    # VLLM_USE_FLASHINFER_SAMPLER=0: vLLM 0.33.0 otherwise JIT-builds a FlashInfer top-k/top-p sampler at
+    # startup, which needs ninja on PATH and a CUDA 13 nvcc, and the server dies with "No such file: 'ninja'".
+    serve = (f"env VLLM_USE_FLASHINFER_SAMPLER=0 {VLLM} serve {VLM[0]} --revision {VLM[1]} --tensor-parallel-size 1 "
              "--max-model-len 32768 --gpu-memory-utilization 0.85 --uvicorn-log-level warning --port {port}")
     cmd = [
         str(BIN / "lerobot-annotate"),
@@ -215,11 +241,18 @@ def stage_summary(_: argparse.Namespace) -> None:
     for meta in sorted((RESULTS / "logs").glob("*.meta.json")):
         m = json.loads(meta.read_text())
         s["runs"][meta.name.replace(".meta.json", "")] = {k: m[k] for k in ("exit_code", "elapsed_s", "peak_gpu_mib")}
-    info = sorted((RESULTS / "rollout").rglob("eval_info.json"))
-    if info:
-        d = json.loads(info[0].read_text())
-        s["rollout"]["eval_info_overall"] = d.get("overall", d.get("aggregated", {}))
-    s["rollout"]["videos"] = [str(p.relative_to(RESULTS)) for p in sorted((RESULTS / "rollout").rglob("*.mp4"))]
+    for name in ("g05", "smolvla"):
+        r: dict = {}
+        info = sorted((RESULTS / f"rollout_{name}").rglob("eval_info.json"))
+        if info:
+            d = json.loads(info[0].read_text())
+            r["eval_info_overall"] = d.get("overall", d.get("aggregated", {}))
+            r["per_task"] = d.get("per_task", d.get("per_group"))
+        timing = RESULTS / f"timing_{name}.json"
+        if timing.exists():
+            r["timing"] = json.loads(timing.read_text())
+        r["videos"] = [str(p.relative_to(RESULTS)) for p in sorted((RESULTS / f"rollout_{name}").rglob("*.mp4"))]
+        s["rollout"][name] = r
     ann = RESULTS / "annotations.json"
     if ann.exists():
         s["annotate"] = json.loads(ann.read_text())
@@ -228,7 +261,7 @@ def stage_summary(_: argparse.Namespace) -> None:
     log(f"wrote {out}. Copy the JSON (not the MP4) into the notebook's results/ folder.")
 
 
-STAGES = {"fetch": stage_fetch, "rollout": stage_rollout, "annotate": stage_annotate, "summary": stage_summary}
+STAGES = {"fetch": stage_fetch, "rollout": stage_rollout, "rollout_smolvla": stage_rollout_smolvla, "annotate": stage_annotate, "summary": stage_summary}
 
 
 def main() -> None:

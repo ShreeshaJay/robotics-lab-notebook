@@ -1,0 +1,18 @@
+{
+  "cmd": [
+    "/home/shree/g05-lab/.venv-lerobot/bin/lerobot-annotate",
+    "--root=/home/shree/g05-lab/datasets/svla_so101_pickplace",
+    "--only_episodes=[0,1,2]",
+    "--push_to_hub=false",
+    "--vlm.model_id=Qwen/Qwen3.5-4B",
+    "--vlm.serve_command=env VLLM_USE_FLASHINFER_SAMPLER=0 /home/shree/g05-lab/.venv-vllm/bin/vllm serve Qwen/Qwen3.5-4B --revision 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a --tensor-parallel-size 1 --max-model-len 32768 --gpu-memory-utilization 0.85 --uvicorn-log-level warning --port {port}",
+    "--vlm.serve_ready_timeout_s=1800",
+    "--vlm.chat_template_kwargs={\"enable_thinking\": false}",
+    "--vlm.camera_key=observation.images.up",
+    "--vqa.restrict_to_default_camera=true",
+    "--interjections.enabled=false"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 320.6,
+  "peak_gpu_mib": 19038
+}

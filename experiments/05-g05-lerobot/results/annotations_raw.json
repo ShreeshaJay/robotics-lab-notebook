@@ -1,0 +1,444 @@
+{
+  "columns": [
+    "action",
+    "observation.state",
+    "timestamp",
+    "frame_index",
+    "episode_index",
+    "index",
+    "task_index",
+    "language_persistent",
+    "language_events"
+  ],
+  "0": {
+    "frames": 303,
+    "subtasks": [
+      {
+        "role": "assistant",
+        "content": "pick up the pink lego brick",
+        "style": "subtask",
+        "timestamp": 0.0,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "place the pink lego brick in the box",
+        "style": "subtask",
+        "timestamp": 5.5,
+        "camera": null,
+        "tool_calls": null
+      }
+    ],
+    "plan": [
+      {
+        "role": "assistant",
+        "content": "1. pick up the pink lego brick\n2. place the pink lego brick in the box",
+        "style": "plan",
+        "timestamp": 0.0,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "1. place the pink lego brick in the box",
+        "style": "plan",
+        "timestamp": 5.5,
+        "camera": null,
+        "tool_calls": null
+      }
+    ],
+    "vqa": [
+      {
+        "role": "assistant",
+        "content": "{\"count\": 1, \"label\": \"pink lego brick\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "How many pink lego bricks are there?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"attribute\": \"color\", \"label\": \"lego brick\", \"value\": \"pink\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "What is the color of the lego brick?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"attribute\": \"color\", \"label\": \"small object\", \"value\": \"pink\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "What is the color of the small object on the table?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"detections\": [{\"bbox\": [0.315, 0.819, 0.358, 0.887], \"bbox_format\": \"xyxy\", \"label\": \"pink lego brick\"}]}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "Where is the pink lego brick located?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"object\": \"robot\", \"relation\": \"below\", \"subject\": \"pink lego brick\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "Where is the pink lego brick located in relation to the robot?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"label\": \"robot gripper tip\", \"point\": [0.32, 0.85], \"point_format\": \"xy\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "Where is the tip of the robot's gripper located?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      }
+    ]
+  },
+  "1": {
+    "frames": 266,
+    "subtasks": [
+      {
+        "role": "assistant",
+        "content": "pick up the pink lego brick",
+        "style": "subtask",
+        "timestamp": 0.0,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "place the pink lego brick into the box",
+        "style": "subtask",
+        "timestamp": 1.899999976158142,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "pick up the pink lego brick",
+        "style": "subtask",
+        "timestamp": 3.4000000953674316,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "place the pink lego brick into the box",
+        "style": "subtask",
+        "timestamp": 4.900000095367432,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "pick up the pink lego brick",
+        "style": "subtask",
+        "timestamp": 5.400000095367432,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "place the pink lego brick into the box",
+        "style": "subtask",
+        "timestamp": 6.400000095367432,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "pick up the pink lego brick",
+        "style": "subtask",
+        "timestamp": 8.300000190734863,
+        "camera": null,
+        "tool_calls": null
+      }
+    ],
+    "plan": [
+      {
+        "role": "assistant",
+        "content": "1. pick up the pink lego brick\n2. place the pink lego brick into the box\n3. pick up the pink lego brick\n4. place the pink lego brick into the box\n5. pick up the pink lego brick\n6. place the pink lego brick into the box\n7. pick up the pink lego brick",
+        "style": "plan",
+        "timestamp": 0.0,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "1. place the pink lego brick into the box\n2. pick up the pink lego brick\n3. place the pink lego brick into the box\n4. pick up the pink lego brick\n5. place the pink lego brick into the box\n6. pick up the pink lego brick",
+        "style": "plan",
+        "timestamp": 1.899999976158142,
+        "camera": null,
+        "tool_calls": null
+      }
+    ],
+    "vqa": [
+      {
+        "role": "assistant",
+        "content": "{\"label\": \"robot gripper tip\", \"point\": [0.427, 0.706], \"point_format\": \"xy\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "Where is the tip of the robot's gripper pointing?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"count\": 1, \"label\": \"pink lego brick\", \"note\": \"single brick on the table\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "How many pink lego bricks are visible in the frame?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"label\": \"pipette tip\", \"point\": [0.315, 0.65], \"point_format\": \"xy\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "Where is the tip of the pipette located?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"object\": \"transparent box\", \"relation\": \"above\", \"subject\": \"robot arm\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "What is the spatial relation between the robot arm and the transparent box?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"count\": 1, \"label\": \"pink lego brick\", \"note\": \"single brick inside the box\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "How many pink lego bricks are visible in the transparent box?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"count\": 1, \"label\": \"pink lego brick\", \"note\": \"single brick being held by the robot\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "How many pink lego bricks are visible in the transparent box?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      }
+    ]
+  },
+  "2": {
+    "frames": 230,
+    "subtasks": [
+      {
+        "role": "assistant",
+        "content": "pick up the pink object",
+        "style": "subtask",
+        "timestamp": 0.0,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "place the pink object in the box",
+        "style": "subtask",
+        "timestamp": 1.0,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "pick up the pink object",
+        "style": "subtask",
+        "timestamp": 3.0,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "place the pink object in the box",
+        "style": "subtask",
+        "timestamp": 4.0,
+        "camera": null,
+        "tool_calls": null
+      }
+    ],
+    "plan": [
+      {
+        "role": "assistant",
+        "content": "1. pick up the pink object\n2. place the pink object in the box\n3. pick up the pink object\n4. place the pink object in the box",
+        "style": "plan",
+        "timestamp": 0.0,
+        "camera": null,
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "1. place the pink object in the box\n2. pick up the pink object\n3. place the pink object in the box",
+        "style": "plan",
+        "timestamp": 1.0,
+        "camera": null,
+        "tool_calls": null
+      }
+    ],
+    "vqa": [
+      {
+        "role": "assistant",
+        "content": "{\"attribute\": \"color\", \"label\": \"lego brick\", \"value\": \"pink\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "What is the color of the lego brick?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"object\": \"robot\", \"relation\": \"below\", \"subject\": \"pink lego brick\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "Where is the pink lego brick located in relation to the robot?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"attribute\": \"color\", \"label\": \"lego brick\", \"value\": \"pink\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "What is the color of the lego brick?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"attribute\": \"color\", \"label\": \"lego brick\", \"value\": \"pink\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "What color is the lego brick being held by the robot?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"object\": \"transparent box\", \"relation\": \"above\", \"subject\": \"robot arm\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "What spatial relation exists between the robot arm and the transparent box?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "assistant",
+        "content": "{\"object\": \"transparent box\", \"relation\": \"in\", \"subject\": \"pink lego brick\"}",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      },
+      {
+        "role": "user",
+        "content": "Where is the pink lego brick located in relation to the transparent box?",
+        "style": "vqa",
+        "camera": "observation.images.up",
+        "tool_calls": null
+      }
+    ]
+  }
+}

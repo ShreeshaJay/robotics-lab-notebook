@@ -43,7 +43,7 @@ python3.12 -m venv "$WORK/.venv-lerobot"
 "$WORK/.venv-lerobot/bin/python" -m pip install --upgrade "pip==25.3"
 # Pin torch to the CUDA 12.8 build first (inside lerobot's torch>=2.7,<2.16 range).
 "$WORK/.venv-lerobot/bin/pip" install torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cu128
-"$WORK/.venv-lerobot/bin/pip" install "lerobot[g05,libero,annotations]==${LEROBOT_VERSION}" \
+"$WORK/.venv-lerobot/bin/pip" install "lerobot[g05,smolvla,libero,annotations]==${LEROBOT_VERSION}" \
   "flash-linear-attention==${FLA_VERSION}" \
   "robosuite==1.4.0" "bddl==1.0.1" "mujoco==3.3.1"   # same LIBERO pins as lerobot's docker/Dockerfile.sim
 

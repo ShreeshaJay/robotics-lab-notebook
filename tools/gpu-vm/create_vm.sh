@@ -10,7 +10,7 @@ HOURS="${HOURS:-4}"           # hard cap; VM is deleted after this
 IDLE_MIN="${IDLE_MIN:-30}"
 MACHINE="${MACHINE:-g2-standard-8}"   # g2-standard-8: 1x L4 24 GB; a2-ultragpu-1g: 1x A100 80 GB (GPU is bundled with both)
 DISK_GB="${DISK_GB:-200}"
-IMAGE_FAMILY="${IMAGE_FAMILY:-common-cu129-ubuntu-2204-nvidia-580}"
+IMAGE_FAMILY="${IMAGE_FAMILY:-common-cu129-ubuntu-2404-nvidia-580}"
 IMAGE_PROJECT="${IMAGE_PROJECT:-deeplearning-platform-release}"
 
 if [ "$HOURS" -gt 8 ]; then echo "HOURS > 8 needs explicit approval"; exit 1; fi

@@ -1,0 +1,138 @@
+{
+  "per_task": [
+    {
+      "task_group": "libero_10",
+      "task_id": 0,
+      "metrics": {
+        "sum_rewards": [
+          1.0,
+          1.0
+        ],
+        "max_rewards": [
+          1.0,
+          1.0
+        ],
+        "successes": [
+          true,
+          true
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_0/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_0/eval_episode_1.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 2,
+      "n_success": 2,
+      "pc_success": 100.0,
+      "pc_success_ci95": [
+        34.23802275066532,
+        100.0
+      ]
+    },
+    {
+      "task_group": "libero_10",
+      "task_id": 1,
+      "metrics": {
+        "sum_rewards": [
+          1.0,
+          1.0
+        ],
+        "max_rewards": [
+          1.0,
+          1.0
+        ],
+        "successes": [
+          true,
+          true
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_1/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_1/eval_episode_1.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 2,
+      "n_success": 2,
+      "pc_success": 100.0,
+      "pc_success_ci95": [
+        34.23802275066532,
+        100.0
+      ]
+    },
+    {
+      "task_group": "libero_10",
+      "task_id": 2,
+      "metrics": {
+        "sum_rewards": [
+          1.0,
+          1.0
+        ],
+        "max_rewards": [
+          1.0,
+          1.0
+        ],
+        "successes": [
+          true,
+          true
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_2/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_2/eval_episode_1.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 2,
+      "n_success": 2,
+      "pc_success": 100.0,
+      "pc_success_ci95": [
+        34.23802275066532,
+        100.0
+      ]
+    }
+  ],
+  "per_group": {
+    "libero_10": {
+      "avg_sum_reward": 1.0,
+      "avg_max_reward": 1.0,
+      "pc_success": 100.0,
+      "n_episodes": 6,
+      "n_success": 6,
+      "pc_success_ci95": [
+        60.96657120978348,
+        100.0
+      ],
+      "video_paths": [
+        "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_0/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_0/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_1/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_1/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_2/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_2/eval_episode_1.mp4"
+      ],
+      "predicted_video_paths": []
+    }
+  },
+  "overall": {
+    "avg_sum_reward": 1.0,
+    "avg_max_reward": 1.0,
+    "pc_success": 100.0,
+    "n_episodes": 6,
+    "n_success": 6,
+    "pc_success_ci95": [
+      60.96657120978348,
+      100.0
+    ],
+    "eval_s": 248.47804999351501,
+    "eval_ep_s": 41.41300845146179,
+    "video_paths": [
+      "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_0/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_0/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_1/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_1/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_2/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rollout_g05/videos/libero_10_2/eval_episode_1.mp4"
+    ],
+    "predicted_video_paths": []
+  }
+}

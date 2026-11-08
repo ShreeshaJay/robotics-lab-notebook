@@ -1,0 +1,316 @@
+{
+  "0": {
+    "duration_s": 10.07,
+    "task": null,
+    "subtasks": [
+      {
+        "t": 0.0,
+        "text": "pick up the pink lego brick"
+      },
+      {
+        "t": 5.5,
+        "text": "place the pink lego brick in the box"
+      }
+    ],
+    "n_vqa_pairs": 11,
+    "n_bbox_answers": 3,
+    "vqa_examples": [
+      {
+        "t": 0.0,
+        "role": "assistant",
+        "content": "{\"count\": 1, \"label\": \"pink lego brick\"}"
+      },
+      {
+        "t": 0.0,
+        "role": "user",
+        "content": "How many pink lego bricks are there?"
+      },
+      {
+        "t": 1.0,
+        "role": "assistant",
+        "content": "{\"attribute\": \"color\", \"label\": \"lego brick\", \"value\": \"pink\"}"
+      },
+      {
+        "t": 1.0,
+        "role": "user",
+        "content": "What is the color of the lego brick?"
+      },
+      {
+        "t": 2.0,
+        "role": "assistant",
+        "content": "{\"attribute\": \"color\", \"label\": \"small object\", \"value\": \"pink\"}"
+      },
+      {
+        "t": 2.0,
+        "role": "user",
+        "content": "What is the color of the small object on the table?"
+      },
+      {
+        "t": 3.0,
+        "role": "assistant",
+        "content": "{\"detections\": [{\"bbox\": [0.315, 0.819, 0.358, 0.887], \"bbox_format\": \"xyxy\", \"label\": \"pink lego brick\"}]}"
+      },
+      {
+        "t": 3.0,
+        "role": "user",
+        "content": "Where is the pink lego brick located?"
+      },
+      {
+        "t": 4.0,
+        "role": "assistant",
+        "content": "{\"object\": \"robot\", \"relation\": \"below\", \"subject\": \"pink lego brick\"}"
+      },
+      {
+        "t": 4.0,
+        "role": "user",
+        "content": "Where is the pink lego brick located in relation to the robot?"
+      }
+    ],
+    "drawn": [
+      {
+        "timestamp": 3.0,
+        "question": "",
+        "answer": {
+          "detections": [
+            {
+              "bbox": [
+                0.315,
+                0.819,
+                0.358,
+                0.887
+              ],
+              "bbox_format": "xyxy",
+              "label": "pink lego brick"
+            }
+          ]
+        },
+        "png": "ep0_t3.0.png"
+      },
+      {
+        "timestamp": 9.0,
+        "question": "",
+        "answer": {
+          "detections": [
+            {
+              "bbox": [
+                0.198,
+                0.42,
+                0.235,
+                0.465
+              ],
+              "bbox_format": "xyxy",
+              "label": "pink lego brick"
+            }
+          ]
+        },
+        "png": "ep0_t9.0.png"
+      }
+    ]
+  },
+  "1": {
+    "duration_s": 8.83,
+    "task": null,
+    "subtasks": [
+      {
+        "t": 0.0,
+        "text": "pick up the pink lego brick"
+      },
+      {
+        "t": 1.9,
+        "text": "place the pink lego brick into the box"
+      },
+      {
+        "t": 3.4,
+        "text": "pick up the pink lego brick"
+      },
+      {
+        "t": 4.9,
+        "text": "place the pink lego brick into the box"
+      },
+      {
+        "t": 5.4,
+        "text": "pick up the pink lego brick"
+      },
+      {
+        "t": 6.4,
+        "text": "place the pink lego brick into the box"
+      },
+      {
+        "t": 8.3,
+        "text": "pick up the pink lego brick"
+      }
+    ],
+    "n_vqa_pairs": 9,
+    "n_bbox_answers": 3,
+    "vqa_examples": [
+      {
+        "t": 0.0,
+        "role": "assistant",
+        "content": "{\"label\": \"robot gripper tip\", \"point\": [0.427, 0.706], \"point_format\": \"xy\"}"
+      },
+      {
+        "t": 0.0,
+        "role": "user",
+        "content": "Where is the tip of the robot's gripper pointing?"
+      },
+      {
+        "t": 1.0,
+        "role": "assistant",
+        "content": "{\"count\": 1, \"label\": \"pink lego brick\", \"note\": \"single brick on the table\"}"
+      },
+      {
+        "t": 1.0,
+        "role": "user",
+        "content": "How many pink lego bricks are visible in the frame?"
+      },
+      {
+        "t": 2.0,
+        "role": "assistant",
+        "content": "{\"label\": \"pipette tip\", \"point\": [0.315, 0.65], \"point_format\": \"xy\"}"
+      },
+      {
+        "t": 2.0,
+        "role": "user",
+        "content": "Where is the tip of the pipette located?"
+      },
+      {
+        "t": 3.0,
+        "role": "assistant",
+        "content": "{\"object\": \"transparent box\", \"relation\": \"above\", \"subject\": \"robot arm\"}"
+      },
+      {
+        "t": 3.0,
+        "role": "user",
+        "content": "What is the spatial relation between the robot arm and the transparent box?"
+      },
+      {
+        "t": 4.0,
+        "role": "assistant",
+        "content": "{\"count\": 1, \"label\": \"pink lego brick\", \"note\": \"single brick inside the box\"}"
+      },
+      {
+        "t": 4.0,
+        "role": "user",
+        "content": "How many pink lego bricks are visible in the transparent box?"
+      }
+    ],
+    "drawn": [
+      {
+        "timestamp": 6.0,
+        "question": "",
+        "answer": {
+          "detections": [
+            {
+              "bbox": [
+                0.28,
+                0.33,
+                0.32,
+                0.38
+              ],
+              "bbox_format": "xyxy",
+              "label": "pink lego brick"
+            }
+          ]
+        },
+        "png": "ep1_t6.0.png"
+      },
+      {
+        "timestamp": 7.0,
+        "question": "",
+        "answer": {
+          "detections": [
+            {
+              "bbox": [
+                0.1,
+                0.33,
+                0.23,
+                0.48
+              ],
+              "bbox_format": "xyxy",
+              "label": "transparent box"
+            }
+          ]
+        },
+        "png": "ep1_t7.0.png"
+      }
+    ]
+  },
+  "2": {
+    "duration_s": 7.63,
+    "task": null,
+    "subtasks": [
+      {
+        "t": 0.0,
+        "text": "pick up the pink object"
+      },
+      {
+        "t": 1.0,
+        "text": "place the pink object in the box"
+      },
+      {
+        "t": 3.0,
+        "text": "pick up the pink object"
+      },
+      {
+        "t": 4.0,
+        "text": "place the pink object in the box"
+      }
+    ],
+    "n_vqa_pairs": 8,
+    "n_bbox_answers": 0,
+    "vqa_examples": [
+      {
+        "t": 0.0,
+        "role": "assistant",
+        "content": "{\"attribute\": \"color\", \"label\": \"lego brick\", \"value\": \"pink\"}"
+      },
+      {
+        "t": 0.0,
+        "role": "user",
+        "content": "What is the color of the lego brick?"
+      },
+      {
+        "t": 1.0,
+        "role": "assistant",
+        "content": "{\"object\": \"robot\", \"relation\": \"below\", \"subject\": \"pink lego brick\"}"
+      },
+      {
+        "t": 1.0,
+        "role": "user",
+        "content": "Where is the pink lego brick located in relation to the robot?"
+      },
+      {
+        "t": 2.0,
+        "role": "assistant",
+        "content": "{\"attribute\": \"color\", \"label\": \"lego brick\", \"value\": \"pink\"}"
+      },
+      {
+        "t": 2.0,
+        "role": "user",
+        "content": "What is the color of the lego brick?"
+      },
+      {
+        "t": 3.0,
+        "role": "assistant",
+        "content": "{\"attribute\": \"color\", \"label\": \"lego brick\", \"value\": \"pink\"}"
+      },
+      {
+        "t": 3.0,
+        "role": "user",
+        "content": "What color is the lego brick being held by the robot?"
+      },
+      {
+        "t": 4.0,
+        "role": "assistant",
+        "content": "{\"object\": \"transparent box\", \"relation\": \"above\", \"subject\": \"robot arm\"}"
+      },
+      {
+        "t": 4.0,
+        "role": "user",
+        "content": "What spatial relation exists between the robot arm and the transparent box?"
+      }
+    ],
+    "drawn": []
+  },
+  "fps": 30
+}
