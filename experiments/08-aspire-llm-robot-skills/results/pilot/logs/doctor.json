@@ -1,0 +1,253 @@
+{
+  "checks": [
+    {
+      "details": {
+        "executable": "/home/shree/aspire/.venv-libero/bin/python",
+        "version": "3.12.3"
+      },
+      "duration_ms": 0,
+      "name": "python",
+      "required": true,
+      "status": "pass",
+      "summary": "Python 3.12.3 is supported"
+    },
+    {
+      "details": {
+        "machine": "x86_64",
+        "release": "7.0.0-1014-gcp",
+        "system": "Linux"
+      },
+      "duration_ms": 0,
+      "name": "platform",
+      "required": true,
+      "status": "pass",
+      "summary": "Linux/x86_64 platform detected"
+    },
+    {
+      "details": {
+        "driver_versions": [
+          "580.178.04"
+        ],
+        "gpu_count": 1,
+        "models": [
+          "NVIDIA L4"
+        ],
+        "return_code": 0
+      },
+      "duration_ms": 23,
+      "name": "nvidia",
+      "required": true,
+      "status": "pass",
+      "summary": "1 NVIDIA GPU(s) visible"
+    },
+    {
+      "details": {
+        "MUJOCO_GL": "egl",
+        "PYOPENGL_PLATFORM": "egl",
+        "egl_library": "libEGL.so.1",
+        "vendor_files": [
+          "/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
+        ]
+      },
+      "duration_ms": 3,
+      "name": "egl",
+      "required": true,
+      "status": "pass",
+      "summary": "EGL environment and NVIDIA vendor configuration are ready"
+    },
+    {
+      "details": {
+        "error": null,
+        "path": "/home/shree/aspire",
+        "project_files": true,
+        "writable": true
+      },
+      "duration_ms": 0,
+      "name": "source_checkout",
+      "required": true,
+      "status": "pass",
+      "summary": "repository checkout is writable and contains the project locks"
+    },
+    {
+      "details": {
+        "active_matches_requested": true,
+        "active_path": "/home/shree/aspire/.venv-libero",
+        "basename_matches": true,
+        "error": null,
+        "expected_basename": null,
+        "inside_source": true,
+        "path": "/home/shree/aspire/.venv-libero",
+        "writable": true
+      },
+      "duration_ms": 0,
+      "name": "python_environment",
+      "required": true,
+      "status": "pass",
+      "summary": "requested Python environment is active and writable"
+    },
+    {
+      "details": {
+        "failures": {},
+        "imported": {
+          "cap_harness": "0.1.0",
+          "numpy": "1.26.4",
+          "requests": "2.34.2",
+          "scipy": "1.17.1",
+          "yaml": "6.0.3"
+        }
+      },
+      "duration_ms": 216,
+      "name": "core_package_imports",
+      "required": true,
+      "status": "pass",
+      "summary": "all required core packages import"
+    },
+    {
+      "details": {
+        "failures": {},
+        "imported": {
+          "gymnasium": "1.3.0",
+          "libero": "imported",
+          "mujoco": "3.3.0",
+          "robosuite": "1.4.0",
+          "torch": "2.9.1+cu128"
+        }
+      },
+      "duration_ms": 1939,
+      "name": "libero_package_imports",
+      "required": true,
+      "status": "pass",
+      "summary": "all required LIBERO packages import"
+    },
+    {
+      "details": {
+        "configured_paths": {
+          "assets": "/home/shree/aspire/third_party/LIBERO-PRO/libero/libero/assets",
+          "bddl_files": "/home/shree/aspire/third_party/LIBERO-PRO/libero/libero/bddl_files",
+          "benchmark_root": "/home/shree/aspire/third_party/LIBERO-PRO/libero/libero",
+          "datasets": "/home/shree/aspire/third_party/LIBERO-PRO/libero/datasets",
+          "init_states": "/home/shree/aspire/third_party/LIBERO-PRO/libero/libero/init_files"
+        },
+        "path_config": "/home/shree/aspire/.libero/config.yaml",
+        "path_errors": [],
+        "submodule": "/home/shree/aspire/third_party/LIBERO-PRO",
+        "submodule_populated": true,
+        "validation_config": "/home/shree/aspire/src/cap_harness/configs/libero/validation_cases.yaml",
+        "validation_config_present": true
+      },
+      "duration_ms": 2,
+      "name": "libero_paths",
+      "required": true,
+      "status": "pass",
+      "summary": "LIBERO validation config, path config, and submodule are valid"
+    },
+    {
+      "details": {
+        "services": [
+          {
+            "error": null,
+            "host": "127.0.0.1",
+            "http_status": 200,
+            "name": "sam3",
+            "port": 8114,
+            "responding": true
+          },
+          {
+            "error": null,
+            "host": "127.0.0.1",
+            "http_status": 200,
+            "name": "contact_graspnet",
+            "port": 8115,
+            "responding": true
+          },
+          {
+            "error": null,
+            "host": "127.0.0.1",
+            "http_status": 200,
+            "name": "pyroki",
+            "port": 8116,
+            "responding": true
+          },
+          {
+            "error": null,
+            "host": "127.0.0.1",
+            "http_status": 200,
+            "name": "curobo",
+            "port": 8118,
+            "responding": true
+          }
+        ]
+      },
+      "duration_ms": 7,
+      "name": "services",
+      "required": true,
+      "status": "pass",
+      "summary": "all requested model services are responding"
+    },
+    {
+      "details": {
+        "result": {
+          "embodiment": "libero",
+          "seed": 1,
+          "suite": "libero_goal_swap",
+          "task_id": 0,
+          "task_language_present": true
+        },
+        "target": {
+          "embodiment": "libero",
+          "seed": 1,
+          "suite": null,
+          "task_id": null
+        }
+      },
+      "duration_ms": 6456,
+      "name": "single_reset",
+      "required": true,
+      "status": "pass",
+      "summary": "one simulation reset completed and closed cleanly"
+    }
+  ],
+  "environment": {
+    "captured_at": "2026-11-09T03:02:55.906013Z",
+    "graphics_and_devices": {
+      "CUDA_VISIBLE_DEVICES": "0",
+      "MUJOCO_GL": "egl",
+      "PYOPENGL_PLATFORM": "egl"
+    },
+    "packages": {
+      "cap-harness": "0.1.0",
+      "isaacsim": null,
+      "jax": null,
+      "libero": "0.1.0",
+      "mujoco": "3.3.0",
+      "numpy": "1.26.4",
+      "nvidia-curobo": null,
+      "omnigibson": null,
+      "pyroki": null,
+      "robosuite": "1.4.0",
+      "torch": "2.9.1"
+    },
+    "paths": {
+      "environment": "/home/shree/aspire/.venv-libero",
+      "libero_path_config": "/home/shree/aspire/.libero/config.yaml",
+      "libero_submodule": "/home/shree/aspire/third_party/LIBERO-PRO",
+      "repository": "/home/shree/aspire",
+      "validation_config": "/home/shree/aspire/src/cap_harness/configs/libero/validation_cases.yaml"
+    },
+    "platform": {
+      "machine": "x86_64",
+      "release": "7.0.0-1014-gcp",
+      "system": "Linux"
+    },
+    "python": {
+      "executable": "/home/shree/aspire/.venv-libero/bin/python",
+      "implementation": "CPython",
+      "version": "3.12.3"
+    },
+    "unit_mode": false
+  },
+  "generated_at": "2026-11-09T03:02:55.905963Z",
+  "mode": "full",
+  "schema_version": 1,
+  "success": true
+}

@@ -1,0 +1,3 @@
+/home/shree/logs/smoke_saved.log:program_ok=True task_success=False protocol_success=None termination_reason=program_completed
+/home/shree/logs/smoke_seed2.log:program_ok=True task_success=False protocol_success=None termination_reason=program_completed
+/home/shree/logs/smoke.log:program_ok=True task_success=False protocol_success=None termination_reason=program_completed

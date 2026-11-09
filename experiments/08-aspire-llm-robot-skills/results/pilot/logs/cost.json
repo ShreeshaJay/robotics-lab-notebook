@@ -1,0 +1,14 @@
+{
+ "messages": 107,
+ "tokens": {
+  "input_tokens": 214,
+  "cache_read_input_tokens": 8465725,
+  "output_tokens": 166523,
+  "cache_creation_input_tokens": 817729
+ },
+ "cost_usd": 0.3315,
+ "models": [
+  "claude-haiku-5-5"
+ ],
+ "ts": "2026-11-09T04:23:12Z"
+}

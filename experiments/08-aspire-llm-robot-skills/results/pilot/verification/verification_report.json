@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "benchmark": "libero-pro",
+  "suite": "libero_goal_swap",
+  "task_id": 0,
+  "seeds": [51, 52, 53, 54, 55],
+  "attempts_used": 2,
+  "trials": 5,
+  "passes": 0,
+  "verdict": "refuted",
+  "skills_applied": [
+    "proposed:localize.md#Middle of stacked identical handles (height-ordered)",
+    "proposed:localize.md#Prompt Registry row (drawer handle, stacked identical handles)",
+    "proposed:grasp.md#Grasp verification by jaw width after close",
+    "grasp.md#Standard Pick-and-Place Template (pre-grasp / grasp / move_to_pose guards)",
+    "grasp.md#Key Conventions (close_gripper, motion result guard, wxyz quaternions)"
+  ],
+  "proposals": [
+    {"title": "localize.md - Middle of stacked identical handles (height-ordered)", "disposition": "sound", "note": "Reproduced as written on all 5 seeds in v01 and v02: 3 real handles kept at z about 0.041/0.110/0.183 with the middle selected at z 0.1097 and xy about (0.417, -0.157) on every seed. Fragility: the index-based middle (len//2) shifts if an extra candidate above 0.5 x top passes the filter; seed 53 kept a false positive at z -0.001 that happened to sit below the true middle. Whether the selected handle is the one the task's success predicate needs was not confirmed, because no grasp ever completed."},
+    {"title": "localize.md - Prompt Registry row (stacked identical handles)", "disposition": "sound", "note": "Scores reproduced: seed 51 0.531/0.520/0.508 with a 0.202 false positive (metal stove edge), seed 55 0.555/0.543/0.531, seed 52 0.451/0.447/0.439. Filter at 0.5 x top kept the three handles and dropped the false positive on every seed."},
+    {"title": "grasp.md - Grasp verification by jaw width after close", "disposition": "untested", "note": "No close_gripper() ever ran on a handle: every program stopped at the first pre-grasp move_to_pose (timeout), so the width threshold (0.1) was never read after a real close. Only an empty-jaw reading of about 0.6 to 0.97 during transit was observed."},
+    {"title": "grasp.md - Standard Pick-and-Place Template: check generate_grasps against the localized centre (3 cm) and fall back to a handwritten pose", "disposition": "untested", "note": "generate_grasps was never called; v01 and v02 used the handwritten top-down pose on the localized handle centre directly, so the 3 cm check and its fallback were not exercised."},
+    {"title": "grasp.md - Backend choice: curobo only for transits clear of the target", "disposition": "untested", "note": "No curobo call was made in v01 or v02 (default interpolation throughout), so the 79 s planning_failed claim was neither reproduced nor refuted."},
+    {"title": "manipulation.md - header pointer to a Drawer Interaction section", "disposition": "sound", "note": "Confirmed by reading the file: manipulation.md contains no Drawer Interaction section, only Knob/Switch, Hinged Door, Pushing and General Notes. A drawer task finds no pull guidance there, which is what stalled this attempt's design."}
+  ],
+  "gaps": [
+    "move_to_pose timeout at the pre-grasp height: on all 5 seeds the planned trajectory executes about 120 ticks and returns status timeout, with steps_executed 120-126, even though plan_motion and pyroki.solve_ik return ok. The measured end-effector stops about 2.1 cm short in y (commanded -0.155, measured -0.134 to -0.137) and about 0.6 to 0.9 cm high in z (commanded 0.210, measured 0.216 to 0.219). The skills give no guidance on this steady-state offset or on what a timeout with a near-zero measured error means.",
+    "Closed-loop re-issue does not clear the timeout: re-issuing the target with the measured error added back shrinks the position error to about 0.0064 m after 3 re-issues, but the status stays timeout and the 4th re-issue becomes controller_failed. The residual may be orientation (the end-effector quaternion ends about 0.02 to 0.03 off the downward quaternion); this was not confirmed, and no skill says how move_to_pose's convergence test treats orientation or what tolerance to use for approach moves.",
+    "No drawer-pull guidance: manipulation.md has no Drawer Interaction section, so the pull direction, the grasp-then-pull pattern, and the pull length had to be invented. The pull direction used here was the principal axis of the handle's XY footprint with its sign set to +x in robot_base (handle protrudes along the pull direction); this is an assumption, not a documented pattern, and the sign rule is unverified.",
+    "Gripper readback drifts during move_to_pose: after open_gripper() the gripper_positions['primary'] reading falls from about 0.97 to about 0.6 during the transit moves even though open_gripper() was the last command, so an open-jaw width is not a reliable baseline for the grasp width check. No skill mentions this.",
+    "The grasp width threshold (0.1 closed-empty) and the dz offsets (-0.02 held, 0 and +0.02 closed-empty) were never exercised because no grasp reached a close; the proposal's evidence cannot be checked from this attempt.",
+    "Identity selectors standing dispute: only the height-ordered selection was computed. The other selectors (instruction relation, support gap, proximity) were not computed or reported."
+  ],
+  "notes": "Verdict is refuted by budget: 0 of 5 seeds passed on attempt 1 (v01, literal proposals) and on attempt 2 (v02, closed-loop re-issue of move_to_pose). The blocker is pre-grasp reachability and move_to_pose convergence at the handle, not perception, so the localization proposals transmit and the grasp and drawer-pull guidance does not yet. A rewrite needs a documented move_to_pose timeout and offset recipe for approach moves and a drawer pull section."
+}

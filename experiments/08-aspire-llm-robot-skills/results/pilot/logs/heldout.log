@@ -1,0 +1,106 @@
+batch: 50 seed(s) on 4 worker(s) -> /home/shree/aspire/outputs/runs/2026-11-09_03-07-10/libero-pro/libero_goal_swap/task_0/validation/runs/801b2c732449d2ea/logs
+seed 03: task_success=False program_ok=False 75.2s pid=39153 rss=2089MB
+seed 02: task_success=False program_ok=False 90.5s pid=39150 rss=2111MB
+seed 01: task_success=False program_ok=False 92.2s pid=39147 rss=2108MB
+seed 04: task_success=False program_ok=False 93.6s pid=39156 rss=2091MB
+seed 07: task_success=False program_ok=False 70.8s pid=39153 rss=2162MB
+seed 05: task_success=False program_ok=False 65.0s pid=39147 rss=2159MB
+seed 06: task_success=False program_ok=False 84.8s pid=39150 rss=2155MB
+seed 08: task_success=False program_ok=True 98.8s pid=39156 rss=2177MB
+seed 11: task_success=False program_ok=False 80.2s pid=39153 rss=2192MB
+seed 09: task_success=True program_ok=True 92.8s pid=39147 rss=2180MB
+seed 10: task_success=False program_ok=False 87.9s pid=39150 rss=2185MB
+seed 12: task_success=False program_ok=False 71.8s pid=39156 rss=2196MB
+seed 15: task_success=False program_ok=False 76.1s pid=39153 rss=2193MB
+seed 13: task_success=False program_ok=True 101.3s pid=39147 rss=2206MB
+seed 16: task_success=False program_ok=True 91.2s pid=39156 rss=2238MB
+seed 14: task_success=False program_ok=True 110.1s pid=39150 rss=2202MB
+seed 19: task_success=False program_ok=True 109.4s pid=39153 rss=2210MB
+seed 17: task_success=False program_ok=False 70.3s pid=39147 rss=2224MB
+seed 18: task_success=False program_ok=False 70.5s pid=39150 rss=2211MB
+seed 20: task_success=False program_ok=True 101.5s pid=39156 rss=2239MB
+seed 23: task_success=False program_ok=False 82.5s pid=39153 rss=2227MB
+seed 22: task_success=False program_ok=False 82.7s pid=39150 rss=2212MB
+seed 21: task_success=False program_ok=True 108.1s pid=39147 rss=2224MB
+seed 24: task_success=False program_ok=True 102.9s pid=39156 rss=2240MB
+seed 27: task_success=False program_ok=False 92.5s pid=39153 rss=2227MB
+seed 26: task_success=False program_ok=False 89.2s pid=39150 rss=2212MB
+seed 25: task_success=False program_ok=True 101.3s pid=39147 rss=2224MB
+seed 28: task_success=False program_ok=False 86.0s pid=39156 rss=2249MB
+seed 30: task_success=False program_ok=False 74.4s pid=39150 rss=2231MB
+seed 31: task_success=False program_ok=True 106.3s pid=39153 rss=2227MB
+seed 29: task_success=False program_ok=False 91.6s pid=39147 rss=2224MB
+seed 32: task_success=False program_ok=False 77.8s pid=39156 rss=2249MB
+seed 34: task_success=False program_ok=False 70.9s pid=39150 rss=2231MB
+seed 33: task_success=False program_ok=False 73.4s pid=39147 rss=2224MB
+seed 35: task_success=False program_ok=True 105.1s pid=39153 rss=2228MB
+seed 38: task_success=False program_ok=False 72.3s pid=39150 rss=2231MB
+seed 36: task_success=False program_ok=True 112.6s pid=39156 rss=2265MB
+seed 39: task_success=False program_ok=True 90.6s pid=39153 rss=2232MB
+seed 37: task_success=False program_ok=True 98.4s pid=39147 rss=2224MB
+seed 40: task_success=False program_ok=False 68.1s pid=39156 rss=2265MB
+seed 44: task_success=False program_ok=False 68.5s pid=44018 rss=2104MB
+seed 41: task_success=False program_ok=False 74.4s pid=44009 rss=2094MB
+seed 43: task_success=False program_ok=False 78.1s pid=44015 rss=2059MB
+seed 42: task_success=False program_ok=False 82.5s pid=44012 rss=2108MB
+seed 45: task_success=False program_ok=False 66.8s pid=44009 rss=2128MB
+seed 46: task_success=False program_ok=False 70.2s pid=44012 rss=2153MB
+seed 48: task_success=False program_ok=False 86.1s pid=44018 rss=2174MB
+seed 47: task_success=False program_ok=False 76.8s pid=44015 rss=2138MB
+seed 50: task_success=False program_ok=False 49.3s pid=44012 rss=2156MB
+seed 49: task_success=False program_ok=True 76.9s pid=44009 rss=2179MB
+batch: 50/50 runs, 1 passed, 1128.6s elapsed (4250.3s of seed time on 4 worker(s))
+summary: /home/shree/aspire/outputs/runs/2026-11-09_03-07-10/libero-pro/libero_goal_swap/task_0/validation/runs/801b2c732449d2ea/batch.json
+seed 01: task_success=False program_ok=False exit=0
+seed 02: task_success=False program_ok=False exit=0
+seed 03: task_success=False program_ok=False exit=0
+seed 04: task_success=False program_ok=False exit=0
+seed 05: task_success=False program_ok=False exit=0
+seed 06: task_success=False program_ok=False exit=0
+seed 07: task_success=False program_ok=False exit=0
+seed 08: task_success=False program_ok=True exit=0
+seed 09: task_success=True program_ok=True exit=0
+seed 10: task_success=False program_ok=False exit=0
+seed 11: task_success=False program_ok=False exit=0
+seed 12: task_success=False program_ok=False exit=0
+seed 13: task_success=False program_ok=True exit=0
+seed 14: task_success=False program_ok=True exit=0
+seed 15: task_success=False program_ok=False exit=0
+seed 16: task_success=False program_ok=True exit=0
+seed 17: task_success=False program_ok=False exit=0
+seed 18: task_success=False program_ok=False exit=0
+seed 19: task_success=False program_ok=True exit=0
+seed 20: task_success=False program_ok=True exit=0
+seed 21: task_success=False program_ok=True exit=0
+seed 22: task_success=False program_ok=False exit=0
+seed 23: task_success=False program_ok=False exit=0
+seed 24: task_success=False program_ok=True exit=0
+seed 25: task_success=False program_ok=True exit=0
+seed 26: task_success=False program_ok=False exit=0
+seed 27: task_success=False program_ok=False exit=0
+seed 28: task_success=False program_ok=False exit=0
+seed 29: task_success=False program_ok=False exit=0
+seed 30: task_success=False program_ok=False exit=0
+seed 31: task_success=False program_ok=True exit=0
+seed 32: task_success=False program_ok=False exit=0
+seed 33: task_success=False program_ok=False exit=0
+seed 34: task_success=False program_ok=False exit=0
+seed 35: task_success=False program_ok=True exit=0
+seed 36: task_success=False program_ok=True exit=0
+seed 37: task_success=False program_ok=True exit=0
+seed 38: task_success=False program_ok=False exit=0
+seed 39: task_success=False program_ok=True exit=0
+seed 40: task_success=False program_ok=False exit=0
+seed 41: task_success=False program_ok=False exit=0
+seed 42: task_success=False program_ok=False exit=0
+seed 43: task_success=False program_ok=False exit=0
+seed 44: task_success=False program_ok=False exit=0
+seed 45: task_success=False program_ok=False exit=0
+seed 46: task_success=False program_ok=False exit=0
+seed 47: task_success=False program_ok=False exit=0
+seed 48: task_success=False program_ok=False exit=0
+seed 49: task_success=False program_ok=True exit=0
+seed 50: task_success=False program_ok=False exit=0
+Written: /home/shree/aspire/outputs/runs/2026-11-09_03-07-10/progress.md
+Progress: 1/1 tasks done  |  0 need Stage 2  |  0 mid-Stage 1  |  0 pending  |  0 need skill verification  |  0 rerun candidate(s)
+run=801b2c732449d2ea status=complete passes=1/50 manifest=/home/shree/aspire/outputs/runs/2026-11-09_03-07-10/libero-pro/libero_goal_swap/task_0/validation/runs/801b2c732449d2ea/manifest.json
