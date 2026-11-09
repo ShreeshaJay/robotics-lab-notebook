@@ -74,10 +74,12 @@ def env() -> dict[str, str]:
     e.setdefault("TOKENIZERS_PARALLELISM", "false")
     # vLLM 0.33.0 JIT-builds a FlashInfer sampler that needs ninja + a CUDA 13 nvcc (lesson from experiment 05).
     e.setdefault("VLLM_USE_FLASHINFER_SAMPLER", "0")
+    # Child Python output is block-buffered into the pipe otherwise, so log lines arrive late (seen in the first run).
+    e.setdefault("PYTHONUNBUFFERED", "1")
     return e
 
 
-def run(cmd: list[str], *, cwd: Path, logfile: Path) -> int:
+def run(cmd: list[str], *, cwd: Path, logfile: Path, stamp: bool = False) -> int:
     """Run a command, tee output to a log file, sample GPU memory while it runs."""
     logfile.parent.mkdir(parents=True, exist_ok=True)
     log("$ " + " ".join(cmd))
@@ -110,7 +112,9 @@ def run(cmd: list[str], *, cwd: Path, logfile: Path) -> int:
         assert proc.stdout is not None
         for line in proc.stdout:
             sys.stdout.write(line)
-            fh.write(line)
+            # stamp=True prefixes each log line with UTC time, so batch runs can be split per clip afterwards.
+            fh.write(time.strftime("%Y-%m-%dT%H:%M:%S ", time.gmtime()) + line if stamp else line)
+            fh.flush()
         code = proc.wait()
     stop.set()
     t.join(timeout=5)
@@ -355,18 +359,156 @@ def stage_summary(a: argparse.Namespace) -> None:
     log(f"wrote {out}. Copy this JSON (not the video) into the notebook's results/ folder.")
 
 
+# ----------------------------------------------------------------------------- several clips (--clips)
+# One Flora process per stage for all clips: the annotation CLI's --input-jsonl and the rewarder's --jobs.
+# Inside one annotation process Flora remembers which model manifests it has already SHA-256-verified
+# (keyed on path, inode, size, mtime, ctime), so the 109 GB Captioner hash is paid once, not per clip.
+
+MORE = RESULTS / "more_clips"
+
+
+def load_clips(a: argparse.Namespace) -> dict:
+    return json.loads(Path(a.clips).read_text())
+
+
+def clip_path(cid: str) -> Path:
+    return DATA / f"{cid}_720p.mp4"
+
+
+ENCODE = ["-map", "0:v:0", "-an", "-vf", "scale=1280:-2", "-fps_mode", "passthrough", "-c:v", "libx264",
+          "-crf", "20", "-preset", "medium", "-pix_fmt", "yuv420p", "-movflags", "+faststart"]
+
+
+def download(url: str, size: int, dest: Path) -> None:
+    if dest.exists() and dest.stat().st_size == size:
+        return
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dest.with_suffix(".part")
+    log(f"downloading {url} ({size / 1e6:.0f} MB)")
+    with urllib.request.urlopen(url, timeout=60) as r, tmp.open("wb") as f:
+        shutil.copyfileobj(r, f, length=8 << 20)
+    if tmp.stat().st_size != size:
+        sys.exit(f"unexpected size {tmp.stat().st_size} for {url}, expected {size}")
+    tmp.rename(dest)
+
+
+def probe(p: Path) -> dict:
+    out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-count_packets", "-show_entries",
+                          "stream=width,height,avg_frame_rate,nb_read_packets:format=duration,size", "-of", "json",
+                          str(p)], capture_output=True, text=True, check=True).stdout
+    return json.loads(out)
+
+
+def stage_fetch_many(a: argparse.Namespace) -> None:
+    m = load_clips(a)
+    whole = [c for c in m["clips"] if c["start_s"] is None]
+    # Whole videos: plain HTTPS downloads in parallel (data.bris was about 1 MB/s per stream in the first run).
+    threads = [threading.Thread(target=download, args=(c["url"], c["bytes"], DATA / "raw" / Path(c["url"]).name))
+               for c in whole]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    probes = {}
+    for c in m["clips"]:
+        out = clip_path(c["id"])
+        if not out.exists():
+            if c["start_s"] is None:
+                src = ["-i", str(DATA / "raw" / Path(c["url"]).name)]
+            else:
+                # A window of a long video: ffmpeg reads only the needed byte ranges over HTTPS (the server
+                # sends Accept-Ranges: bytes). Input-side -ss with re-encoding is frame-accurate; output starts at 0.
+                src = ["-ss", f"{c['start_s']:.3f}", "-t", f"{c['dur_s']:.3f}", "-i", c["url"]]
+            if run(["ffmpeg", "-hide_banner", "-y", *src, *ENCODE, str(out)], cwd=WORK,
+                   logfile=MORE / "logs" / f"ffmpeg_{c['id']}.log") != 0:
+                sys.exit(f"ffmpeg failed for {c['id']}")
+        probes[c["id"]] = probe(out)
+    n = m["negative_control"]
+    neg = clip_path(n["id"])
+    if not neg.exists():
+        if run(["ffmpeg", "-hide_banner", "-y", "-i", str(clip_path(n["from"])), "-t", f"{n['dur_s']:.3f}", *ENCODE,
+                str(neg)], cwd=WORK, logfile=MORE / "logs" / f"ffmpeg_{n['id']}.log") != 0:
+            sys.exit("ffmpeg failed for the negative control")
+    probes[n["id"]] = probe(neg)
+    for cid, info in probes.items():
+        dur, mib = float(info["format"]["duration"]), int(info["format"]["size"]) / 2**20
+        log(f"{cid}: {dur:.1f}s {mib:.0f} MiB {info['streams'][0]}")
+        if dur > 120 or mib > 256:
+            sys.exit(f"{cid} exceeds Flora limits (120 s / 256 MiB)")
+    (MORE / "clip_probe.json").write_text(json.dumps(probes, indent=2))
+
+
+def stage_caption_many(a: argparse.Namespace) -> None:
+    require_ack()
+    m = load_clips(a)
+    jobs = MORE / "caption_jobs.jsonl"
+    jobs.write_text("".join(json.dumps({"id": c["id"], "video": str(clip_path(c["id"])), "profile": "human"}) + "\n"
+                            for c in m["clips"]))
+    cmd = [str(VENV_ANN), "captioner/infer.py", "--input-jsonl", str(jobs), "--output-dir", str(MORE / "captions"),
+           "--overwrite"]
+    if a.validate_only:
+        cmd = [str(VENV_ANN), "captioner/infer.py", "--input-jsonl", str(jobs), "--validate-only"]
+    code = run(cmd, cwd=FLORA, logfile=MORE / "logs" / ("validate_caption.log" if a.validate_only else "caption.log"),
+               stamp=True)
+    if code != 0:
+        log("caption stage failed; see the log")
+
+
+def stage_reward_many(a: argparse.Namespace) -> None:
+    require_ack()
+    m = load_clips(a)
+    rows = [{"id": c["id"], "task": c["task"], "videos": [str(clip_path(c["id"]))]} for c in m["clips"]]
+    n = m["negative_control"]
+    (MORE / "dense_jobs.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
+    rows.append({"id": n["id"], "task": n["task"], "videos": [str(clip_path(n["id"]))]})
+    (MORE / "terminal_jobs.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
+    common = ["--model", REWARDER_REPO, "--revision", REWARDER_REV, "--overwrite"]
+    jobs = {
+        "dense": ["--jobs", str(MORE / "dense_jobs.jsonl"), *common, "--output", str(MORE / "dense.jsonl")],
+        "terminal": ["--jobs", str(MORE / "terminal_jobs.jsonl"), *common, "--with-rationale",
+                     "--output", str(MORE / "terminal.jsonl")],
+    }
+    for name, args in jobs.items():
+        if a.validate_only:
+            args = [*args, "--dry-run"]
+        cmd = [str(VENV_REW), "-m", f"rewarder.batch_utils.{name}_reward", *args]
+        tag = f"validate_{name}" if a.validate_only else f"reward_{name}"
+        if run(cmd, cwd=FLORA, logfile=MORE / "logs" / f"{tag}.log", stamp=True) != 0:
+            log(f"{name} reward failed; see the log")
+
+
 STAGES = {"fetch": stage_fetch, "prefetch": stage_prefetch, "validate": stage_validate, "caption": stage_caption,
           "reward": stage_reward, "summary": stage_summary}
+MANY = {"fetch": stage_fetch_many, "caption": stage_caption_many, "reward": stage_reward_many}
 
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("stage", choices=[*STAGES, "all"])
     p.add_argument("--mode", choices=["l4", "reference"], default="l4")
+    p.add_argument("--clips", help="JSON manifest of several clips (see more_clips.json); reference mode only. "
+                                   "Stages fetch, caption and reward then run all clips in one process each.")
+    p.add_argument("--validate-only", action="store_true",
+                   help="with --clips: caption runs --validate-only, reward runs --dry-run")
     a = p.parse_args()
+    if a.clips and a.mode != "reference":
+        sys.exit("--clips is for --mode reference only")
+    if a.clips:
+        MORE.mkdir(parents=True, exist_ok=True)
+        if a.stage == "fetch":  # needs only ffmpeg, so it can run while setup.sh is still building venvs
+            log("== stage fetch (--clips)")
+            stage_fetch_many(a)
+            return
     if not FLORA.is_dir() or not VENV_ANN.exists() or not VENV_REW.exists():
         sys.exit(f"run setup.sh first (expected {FLORA}, {VENV_ANN}, {VENV_REW})")
     RESULTS.mkdir(parents=True, exist_ok=True)
+    if a.clips:
+        for name in (MANY if a.stage == "all" else [a.stage]):
+            if name not in MANY:
+                sys.exit(f"stage {name} has no --clips variant (use prefetch without --clips)")
+            log(f"== stage {name} (--clips)")
+            MANY[name](a)
+        return
     for name in (STAGES if a.stage == "all" else [a.stage]):
         log(f"== stage {name} ({a.mode})")
         STAGES[name](a)

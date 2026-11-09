@@ -1,6 +1,6 @@
 # 04 · Flora: open models for labeling egocentric video
 
-**Date:** planned 2026-11-07, run 2026-11-08 · **Track:** Data labeling · **Status:** run at full precision on one A100 80 GB, results below · **Spend:** about $3.30 (1.10 h of one Spot `a2-ultragpu-1g` plus its disk)
+**Date:** planned 2026-11-07, run 2026-11-08 · **Track:** Data labeling · **Status:** run at full precision on one A100 80 GB, results below · **Spend:** about $3.30 (1.10 h of one Spot `a2-ultragpu-1g` plus its disk), plus about $1.26 for the 2026-11-08 extension, which was stopped by Spot preemptions (see "More clips")
 
 ## Goal
 
@@ -121,6 +121,127 @@ written for robots.
    disk type, a warm page cache and a long-running process that keeps the model loaded matter more than the GPU.
 6. **License limits use.** Everything here is research/evaluation only under the NVIDIA License (below). Labels made
    with Flora cannot go into a commercial product or a dataset sold to others without a separate license from NVIDIA.
+
+## More clips (2026-11-08)
+
+**Status: not run on the GPU.** The plan was 4 more household-task clips and one negative control on one Spot
+A100 80 GB. All three Spot VMs were preempted during setup, before any model ran, so there are no new Flora outputs.
+The clip set, the ground truth, the batch mode in `run.py` and the merge-to-steps script are ready for a re-run.
+The merge script was evaluated on the existing P08_02 output instead.
+
+### What happened
+
+| Try | Zone | Up (UTC, 2026-11-09) | Reached | End |
+|-|-|-|-|-|
+| 1 | us-central1-a | 02:00:12 to 02:08:43 (8.5 min) | clip downloads 70% done, weights 37 GB of 185 GB | preempted |
+| 2 | us-central1-c | 02:11:39 to 02:25:35 (13.9 min) | setup, downloads and weight prefetch in progress | preempted |
+| 3 | us-central1-a | 02:28:28 to 02:31:13 (2.8 min) | setup just started | preempted |
+
+- The VM tool sets `--instance-termination-action=DELETE`, so each preemption deleted the VM and its disk, and
+  setup (about 20 min) had to start over each time.
+- `a2-ultragpu-1g` does not exist in us-central1-b or us-central1-f ("Machine type ... does not exist in zone"),
+  so a and c were the only zones to try. Spot A100 80 GB quota exists only in us-central1.
+- I stopped after the third preemption: about 25 min of VM time had gone to this one blocker, and three
+  preemptions in 30 min made an uninterrupted 2 h run unlikely that night.
+- **Takeaway:** for Spot runs longer than about an hour, build the environment once on a disk that survives
+  preemption (`--instance-termination-action=STOP`, or a separate data disk or image with the venvs and weights),
+  or run at a quieter hour. The previous run got 1.1 h without a preemption in the same zone.
+
+### Clips chosen (inputs ready, not run)
+
+I picked them from the EPIC-100 narration annotations: short videos (60 to 120 s, because Flora's annotation input
+limit is 120 s) or 110 s windows with the highest share of the target verbs. Each clip is from a different
+participant, none from P08. Manifest: [`more_clips.json`](more_clips.json). Ground-truth narrations (CC BY-NC 4.0)
+are in `results/more_clips/epic_ground_truth_<clip>.json`, with times on the clip's own clock.
+
+| Clip | Kind | Length | Source | EPIC narrations (mean length) | Outcome task |
+|-|-|-|-|-|-|
+| P14_07 | dishwashing | 90.3 s, whole video | `train/P14`, 340 MB | 12 (5.2 s): take sponge, open tap, wash spoon (16 s), wash bowl (30 s), turn off water | Wash the spoon and the bowl in the sink. |
+| P01_19, 301 to 416 s | wiping | 115 s window | `train/P01`, 1.8 GB video; ffmpeg reads only the window over HTTPS (the server accepts byte ranges) | 31 (4.5 s): rinse and squeeze cloth, wipe sink, wipe counter, wipe cooker (30 s), wash sink | Wipe the sink, the counter and the cooker with the cloth. |
+| P28_24 | food prep | 68.3 s, whole video | `test/P28`, 258 MB | 16 (5.1 s): cut tomato, throw piece in bin, chop tomato, take dish from microwave, chop tomato | Chop the tomato. |
+| P11_24 | put-away | 83.6 s, whole video | `test/P11`, 315 MB | 24 (2.4 s): put away wine glass, bowls, chopping block, mug and scissors in cupboards, put bag in bin | Put the dishes away in the cupboards. |
+| P14_07, first 46 s | negative control | 46 s | cut from the P14_07 re-encode | spoon washed, bowl not yet picked up (EPIC: pick up bowl at 46.5 s) | same task as P14_07; expected well below 5 |
+
+All URLs are under `https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/`, the same direct route as
+P08_02 (some are in `test/`, not `train/`). Downloads ran at about 1.1 MB/s per stream, so `run.py` fetches in parallel.
+
+### What is ready for the re-run
+
+- `run.py --clips more_clips.json` runs `fetch`, `caption` and `reward` for all clips, one Flora process per stage:
+  - the annotation CLI's `--input-jsonl` for the captions;
+  - the rewarder's `--jobs` for dense and outcome rewards (the outcome jobs include the negative control);
+  - log lines stamped with UTC time, so runtime and peak VRAM can be split per clip from the logs and the GPU trace.
+- **Skipping the re-hash:** this needs no change to Flora. Inside one process, Flora remembers which model manifests it
+  has already SHA-256-checked, keyed on each file's path, inode, size, mtime and ctime
+  (`captioner/batch_utils/models.py`, event `manifest_verified_reuse`). It re-hashes if any file changed. So
+  `--input-jsonl` should pay the 6.7 min Captioner hash once for all clips, not once per clip. I read this in the
+  code; it has not been measured.
+- `PYTHONUNBUFFERED=1` in the child environment fixes the late log lines from the first run.
+- `--clips` reached clip downloads on the VM and nothing further. The caption and reward batch paths have not run yet.
+
+### Merge to steps (`merge_steps.py`, CPU)
+
+The rule, with thresholds fixed before looking at results:
+
+1. **One timeline.** A segment that starts inside the previous one is trimmed to start where the previous one
+   ends. A segment almost fully inside the previous one is folded into it.
+2. **Verb and object per clause.** Each Flora caption is split at commas, the hand phrases are dropped, and the
+   verb and object are read from each clause. For example, "pick up glass with left hand" gives (pick up, glass).
+3. **Greedy merge.** The next segment joins the current step when three things hold:
+   - it is adjacent (gap of 1 s or less);
+   - the step stays 15 s or shorter;
+   - the two share a verb-object pair, or the object, or enough caption words (Jaccard 0.3 or more).
+4. **Short steps.** A step shorter than 4 s joins the neighbour it shares more words with.
+5. **Output.** Each step gets one imperative, taken from the clause about the step's main object. Steps are written
+   as FineART-style rows: `style: subtask`, a start `timestamp`, and `content`; contiguous, non-overlapping and start-only.
+
+Scoring against the EPIC narrations:
+
+- **Boundary error:** the distance from each internal step boundary to the nearest EPIC narration start or end.
+  EPIC boundaries are dense (one every 1.5 s or so), so I also report evenly spaced boundaries as a chance baseline.
+- **Matched human steps:** an EPIC narration counts as matched when one step covers at least half of it and mentions
+  its verb or noun (a small synonym table maps tap to faucet, cupboard to cabinet, and so on). "Strict" counts only
+  the step's one-line text. "Lenient" also counts the Flora captions merged into the step.
+
+Result on P08_02 (the only clip with Flora output), from [`results/more_clips/steps_P08_02.json`](results/more_clips/steps_P08_02.json):
+
+| | Units | Mean length | Boundary error, median (even-grid baseline) | Boundaries within 1 s of a human one | EPIC narrations matched, strict / lenient |
+|-|-|-|-|-|-|
+| Raw Flora segments | 40 | 3.2 s | 0.27 s (0.56 s) | 82% | 26 / 26 of 34 |
+| Merged steps | 10 | 10.7 s | 0.22 s (0.71 s) | 100% (9 of 9) | 11 / 30 of 34 |
+
+- **Length is on target.** The 10 steps run 5.2 to 14.4 s, mean 10.7 s, which is in FineART's 5 to 15 s range.
+  That is about 4 Flora segments per step.
+- **Boundaries are good.** Every merged boundary falls within 1 s of a human boundary, and the median error is a
+  third of the chance baseline. Two of them, 30.8 s and 59.4 s, fall close to the clip's two phase changes
+  (about 31 s and 58 s in the ground truth).
+- **Step text is the weak part.** One line per 11 s step names only 11 of the 34 human actions (strict). The merged
+  captions still cover 30 of 34 (lenient), so the information is there but the summary drops it. Several step
+  texts name a sub-action, not the goal:
+  - "Pick up plate." for 5 to 16 s, where the person is loading cutlery and plates into the dishwasher;
+  - "Hold debris." for 45 to 59 s, where the person starts the dishwasher and throws away the wrap;
+  - "Pass cloth." for 59 to 71 s, where the person gets the sponge and turns on the tap.
+
+  A rule cannot write goal-level text such as "Load the plates and cutlery into the dishwasher". That needs a
+  language model over the merged captions, or a human.
+- This is one clip, so these numbers are a first check, not a measured accuracy.
+
+### Per-clip results, negative control
+
+Not available: no model ran on the new clips. The P08_02 results and conclusions above still stand, and nothing
+in this attempt changes them.
+
+### Cost
+
+| Item | Used | Cost |
+|-|-|-|
+| `a2-ultragpu-1g` Spot at $2.952/h (rate from the first run) | 25.2 min over 3 VMs (8.5 + 13.9 + 2.8) | about $1.24 |
+| 300 GB pd-balanced disks | the same 25 min | about $0.02 |
+| **Total** | 0.42 VM-hours of the 4 h cap | **about $1.26** |
+
+After the third preemption I ran `gcloud compute instances delete scout-flora2-a100 --zone us-central1-a --quiet`
+(it reported "not found", because the preemption had already deleted the VM). `gcloud compute instances list` and
+`gcloud compute disks list` both returned "Listed 0 items".
 
 ## Steps actually run
 
@@ -287,6 +408,10 @@ Time split of the 1.10 VM-hours: setup and downloads 21 min, annotation 29 min, 
 | `results/epic_ground_truth_P08_02.json` | EPIC-KITCHENS-100 narrations for P08_02, for comparison |
 | `results/frames/*.png`, `results/reward_curve.png` | 4 frames with captions burned in; dense reward over time |
 | `results/logs/` | stage logs, `*.meta.json` (exit code, wall time, peak VRAM), `*.gpu.csv` (GPU memory every 2 s) |
+| `more_clips.json` | the 4 extra clips and the negative control: URL, window, outcome task |
+| `merge_steps.py` | CPU script: Flora segments to FineART-style steps, scored against EPIC narrations |
+| `results/more_clips/epic_ground_truth_*.json` | EPIC-KITCHENS-100 narrations for the 4 extra clips, on the clip clock |
+| `results/more_clips/steps_P08_02.json` | merged steps, FineART-style rows and scores for P08_02 |
 
 No weights and no video are in this repo.
 
@@ -300,8 +425,9 @@ No weights and no video are in this repo.
 
 ## Next steps
 
-- Write the merge step (Flora segments into about 9 s imperative steps on one non-overlapping timeline) and check it
-  against FineART's label conventions on a few more clips.
-- Run 3 to 5 more clips, including one where the task fails, to see whether the outcome score stays this decisive.
+- Re-run the 4 clips in `more_clips.json` with `run.py --clips`, on a VM that survives preemption (stop instead of
+  delete, or a prebuilt image or disk), and run `merge_steps.py --batch` on the outputs. The merge step itself is
+  written and checked on P08_02 (see "More clips").
+- Include the incomplete-task negative control (P14_07, first 46 s) to see whether the outcome score stays this decisive.
 - Measure the per-video cost with a warm, long-running process on a pd-ssd or local SSD, where the 109 GB hash and
   load are paid once.

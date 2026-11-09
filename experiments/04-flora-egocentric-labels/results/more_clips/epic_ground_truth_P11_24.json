@@ -1,0 +1,177 @@
+{
+ "source": "EPIC-KITCHENS-100 annotations, EPIC_100_validation.csv (github.com/epic-kitchens/epic-kitchens-100-annotations), CC BY-NC 4.0",
+ "video_id": "P11_24",
+ "clip_id": "P11_24",
+ "clip_offset_s": 0.0,
+ "note": "times are relative to the clip start; narrations crossing the cut are clipped",
+ "narrations": [
+  {
+   "start_s": 0.5,
+   "end_s": 1.75,
+   "narration": "pick up pot",
+   "verb": "pick-up",
+   "noun": "pot"
+  },
+  {
+   "start_s": 1.56,
+   "end_s": 3.35,
+   "narration": "pick up pot lids",
+   "verb": "pick-up",
+   "noun": "lid:pot"
+  },
+  {
+   "start_s": 3.24,
+   "end_s": 4.24,
+   "narration": "put down pot and lids",
+   "verb": "put-down",
+   "noun": "pot"
+  },
+  {
+   "start_s": 4.84,
+   "end_s": 7.59,
+   "narration": "pick up wine glass",
+   "verb": "pick-up",
+   "noun": "glass:wine"
+  },
+  {
+   "start_s": 5.57,
+   "end_s": 6.57,
+   "narration": "open cupboard",
+   "verb": "open",
+   "noun": "cupboard"
+  },
+  {
+   "start_s": 6.56,
+   "end_s": 8.4,
+   "narration": "put down wine glass",
+   "verb": "put-down",
+   "noun": "glass:wine"
+  },
+  {
+   "start_s": 9.16,
+   "end_s": 10.21,
+   "narration": "put away wine glass",
+   "verb": "put-away",
+   "noun": "glass:wine"
+  },
+  {
+   "start_s": 10.51,
+   "end_s": 11.25,
+   "narration": "pick up bowl",
+   "verb": "pick-up",
+   "noun": "bowl"
+  },
+  {
+   "start_s": 11.55,
+   "end_s": 12.41,
+   "narration": "open cupboards",
+   "verb": "open",
+   "noun": "cupboard"
+  },
+  {
+   "start_s": 11.95,
+   "end_s": 13.89,
+   "narration": "put away bowl",
+   "verb": "put",
+   "noun": "bowl"
+  },
+  {
+   "start_s": 13.52,
+   "end_s": 14.44,
+   "narration": "pick up chopping block",
+   "verb": "pick-up",
+   "noun": "block:chopping"
+  },
+  {
+   "start_s": 16.22,
+   "end_s": 21.43,
+   "narration": "put away chopping block",
+   "verb": "put",
+   "noun": "block:chopping"
+  },
+  {
+   "start_s": 23.59,
+   "end_s": 24.33,
+   "narration": "pick up bowl",
+   "verb": "pick-up",
+   "noun": "bowl"
+  },
+  {
+   "start_s": 24.76,
+   "end_s": 27.31,
+   "narration": "put away bowl",
+   "verb": "put",
+   "noun": "bowl"
+  },
+  {
+   "start_s": 27.74,
+   "end_s": 28.44,
+   "narration": "pick up mug",
+   "verb": "pick-up",
+   "noun": "mug"
+  },
+  {
+   "start_s": 29.69,
+   "end_s": 31.46,
+   "narration": "put away mug",
+   "verb": "put",
+   "noun": "mug"
+  },
+  {
+   "start_s": 37.48,
+   "end_s": 39.09,
+   "narration": "push back glass",
+   "verb": "push",
+   "noun": "glass"
+  },
+  {
+   "start_s": 39.23,
+   "end_s": 41.89,
+   "narration": "move mug",
+   "verb": "move",
+   "noun": "mug"
+  },
+  {
+   "start_s": 44.25,
+   "end_s": 45.55,
+   "narration": "close cupboards",
+   "verb": "close",
+   "noun": "cupboard"
+  },
+  {
+   "start_s": 45.35,
+   "end_s": 46.31,
+   "narration": "put away scissors",
+   "verb": "put-away",
+   "noun": "scissors"
+  },
+  {
+   "start_s": 51.32,
+   "end_s": 54.61,
+   "narration": "pick up bag",
+   "verb": "pick-up",
+   "noun": "bag"
+  },
+  {
+   "start_s": 56.72,
+   "end_s": 70.18,
+   "narration": "open bag",
+   "verb": "open",
+   "noun": "bag"
+  },
+  {
+   "start_s": 70.28,
+   "end_s": 71.76,
+   "narration": "open bag",
+   "verb": "open",
+   "noun": "bag"
+  },
+  {
+   "start_s": 72.65,
+   "end_s": 80.54,
+   "narration": "put bag in bin",
+   "verb": "put-in",
+   "noun": "bag"
+  }
+ ]
+}

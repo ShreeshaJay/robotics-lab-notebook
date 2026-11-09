@@ -1,0 +1,16 @@
+{
+  "note": "Clips for the 2026-11-08 extension. EPIC-KITCHENS (CC BY-NC 4.0), direct download from data.bris, no sign-up. start_s/dur_s cut a window out of a longer video (null = whole video). Times in Flora outputs are relative to the cut.",
+  "clips": [
+    {"id": "P14_07", "kind": "dishwashing", "url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/train/P14/P14_07.MP4", "bytes": 340452176, "start_s": null, "dur_s": null,
+     "task": "Wash the spoon and the bowl in the sink."},
+    {"id": "P01_19_w301", "kind": "wiping", "url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/train/P01/P01_19.MP4", "bytes": 1802125130, "start_s": 301.0, "dur_s": 115.0,
+     "task": "Wipe the sink, the counter and the cooker with the cloth."},
+    {"id": "P28_24", "kind": "food prep", "url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P28/P28_24.MP4", "bytes": 257757263, "start_s": null, "dur_s": null,
+     "task": "Chop the tomato."},
+    {"id": "P11_24", "kind": "put-away", "url": "https://data.bris.ac.uk/datasets/3h91syskeag572hl6tvuovwv4d/videos/test/P11/P11_24.MP4", "bytes": 315138422, "start_s": null, "dur_s": null,
+     "task": "Put the dishes away in the cupboards."}
+  ],
+  "negative_control": {"id": "P14_07_first46s", "from": "P14_07", "dur_s": 46.0,
+    "task": "Wash the spoon and the bowl in the sink.",
+    "why": "Cut before the bowl is picked up (EPIC: pick up bowl 46.5 s, wash bowl 47.6-77.8 s). The spoon is washed, the bowl is not, so the task is incomplete."}
+}

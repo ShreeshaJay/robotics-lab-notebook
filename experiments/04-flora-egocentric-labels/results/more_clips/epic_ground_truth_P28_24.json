@@ -1,0 +1,121 @@
+{
+ "source": "EPIC-KITCHENS-100 annotations, EPIC_100_validation.csv (github.com/epic-kitchens/epic-kitchens-100-annotations), CC BY-NC 4.0",
+ "video_id": "P28_24",
+ "clip_id": "P28_24",
+ "clip_offset_s": 0.0,
+ "note": "times are relative to the clip start; narrations crossing the cut are clipped",
+ "narrations": [
+  {
+   "start_s": 0.5,
+   "end_s": 1.5,
+   "narration": "take tomato and knife",
+   "verb": "take",
+   "noun": "tomato"
+  },
+  {
+   "start_s": 1.6,
+   "end_s": 4.31,
+   "narration": "cut tomato",
+   "verb": "cut",
+   "noun": "tomato"
+  },
+  {
+   "start_s": 5.95,
+   "end_s": 9.7,
+   "narration": "cut piece of tomato",
+   "verb": "cut",
+   "noun": "piece:tomato"
+  },
+  {
+   "start_s": 10.18,
+   "end_s": 11.01,
+   "narration": "open bin",
+   "verb": "open",
+   "noun": "bin"
+  },
+  {
+   "start_s": 10.82,
+   "end_s": 11.82,
+   "narration": "throw piece of tomato",
+   "verb": "throw",
+   "noun": "piece:tomato"
+  },
+  {
+   "start_s": 13.57,
+   "end_s": 31.66,
+   "narration": "chop tomato",
+   "verb": "chop",
+   "noun": "tomato"
+  },
+  {
+   "start_s": 13.61,
+   "end_s": 36.15,
+   "narration": "keep chopping tomato",
+   "verb": "chop",
+   "noun": "tomato"
+  },
+  {
+   "start_s": 36.25,
+   "end_s": 37.04,
+   "narration": "put down knife",
+   "verb": "put-down",
+   "noun": "knife"
+  },
+  {
+   "start_s": 37.89,
+   "end_s": 39.74,
+   "narration": "open microwave oven",
+   "verb": "open",
+   "noun": "oven:microwave"
+  },
+  {
+   "start_s": 40.31,
+   "end_s": 42.04,
+   "narration": "take dish with wraps",
+   "verb": "take-with",
+   "noun": "dish"
+  },
+  {
+   "start_s": 42.08,
+   "end_s": 43.09,
+   "narration": "close microwave oven",
+   "verb": "close",
+   "noun": "oven:microwave"
+  },
+  {
+   "start_s": 44.49,
+   "end_s": 45.87,
+   "narration": "put down dish with wraps",
+   "verb": "put-down",
+   "noun": "dish"
+  },
+  {
+   "start_s": 46.34,
+   "end_s": 46.91,
+   "narration": "take knife",
+   "verb": "take",
+   "noun": "knife"
+  },
+  {
+   "start_s": 46.83,
+   "end_s": 53.77,
+   "narration": "chop tomato",
+   "verb": "chop",
+   "noun": "tomato"
+  },
+  {
+   "start_s": 49.01,
+   "end_s": 63.34,
+   "narration": "keep chopping tomato",
+   "verb": "chop",
+   "noun": "tomato"
+  },
+  {
+   "start_s": 63.84,
+   "end_s": 66.59,
+   "narration": "put down knife",
+   "verb": "put-down",
+   "noun": "knife"
+  }
+ ]
+}

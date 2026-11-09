@@ -1,0 +1,226 @@
+{
+ "source": "EPIC-KITCHENS-100 annotations, EPIC_100_train.csv (github.com/epic-kitchens/epic-kitchens-100-annotations), CC BY-NC 4.0",
+ "video_id": "P01_19",
+ "clip_id": "P01_19_w301",
+ "clip_offset_s": 301.0,
+ "note": "times are relative to the clip start; narrations crossing the cut are clipped",
+ "narrations": [
+  {
+   "start_s": 0.05,
+   "end_s": 2.21,
+   "narration": "rinse sponge",
+   "verb": "rinse",
+   "noun": "sponge"
+  },
+  {
+   "start_s": 1.06,
+   "end_s": 2.22,
+   "narration": "take cloth",
+   "verb": "take",
+   "noun": "cloth"
+  },
+  {
+   "start_s": 2.32,
+   "end_s": 3.81,
+   "narration": "rinse cloth",
+   "verb": "rinse",
+   "noun": "cloth"
+  },
+  {
+   "start_s": 3.85,
+   "end_s": 4.74,
+   "narration": "turn off tap",
+   "verb": "turn-off",
+   "noun": "tap"
+  },
+  {
+   "start_s": 4.66,
+   "end_s": 6.92,
+   "narration": "squeeze cloth",
+   "verb": "squeeze",
+   "noun": "cloth"
+  },
+  {
+   "start_s": 4.81,
+   "end_s": 6.71,
+   "narration": "squeeze cloth",
+   "verb": "squeeze",
+   "noun": "cloth"
+  },
+  {
+   "start_s": 8.86,
+   "end_s": 15.94,
+   "narration": "wipe sink",
+   "verb": "wipe",
+   "noun": "sink"
+  },
+  {
+   "start_s": 9.12,
+   "end_s": 15.86,
+   "narration": "wipe sink",
+   "verb": "wipe",
+   "noun": "sink"
+  },
+  {
+   "start_s": 13.85,
+   "end_s": 23.35,
+   "narration": "wipe counter",
+   "verb": "wipe",
+   "noun": "counter"
+  },
+  {
+   "start_s": 22.92,
+   "end_s": 25.71,
+   "narration": "squeeze cloth",
+   "verb": "squeeze",
+   "noun": "cloth"
+  },
+  {
+   "start_s": 25.71,
+   "end_s": 36.48,
+   "narration": "wipe counter",
+   "verb": "wipe",
+   "noun": "counter"
+  },
+  {
+   "start_s": 32.83,
+   "end_s": 37.62,
+   "narration": "wipe sink",
+   "verb": "wipe",
+   "noun": "sink"
+  },
+  {
+   "start_s": 40.48,
+   "end_s": 41.35,
+   "narration": "open bin",
+   "verb": "open",
+   "noun": "bin"
+  },
+  {
+   "start_s": 41.2,
+   "end_s": 41.93,
+   "narration": "throw rubbish in bin",
+   "verb": "throw-in",
+   "noun": "rubbish"
+  },
+  {
+   "start_s": 41.71,
+   "end_s": 42.42,
+   "narration": "close bin",
+   "verb": "close",
+   "noun": "bin"
+  },
+  {
+   "start_s": 43.79,
+   "end_s": 57.25,
+   "narration": "wipe counter",
+   "verb": "wipe",
+   "noun": "counter"
+  },
+  {
+   "start_s": 52.75,
+   "end_s": 54.2,
+   "narration": "move tray",
+   "verb": "move",
+   "noun": "tray"
+  },
+  {
+   "start_s": 54.27,
+   "end_s": 57.06,
+   "narration": "wipe counter",
+   "verb": "wipe",
+   "noun": "counter"
+  },
+  {
+   "start_s": 57.16,
+   "end_s": 76.88,
+   "narration": "wipe cooker",
+   "verb": "wipe",
+   "noun": "cooker"
+  },
+  {
+   "start_s": 70.11,
+   "end_s": 89.4,
+   "narration": "continue wiping cooker",
+   "verb": "wipe",
+   "noun": "cooker"
+  },
+  {
+   "start_s": 90.17,
+   "end_s": 97.44,
+   "narration": "wipe counter",
+   "verb": "wipe",
+   "noun": "counter"
+  },
+  {
+   "start_s": 97.36,
+   "end_s": 100.02,
+   "narration": "wipe sink",
+   "verb": "wipe",
+   "noun": "sink"
+  },
+  {
+   "start_s": 99.81,
+   "end_s": 101.96,
+   "narration": "turn on tap",
+   "verb": "turn-on",
+   "noun": "tap"
+  },
+  {
+   "start_s": 102.06,
+   "end_s": 104.35,
+   "narration": "rinse cloth",
+   "verb": "rinse",
+   "noun": "cloth"
+  },
+  {
+   "start_s": 104.41,
+   "end_s": 109.92,
+   "narration": "wash sink",
+   "verb": "wash",
+   "noun": "sink"
+  },
+  {
+   "start_s": 104.65,
+   "end_s": 107.42,
+   "narration": "wash sink",
+   "verb": "wash",
+   "noun": "sink"
+  },
+  {
+   "start_s": 106.99,
+   "end_s": 109.26,
+   "narration": "rinse cloth",
+   "verb": "rinse",
+   "noun": "cloth"
+  },
+  {
+   "start_s": 110.59,
+   "end_s": 112.32,
+   "narration": "rinse sponge",
+   "verb": "rinse",
+   "noun": "sponge"
+  },
+  {
+   "start_s": 112.42,
+   "end_s": 113.13,
+   "narration": "put down sponge",
+   "verb": "put-down",
+   "noun": "sponge"
+  },
+  {
+   "start_s": 113.23,
+   "end_s": 114.57,
+   "narration": "rinse cloth",
+   "verb": "rinse",
+   "noun": "cloth"
+  },
+  {
+   "start_s": 114.39,
+   "end_s": 115.0,
+   "narration": "wipe sink",
+   "verb": "wipe",
+   "noun": "sink"
+  }
+ ]
+}

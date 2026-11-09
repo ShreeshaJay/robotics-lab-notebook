@@ -1,0 +1,232 @@
+{
+ "video": "captions_reference",
+ "duration_s": 107.423983,
+ "params": {
+  "gap_s": 1.0,
+  "max_step_s": 15.0,
+  "min_step_s": 4.0,
+  "jaccard": 0.3
+ },
+ "raw_flora": {
+  "units": 40,
+  "mean_len_s": 3.18,
+  "median_len_s": 2.1,
+  "boundary_error_s": {
+   "mean": 0.47,
+   "median": 0.27,
+   "within_1s": 0.82,
+   "even_grid_median": 0.56
+  },
+  "human_steps": 34,
+  "matched_strict": 26,
+  "matched_lenient": 26
+ },
+ "merged": {
+  "units": 10,
+  "mean_len_s": 10.74,
+  "median_len_s": 11.41,
+  "boundary_error_s": {
+   "mean": 0.23,
+   "median": 0.22,
+   "within_1s": 1.0,
+   "even_grid_median": 0.71
+  },
+  "human_steps": 34,
+  "matched_strict": 11,
+  "matched_lenient": 30
+ },
+ "steps": [
+  {
+   "start_s": 0.0,
+   "end_s": 5.2,
+   "content": "Place plate on counter.",
+   "flora_captions": [
+    "place plate on counter with both hands"
+   ]
+  },
+  {
+   "start_s": 5.2,
+   "end_s": 16.05,
+   "content": "Pick up plate.",
+   "flora_captions": [
+    "open dishwasher with right hand, pull dishwasher rack with right hand",
+    "pick up knife and fork with right hand, place knife and fork in dishwasher with right hand",
+    "pick up plate with right hand, pass plate to left hand, place plate in dishwasher with left hand",
+    "hold plate with left hand, pull dishwasher rack with right hand",
+    "pass plate from left hand to right hand",
+    "place plate in dishwasher rack with right hand"
+   ]
+  },
+  {
+   "start_s": 16.05,
+   "end_s": 23.85,
+   "content": "Reposition spoon in dishwasher.",
+   "flora_captions": [
+    "reposition spoon in dishwasher with left hand",
+    "lift dishwasher rack with right hand",
+    "pull dishwasher rack with both hands, reposition mug in dishwasher rack with left hand",
+    "shift mug in dishwasher rack with left hand, shift wooden spoon in dishwasher rack with right hand"
+   ]
+  },
+  {
+   "start_s": 23.85,
+   "end_s": 30.8,
+   "content": "Pick up glass.",
+   "flora_captions": [
+    "pick up glass with left hand, place glass in dishwasher rack with left hand",
+    "place bowl in dishwasher with right hand, reposition bowls in dishwasher with both hands"
+   ]
+  },
+  {
+   "start_s": 30.8,
+   "end_s": 45.2,
+   "content": "Open dishwasher door.",
+   "flora_captions": [
+    "shift wooden spoon in dishwasher rack with right hand",
+    "push dishwasher rack with left hand",
+    "push dishwasher rack with right hand, close dishwasher door with right hand, open cabinet door with left hand",
+    "pick up foil with left hand, close cabinet door with right hand",
+    "open dishwasher door with right hand, unwrap soap with both hands",
+    "place detergent in dishwasher with right hand, close detergent compartment with right hand"
+   ]
+  },
+  {
+   "start_s": 45.2,
+   "end_s": 59.4,
+   "content": "Hold debris.",
+   "flora_captions": [
+    "hold debris with left hand, close dishwasher door with both hands",
+    "place debris in trash can with left hand, pick up cloth with left hand"
+   ]
+  },
+  {
+   "start_s": 59.4,
+   "end_s": 70.6,
+   "content": "Pass cloth.",
+   "flora_captions": [
+    "pass cloth to right hand, turn on faucet with left hand, turn off faucet with left hand",
+    "fold sponge with both hands, squeeze sponge with right hand",
+    "squeeze cloth with right hand",
+    "unfold cloth with both hands, place cloth on counter with right hand",
+    "place cloth on counter with right hand, wipe counter with cloth in right hand",
+    "wipe counter with cloth in right hand, wipe sink with cloth in right hand",
+    "pick up sponge with right hand"
+   ]
+  },
+  {
+   "start_s": 70.6,
+   "end_s": 82.4,
+   "content": "Wipe counter with cloth.",
+   "flora_captions": [
+    "wipe counter with cloth in right hand",
+    "wipe counter with sponge in right hand"
+   ]
+  },
+  {
+   "start_s": 82.4,
+   "end_s": 95.8,
+   "content": "Rinse cloth under faucet.",
+   "flora_captions": [
+    "turn on faucet with left hand, rinse cloth under faucet with both hands, wipe sink with cloth in right hand",
+    "hold cloth with right hand, turn on faucet with left hand, rinse cloth under faucet with both hands",
+    "wipe sink with sponge in right hand",
+    "rinse cloth under faucet with right hand, turn off faucet with left hand",
+    "fold cloth with both hands, squeeze cloth with right hand",
+    "squeeze sponge with right hand, turn on faucet with left hand, turn off faucet with left hand",
+    "wring cloth with both hands, unfold cloth with both hands"
+   ]
+  },
+  {
+   "start_s": 95.8,
+   "end_s": 107.42,
+   "content": "Place cloth on oven handle.",
+   "flora_captions": [
+    "place cloth on counter with left hand",
+    "pick up cloth with right hand, fold cloth with both hands",
+    "place cloth on oven handle with both hands"
+   ]
+  }
+ ],
+ "fineart_rows": [
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 0.0,
+   "content": "Place plate on counter.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 5.2,
+   "content": "Pick up plate.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 16.05,
+   "content": "Reposition spoon in dishwasher.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 23.85,
+   "content": "Pick up glass.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 30.8,
+   "content": "Open dishwasher door.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 45.2,
+   "content": "Hold debris.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 59.4,
+   "content": "Pass cloth.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 70.6,
+   "content": "Wipe counter with cloth.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 82.4,
+   "content": "Rinse cloth under faucet.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 95.8,
+   "content": "Place cloth on oven handle.",
+   "camera": null,
+   "tool_calls": null
+  }
+ ]
+}
