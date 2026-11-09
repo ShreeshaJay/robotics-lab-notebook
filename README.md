@@ -9,7 +9,7 @@ Each experiment folder has a README with the goal, the exact steps, pinned versi
 |-|-|-|-|-|
 | 01 | Inspecting the FineART step-labeled robot dataset (LeRobot format) | Robot data | done (CPU, $0) | 40.5k episodes, 534k timestamped step labels (~9 s each); no success/outcome fields |
 | 02 | Inspect Robots: running an open robot-eval harness with frontier LLMs | Evals | done (CPU mock) | Haiku 5.5 agent 3/3 on toy reach task, ~$0.007 |
-| 03 | SimReady Central assets for household scenes | Simulation | done (L4, ~$0.46) | 23-asset room renders headless in Isaac Sim 6.1 at 7.2 GB VRAM; re-runs ~2.5 min with a warm shader cache; articulated drawers and some colliders need fixes |
+| 03 | SimReady Central assets for household scenes | Simulation | done (L4, ~$0.78 total) | 23-asset room renders headless in Isaac Sim 6.1 at 7–8 GB VRAM; drawers, vacuum and basin defects fixed (articulation check passes); re-runs ~2.5 min with a warm shader cache |
 | 04 | Flora: open models for labeling egocentric video | Data labeling | done (A100 80 GB, ~$3.30) | Captions track human narrations closely; outcome score separates success (5) from a negative control (1); dense reward noisy on human video |
 | 05 | G0.5 VLA vs SmolVLA in LeRobot | Robot learning | done (L4, ~$1.00 total) | LIBERO-10, 50 episodes each: G0.5 49/50 (98%), SmolVLA 26/50 (52%); SmolVLA ~2x faster per chunk at 0.9 GB VRAM vs 11 GB |
 | 06 | Driving a Colab GPU from a coding agent (colab-mcp) | Agentic tooling | done (Colab Pro+) | 7 notebook tools; A100 40 GB at 239 TFLOPS bf16; GPU must be picked by hand in the UI |

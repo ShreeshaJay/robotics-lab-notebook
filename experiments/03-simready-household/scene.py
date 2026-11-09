@@ -1,6 +1,8 @@
-"""Small "rental turnover" room built from SimReady assets, rendered headless in Isaac Sim.
+"""Small "household reset" room built from SimReady assets, rendered headless in Isaac Sim.
 
-STATUS: ran end to end on 2026-11-08 (container, one L4; see README Run results). Targets Isaac Sim 6.1.0 (pip `isaacsim` or the
+STATUS: ran end to end on 2026-11-08 (container, one L4; see README Run results).
+The three open physics defects (chest drawers, vacuum, soap) were fixed the same day; the fixes are
+the `fix=` entries in ASSETS and the FIX(...) comments below (README "Fixes (2026-11-08)"). --no-fixes reverts them. Targets Isaac Sim 6.1.0 (pip `isaacsim` or the
 nvcr.io/nvidia/isaac-sim:6.1.0 container) on one NVIDIA L4 (24 GB). API names were
 checked against the 6.1 docs; every version-sensitive call has a fallback, but expect
 small fixes on the first real run.
@@ -60,12 +62,17 @@ ASSETS = [
     # bedroom / living (x < 0)
     nv("bedding_a01", rev=NV_MAIN, cls="bed", xy=(-2.0, 1.6), yaw=0, static=True),
     nv("table_bedside_b01", cls="nightstand", xy=(-0.7, 2.1), yaw=0, static=True),
-    fc("chest_of_drawers", cls="dresser", xy=(-2.6, -0.4), yaw=90, static=True),
+    # fix= holds the 2026-11-08 defect fixes; they are applied unless --no-fixes (see README "Fixes")
+    fc("chest_of_drawers", cls="dresser", xy=(-2.6, -0.4), yaw=90, static=True, drawer_check=True,
+       fix=dict(articulated=True)),        # fixed-base articulation: carcass welded to world, drawers jointed
+
     nv("sofa_soft_b01", cls="sofa", xy=(-1.4, -1.8), yaw=0, static=True),
     nv("furniture_table_coffee_low_a01", cls="table", xy=(-1.4, -0.6), yaw=0, static=True),
     fc("dining_chair", cls="chair", xy=(0.4, -0.3), yaw=200, static=True),
     nv("cleaning_towel_a01", cls="towel", on="bedding_a01", xy=(0.3, 0.0), yaw=15),
-    nv("serviceTool_vacuum_cleaner_a01", cls="vacuum", xy=(-0.3, 1.0), yaw=30),
+    nv("serviceTool_vacuum_cleaner_a01", cls="vacuum", xy=(-0.3, 1.0), yaw=30,
+       fix=dict(self_collide=False)),      # its 13 jointed parts' convex hulls overlap each other
+
     # kitchen (back-right)
     nv("fixture_counter_a01", cls="counter", xy=(1.48, 2.1), yaw=90, static=True),  # 3.0 m long axis is +y in the asset
     nv("kitchenware_kettle_a01", cls="kettle", on="fixture_counter_a01", xy=(-0.5, 0.0), yaw=0),
@@ -81,13 +88,22 @@ ASSETS = [
     fc("pedal_trash_can", cls="trash_bin", xy=(-0.25, 2.1), yaw=0, static=True),
     # bathroom corner (front-right)
     nv("toilet_a01", cls="toilet", xy=(2.5, -1.2), yaw=-90, static=True),
-    nv("washBasin_a01", cls="sink", xy=(2.65, -0.1), yaw=-90, static=True, mount_top=0.85),
-    nv("cleaning_barSoap_a01", cls="soap", on="washBasin_a01", xy=(0.0, 0.0), yaw=0),
+    # basin: asset -x is its wall side, so yaw 180 puts the back on the +x wall; top 1.0 puts the rim at ~0.84 m.
+    # collider "none" = exact triangle mesh, which needs a static (non-body) collider.
+    nv("washBasin_a01", cls="sink", xy=(2.65, -0.1), yaw=-90, static=True, mount_top=0.85,
+       fix=dict(xy=(2.82, -0.1), yaw=180, mount_top=1.0, collider="none")),
+    # soap: drop over the bowl (bbox centre is offset by the faucet), below the faucet top, with CCD
+    nv("cleaning_barSoap_a01", cls="soap", on="washBasin_a01", xy=(0.0, 0.0), yaw=0,
+       fix=dict(xy=(-0.06, 0.0), drop=-0.14, ccd=True)),
 ]
 
 CAMERAS = [  # name, position, look_at
     ("cam_living", (2.6, -2.3, 1.7), (-1.2, 0.6, 0.4)),
     ("cam_kitchen", (0.2, 0.2, 1.6), (1.6, 2.2, 0.9)),
+    # close-ups for the 2026-11-08 fixes
+    ("cam_chest", (-1.0, -0.9, 1.35), (-2.6, -0.4, 0.5)),
+    ("cam_vacuum", (1.0, -0.1, 0.55), (-0.3, 1.0, 0.2)),
+    ("cam_basin", (2.0, -0.6, 1.45), (2.78, -0.1, 0.78)),
 ]
 
 
@@ -153,6 +169,10 @@ def parse() -> argparse.Namespace:
     ap.add_argument("--settle-steps", type=int, default=240, help="app updates with physics playing before frame 0")
     ap.add_argument("--steps-between", type=int, default=6)
     ap.add_argument("--rt-subframes", type=int, default=4)
+    ap.add_argument("--no-fixes", action="store_true", help="reproduce the pre-2026-11-08 behaviour (for before renders)")
+    ap.add_argument("--drawer-open", type=float, default=0.30, help="drawer drive target (m) for the articulation check")
+    ap.add_argument("--drawer-steps", type=int, default=90, help="app updates while the drawer opens")
+    ap.add_argument("--gif-every", type=int, default=6, help="capture cam_chest every N updates while opening (0 = off)")
     return ap.parse_args()
 
 
@@ -169,6 +189,9 @@ def main() -> int:
                  "OMNI_KIT_ACCEPT_EULA=YES (pip) or pass -e ACCEPT_EULA=Y (container) themselves. "
                  "This script never accepts it.")
 
+    if not args.no_fixes:                    # 2026-11-08 fixes: per-asset overrides (see ASSETS fix=...)
+        for a in ASSETS:
+            a.update(a.get("fix", {}))
     metrics: dict = {"args": {k: str(v) for k, v in vars(args).items()}, "gpu": {}, "t": {}, "assets": {}}
     t0 = time.time()
     metrics["gpu"]["before_app"] = gpu_mem()
@@ -181,7 +204,7 @@ def main() -> int:
     import omni.replicator.core as rep
     import omni.timeline
     import omni.usd
-    from pxr import Gf, Usd, UsdGeom, UsdLux, UsdPhysics
+    from pxr import Gf, Sdf, Usd, UsdGeom, UsdLux, UsdPhysics
     try:
         from pxr import PhysxSchema
     except ImportError:
@@ -208,6 +231,7 @@ def main() -> int:
         px = PhysxSchema.PhysxSceneAPI.Apply(scene.GetPrim())
         px.CreateEnableGPUDynamicsAttr(bool(args.gpu_dynamics))
         px.CreateBroadphaseTypeAttr("GPU" if args.gpu_dynamics else "MBP")
+        px.CreateEnableCCDAttr(not args.no_fixes)   # FIX(soap): CCD must be on at scene level for per-body CCD
 
     def box(path, size, center, rgb):
         c = UsdGeom.Cube.Define(stage, path)
@@ -284,24 +308,67 @@ def main() -> int:
             for p in inst:
                 p.SetInstanceable(False)
 
-    def fix_physics(root, static: bool) -> dict:
+    tc = Usd.TimeCode.Default()
+
+    def unreset_xforms(root) -> int:
+        # FIX(chest): ForgeCAD's physics layer gives each drawer ["!resetXformStack!", simulationWorld], i.e. a
+        # pose in the asset's own world frame. Referenced under a moved parent, the drawers stayed near the world
+        # origin while the carcass moved. Re-express that pose relative to the parent and drop the reset.
+        n, root_inv = 0, UsdGeom.Xformable(root).ComputeLocalToWorldTransform(tc).GetInverse()
+        for p in Usd.PrimRange(root):
+            if not p.IsA(UsdGeom.Xformable) or not UsdGeom.Xformable(p).GetResetXformStack():
+                continue
+            x = UsdGeom.Xformable(p)
+            pose_in_asset = x.GetLocalTransformation(tc)
+            parent_in_asset = UsdGeom.Xformable(p.GetParent()).ComputeLocalToWorldTransform(tc) * root_inv
+            x.ClearXformOpOrder()                        # also removes !resetXformStack!
+            x.AddTransformOp(opSuffix="unreset").Set(pose_in_asset * parent_in_asset.GetInverse())
+            n += 1
+        return n
+
+    def fix_physics(root, static: bool, cfg: dict) -> dict:
         info = {"colliders": 0, "rigid_bodies": 0}
+        collider = cfg.get("collider", args.collider)   # per-asset override (basin: exact triangle mesh)
         if args.collider != "asset-default":
             deinstance(root)
+        if not args.no_fixes:
+            info["unreset_prims"] = unreset_xforms(root)
+            for p in [q for q in Usd.PrimRange(root) if q.IsA(UsdPhysics.Scene)]:
+                p.SetActive(False)                      # asset ships its own PhysicsScene; use /World's only
+        bodies = []
         for p in Usd.PrimRange(root):
             if p.HasAPI(UsdPhysics.RigidBodyAPI):
                 info["rigid_bodies"] += 1
-                if static:
+                bodies.append(p)
+                if cfg.get("articulated"):
+                    # FIX(chest): no kinematic bodies in an articulation. The root's ArticulationRootAPI moves to a
+                    # fixed joint to world (added after placement), so the carcass is welded and drawers slide.
+                    if p.HasAPI(UsdPhysics.ArticulationRootAPI):
+                        p.RemoveAPI(UsdPhysics.ArticulationRootAPI)
+                        info["articulation_root_body"] = str(p.GetPath())
+                elif static and collider == "none":
+                    p.RemoveAPI(UsdPhysics.RigidBodyAPI)    # FIX(basin): triangle meshes need a static collider
+                    info["made_static_collider"] = True
+                elif static:
                     UsdPhysics.RigidBodyAPI(p).CreateKinematicEnabledAttr(True)
+                if cfg.get("ccd") and PhysxSchema:      # FIX(soap): small body dropped into a thin-walled bowl
+                    PhysxSchema.PhysxRigidBodyAPI.Apply(p).CreateEnableCCDAttr(True)
             if args.collider == "asset-default" or not p.HasAPI(UsdPhysics.CollisionAPI) or not p.IsA(UsdGeom.Mesh):
                 continue
-            UsdPhysics.MeshCollisionAPI.Apply(p).CreateApproximationAttr().Set(args.collider)
+            UsdPhysics.MeshCollisionAPI.Apply(p).CreateApproximationAttr().Set(collider)
             if PhysxSchema:
-                if args.collider != "sdf" and p.HasAPI(PhysxSchema.PhysxSDFMeshCollisionAPI):
+                if collider != "sdf" and p.HasAPI(PhysxSchema.PhysxSDFMeshCollisionAPI):
                     p.RemoveAPI(PhysxSchema.PhysxSDFMeshCollisionAPI)
-                if args.collider == "convexHull":
+                if collider == "convexHull":
                     PhysxSchema.PhysxConvexHullCollisionAPI.Apply(p).CreateHullVertexLimitAttr(args.hull_vertex_limit)
             info["colliders"] += 1
+        if cfg.get("self_collide") is False and len(bodies) > 1:
+            # FIX(vacuum): the parts' convex hulls overlap (tanks/covers inside the body hull, casters under it).
+            # Joints only filter directly jointed pairs, so the rest pushed apart and drove the wheels into the floor.
+            for p in bodies:
+                UsdPhysics.FilteredPairsAPI.Apply(p).CreateFilteredPairsRel().SetTargets(
+                    [q.GetPath() for q in bodies if q != p])
+            info["self_collision_filtered_bodies"] = len(bodies)
         if info["rigid_bodies"] == 0 and not static:  # asset shipped without a body: make it one
             UsdPhysics.RigidBodyAPI.Apply(root)
             info["rigid_bodies_added"] = 1
@@ -318,7 +385,7 @@ def main() -> int:
             rep.functional.modify.semantics(prim, {"class": cls}, mode="add")
 
     for name, rec in loaded.items():
-        rec_info = fix_physics(rec["inner"], bool(rec["cfg"].get("static")))
+        rec_info = fix_physics(rec["inner"], bool(rec["cfg"].get("static")), rec["cfg"])
         metrics["assets"][name].update(rec_info)
         add_class_label(stage.GetPrimAtPath(rec["outer"]), rec["cfg"]["cls"])
 
@@ -359,7 +426,23 @@ def main() -> int:
             continue
         slo, shi = supports[cfg["on"]]
         sx, sy = (slo[0] + shi[0]) / 2 + cfg["xy"][0], (slo[1] + shi[1]) / 2 + cfg["xy"][1]
-        move_to(rec, sx, sy, z_bottom=shi[2] + 0.03)   # small drop, physics settles it
+        move_to(rec, sx, sy, z_bottom=shi[2] + cfg.get("drop", 0.03))   # small drop, physics settles it
+
+    for name, rec in loaded.items():          # FIX(chest): weld the articulation's root body to the world
+        if rec["cfg"].get("drawer_check"):
+            rec["drawer_joints"] = sorted((p for p in Usd.PrimRange(rec["inner"]) if p.IsA(UsdPhysics.PrismaticJoint)),
+                                          key=lambda p: p.GetName())
+        root_body = metrics["assets"][name].get("articulation_root_body")
+        if not root_body:
+            continue
+        m = UsdGeom.Xformable(stage.GetPrimAtPath(root_body)).ComputeLocalToWorldTransform(tc)
+        j = UsdPhysics.FixedJoint.Define(stage, rec["outer"] + "/root_joint")
+        j.CreateBody1Rel().SetTargets([Sdf.Path(root_body)])
+        j.CreateLocalPos0Attr(Gf.Vec3f(m.ExtractTranslation()))
+        j.CreateLocalRot0Attr(Gf.Quatf(m.RemoveScaleShear().ExtractRotationQuat()))
+        j.CreateLocalPos1Attr(Gf.Vec3f(0, 0, 0))
+        j.CreateLocalRot1Attr(Gf.Quatf(1, 0, 0, 0))
+        UsdPhysics.ArticulationRootAPI.Apply(j.GetPrim())   # root API on the world joint = fixed-base articulation
     metrics["t"]["setup_s"] = round(time.time() - t0, 1)
 
     # ---------------------------------------------------------------- cameras + annotators
@@ -442,15 +525,143 @@ def main() -> int:
             save(cname, i, ann)
         frame_times.append(round(time.time() - tf, 3))
         timeline.play()
-    timeline.stop()
     metrics["t"]["frame_s"] = frame_times                      # frame 0 includes shader warm-up
-    metrics["t"]["total_s"] = round(time.time() - t0, 1)
-    metrics["gpu"]["after_render"] = gpu_mem()
+    timeline.pause()   # read poses before stop(): stop() resets bodies to their start poses
 
     # where did dynamic items end up? (fell through / flew away = collider problem)
     for name, rec in loaded.items():
         lo, hi = bounds(rec["outer"])
         metrics["assets"][name]["final_min_z"] = round(lo[2], 3)
+
+    # ---------------------------------------------------------------- support check (2026-11-08)
+    # Expected support height = highest RENDER-mesh surface (or the floor at z=0) straight below the item's
+    # centre, from the other assets' visual triangles. Independent of the collider approximation.
+    tri_cache: dict = {}
+
+    def world_tris(prim):
+        if prim.GetPath() not in tri_cache:
+            m = UsdGeom.Mesh(prim)
+            pts, cnt, idx = (m.GetPointsAttr().Get(), m.GetFaceVertexCountsAttr().Get(),
+                             m.GetFaceVertexIndicesAttr().Get())
+            if not pts or not cnt:
+                tri_cache[prim.GetPath()] = None
+                return None
+            M = np.array(UsdGeom.Xformable(prim).ComputeLocalToWorldTransform(tc))
+            pts = np.asarray(pts, dtype=np.float64) @ M[:3, :3] + M[3, :3]
+            cnt, idx = np.asarray(cnt), np.asarray(idx)
+            start = np.concatenate([[0], np.cumsum(cnt)[:-1]])
+            tris = [np.stack([idx[start[cnt >= k + 2]], idx[start[cnt >= k + 2] + k], idx[start[cnt >= k + 2] + k + 1]], -1)
+                    for k in range(1, int(cnt.max()) - 1)]
+            tri_cache[prim.GetPath()] = pts[np.concatenate(tris)] if tris else None
+        return tri_cache[prim.GetPath()]
+
+    def surface_below(x, y, z_from, skip_outer):
+        best = (0.0, "floor")
+        for oname, orec in loaded.items():
+            if orec["outer"] == skip_outer:
+                continue
+            olo, ohi = bounds(orec["outer"])
+            if not (olo[0] <= x <= ohi[0] and olo[1] <= y <= ohi[1]):
+                continue
+            for p in Usd.PrimRange(stage.GetPrimAtPath(orec["outer"]), Usd.TraverseInstanceProxies()):
+                if not p.IsA(UsdGeom.Mesh) or UsdGeom.Imageable(p).ComputePurpose() not in ("default", "render"):
+                    continue
+                T = world_tris(p)
+                if T is None:
+                    continue
+                a, b, c = T[:, 0], T[:, 1], T[:, 2]
+                d = (b[:, 1] - c[:, 1]) * (a[:, 0] - c[:, 0]) + (c[:, 0] - b[:, 0]) * (a[:, 1] - c[:, 1])
+                ok = np.abs(d) > 1e-12
+                with np.errstate(divide="ignore", invalid="ignore"):
+                    l1 = ((b[:, 1] - c[:, 1]) * (x - c[:, 0]) + (c[:, 0] - b[:, 0]) * (y - c[:, 1])) / d
+                    l2 = ((c[:, 1] - a[:, 1]) * (x - c[:, 0]) + (a[:, 0] - c[:, 0]) * (y - c[:, 1])) / d
+                    l3 = 1 - l1 - l2                 # degenerate (vertical) triangles give NaN, masked by `ok`
+                    inside = ok & (l1 >= 0) & (l2 >= 0) & (l3 >= 0)
+                    z = l1 * a[:, 2] + l2 * b[:, 2] + l3 * c[:, 2]
+                z = z[inside & (z <= z_from)]
+                if z.size and z.max() > best[0]:
+                    best = (float(z.max()), oname)
+        return best
+
+    support = {}
+    for name, rec in loaded.items():
+        cfg = rec["cfg"]
+        if cfg.get("static"):
+            continue
+        lo, hi = bounds(rec["outer"])
+        cx, cy, cz = (lo[0] + hi[0]) / 2, (lo[1] + hi[1]) / 2, (lo[2] + hi[2]) / 2
+        sz, sname = surface_below(cx, cy, cz, rec["outer"])
+        gap = lo[2] - sz
+        support[name] = {"final_min_z": round(lo[2], 3), "support_z": round(sz, 3), "support": sname,
+                         "expected_support": cfg.get("on", "floor"), "gap_m": round(gap, 3),
+                         "resting_on_expected": bool(abs(gap) < 0.015 and sname == cfg.get("on", "floor")),
+                         "centre_xy": [round(cx, 3), round(cy, 3)]}
+    metrics["support"] = support
+
+    # ---------------------------------------------------------------- articulation check (2026-11-08)
+    def l2w(path):
+        return UsdGeom.Xformable(stage.GetPrimAtPath(path)).ComputeLocalToWorldTransform(tc)
+
+    for name, rec in loaded.items():
+        joints = rec.get("drawer_joints")
+        if not joints:
+            continue
+
+        def joint_state(jp):
+            j = UsdPhysics.PrismaticJoint(jp)
+            b0, b1 = j.GetBody0Rel().GetTargets()[0], j.GetBody1Rel().GetTargets()[0]
+            M0 = l2w(b0)
+            axis_local = Gf.Rotation(Gf.Quatd(j.GetLocalRot0Attr().Get())).TransformDir(
+                Gf.Vec3d(*{"X": (1, 0, 0), "Y": (0, 1, 0), "Z": (0, 0, 1)}[j.GetAxisAttr().Get()]))
+            anchor0 = Gf.Vec3d(j.GetLocalPos0Attr().Get())
+            p1_in_b0 = M0.GetInverse().Transform(l2w(b1).ExtractTranslation())   # drawer origin in carcass frame
+            q = (p1_in_b0 - anchor0) * axis_local                                # signed travel along the axis
+            off = (p1_in_b0 - anchor0) - axis_local * q                          # error perpendicular to it
+            return {"travel_m": round(q, 4), "off_axis_mm": round(off.GetLength() * 1000, 2),
+                    "axis_world": [round(v, 3) for v in M0.TransformDir(axis_local).GetNormalized()],
+                    "drawer_world": [round(v, 3) for v in l2w(b1).ExtractTranslation()],
+                    "carcass_world": [round(v, 3) for v in M0.ExtractTranslation()]}
+
+        check = {"before": {jp.GetName(): joint_state(jp) for jp in joints}}
+        metrics.setdefault("drawer_check", {})[name] = check
+        if args.no_fixes:                     # before-run: record the detached state only
+            break
+        target = joints[0]
+        drv = UsdPhysics.DriveAPI(target, "linear")
+        drv.GetStiffnessAttr().Set(400.0)      # N/m; with 100 N s/m that is ~critically damped for the 6 kg drawer
+        drv.GetDampingAttr().Set(100.0)
+        drv.GetTargetPositionAttr().Set(float(args.drawer_open))
+        check.update(driven_joint=target.GetName(), target_m=args.drawer_open, steps=args.drawer_steps)
+        timeline.play()
+        gif = []
+        chest_rig = [r for r in rigs if r[0] == "cam_chest"]
+        for k in range(args.drawer_steps):
+            app.update()
+            if args.gif_every and chest_rig and k % args.gif_every == 0:
+                timeline.pause()
+                capture()
+                gif.append(np.asarray(chest_rig[0][2]["rgb"].get_data())[..., :3].copy())
+                timeline.play()
+        timeline.pause()
+        check["after"] = {jp.GetName(): joint_state(jp) for jp in joints}
+        a = check["after"][target.GetName()]
+        others = [v["travel_m"] for k2, v in check["after"].items() if k2 != target.GetName()]
+        carcass_moved = (Gf.Vec3d(*check["after"][target.GetName()]["carcass_world"])
+                         - Gf.Vec3d(*check["before"][target.GetName()]["carcass_world"])).GetLength()
+        check["pass"] = bool(abs(a["travel_m"] - args.drawer_open) < 0.01 and a["off_axis_mm"] < 5
+                             and all(abs(v) < 0.005 for v in others) and carcass_moved < 0.005)
+        check["carcass_moved_m"] = round(carcass_moved, 4)
+        capture()
+        for cname, _, ann in rigs:
+            save(f"open_{cname}", 0, ann)
+        if gif and Image is not None:
+            frames = [Image.fromarray(f.astype(np.uint8)).resize((480, 270)) for f in gif]
+            frames[0].save(args.out / "drawer_open.gif", save_all=True, append_images=frames[1:], duration=100, loop=0)
+        break
+
+    timeline.stop()
+    metrics["t"]["total_s"] = round(time.time() - t0, 1)
+    metrics["gpu"]["after_render"] = gpu_mem()
     (args.out / "metrics.json").write_text(json.dumps(metrics, indent=1, default=str))
     print(json.dumps({k: metrics[k] for k in ("t", "gpu")}, indent=1))
     app.close()

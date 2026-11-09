@@ -1,4 +1,4 @@
-﻿"""Survey SimReady Central's catalog for short-term-rental household coverage.
+﻿"""Survey SimReady Central's catalog for household coverage.
 
 Metadata only. Nothing here downloads USD geometry or textures.
 
@@ -34,7 +34,7 @@ PALATIAL_ID = "PalatialSim/palatial-nv-asset-library"
 PALATIAL_REV = "7455e87ba9bdf264d3917d88a6bdc57c7e2028b4"     # dataset commit used for these notes
 INSTALL_URL = "https://nvidia-simready-central.hf.space/install_categories.json"  # live; not pinnable
 
-# Short-term-rental turnover checklist -> name tokens that count as a hit.
+# household reset checklist -> name tokens that count as a hit.
 # Tokens are matched against names split on _ - space and camelCase (so "toiletPaperHolder" ->
 # toilet, paper, holder). "all" means every token in the tuple must appear.
 CHECKLIST: dict[str, dict] = {
@@ -181,8 +181,8 @@ def main() -> int:
     for k, n in collections.Counter(r["class_label"] for r in pal_in).most_common(15):
         print(f"| {k} | {n} |")
 
-    # turnover checklist
-    print("\n## rental-turnover checklist (home-relevant hits; industrial categories excluded)")
+    # reset checklist
+    print("\n## household-reset checklist (home-relevant hits; industrial categories excluded)")
     out = []
     for item, rule in CHECKLIST.items():
         hits = [r for r in rows

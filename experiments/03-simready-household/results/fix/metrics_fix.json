@@ -1,0 +1,538 @@
+{
+ "note": "final_min_z = lowest point of the item's world bounds after settling; support_z = highest render-mesh surface (or floor z=0) below the item's centre; gap = final_min_z - support_z; resting = |gap| < 0.015 m on the expected support",
+ "runs": {
+  "before": {
+   "flags": "--no-fixes --frames 2",
+   "support": {
+    "cleaning_towel_a01": {
+     "final_min_z": 0.256,
+     "support_z": 0.24,
+     "gap_m": 0.016,
+     "support": "bedding_a01",
+     "expected_support": "bedding_a01",
+     "resting_on_expected": false
+    },
+    "serviceTool_vacuum_cleaner_a01": {
+     "final_min_z": -0.213,
+     "support_z": 0.0,
+     "gap_m": -0.213,
+     "support": "floor",
+     "expected_support": "floor",
+     "resting_on_expected": false
+    },
+    "kitchenware_kettle_a01": {
+     "final_min_z": 0.923,
+     "support_z": 0.929,
+     "gap_m": -0.006,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": true
+    },
+    "kitchenware_pan_a01": {
+     "final_min_z": 0.924,
+     "support_z": 0.929,
+     "gap_m": -0.005,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": true
+    },
+    "kitchenware_mug_a01": {
+     "final_min_z": 0.927,
+     "support_z": 0.51,
+     "gap_m": 0.417,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": false
+    },
+    "dishware_glass_tumbler_a01": {
+     "final_min_z": 0.928,
+     "support_z": 0.51,
+     "gap_m": 0.418,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": false
+    },
+    "dishware_plastic_bigPlate_a01": {
+     "final_min_z": 0.928,
+     "support_z": 0.51,
+     "gap_m": 0.418,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": false
+    },
+    "kitchenware_fork_a01": {
+     "final_min_z": 0.923,
+     "support_z": 0.51,
+     "gap_m": 0.413,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": false
+    },
+    "kitchenware_knife_a01": {
+     "final_min_z": 0.911,
+     "support_z": 0.51,
+     "gap_m": 0.401,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": false
+    },
+    "cleaning_sponge_b01": {
+     "final_min_z": 0.926,
+     "support_z": 0.929,
+     "gap_m": -0.003,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": true
+    },
+    "cleaning_windowSpray_a01": {
+     "final_min_z": 0.926,
+     "support_z": 0.929,
+     "gap_m": -0.003,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": true
+    },
+    "consumable_paperTowel_roll_a01": {
+     "final_min_z": 0.928,
+     "support_z": 0.929,
+     "gap_m": -0.001,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": true
+    },
+    "cleaning_barSoap_a01": {
+     "final_min_z": -0.003,
+     "support_z": 0.0,
+     "gap_m": -0.003,
+     "support": "floor",
+     "expected_support": "washBasin_a01",
+     "resting_on_expected": false
+    }
+   },
+   "drawer_check": {
+    "chest_of_drawers": {
+     "before": {
+      "drawer_1_1": {
+       "travel_m": 2.378,
+       "off_axis_mm": 178.01,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        0.0,
+        -0.222,
+        0.749
+       ],
+       "carcass_world": [
+        -2.6,
+        -0.4,
+        0.002
+       ]
+      },
+      "drawer_2_1": {
+       "travel_m": 2.378,
+       "off_axis_mm": 178.01,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        0.0,
+        -0.222,
+        0.526
+       ],
+       "carcass_world": [
+        -2.6,
+        -0.4,
+        0.002
+       ]
+      },
+      "drawer_3_1": {
+       "travel_m": 2.378,
+       "off_axis_mm": 178.01,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        0.0,
+        -0.222,
+        0.303
+       ],
+       "carcass_world": [
+        -2.6,
+        -0.4,
+        0.002
+       ]
+      },
+      "drawer_4_1": {
+       "travel_m": 2.378,
+       "off_axis_mm": 178.01,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        0.0,
+        -0.222,
+        0.08
+       ],
+       "carcass_world": [
+        -2.6,
+        -0.4,
+        0.002
+       ]
+      }
+     }
+    }
+   },
+   "t": {
+    "app_start_s": 56.8,
+    "room_s": 6.79,
+    "asset_load_s": 42.9,
+    "setup_s": 108.3,
+    "settle_s": 359.6,
+    "frame_s": [
+     4.403,
+     3.227
+    ],
+    "total_s": 480.2
+   },
+   "gpu": {
+    "before_app": {
+     "used_mib": 0,
+     "total_mib": 23034,
+     "util_pct": 0
+    },
+    "after_load": {
+     "used_mib": 484,
+     "total_mib": 23034,
+     "util_pct": 0
+    },
+    "after_settle": {
+     "used_mib": 8013,
+     "total_mib": 23034,
+     "util_pct": 56
+    },
+    "after_render": {
+     "used_mib": 8091,
+     "total_mib": 23034,
+     "util_pct": 0
+    }
+   }
+  },
+  "after": {
+   "flags": "--frames 2",
+   "support": {
+    "cleaning_towel_a01": {
+     "final_min_z": 0.256,
+     "support_z": 0.24,
+     "gap_m": 0.016,
+     "support": "bedding_a01",
+     "expected_support": "bedding_a01",
+     "resting_on_expected": false
+    },
+    "serviceTool_vacuum_cleaner_a01": {
+     "final_min_z": -0.005,
+     "support_z": 0.0,
+     "gap_m": -0.005,
+     "support": "floor",
+     "expected_support": "floor",
+     "resting_on_expected": true
+    },
+    "kitchenware_kettle_a01": {
+     "final_min_z": 0.923,
+     "support_z": 0.929,
+     "gap_m": -0.006,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": true
+    },
+    "kitchenware_pan_a01": {
+     "final_min_z": 0.924,
+     "support_z": 0.929,
+     "gap_m": -0.005,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": true
+    },
+    "kitchenware_mug_a01": {
+     "final_min_z": 0.927,
+     "support_z": 0.51,
+     "gap_m": 0.417,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": false
+    },
+    "dishware_glass_tumbler_a01": {
+     "final_min_z": 0.928,
+     "support_z": 0.51,
+     "gap_m": 0.418,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": false
+    },
+    "dishware_plastic_bigPlate_a01": {
+     "final_min_z": 0.928,
+     "support_z": 0.51,
+     "gap_m": 0.418,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": false
+    },
+    "kitchenware_fork_a01": {
+     "final_min_z": 0.923,
+     "support_z": 0.51,
+     "gap_m": 0.413,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": false
+    },
+    "kitchenware_knife_a01": {
+     "final_min_z": 0.912,
+     "support_z": 0.51,
+     "gap_m": 0.402,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": false
+    },
+    "cleaning_sponge_b01": {
+     "final_min_z": 0.926,
+     "support_z": 0.929,
+     "gap_m": -0.003,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": true
+    },
+    "cleaning_windowSpray_a01": {
+     "final_min_z": 0.926,
+     "support_z": 0.929,
+     "gap_m": -0.003,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": true
+    },
+    "consumable_paperTowel_roll_a01": {
+     "final_min_z": 0.928,
+     "support_z": 0.929,
+     "gap_m": -0.001,
+     "support": "fixture_counter_a01",
+     "expected_support": "fixture_counter_a01",
+     "resting_on_expected": true
+    },
+    "cleaning_barSoap_a01": {
+     "final_min_z": 0.77,
+     "support_z": 0.773,
+     "gap_m": -0.003,
+     "support": "washBasin_a01",
+     "expected_support": "washBasin_a01",
+     "resting_on_expected": true
+    }
+   },
+   "drawer_check": {
+    "chest_of_drawers": {
+     "before": {
+      "drawer_1_1": {
+       "travel_m": 0.0,
+       "off_axis_mm": 0.0,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        -2.392,
+        -0.4,
+        0.751
+       ],
+       "carcass_world": [
+        -2.614,
+        -0.4,
+        0.002
+       ]
+      },
+      "drawer_2_1": {
+       "travel_m": 0.0,
+       "off_axis_mm": 0.0,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        -2.392,
+        -0.4,
+        0.528
+       ],
+       "carcass_world": [
+        -2.614,
+        -0.4,
+        0.002
+       ]
+      },
+      "drawer_3_1": {
+       "travel_m": 0.0,
+       "off_axis_mm": 0.0,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        -2.392,
+        -0.4,
+        0.305
+       ],
+       "carcass_world": [
+        -2.614,
+        -0.4,
+        0.002
+       ]
+      },
+      "drawer_4_1": {
+       "travel_m": 0.0,
+       "off_axis_mm": 0.0,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        -2.392,
+        -0.4,
+        0.082
+       ],
+       "carcass_world": [
+        -2.614,
+        -0.4,
+        0.002
+       ]
+      }
+     },
+     "driven_joint": "drawer_1_1",
+     "target_m": 0.3,
+     "steps": 90,
+     "after": {
+      "drawer_1_1": {
+       "travel_m": 0.2997,
+       "off_axis_mm": 0.0,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        -2.092,
+        -0.4,
+        0.751
+       ],
+       "carcass_world": [
+        -2.614,
+        -0.4,
+        0.002
+       ]
+      },
+      "drawer_2_1": {
+       "travel_m": 0.0,
+       "off_axis_mm": 0.0,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        -2.392,
+        -0.4,
+        0.528
+       ],
+       "carcass_world": [
+        -2.614,
+        -0.4,
+        0.002
+       ]
+      },
+      "drawer_3_1": {
+       "travel_m": 0.0,
+       "off_axis_mm": 0.0,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        -2.392,
+        -0.4,
+        0.305
+       ],
+       "carcass_world": [
+        -2.614,
+        -0.4,
+        0.002
+       ]
+      },
+      "drawer_4_1": {
+       "travel_m": 0.0,
+       "off_axis_mm": 0.0,
+       "axis_world": [
+        1.0,
+        -0.0,
+        0.0
+       ],
+       "drawer_world": [
+        -2.392,
+        -0.4,
+        0.082
+       ],
+       "carcass_world": [
+        -2.614,
+        -0.4,
+        0.002
+       ]
+      }
+     },
+     "pass": true,
+     "carcass_moved_m": 0.0
+    }
+   },
+   "t": {
+    "app_start_s": 39.2,
+    "room_s": 0.47,
+    "asset_load_s": 5.5,
+    "setup_s": 46.8,
+    "settle_s": 35.8,
+    "frame_s": [
+     4.615,
+     3.388
+    ],
+    "total_s": 121.9
+   },
+   "gpu": {
+    "before_app": {
+     "used_mib": 0,
+     "total_mib": 23034,
+     "util_pct": 0
+    },
+    "after_load": {
+     "used_mib": 2053,
+     "total_mib": 23034,
+     "util_pct": 1
+    },
+    "after_settle": {
+     "used_mib": 7940,
+     "total_mib": 23034,
+     "util_pct": 77
+    },
+    "after_render": {
+     "used_mib": 8018,
+     "total_mib": 23034,
+     "util_pct": 0
+    }
+   }
+  }
+ }
+}

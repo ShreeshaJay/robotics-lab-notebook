@@ -1,20 +1,21 @@
 # 03 · SimReady Central assets for household scenes
 
-**Track:** Simulation · **Status:** metadata survey done (CPU, $0); Isaac Sim 6.1 scene ran on one Spot L4 on 2026-11-08 (0.84 VM-hours, about $0.46), VM and disk deleted · **Date:** 2026-11-07, run 2026-11-08
+**Track:** Simulation · **Status:** metadata survey done (CPU, $0); Isaac Sim 6.1 scene ran on one Spot L4 on 2026-11-08 (0.84 VM-hours, about $0.46), VM and disk deleted. The three open physics defects were fixed in a second run the same day (0.58 VM-hours, about $0.32; see Fixes) · **Date:** 2026-11-07, runs 2026-11-08
 
 ## Goal
-Find out whether NVIDIA's SimReady Central library (free OpenUSD assets that ship with collision, mass, friction and semantic labels) covers what a small home needs: bedroom, bathroom and kitchen, plus the things a cleaner touches during a short-term-rental changeover. Then plan the cheapest sensible first run of a small Isaac Sim scene on one cloud NVIDIA L4.
+Find out whether NVIDIA's SimReady Central library (free OpenUSD assets that ship with collision, mass, friction and semantic labels) covers what a small home needs: bedroom, bathroom and kitchen, plus the things a cleaner touches during a household reset (cleaning and restocking). Then plan the cheapest sensible first run of a small Isaac Sim scene on one cloud NVIDIA L4.
 
 I downloaded metadata only. No USD geometry or textures were pulled in bulk. I inspected three sample assets' small text layers.
 
 ## Files
 | File | What it is |
 |-|-|
-| `analyze_catalog.py` | Fetches the catalog metadata and prints counts by dataset and category plus the turnover checklist. Writes `coverage.csv` |
+| `analyze_catalog.py` | Fetches the catalog metadata and prints counts by dataset and category plus the reset checklist. Writes `coverage.csv` |
 | `coverage.csv` | Checklist output: hits per item, by source, with example names |
 | `inspect_physics.py` | Prints the colliders, mass, friction and semantic labels of one asset, with `usd-core` and no Isaac Sim |
 | `scene.py` | Isaac Sim 6.1 headless scene: 23 assets, convex-hull colliders, RGB + depth + instance segmentation. Ran on 2026-11-08 (see Run results) |
 | `requirements.txt` | Pinned local venv (Python 3.12.13, `huggingface-hub==0.36.0`, `usd-core==25.8`) |
+| `results/fix/` | Before/after renders, drawer GIF, `metrics_fix.json` and logs of the 2026-11-08 defect fixes (see Fixes) |
 | `results/` | Small outputs of the 2026-11-08 run: `metrics_*.json`, `gpu_*.csv` (nvidia-smi every 2 s), Isaac logs, RGB / depth / instance PNGs, and the VM scripts (`vm_setup_all.sh`, `vm_run.sh`) |
 
 Reproduce: `uv venv --python 3.12`, `uv pip install -r requirements.txt`, then `python -I analyze_catalog.py --data-dir <somewhere-outside-repo> --fetch`.
@@ -44,7 +45,7 @@ Reproduce: `uv venv --python 3.12`, `uv pip install -r requirements.txt`, then `
 - Palatial's 957 are mostly kitchen: kitchenware 189, containers 143, food 76, bowls 42, home appliances 42 (many articulated).
 - **Packages are heavy.** Median 60 MB, p90 509 MB. All 2,597 packages that had been indexed by 2026-10-16 total 466 GB. Furniture runs 280–800 MB each because of high-resolution textures plus duplicated `source_assets/`.
 
-### 2. Coverage for a rental turnover
+### 2. Coverage for a household reset
 Counts come from name and class-label token matching (`analyze_catalog.py`), excluding industrial and robot categories. Treat them as ±a few. I checked the examples by eye.
 
 | Area | Item | Hits | What's actually there |
@@ -202,11 +203,12 @@ Prices are from Google's [accelerator-optimized pricing page](https://cloud.goog
 | 6 | The Kit shader cache was not persisted, so the "warm" re-run still spent 320 s compiling | The cache lives in `/isaac-sim/kit/cache` (4.4 GB after one run). That path is now mounted in `vm_run.sh` |
 | 7 | (runner error) I replaced `run.sh` while a run was reading it. Bash reads scripts lazily, so that run's log was clobbered. Its `metrics.json` and images were intact | Do not edit a running script. The cold-run log (`run_convexhull_run1.log`) covers the same steps |
 
-**Known issues left open** (not fixed, to keep changes minimal):
-- **Articulated assets as kinematic.** The bedside table, counter, toilet and trash can have joints between their parts. Making every body kinematic triggers `CreateJoint - cannot create a joint between static bodies` (harmless). The ForgeCAD **chest of drawers' drawers render ~1.5 m away from its carcass**: the drawer bodies don't follow the parent transform. This needs a proper articulation path (fixed root plus jointed drawers), not a blanket kinematic override.
-- **Vacuum** (13 dynamic bodies) sinks 0.2 m into the floor with convex hulls, but not with SDF.
-- **Bar soap** falls through the wall-mounted wash basin to the floor in both collider modes. The basin's collider or its mount needs a look.
-- The sofa (`sofa_soft_b01`) is armchair-sized (0.71 m wide).
+**Known issues after the first run** (status updated by the fixes below):
+- **Articulated assets as kinematic.** The bedside table, counter, toilet and trash can have joints between their parts. Making every body kinematic triggers `CreateJoint - cannot create a joint between static bodies` (harmless). **Still open** for those four.
+- ForgeCAD **chest of drawers: drawers detached from the carcass.** **Resolved**, see Fixes 1. (Measured: 2.4 m away, not ~1.5 m.)
+- **Vacuum** (13 dynamic bodies) sinks 0.2 m into the floor with convex hulls, but not with SDF. **Resolved**, see Fixes 2.
+- **Bar soap** falls through the wall-mounted wash basin to the floor in both collider modes. **Resolved** in the default convex-hull mode, see Fixes 3.
+- The sofa (`sofa_soft_b01`) is armchair-sized (0.71 m wide). **Still open.**
 
 ### Spend
 | Item | Amount |
@@ -217,9 +219,51 @@ Prices are from Google's [accelerator-optimized pricing page](https://cloud.goog
 
 Both VMs and their disks are deleted. `gcloud compute instances list` and `gcloud compute disks list` for the project both returned 0 items, and no static addresses remain.
 
+## Fixes (2026-11-08)
+
+Second session, same day: one `g2-standard-8` Spot L4, same image, driver swap to 595.91.07, Docker and container as in Setup. Two runs of `scene.py` (`results/fix/vm_do_runs.sh`): **before** = `--no-fixes --frames 2` (reproduces the old behaviour with the new close-up cameras), **after** = `--frames 2`. Both with convex-hull colliders. All changes in `scene.py` are the `fix=` entries in `ASSETS` and blocks marked `FIX(...)`; `--no-fixes` turns them off.
+
+Evidence check used for every dynamic item (`metrics_fix.json`, `support`): `final_min_z` is the lowest point of its world bounds after settling. `support_z` is the highest **render-mesh** surface (or the floor at z = 0) straight below its centre, taken from the other assets' visual triangles, so it does not depend on the collider approximation. "Resting" means |gap| < 1.5 cm on the intended support.
+
+### 1. Chest of drawers: drawers detached
+- **Cause.** ForgeCAD's `forgecad/physics.usda` overrides each drawer prim with `xformOpOrder = ["!resetXformStack!", "xformOp:transform:simulationWorld"]`. That is a pose in the asset's own world frame, and the reset makes it ignore every parent transform. Referenced under `/World/Assets/chest_of_drawers` and moved to (−2.6, −0.4) with yaw 90°, the carcass moved but the four drawers stayed at world (0, −0.222, z). That is 2.4 m from the carcass, not ~1.5 m as first estimated. The blanket kinematic override then made the drawers kinematic too (`cannot create a joint between static bodies`), and PhysX ignored the articulation root because it sat on a kinematic body. The joint local poses themselves are correct: `localPos0` (0, −0.222, z) in the carcass frame matches the drawers' authored rest pose, axis X rotated −90° about z = the chest's front.
+- **Fix.** (a) For any prim inside a referenced asset that resets the transform stack, convert its pose into its parent's frame and drop the reset (4 prims, only the drawers). (b) `articulated=True`: the carcass and drawers stay dynamic; `PhysicsArticulationRootAPI` moves from the carcass to a new fixed joint between the world and the carcass, added after placement, which makes a fixed-base articulation. (c) The asset's own `PhysicsScene` is deactivated so only `/World/PhysicsScene` exists.
+- **Evidence.** Closed state: every drawer's origin sits exactly on its joint anchor (travel 0.000 m, off-axis 0.0 mm). Before: travel 2.378 m and off-axis 178 mm for all four. **Articulation check:** the top drawer's linear drive was set to stiffness 400 N/m, damping 100 N·s/m, target 0.30 m, then 90 updates (1.5 s). Travel **0.2997 m** along world +x (the chest's front), off-axis 0.0 mm. The other three drawers moved 0.000 m and the carcass 0.000 m: **pass**. No articulation warnings in `run_after.log`. Renders: `before_cam_chest.png` (empty carcass), `after_cam_chest_closed.png`, `after_cam_chest_drawer_open.png`, `drawer_open.gif` (15 frames, 0.9 MB).
+
+### 2. Vacuum sinks into the floor
+- **Cause.** The vacuum is 13 rigid bodies held by 12 joints (fixed for tanks and covers, revolute for wheels and supports, prismatic for buttons). As convex hulls, the parts overlap: the tanks and covers sit inside the body's hull, and the caster wheels (jointed to their supports, not to the body) sit under it. PhysX only filters collisions between directly jointed pairs, so the overlapping pairs pushed apart against the joints. The assembly tipped over, slid 0.7 m and ended 0.21 m below the floor. SDF keeps the shapes concave, so they hardly overlap, which is why SDF looked fine.
+- **Fix.** `self_collide=False`: `UsdPhysics.FilteredPairsAPI` on each of the 13 bodies, listing the other 12. The vacuum still collides with the floor and everything else.
+- **Evidence.** `final_min_z` −0.213 → **−0.005 m** against floor 0.000. The vacuum stays upright where it was placed: centre (−0.29, 1.00) vs target (−0.30, 1.00). Renders: `before_cam_vacuum.png` (on its side), `after_cam_vacuum.png`.
+
+### 3. Soap falls through the basin
+- **Cause.** Two problems together, neither of them CCD. (a) The basin was turned the wrong way: its wall side is the asset's −x, so yaw −90° put the back sideways with the faucet toward +y. (b) With a convex hull, the 0.30 m-high rim and the 0.46 m faucet tip become one solid that slopes about 34°. The soap was dropped at the bounding-box centre, which is on that slope (μ 0.35), slid off the front and fell to the floor. With SDF, the cooker warned that the basin mesh is not watertight and repair failed, so the bowl collider is not reliable. Neither mode modelled the bowl.
+- **Fix.** The basin is yaw 180° with its back on the +x wall and top at 1.0 m (rim at 0.84 m). Its collider is the exact triangle mesh (`collider="none"`), so its `RigidBodyAPI` is removed and it becomes a static collider; PhysX accepts triangle meshes only on static colliders. The soap drops over the bowl, 6 cm in front of the bounding-box centre and 2 cm above the rim. CCD is on for the soap and the scene as a cheap guard for a small body in a thin-walled bowl.
+- **Evidence.** Soap `final_min_z` −0.003 m (floor) → **0.770 m**, on the basin's bowl surface at **0.773 m**. Renders: `before_cam_basin.png` (empty basin, turned sideways), `after_cam_basin.png`.
+- **Not covered:** `--collider sdf` now also uses the triangle mesh for the basin (per-asset override), but I did not re-run the SDF mode.
+
+### Other numbers from the after run
+- The other dynamic items were unchanged. Kettle, pan, sponge, spray bottle and paper towel rest on the counter top (gaps −1 to −6 mm). Mug, tumbler, plate, fork and knife still sit on the convex hull that fills the counter's sink, 0.40–0.42 m above its visual bottom (a known convex-hull trade-off, see Run results). The towel is 1.6 cm above the bed's visual surface, just outside the 1.5 cm tolerance.
+- Whole script 122 s, container wall 134 s (warm cache), peak GPU memory 8.1 GB (three extra 720p close-up cameras). The cold before-run took 610 s, about 110 s of which was Replicator's orchestrator timing out at shutdown.
+- `before_cam_living.png` / `after_cam_living.png` show the room overview with the same fixes.
+
+### Session problems
+| # | Problem | Fix |
+|-|-|-|
+| 1 | The first Spot VM (`us-central1-a`) was **preempted after 3 min** during setup and auto-deleted, as in the first session | Recreated in `us-central1-b`, which ran 31 min without preemption |
+| 2 | The reboot after the driver swap cleared `/tmp`, removing the copied runner script | Copied it again. Next time, stage files under `/data` |
+
+### Spend
+| Item | Amount |
+|-|-|
+| VM 1 (preempted) | 3.3 min |
+| VM 2 | 31.3 min (create 01:19:01 UTC, delete 01:49:24) |
+| Total | **0.58 VM-hours × $0.5108/h Spot = $0.29**, + 200 GB pd-balanced × 0.58 h = $0.02, + ephemeral IPv4 (a few cents at most) → **≈ $0.32** |
+
+Both VMs and their disks are deleted. Afterwards `gcloud compute instances list`, `gcloud compute disks list` and `gcloud compute addresses list` for the project each returned 0 items.
+
 ## Next steps
 1. Persist `/isaac-sim/kit/cache` (and the image) on a small reusable disk or image. Cold shader compilation is about 5 of the 8.5 minutes per fresh VM.
-2. Handle articulated SimReady assets properly: a fixed base and jointed drawers or doors instead of all-kinematic. Then the chest, nightstand and counter shelves become door and drawer tasks.
+2. Extend the fixed-base articulation path (done for the chest, Fixes 1) to the nightstand, counter shelves, toilet lid and trash-can pedal. They are still all-kinematic, and the trash can's mimic joints need an articulation.
 3. Sanity-filter masses across the household subset (authored mass vs. bounding-box volume × density). The mug is still 1.33 kg and the counter 357 kg.
 4. An SDF memory test that could actually stress it: `--gpu-dynamics`, then 10× the small dynamic items, then compare against convex hull.
 5. Fill the bedroom and bathroom gaps from outside the catalog: mattresses, pillows, toiletries, toilet paper, bath towels, a shower or tub. Candidates to scout: Objaverse/procedural generation, Infinigen-Indoors, or Isaac Sim's own residential sample assets. Check each one's license.
