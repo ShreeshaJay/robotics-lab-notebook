@@ -1,0 +1,278 @@
+{
+  "schema_version": "flora_demo_annotation_v1",
+  "duration_s": 90.273517,
+  "segments": [
+    {
+      "start_s": 0.0,
+      "end_s": 5.65,
+      "caption": "place bowl in sink with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 5.65,
+      "end_s": 7.55,
+      "caption": "pick up sponge with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 7.55,
+      "end_s": 8.55,
+      "caption": "rinse sponge under faucet with right hand, shift faucet with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 8.55,
+      "end_s": 9.55,
+      "caption": "place sponge in sink with right hand, pick up sponge with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 9.55,
+      "end_s": 10.55,
+      "caption": "pick up blue sponge with left hand, pass blue sponge from left hand to right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 9.55,
+      "end_s": 13.65,
+      "caption": "pass sponge from left hand to right hand, turn on faucet with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 10.55,
+      "end_s": 12.15,
+      "caption": "hold sponge with right hand, shift faucet with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 13.65,
+      "end_s": 15.85,
+      "caption": "squeeze sponge under faucet with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 15.85,
+      "end_s": 17.05,
+      "caption": "Hand over the sponge from the right hand to the left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 17.05,
+      "end_s": 19.65,
+      "caption": "Pick up the bottle with yellow liquid from the top left side of the countertop with the right hand while holding the sponge with the left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 19.65,
+      "end_s": 22.25,
+      "caption": "hold sponge with left hand, pour soap from bottle onto sponge with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 22.25,
+      "end_s": 23.45,
+      "caption": "Place the dishwashing liquid bottle on the top left side of the sink with the right hand while holding the sponge with the left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 23.4,
+      "end_s": 24.4,
+      "caption": "Hand over the sponge from the left hand to the right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 23.45,
+      "end_s": 26.3,
+      "caption": "pass sponge from left hand to right hand, squeeze sponge with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 24.4,
+      "end_s": 25.6,
+      "caption": "squeeze sponge with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 25.6,
+      "end_s": 26.6,
+      "caption": "hold sponge with right hand, pick up spoon with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 26.6,
+      "end_s": 27.6,
+      "caption": "hold sponge with right hand, rinse spoon under faucet with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 27.6,
+      "end_s": 28.6,
+      "caption": "hold spoon with left hand, rinse sponge under faucet with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 28.6,
+      "end_s": 29.6,
+      "caption": "hold spoon with left hand, squeeze sponge with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 29.6,
+      "end_s": 34.6,
+      "caption": "hold spoon with left hand, scrub spoon with sponge in right hand, flip spoon with left hand, scrub spoon with sponge in right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 34.8,
+      "end_s": 39.8,
+      "caption": "hold sponge with right hand, rinse spoon under faucet with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 39.8,
+      "end_s": 42.8,
+      "caption": "hold spoon with left hand, scrub spoon with sponge in right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 42.8,
+      "end_s": 44.8,
+      "caption": "hold sponge with right hand, rinse ladle under faucet with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 44.8,
+      "end_s": 46.2,
+      "caption": "hold sponge with right hand, place spoon in rack with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 46.2,
+      "end_s": 47.4,
+      "caption": "hold sponge with right hand, pick up bowl with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 47.35,
+      "end_s": 49.25,
+      "caption": "hold sponge with right hand, rinse bowl under faucet with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 49.3,
+      "end_s": 56.9,
+      "caption": "hold bowl with left hand, scrub bowl with sponge in right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 56.9,
+      "end_s": 58.9,
+      "caption": "hold bowl with left hand, place sponge on sink with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 58.9,
+      "end_s": 62.45,
+      "caption": "rinse bowl under faucet with both hands, pour water from bowl into sink with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 59.05,
+      "end_s": 78.0,
+      "caption": "rinse bowl under faucet with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 78.0,
+      "end_s": 79.2,
+      "caption": "hold bowl with left hand, turn off faucet with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 79.2,
+      "end_s": 82.6,
+      "caption": "turn bowl with both hands, place bowl on rack with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 82.65,
+      "end_s": 85.35,
+      "caption": "pick up cloth with right hand, fold cloth with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 85.3,
+      "end_s": 86.3,
+      "caption": "place cloth on counter with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 86.3,
+      "end_s": 90.273517,
+      "caption": "place cloth on counter with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    }
+  ],
+  "elapsed_s": 1437.17,
+  "source_clock": "seconds relative to the first native source presentation timestamp",
+  "camera_roles": [
+    "main"
+  ],
+  "profile": "Human",
+  "model_revisions": {
+    "tempseg": {
+      "repo": "nvidia/Flora-TempSeg",
+      "revision": "114a1076f70eb53f4a58ac045505db3087e79347",
+      "sha256": "1d80fe544e4cd1a7ff6b0ea4be71e988972408dab81d4c8af72e3a628739d6c3",
+      "repo_env": "FLORA_TEMPSEG_REPO"
+    },
+    "captioner": {
+      "repo": "nvidia/Flora-Captioner",
+      "revision": "fef0bbfe11829ca7f3539d58da7a6a2c2f109dc6",
+      "source_manifest_identity": "2ab6cafd286df7f446bfb84fbc4af7c54773d5e890dd277ac5a0453d0d4fb778",
+      "repo_env": "FLORA_CAPTIONER_REPO"
+    },
+    "tempseg_base": {
+      "repo": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+    }
+  },
+  "input_sha256": {
+    "main": "91677e9519e98a258a1bb8c67ddaa09c45ecd66d37ae72c3562375fe891f65e3"
+  }
+}

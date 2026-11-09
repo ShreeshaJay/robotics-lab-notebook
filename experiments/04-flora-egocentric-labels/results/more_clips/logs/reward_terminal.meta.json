@@ -1,0 +1,20 @@
+{
+  "cmd": [
+    "/home/shree/flora-lab/.venv-rewarder/bin/python",
+    "-m",
+    "rewarder.batch_utils.terminal_reward",
+    "--jobs",
+    "/home/shree/flora-lab/results/more_clips/terminal_jobs.jsonl",
+    "--model",
+    "nvidia/Flora-Rewarder",
+    "--revision",
+    "b64cee902fd6937184d9bea5afa043cd55650e45",
+    "--overwrite",
+    "--with-rationale",
+    "--output",
+    "/home/shree/flora-lab/results/more_clips/terminal.jsonl"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 154.0,
+  "peak_gpu_mib": 73662
+}

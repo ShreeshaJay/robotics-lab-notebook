@@ -1,0 +1,212 @@
+{
+ "video": "P14_07",
+ "duration_s": 90.273517,
+ "params": {
+  "gap_s": 1.0,
+  "max_step_s": 15.0,
+  "min_step_s": 4.0,
+  "jaccard": 0.3
+ },
+ "raw_flora": {
+  "units": 35,
+  "mean_len_s": 2.83,
+  "median_len_s": 1.9,
+  "boundary_error_s": {
+   "mean": 2.3,
+   "median": 0.85,
+   "within_1s": 0.53,
+   "even_grid_median": 2.79
+  },
+  "human_steps": 12,
+  "matched_strict": 11,
+  "matched_lenient": 11
+ },
+ "merged": {
+  "units": 9,
+  "mean_len_s": 10.0,
+  "median_len_s": 10.2,
+  "boundary_error_s": {
+   "mean": 3.44,
+   "median": 1.84,
+   "within_1s": 0.38,
+   "even_grid_median": 3.65
+  },
+  "human_steps": 12,
+  "matched_strict": 10,
+  "matched_lenient": 12
+ },
+ "steps": [
+  {
+   "start_s": 0.0,
+   "end_s": 5.65,
+   "content": "Place bowl in sink.",
+   "flora_captions": [
+    "place bowl in sink with right hand"
+   ]
+  },
+  {
+   "start_s": 5.65,
+   "end_s": 15.85,
+   "content": "Pass sponge.",
+   "flora_captions": [
+    "pick up sponge with right hand",
+    "rinse sponge under faucet with right hand, shift faucet with left hand",
+    "place sponge in sink with right hand, pick up sponge with left hand",
+    "pass sponge from left hand to right hand, turn on faucet with left hand",
+    "pick up blue sponge with left hand, pass blue sponge from left hand to right hand",
+    "hold sponge with right hand, shift faucet with left hand",
+    "squeeze sponge under faucet with right hand"
+   ]
+  },
+  {
+   "start_s": 15.85,
+   "end_s": 23.45,
+   "content": "Pour soap from bottle onto sponge.",
+   "flora_captions": [
+    "Hand over the sponge from the right hand to the left hand",
+    "Pick up the bottle with yellow liquid from the top left side of the countertop with the right hand while holding the sponge with the left hand",
+    "hold sponge with left hand, pour soap from bottle onto sponge with right hand",
+    "Place the dishwashing liquid bottle on the top left side of the sink with the right hand while holding the sponge with the left hand"
+   ]
+  },
+  {
+   "start_s": 23.45,
+   "end_s": 34.6,
+   "content": "Hold spoon.",
+   "flora_captions": [
+    "Hand over the sponge from the left hand to the right hand",
+    "pass sponge from left hand to right hand, squeeze sponge with right hand",
+    "squeeze sponge with right hand",
+    "hold sponge with right hand, pick up spoon with left hand",
+    "hold sponge with right hand, rinse spoon under faucet with left hand",
+    "hold spoon with left hand, rinse sponge under faucet with right hand",
+    "hold spoon with left hand, squeeze sponge with right hand",
+    "hold spoon with left hand, scrub spoon with sponge in right hand, flip spoon with left hand, scrub spoon with sponge in right hand"
+   ]
+  },
+  {
+   "start_s": 34.8,
+   "end_s": 49.25,
+   "content": "Rinse spoon under faucet.",
+   "flora_captions": [
+    "hold sponge with right hand, rinse spoon under faucet with left hand",
+    "hold spoon with left hand, scrub spoon with sponge in right hand",
+    "hold sponge with right hand, rinse ladle under faucet with left hand",
+    "hold sponge with right hand, place spoon in rack with left hand",
+    "hold sponge with right hand, pick up bowl with left hand",
+    "hold sponge with right hand, rinse bowl under faucet with left hand"
+   ]
+  },
+  {
+   "start_s": 49.3,
+   "end_s": 62.45,
+   "content": "Hold bowl.",
+   "flora_captions": [
+    "hold bowl with left hand, scrub bowl with sponge in right hand",
+    "hold bowl with left hand, place sponge on sink with right hand",
+    "rinse bowl under faucet with both hands, pour water from bowl into sink with both hands"
+   ]
+  },
+  {
+   "start_s": 62.45,
+   "end_s": 78.0,
+   "content": "Rinse bowl under faucet.",
+   "flora_captions": [
+    "rinse bowl under faucet with both hands"
+   ]
+  },
+  {
+   "start_s": 78.0,
+   "end_s": 82.6,
+   "content": "Turn bowl.",
+   "flora_captions": [
+    "hold bowl with left hand, turn off faucet with right hand",
+    "turn bowl with both hands, place bowl on rack with left hand"
+   ]
+  },
+  {
+   "start_s": 82.65,
+   "end_s": 90.27,
+   "content": "Place cloth on counter.",
+   "flora_captions": [
+    "pick up cloth with right hand, fold cloth with both hands",
+    "place cloth on counter with right hand",
+    "place cloth on counter with right hand"
+   ]
+  }
+ ],
+ "fineart_rows": [
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 0.0,
+   "content": "Place bowl in sink.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 5.65,
+   "content": "Pass sponge.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 15.85,
+   "content": "Pour soap from bottle onto sponge.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 23.45,
+   "content": "Hold spoon.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 34.8,
+   "content": "Rinse spoon under faucet.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 49.3,
+   "content": "Hold bowl.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 62.45,
+   "content": "Rinse bowl under faucet.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 78.0,
+   "content": "Turn bowl.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 82.65,
+   "content": "Place cloth on counter.",
+   "camera": null,
+   "tool_calls": null
+  }
+ ]
+}

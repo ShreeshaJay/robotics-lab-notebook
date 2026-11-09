@@ -1,0 +1,77 @@
+{
+  "P14_07": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "avg_frame_rate": "60000/1001",
+        "nb_read_packets": "5411"
+      }
+    ],
+    "format": {
+      "duration": "90.273517",
+      "size": "42054236"
+    }
+  },
+  "P01_19_w301": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "avg_frame_rate": "60000/1001",
+        "nb_read_packets": "6894"
+      }
+    ],
+    "format": {
+      "duration": "115.014900",
+      "size": "65151979"
+    }
+  },
+  "P28_24": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "avg_frame_rate": "60000/1001",
+        "nb_read_packets": "4091"
+      }
+    ],
+    "format": {
+      "duration": "68.251517",
+      "size": "54898234"
+    }
+  },
+  "P11_24": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "avg_frame_rate": "60000/1001",
+        "nb_read_packets": "5009"
+      }
+    ],
+    "format": {
+      "duration": "83.566817",
+      "size": "44874844"
+    }
+  },
+  "P14_07_first46s": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "avg_frame_rate": "60000/1001",
+        "nb_read_packets": "2758"
+      }
+    ],
+    "format": {
+      "duration": "46.012633",
+      "size": "20214830"
+    }
+  }
+}

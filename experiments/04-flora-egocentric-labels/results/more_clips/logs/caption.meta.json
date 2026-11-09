@@ -1,0 +1,14 @@
+{
+  "cmd": [
+    "/home/shree/flora-lab/.venv-annotation/bin/python",
+    "captioner/infer.py",
+    "--input-jsonl",
+    "/home/shree/flora-lab/results/more_clips/caption_jobs.jsonl",
+    "--output-dir",
+    "/home/shree/flora-lab/results/more_clips/captions",
+    "--overwrite"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 4405.9,
+  "peak_gpu_mib": 66350
+}

@@ -1,0 +1,242 @@
+{
+ "video": "P01_19_w301",
+ "duration_s": 115.0149,
+ "params": {
+  "gap_s": 1.0,
+  "max_step_s": 15.0,
+  "min_step_s": 4.0,
+  "jaccard": 0.3
+ },
+ "raw_flora": {
+  "units": 35,
+  "mean_len_s": 4.38,
+  "median_len_s": 2.3,
+  "boundary_error_s": {
+   "mean": 0.79,
+   "median": 0.38,
+   "within_1s": 0.79,
+   "even_grid_median": 1.07
+  },
+  "human_steps": 31,
+  "matched_strict": 27,
+  "matched_lenient": 27
+ },
+ "merged": {
+  "units": 11,
+  "mean_len_s": 10.46,
+  "median_len_s": 9.75,
+  "boundary_error_s": {
+   "mean": 1.2,
+   "median": 0.58,
+   "within_1s": 0.7,
+   "even_grid_median": 1.74
+  },
+  "human_steps": 31,
+  "matched_strict": 22,
+  "matched_lenient": 29
+ },
+ "steps": [
+  {
+   "start_s": 0.0,
+   "end_s": 8.0,
+   "content": "Place sponge on sink.",
+   "flora_captions": [
+    "hold sponge with right hand, squeeze sponge with left hand",
+    "pick up cloth with left hand, place sponge on sink with right hand",
+    "place sponge on sink with right hand, rinse cloth under faucet with both hands, turn off faucet with left hand, wring cloth with both hands",
+    "hold cloth with left hand, pick up sponge with right hand",
+    "squeeze sponge with right hand, pass sponge from right hand to left hand"
+   ]
+  },
+  {
+   "start_s": 8.0,
+   "end_s": 13.35,
+   "content": "Pass cloth.",
+   "flora_captions": [
+    "scrub sink with sponge in left hand",
+    "pass cloth from left hand to right hand, wipe sink with cloth in right hand",
+    "squeeze cloth with both hands",
+    "squeeze cloth with both hands"
+   ]
+  },
+  {
+   "start_s": 13.35,
+   "end_s": 25.65,
+   "content": "Wipe counter with cloth.",
+   "flora_captions": [
+    "wipe counter with cloth in right hand, wipe sink with cloth in right hand",
+    "wipe counter with cloth in right hand"
+   ]
+  },
+  {
+   "start_s": 25.65,
+   "end_s": 35.4,
+   "content": "Wipe sink with cloth.",
+   "flora_captions": [
+    "wipe sink with cloth in right hand",
+    "hold debris with left hand, wipe counter with cloth in right hand"
+   ]
+  },
+  {
+   "start_s": 35.4,
+   "end_s": 42.05,
+   "content": "Hold cloth.",
+   "flora_captions": [
+    "hold cloth with right hand, open trash can with right hand, place crumbs in trash can with left hand",
+    "place cloth in sink with right hand",
+    "hold cloth with right hand, open trash can with right hand, place debris in trash can with left hand"
+   ]
+  },
+  {
+   "start_s": 42.05,
+   "end_s": 56.4,
+   "content": "Wipe counter with cloth.",
+   "flora_captions": [
+    "wipe counter with cloth in right hand",
+    "hold cloth with right hand, shift tray on counter with both hands",
+    "wipe counter with cloth in right hand, pick up cloth with right hand"
+   ]
+  },
+  {
+   "start_s": 56.4,
+   "end_s": 73.25,
+   "content": "Wipe stove with cloth.",
+   "flora_captions": [
+    "wipe stove with cloth in right hand"
+   ]
+  },
+  {
+   "start_s": 73.25,
+   "end_s": 81.85,
+   "content": "Wipe stove with cloth.",
+   "flora_captions": [
+    "wipe stove with cloth in right hand, fold cloth with both hands",
+    "wipe stove with cloth in right hand",
+    "fold cloth with both hands, pass cloth from left hand to right hand"
+   ]
+  },
+  {
+   "start_s": 81.85,
+   "end_s": 89.05,
+   "content": "Wipe stove with cloth.",
+   "flora_captions": [
+    "wipe stove with cloth in right hand"
+   ]
+  },
+  {
+   "start_s": 89.05,
+   "end_s": 101.65,
+   "content": "Wipe counter with cloth.",
+   "flora_captions": [
+    "wipe counter with cloth in right hand",
+    "wipe sink with cloth in right hand, turn on faucet with left hand"
+   ]
+  },
+  {
+   "start_s": 101.65,
+   "end_s": 115.01,
+   "content": "Scrub sink with sponge.",
+   "flora_captions": [
+    "rinse cloth under faucet with both hands, squeeze cloth with both hands",
+    "scrub sink with sponge in right hand",
+    "scrub sink with sponge in right hand, rinse sponge under faucet with both hands",
+    "rinse sponge under faucet with both hands",
+    "scrub sink with cloth in right hand",
+    "pass sponge from right hand to left hand, pick up sponge with right hand",
+    "hold cloth with left hand, rinse sponge under faucet with right hand",
+    "place sponge on counter with right hand, rinse cloth under faucet with both hands",
+    "pass sponge from left hand to right hand, place sponge on sink with right hand"
+   ]
+  }
+ ],
+ "fineart_rows": [
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 0.0,
+   "content": "Place sponge on sink.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 8.0,
+   "content": "Pass cloth.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 13.35,
+   "content": "Wipe counter with cloth.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 25.65,
+   "content": "Wipe sink with cloth.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 35.4,
+   "content": "Hold cloth.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 42.05,
+   "content": "Wipe counter with cloth.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 56.4,
+   "content": "Wipe stove with cloth.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 73.25,
+   "content": "Wipe stove with cloth.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 81.85,
+   "content": "Wipe stove with cloth.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 89.05,
+   "content": "Wipe counter with cloth.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 101.65,
+   "content": "Scrub sink with sponge.",
+   "camera": null,
+   "tool_calls": null
+  }
+ ]
+}

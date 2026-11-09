@@ -1,0 +1,24 @@
+2026-11-09T04:35:14Z pipeline start boot=9ce82399
+2026-11-09T04:35:14Z apt start
+2026-11-09T04:37:54Z pipeline start boot=7077a096
+2026-11-09T04:37:54Z apt start
+2026-11-09T04:37:59Z apt end
+2026-11-09T04:37:59Z fetch start
+2026-11-09T04:37:59Z setup start
+2026-11-09T04:38:01Z setup end FAIL rc=100
+2026-11-09T04:39:26Z pipeline start boot=7077a096
+2026-11-09T04:39:26Z apt start
+2026-11-09T04:39:39Z apt end
+2026-11-09T04:39:39Z fetch start
+2026-11-09T04:39:39Z setup start
+2026-11-09T04:42:19Z prefetch start
+2026-11-09T04:54:05Z fetch end ok
+2026-11-09T04:57:02Z prefetch end ok
+2026-11-09T05:01:56Z setup end ok
+2026-11-09T05:01:56Z validate start
+2026-11-09T05:03:39Z validate end ok
+2026-11-09T05:03:39Z caption start
+2026-11-09T06:17:05Z caption end ok
+2026-11-09T06:17:05Z reward start
+2026-11-09T06:29:35Z reward end ok
+2026-11-09T06:29:35Z ALL DONE

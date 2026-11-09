@@ -1,0 +1,194 @@
+{
+  "schema_version": "flora_demo_annotation_v1",
+  "duration_s": 68.251517,
+  "segments": [
+    {
+      "start_s": 0.0,
+      "end_s": 1.0,
+      "caption": "pick up knife with left hand, pick up tomato with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 1.0,
+      "end_s": 4.4,
+      "caption": "place tomato on cutting board with right hand, cut tomato with knife in left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 4.4,
+      "end_s": 5.6,
+      "caption": "hold knife with left hand, place tomato on cutting board with right hand, pick up tomato with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 5.6,
+      "end_s": 9.4,
+      "caption": "hold tomato with right hand, cut tomato with knife in left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 9.4,
+      "end_s": 11.6,
+      "caption": "hold knife with left hand, open trash can with right hand, place tomato in trash can with both hands",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 11.8,
+      "end_s": 21.2,
+      "caption": "hold tomato with right hand, slice tomato with knife in left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 21.2,
+      "end_s": 22.6,
+      "caption": "hold knife with left hand, rotate tomato with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 21.25,
+      "end_s": 35.65,
+      "caption": "reposition tomato on cutting board with right hand, slice tomato with knife in left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 22.6,
+      "end_s": 35.65,
+      "caption": "hold tomato with right hand, cut tomato with knife in left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 35.65,
+      "end_s": 39.55,
+      "caption": "place knife on cutting board with left hand, open microwave door with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 35.7,
+      "end_s": 36.7,
+      "caption": "place knife on cutting board with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 36.7,
+      "end_s": 41.7,
+      "caption": "open microwave door with left hand, pick up plate with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 41.7,
+      "end_s": 45.2,
+      "caption": "hold plate with left hand, close microwave door with right hand, place plate on counter with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 45.2,
+      "end_s": 46.5,
+      "caption": "hold tomato with right hand, pick up knife with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 45.2,
+      "end_s": 48.8,
+      "caption": "hold tomato with right hand, pick up knife with left hand, cut tomato with knife in left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine_repaired_by_fine_retry"
+    },
+    {
+      "start_s": 46.5,
+      "end_s": 47.5,
+      "caption": "hold tomato with right hand, pick up knife with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 47.5,
+      "end_s": 48.5,
+      "caption": "hold tomato with right hand, cut tomato with knife in left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 48.8,
+      "end_s": 56.5,
+      "caption": "reposition tomato on cutting board with right hand, cut tomato with knife in left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 56.5,
+      "end_s": 57.5,
+      "caption": "hold knife with left hand, rotate tomato with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 57.5,
+      "end_s": 63.0,
+      "caption": "hold tomato with right hand, slice tomato with knife in left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 63.0,
+      "end_s": 64.0,
+      "caption": "hold tomato with right hand, shift tomato pieces on cutting board with knife in left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 64.0,
+      "end_s": 65.0,
+      "caption": "hold knife with left hand, wipe knife with right hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    },
+    {
+      "start_s": 65.0,
+      "end_s": 68.251517,
+      "caption": "place knife on counter with left hand",
+      "status": "complete",
+      "segmentation_provenance": "fine"
+    }
+  ],
+  "elapsed_s": 723.04,
+  "source_clock": "seconds relative to the first native source presentation timestamp",
+  "camera_roles": [
+    "main"
+  ],
+  "profile": "Human",
+  "model_revisions": {
+    "tempseg": {
+      "repo": "nvidia/Flora-TempSeg",
+      "revision": "114a1076f70eb53f4a58ac045505db3087e79347",
+      "sha256": "1d80fe544e4cd1a7ff6b0ea4be71e988972408dab81d4c8af72e3a628739d6c3",
+      "repo_env": "FLORA_TEMPSEG_REPO"
+    },
+    "captioner": {
+      "repo": "nvidia/Flora-Captioner",
+      "revision": "fef0bbfe11829ca7f3539d58da7a6a2c2f109dc6",
+      "source_manifest_identity": "2ab6cafd286df7f446bfb84fbc4af7c54773d5e890dd277ac5a0453d0d4fb778",
+      "repo_env": "FLORA_CAPTIONER_REPO"
+    },
+    "tempseg_base": {
+      "repo": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+    }
+  },
+  "input_sha256": {
+    "main": "5a3055c8264a2d5d0814ce405e60ba2f489cd6b6fea124277747676f10eabe11"
+  }
+}

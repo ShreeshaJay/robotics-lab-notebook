@@ -1,0 +1,23 @@
+2026-11-09T05:03:30 
+2026-11-09T05:03:30 Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]
+2026-11-09T05:03:30 Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1166.18it/s]
+2026-11-09T05:03:38 P14_07: 5411 frames at 59.9401 FPS, collage 448x256, 64 sampled frames
+2026-11-09T05:03:38 <|im_start|>system
+2026-11-09T05:03:38 You are a terminal-success reward model for robot trajectories.
+2026-11-09T05:03:38 Given the task instruction and the complete trajectory video, predict a score from 1 to 5.
+2026-11-09T05:03:38 A complete failure is 1. A complete success is 5.
+2026-11-09T05:03:38 Judge only what is visible in the trajectory and follow the requested output format exactly.
+2026-11-09T05:03:38 Provide one short, compact rationale followed by the score. Return exactly:
+2026-11-09T05:03:38 Rationale: <rationale>
+2026-11-09T05:03:38 
+2026-11-09T05:03:38 Score: <1-5><|im_end|>
+2026-11-09T05:03:38 <|im_start|>user
+2026-11-09T05:03:38 Task: Wash the spoon and the bowl in the sink.
+2026-11-09T05:03:38 
+2026-11-09T05:03:38 Complete trajectory video:<|vision_start|><|video_pad|><|vision_end|>Evaluate the terminal success of the task.<|im_end|>
+2026-11-09T05:03:38 <|im_start|>assistant
+2026-11-09T05:03:38 <think>
+2026-11-09T05:03:38 
+2026-11-09T05:03:38 </think>
+2026-11-09T05:03:38 
+2026-11-09T05:03:38 

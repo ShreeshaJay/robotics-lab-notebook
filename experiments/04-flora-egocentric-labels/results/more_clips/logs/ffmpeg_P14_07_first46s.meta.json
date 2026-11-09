@@ -1,0 +1,32 @@
+{
+  "cmd": [
+    "ffmpeg",
+    "-hide_banner",
+    "-y",
+    "-i",
+    "/home/shree/flora-lab/data/P14_07_720p.mp4",
+    "-t",
+    "46.000",
+    "-map",
+    "0:v:0",
+    "-an",
+    "-vf",
+    "scale=1280:-2",
+    "-fps_mode",
+    "passthrough",
+    "-c:v",
+    "libx264",
+    "-crf",
+    "20",
+    "-preset",
+    "medium",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart",
+    "/home/shree/flora-lab/data/P14_07_first46s_720p.part.mp4"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 27.0,
+  "peak_gpu_mib": 0
+}

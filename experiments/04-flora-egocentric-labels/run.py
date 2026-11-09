@@ -384,9 +384,18 @@ def download(url: str, size: int, dest: Path) -> None:
         return
     dest.parent.mkdir(parents=True, exist_ok=True)
     tmp = dest.with_suffix(".part")
-    log(f"downloading {url} ({size / 1e6:.0f} MB)")
-    with urllib.request.urlopen(url, timeout=60) as r, tmp.open("wb") as f:
-        shutil.copyfileobj(r, f, length=8 << 20)
+    # Resume a partial download (a Spot VM with ON_END=STOP keeps the disk through a preemption).
+    have = tmp.stat().st_size if tmp.exists() else 0
+    if have > size:
+        tmp.unlink()
+        have = 0
+    log(f"downloading {url} ({size / 1e6:.0f} MB, resuming at {have / 1e6:.0f} MB)")
+    req = urllib.request.Request(url, headers={"Range": f"bytes={have}-"} if have else {})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        if have and r.status != 206:  # server ignored the range: start over
+            have = 0
+        with tmp.open("ab" if have else "wb") as f:
+            shutil.copyfileobj(r, f, length=8 << 20)
     if tmp.stat().st_size != size:
         sys.exit(f"unexpected size {tmp.stat().st_size} for {url}, expected {size}")
     tmp.rename(dest)
@@ -419,16 +428,20 @@ def stage_fetch_many(a: argparse.Namespace) -> None:
                 # A window of a long video: ffmpeg reads only the needed byte ranges over HTTPS (the server
                 # sends Accept-Ranges: bytes). Input-side -ss with re-encoding is frame-accurate; output starts at 0.
                 src = ["-ss", f"{c['start_s']:.3f}", "-t", f"{c['dur_s']:.3f}", "-i", c["url"]]
-            if run(["ffmpeg", "-hide_banner", "-y", *src, *ENCODE, str(out)], cwd=WORK,
+            part = out.with_suffix(".part.mp4")  # rename only when complete, so a preempted encode is redone
+            if run(["ffmpeg", "-hide_banner", "-y", *src, *ENCODE, str(part)], cwd=WORK,
                    logfile=MORE / "logs" / f"ffmpeg_{c['id']}.log") != 0:
                 sys.exit(f"ffmpeg failed for {c['id']}")
+            part.rename(out)
         probes[c["id"]] = probe(out)
     n = m["negative_control"]
     neg = clip_path(n["id"])
     if not neg.exists():
+        part = neg.with_suffix(".part.mp4")
         if run(["ffmpeg", "-hide_banner", "-y", "-i", str(clip_path(n["from"])), "-t", f"{n['dur_s']:.3f}", *ENCODE,
-                str(neg)], cwd=WORK, logfile=MORE / "logs" / f"ffmpeg_{n['id']}.log") != 0:
+                str(part)], cwd=WORK, logfile=MORE / "logs" / f"ffmpeg_{n['id']}.log") != 0:
             sys.exit("ffmpeg failed for the negative control")
+        part.rename(neg)
     probes[n["id"]] = probe(neg)
     for cid, info in probes.items():
         dur, mib = float(info["format"]["duration"]), int(info["format"]["size"]) / 2**20

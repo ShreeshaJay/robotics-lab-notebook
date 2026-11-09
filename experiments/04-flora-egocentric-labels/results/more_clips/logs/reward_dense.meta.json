@@ -1,0 +1,19 @@
+{
+  "cmd": [
+    "/home/shree/flora-lab/.venv-rewarder/bin/python",
+    "-m",
+    "rewarder.batch_utils.dense_reward",
+    "--jobs",
+    "/home/shree/flora-lab/results/more_clips/dense_jobs.jsonl",
+    "--model",
+    "nvidia/Flora-Rewarder",
+    "--revision",
+    "b64cee902fd6937184d9bea5afa043cd55650e45",
+    "--overwrite",
+    "--output",
+    "/home/shree/flora-lab/results/more_clips/dense.jsonl"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 596.3,
+  "peak_gpu_mib": 73656
+}

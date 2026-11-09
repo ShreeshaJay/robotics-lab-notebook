@@ -1,0 +1,208 @@
+{
+ "video": "P11_24",
+ "duration_s": 83.566817,
+ "params": {
+  "gap_s": 1.0,
+  "max_step_s": 15.0,
+  "min_step_s": 4.0,
+  "jaccard": 0.3
+ },
+ "raw_flora": {
+  "units": 31,
+  "mean_len_s": 3.52,
+  "median_len_s": 3.6,
+  "boundary_error_s": {
+   "mean": 0.8,
+   "median": 0.35,
+   "within_1s": 0.77,
+   "even_grid_median": 0.34
+  },
+  "human_steps": 24,
+  "matched_strict": 20,
+  "matched_lenient": 20
+ },
+ "merged": {
+  "units": 9,
+  "mean_len_s": 9.29,
+  "median_len_s": 9.75,
+  "boundary_error_s": {
+   "mean": 1.39,
+   "median": 0.54,
+   "within_1s": 0.62,
+   "even_grid_median": 0.67
+  },
+  "human_steps": 24,
+  "matched_strict": 14,
+  "matched_lenient": 22
+ },
+ "steps": [
+  {
+   "start_s": 0.0,
+   "end_s": 5.35,
+   "content": "Pick up pot.",
+   "flora_captions": [
+    "pick up pot with right hand, pick up pot lid with left hand",
+    "place pot on window sill with right hand, place pot lid on pot with left hand",
+    "pick up glass bowl with right hand"
+   ]
+  },
+  {
+   "start_s": 5.35,
+   "end_s": 16.8,
+   "content": "Pick up cutting board.",
+   "flora_captions": [
+    "open cabinet with left hand, pass glass to left hand, place glass in cabinet with left hand",
+    "pick up bowl with right hand, pass bowl from right hand to left hand",
+    "open cabinet door with right hand, place plates in cabinet with left hand",
+    "pass bowl from right hand to left hand, place bowl on stack with left hand",
+    "pick up cutting board with right hand"
+   ]
+  },
+  {
+   "start_s": 16.8,
+   "end_s": 21.2,
+   "content": "Place mat in drawer.",
+   "flora_captions": [
+    "place mat in drawer with right hand"
+   ]
+  },
+  {
+   "start_s": 21.2,
+   "end_s": 31.65,
+   "content": "Pick up black bowl.",
+   "flora_captions": [
+    "pick up black bowl with right hand, pass black bowl from right hand to left hand",
+    "hold bowl with left hand, pick up pitcher with right hand",
+    "hold pitcher with right hand, place bowl in cabinet with left hand",
+    "place pitcher on shelf with right hand, pick up mug with left hand",
+    "pick up mug with left hand, place mug on shelf with left hand"
+   ]
+  },
+  {
+   "start_s": 31.65,
+   "end_s": 41.4,
+   "content": "Shift glass on shelf.",
+   "flora_captions": [
+    "shift glass on shelf with left hand",
+    "shift glass on shelf with left hand",
+    "shift glass on shelf with left hand",
+    "shift yellow mug on shelf with left hand"
+   ]
+  },
+  {
+   "start_s": 41.4,
+   "end_s": 48.25,
+   "content": "Pass scissors.",
+   "flora_captions": [
+    "pass scissors from right hand to left hand, place scissors in holder with left hand",
+    "pass scissors from right hand to left hand, place scissors in holder with left hand"
+   ]
+  },
+  {
+   "start_s": 48.25,
+   "end_s": 63.15,
+   "content": "Straighten paper towel.",
+   "flora_captions": [
+    "close drawer with right hand, press switch with right hand",
+    "pick up paper towel roll with right hand, pass paper towel roll from right hand to left hand",
+    "hold paper towel roll with left hand, pull paper towel with right hand, tear paper towel with right hand",
+    "hold paper towel with right hand, place paper towel roll on window sill with left hand",
+    "straighten paper towel with both hands, fold paper towel with both hands",
+    "straighten paper towel with both hands",
+    "fold tissue with both hands, press tissue with both hands"
+   ]
+  },
+  {
+   "start_s": 63.15,
+   "end_s": 69.15,
+   "content": "Separate wipes.",
+   "flora_captions": [
+    "separate wipes with both hands"
+   ]
+  },
+  {
+   "start_s": 69.15,
+   "end_s": 83.57,
+   "content": "Place plastic bag in bin.",
+   "flora_captions": [
+    "shake plastic bag with both hands",
+    "place plastic bag in bin with both hands, straighten plastic bag with both hands",
+    "place trash can on floor with right hand"
+   ]
+  }
+ ],
+ "fineart_rows": [
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 0.0,
+   "content": "Pick up pot.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 5.35,
+   "content": "Pick up cutting board.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 16.8,
+   "content": "Place mat in drawer.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 21.2,
+   "content": "Pick up black bowl.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 31.65,
+   "content": "Shift glass on shelf.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 41.4,
+   "content": "Pass scissors.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 48.25,
+   "content": "Straighten paper towel.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 63.15,
+   "content": "Separate wipes.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 69.15,
+   "content": "Place plastic bag in bin.",
+   "camera": null,
+   "tool_calls": null
+  }
+ ]
+}

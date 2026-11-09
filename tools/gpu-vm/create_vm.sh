@@ -19,6 +19,8 @@ case "$ON_END" in DELETE|STOP) ;; *) echo "ON_END must be DELETE or STOP"; exit 
 
 PROVISIONING=()
 if [ "${SPOT:-0}" = "1" ]; then PROVISIONING=(--provisioning-model=SPOT); fi
+# a2-ultragpu machines bundle a local SSD; with STOP, GCE requires saying what happens to it (it is discarded).
+if [ "$ON_END" = "STOP" ] && [[ "$MACHINE" == a2-ultragpu* ]]; then PROVISIONING+=(--discard-local-ssds-at-termination-timestamp=true); fi
 
 gcloud compute instances create "$NAME" \
   --project="$PROJECT" --zone="$ZONE" \

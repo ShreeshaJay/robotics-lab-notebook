@@ -1,0 +1,155 @@
+{
+ "video": "P28_24",
+ "duration_s": 68.251517,
+ "params": {
+  "gap_s": 1.0,
+  "max_step_s": 15.0,
+  "min_step_s": 4.0,
+  "jaccard": 0.3
+ },
+ "raw_flora": {
+  "units": 23,
+  "mean_len_s": 3.9,
+  "median_len_s": 3.25,
+  "boundary_error_s": {
+   "mean": 1.71,
+   "median": 0.47,
+   "within_1s": 0.73,
+   "even_grid_median": 1.13
+  },
+  "human_steps": 16,
+  "matched_strict": 16,
+  "matched_lenient": 16
+ },
+ "merged": {
+  "units": 6,
+  "mean_len_s": 11.34,
+  "median_len_s": 12.32,
+  "boundary_error_s": {
+   "mean": 2.01,
+   "median": 0.34,
+   "within_1s": 0.8,
+   "even_grid_median": 2.02
+  },
+  "human_steps": 16,
+  "matched_strict": 11,
+  "matched_lenient": 16
+ },
+ "steps": [
+  {
+   "start_s": 0.0,
+   "end_s": 11.6,
+   "content": "Hold tomato.",
+   "flora_captions": [
+    "pick up knife with left hand, pick up tomato with right hand",
+    "place tomato on cutting board with right hand, cut tomato with knife in left hand",
+    "hold knife with left hand, place tomato on cutting board with right hand, pick up tomato with right hand",
+    "hold tomato with right hand, cut tomato with knife in left hand",
+    "hold knife with left hand, open trash can with right hand, place tomato in trash can with both hands"
+   ]
+  },
+  {
+   "start_s": 11.8,
+   "end_s": 22.6,
+   "content": "Hold tomato.",
+   "flora_captions": [
+    "hold tomato with right hand, slice tomato with knife in left hand",
+    "hold knife with left hand, rotate tomato with right hand"
+   ]
+  },
+  {
+   "start_s": 22.6,
+   "end_s": 35.65,
+   "content": "Reposition tomato on cutting board.",
+   "flora_captions": [
+    "reposition tomato on cutting board with right hand, slice tomato with knife in left hand",
+    "hold tomato with right hand, cut tomato with knife in left hand"
+   ]
+  },
+  {
+   "start_s": 35.65,
+   "end_s": 48.8,
+   "content": "Open microwave door.",
+   "flora_captions": [
+    "place knife on cutting board with left hand, open microwave door with left hand",
+    "place knife on cutting board with left hand",
+    "open microwave door with left hand, pick up plate with left hand",
+    "hold plate with left hand, close microwave door with right hand, place plate on counter with left hand",
+    "hold tomato with right hand, pick up knife with left hand, cut tomato with knife in left hand",
+    "hold tomato with right hand, pick up knife with left hand",
+    "hold tomato with right hand, pick up knife with left hand",
+    "hold tomato with right hand, cut tomato with knife in left hand"
+   ]
+  },
+  {
+   "start_s": 48.8,
+   "end_s": 63.0,
+   "content": "Reposition tomato on cutting board.",
+   "flora_captions": [
+    "reposition tomato on cutting board with right hand, cut tomato with knife in left hand",
+    "hold knife with left hand, rotate tomato with right hand",
+    "hold tomato with right hand, slice tomato with knife in left hand"
+   ]
+  },
+  {
+   "start_s": 63.0,
+   "end_s": 68.25,
+   "content": "Place knife on counter.",
+   "flora_captions": [
+    "hold tomato with right hand, shift tomato pieces on cutting board with knife in left hand",
+    "hold knife with left hand, wipe knife with right hand",
+    "place knife on counter with left hand"
+   ]
+  }
+ ],
+ "fineart_rows": [
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 0.0,
+   "content": "Hold tomato.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 11.8,
+   "content": "Hold tomato.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 22.6,
+   "content": "Reposition tomato on cutting board.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 35.65,
+   "content": "Open microwave door.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 48.8,
+   "content": "Reposition tomato on cutting board.",
+   "camera": null,
+   "tool_calls": null
+  },
+  {
+   "role": "assistant",
+   "style": "subtask",
+   "timestamp": 63.0,
+   "content": "Place knife on counter.",
+   "camera": null,
+   "tool_calls": null
+  }
+ ]
+}
