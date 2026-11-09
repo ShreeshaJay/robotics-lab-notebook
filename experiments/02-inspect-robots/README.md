@@ -82,7 +82,7 @@ robot policy.
    - Runs the free scripted baseline, then the LLM agent on 3 seeded scenes, one trial each, with a
      $0.50 spend guard between trials.
    - Checks that the key string appears in no log file.
-5. Sketched a household benchmark in the task format: [`household_turnover_task.py`](household_turnover_task.py).
+5. Sketched a household benchmark in the task format: [`household_reset_task.py`](household_reset_task.py).
    It builds the objects with the installed library, but there is no embodiment to run it on.
 
 ```bash
