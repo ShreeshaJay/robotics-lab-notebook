@@ -50,7 +50,12 @@ DATASET_REPO = ("lerobot/svla_so101_pickplace", "f641879e22172be7e8161d5e6c1503c
 VLM = ("Qwen/Qwen3.5-4B", "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a")
 EPISODES = [0, 1, 2]
 # Same LIBERO suite, tasks, seed and fixed initial states for both policies (side-by-side comparison).
-SUITE, TASK_IDS, N_EPISODES_PER_TASK = "libero_10", [0, 1, 2], 2
+# Defaults are the 6-episode smoke test; the 50-episode rerun used TASK_IDS=0-9 N_EPS=5 RUN_TAG=rerun50.
+SUITE = "libero_10"
+_t = os.environ.get("TASK_IDS", "0,1,2")
+TASK_IDS = list(range(int(_t.split("-")[0]), int(_t.split("-")[1]) + 1)) if "-" in _t else [int(x) for x in _t.split(",")]
+N_EPISODES_PER_TASK = int(os.environ.get("N_EPS", "2"))
+RUN_TAG = os.environ.get("RUN_TAG", "")  # rollout outputs go to results/<RUN_TAG>/ when set
 ACK_VALUE = "reviewed-g05-community-license"
 
 
@@ -73,17 +78,25 @@ def run(cmd: list[str], *, logfile: Path, cwd: Path = WORK) -> int:
     log("$ " + " ".join(cmd))
     peak = {"mib": 0}
     stop = threading.Event()
+    csv_path = logfile.with_suffix(".nvsmi.csv")  # whole-GPU memory and utilization every 2 s
 
     def sample() -> None:
-        while not stop.is_set():
-            try:
-                out = subprocess.run(["nvidia-smi", "--query-gpu=memory.used", "--format=csv,noheader,nounits"],
-                                     capture_output=True, text=True, timeout=10).stdout.split()
-                if out:
-                    peak["mib"] = max(peak["mib"], int(out[0]))
-            except Exception:
-                pass
-            stop.wait(2.0)
+        with csv_path.open("w") as csv:
+            csv.write("elapsed_s,memory_used_mib,utilization_gpu_pct\n")
+            t0 = time.monotonic()
+            while not stop.is_set():
+                try:
+                    out = subprocess.run(["nvidia-smi", "--query-gpu=memory.used,utilization.gpu",
+                                          "--format=csv,noheader,nounits"],
+                                         capture_output=True, text=True, timeout=10).stdout.strip()
+                    if out:
+                        mib, util = [x.strip() for x in out.splitlines()[0].split(",")]
+                        peak["mib"] = max(peak["mib"], int(mib))
+                        csv.write(f"{time.monotonic() - t0:.1f},{mib},{util}\n")
+                        csv.flush()
+                except Exception:
+                    pass
+                stop.wait(2.0)
 
     t = threading.Thread(target=sample, daemon=True)
     t.start()
@@ -140,11 +153,12 @@ print('fetched')
 
 
 def _eval(name: str, policy_args: list[str]) -> None:
-    out = RESULTS / f"rollout_{name}"
+    res = RESULTS / RUN_TAG if RUN_TAG else RESULTS
+    out = res / f"rollout_{name}"
     if out.exists():
         shutil.rmtree(out)  # lerobot-eval refuses to reuse an output dir
     cmd = [
-        str(PY), "-I", str(Path(__file__).resolve().parent / "timed_eval.py"), str(RESULTS / f"timing_{name}.json"),
+        str(PY), "-I", str(Path(__file__).resolve().parent / "timed_eval.py"), str(res / f"timing_{name}.json"),
         *policy_args,
         "--policy.device=cuda",
         "--env.type=libero",
@@ -156,7 +170,7 @@ def _eval(name: str, policy_args: list[str]) -> None:
         "--seed=0",
         f"--output_dir={out}",
     ]
-    if run(cmd, logfile=RESULTS / "logs" / f"rollout_{name}.log") != 0:
+    if run(cmd, logfile=res / "logs" / f"rollout_{name}.log") != 0:
         log(f"rollout {name} failed; see log")
     videos = sorted(out.rglob("*.mp4"))
     log(f"rollout {name} videos: {[str(v) for v in videos] or 'none found'}")
@@ -268,8 +282,10 @@ def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("stage", choices=[*STAGES, "all"])
     a = p.parse_args()
-    if not PY.exists() or not VLLM.exists():
-        sys.exit(f"run setup.sh first (expected {PY} and {VLLM})")
+    if not PY.exists():
+        sys.exit(f"run setup.sh first (expected {PY})")
+    if a.stage in ("annotate", "all") and not VLLM.exists():
+        sys.exit(f"annotate needs the vLLM venv: run setup.sh without SKIP_VLLM (expected {VLLM})")
     RESULTS.mkdir(parents=True, exist_ok=True)
     for name in (STAGES if a.stage == "all" else [a.stage]):
         log(f"== stage {name}")

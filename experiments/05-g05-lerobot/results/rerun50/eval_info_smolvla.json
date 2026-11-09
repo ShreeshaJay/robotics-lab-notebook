@@ -1,0 +1,556 @@
+{
+  "per_task": [
+    {
+      "task_group": "libero_10",
+      "task_id": 0,
+      "metrics": {
+        "sum_rewards": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "max_rewards": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "successes": [
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_1.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_2.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_3.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_4.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 5,
+      "n_success": 1,
+      "pc_success": 20.0,
+      "pc_success_ci95": [
+        3.6224108632430143,
+        62.44653702374745
+      ]
+    },
+    {
+      "task_group": "libero_10",
+      "task_id": 1,
+      "metrics": {
+        "sum_rewards": [
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "max_rewards": [
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "successes": [
+          false,
+          false,
+          true,
+          true,
+          false
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_1.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_2.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_3.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_4.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 5,
+      "n_success": 2,
+      "pc_success": 40.0,
+      "pc_success_ci95": [
+        11.762077423264794,
+        76.9275718723987
+      ]
+    },
+    {
+      "task_group": "libero_10",
+      "task_id": 2,
+      "metrics": {
+        "sum_rewards": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "max_rewards": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "successes": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_1.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_2.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_3.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_4.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 5,
+      "n_success": 4,
+      "pc_success": 80.0,
+      "pc_success_ci95": [
+        37.55346297625255,
+        96.37758913675698
+      ]
+    },
+    {
+      "task_group": "libero_10",
+      "task_id": 3,
+      "metrics": {
+        "sum_rewards": [
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "max_rewards": [
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "successes": [
+          false,
+          true,
+          false,
+          true,
+          true
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_1.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_2.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_3.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_4.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 5,
+      "n_success": 3,
+      "pc_success": 60.0,
+      "pc_success_ci95": [
+        23.072428127601295,
+        88.2379225767352
+      ]
+    },
+    {
+      "task_group": "libero_10",
+      "task_id": 4,
+      "metrics": {
+        "sum_rewards": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "max_rewards": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "successes": [
+          true,
+          false,
+          false,
+          false,
+          true
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_1.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_2.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_3.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_4.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 5,
+      "n_success": 2,
+      "pc_success": 40.0,
+      "pc_success_ci95": [
+        11.762077423264794,
+        76.9275718723987
+      ]
+    },
+    {
+      "task_group": "libero_10",
+      "task_id": 5,
+      "metrics": {
+        "sum_rewards": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "max_rewards": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "successes": [
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_1.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_2.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_3.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_4.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 5,
+      "n_success": 1,
+      "pc_success": 20.0,
+      "pc_success_ci95": [
+        3.6224108632430143,
+        62.44653702374745
+      ]
+    },
+    {
+      "task_group": "libero_10",
+      "task_id": 6,
+      "metrics": {
+        "sum_rewards": [
+          1.0,
+          0.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "max_rewards": [
+          1.0,
+          0.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "successes": [
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_1.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_2.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_3.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_4.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 5,
+      "n_success": 3,
+      "pc_success": 60.0,
+      "pc_success_ci95": [
+        23.072428127601295,
+        88.2379225767352
+      ]
+    },
+    {
+      "task_group": "libero_10",
+      "task_id": 7,
+      "metrics": {
+        "sum_rewards": [
+          0.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "max_rewards": [
+          0.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "successes": [
+          false,
+          true,
+          true,
+          false,
+          false
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_1.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_2.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_3.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_4.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 5,
+      "n_success": 2,
+      "pc_success": 40.0,
+      "pc_success_ci95": [
+        11.762077423264794,
+        76.9275718723987
+      ]
+    },
+    {
+      "task_group": "libero_10",
+      "task_id": 8,
+      "metrics": {
+        "sum_rewards": [
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "max_rewards": [
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "successes": [
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_1.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_2.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_3.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_4.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 5,
+      "n_success": 3,
+      "pc_success": 60.0,
+      "pc_success_ci95": [
+        23.072428127601295,
+        88.2379225767352
+      ]
+    },
+    {
+      "task_group": "libero_10",
+      "task_id": 9,
+      "metrics": {
+        "sum_rewards": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "max_rewards": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "successes": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "video_paths": [
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_0.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_1.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_2.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_3.mp4",
+          "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_4.mp4"
+        ],
+        "predicted_video_paths": []
+      },
+      "n_episodes": 5,
+      "n_success": 5,
+      "pc_success": 100.0,
+      "pc_success_ci95": [
+        56.551753521682535,
+        100.0
+      ]
+    }
+  ],
+  "per_group": {
+    "libero_10": {
+      "avg_sum_reward": 0.52,
+      "avg_max_reward": 0.52,
+      "pc_success": 52.0,
+      "n_episodes": 50,
+      "n_success": 26,
+      "pc_success_ci95": [
+        38.51174489004462,
+        65.20286471342195
+      ],
+      "video_paths": [
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_2.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_3.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_4.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_2.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_3.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_4.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_2.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_3.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_4.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_2.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_3.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_4.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_2.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_3.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_4.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_2.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_3.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_4.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_2.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_3.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_4.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_2.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_3.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_4.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_2.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_3.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_4.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_0.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_1.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_2.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_3.mp4",
+        "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_4.mp4"
+      ],
+      "predicted_video_paths": []
+    }
+  },
+  "overall": {
+    "avg_sum_reward": 0.52,
+    "avg_max_reward": 0.52,
+    "pc_success": 52.0,
+    "n_episodes": 50,
+    "n_success": 26,
+    "pc_success_ci95": [
+      38.51174489004462,
+      65.20286471342195
+    ],
+    "eval_s": 999.3115553855896,
+    "eval_ep_s": 19.986231126785277,
+    "video_paths": [
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_2.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_3.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_4.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_2.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_3.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_4.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_2.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_3.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_4.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_2.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_3.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_4.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_2.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_3.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_4.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_2.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_3.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_4.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_2.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_3.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_4.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_2.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_3.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_4.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_2.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_3.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_4.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_0.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_1.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_2.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_3.mp4",
+      "/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_4.mp4"
+    ],
+    "predicted_video_paths": []
+  }
+}

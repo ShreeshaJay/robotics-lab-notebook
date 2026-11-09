@@ -1,0 +1,211 @@
+WARNING 2026-11-09 00:05:35 figs/eval.py:73 No job name provided, using 'libero_smolvla' as job name.
+INFO 2026-11-09 00:05:35 bot_eval.py:813 {'env': {'camera_name': 'agentview_image,robot0_eye_in_hand_image',
+         'camera_name_mapping': None,
+         'control_mode': 'relative',
+         'disable_env_checker': True,
+         'episode_length': None,
+         'features': {},
+         'features_map': {},
+         'fps': 20,
+         'hard_reset': True,
+         'init_states': True,
+         'is_libero_plus': False,
+         'max_parallel_tasks': 1,
+         'obs_type': 'pixels_agent_pos',
+         'observation_height': 360,
+         'observation_width': 360,
+         'render_mode': 'rgb_array',
+         'server': None,
+         'task': 'libero_10',
+         'task_ids': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]},
+ 'eval': {'batch_size': 1,
+          'max_episode_steps': None,
+          'n_episodes': 5,
+          'recording': False,
+          'recording_private': False,
+          'recording_repo_id': None,
+          'use_async_envs': True},
+ 'job_name': 'libero_smolvla',
+ 'output_dir': PosixPath('/home/shree/g05-lab/results/rerun50/rollout_smolvla'),
+ 'policy': {'adapt_to_pi_aloha': False,
+            'add_image_special_tokens': False,
+            'attention_mode': 'cross_attn',
+            'chunk_size': 50,
+            'compile_mode': 'max-autotune',
+            'compile_model': False,
+            'device': 'cuda',
+            'dtype': None,
+            'empty_cameras': 0,
+            'expert_width_multiplier': 0.75,
+            'freeze_vision_encoder': False,
+            'input_features': {'observation.images.camera1': {'shape': (3,
+                                                                        256,
+                                                                        256),
+                                                              'type': <FeatureType.VISUAL: 'VISUAL'>},
+                               'observation.images.camera2': {'shape': (3,
+                                                                        256,
+                                                                        256),
+                                                              'type': <FeatureType.VISUAL: 'VISUAL'>},
+                               'observation.state': {'shape': (8,),
+                                                     'type': <FeatureType.STATE: 'STATE'>}},
+            'license': None,
+            'load_vlm_weights': True,
+            'max_action_dim': 32,
+            'max_period': 4.0,
+            'max_state_dim': 32,
+            'min_period': 0.004,
+            'n_action_steps': 50,
+            'n_obs_steps': 1,
+            'normalization_mapping': {'ACTION': <NormalizationMode.MEAN_STD: 'MEAN_STD'>,
+                                      'STATE': <NormalizationMode.MEAN_STD: 'MEAN_STD'>,
+                                      'VISUAL': <NormalizationMode.IDENTITY: 'IDENTITY'>},
+            'num_expert_layers': 0,
+            'num_steps': 10,
+            'num_vlm_layers': 16,
+            'optimizer_betas': (0.9, 0.95),
+            'optimizer_eps': 1e-08,
+            'optimizer_fused': None,
+            'optimizer_grad_clip_norm': 10.0,
+            'optimizer_lr': 0.0001,
+            'optimizer_weight_decay': 1e-10,
+            'output_features': {'action': {'shape': (7,),
+                                           'type': <FeatureType.ACTION: 'ACTION'>}},
+            'pad_language_to': 'max_length',
+            'prefix_length': 0,
+            'pretrained_path': PosixPath('/home/shree/g05-lab/checkpoints/smolvla_libero'),
+            'pretrained_revision': None,
+            'private': None,
+            'push_to_hub': True,
+            'repo_id': 'pepijn223/smolvla_libero',
+            'resize_imgs_with_padding': (512, 512),
+            'rtc_config': None,
+            'scheduler_decay_lr': 2.5e-06,
+            'scheduler_decay_steps': 25000,
+            'scheduler_warmup_steps': 1000,
+            'self_attn_every_n_layers': 2,
+            'tags': None,
+            'tokenizer_max_length': 48,
+            'train_expert_only': False,
+            'train_state_proj': True,
+            'use_amp': False,
+            'use_cache': True,
+            'use_delta_joint_actions_aloha': False,
+            'use_peft': False,
+            'vlm_model_name': 'HuggingFaceTB/SmolVLM2-500M-Video-Instruct'},
+ 'rename_map': {'observation.images.image': 'observation.images.camera1',
+                'observation.images.image2': 'observation.images.camera2'},
+ 'seed': 0,
+ 'tf32': True,
+ 'trust_remote_code': False}
+INFO 2026-11-09 00:05:35 bot_eval.py:835 Output dir: /home/shree/g05-lab/results/rerun50/rollout_smolvla
+INFO 2026-11-09 00:05:35 bot_eval.py:837 Making environment (batch_size=1, async=True).
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+WARNING 2026-11-09 00:05:35 e/__init__.py:7 No private macro file found!
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+WARNING 2026-11-09 00:05:35 e/__init__.py:8 It is recommended to use a private macro file
+[robosuite WARNING] To setup, run: python /home/shree/g05-lab/.venv-lerobot/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+WARNING 2026-11-09 00:05:35 e/__init__.py:9 To setup, run: python /home/shree/g05-lab/.venv-lerobot/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py
+INFO 2026-11-09 00:05:35 pesloader.py:70 Failed to load library ( 'libOpenGL.so.0' ): libOpenGL.so.0: cannot open shared object file: No such file or directory
+INFO 2026-11-09 00:05:35 tesupport.py:24 No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+INFO 2026-11-09 00:05:35 pesloader.py:70 Failed to load library ( 'libOpenGL.so.0' ): libOpenGL.so.0: cannot open shared object file: No such file or directory
+INFO 2026-11-09 00:05:36 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-09 00:05:36 s/libero.py:517 Restricting to task_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO 2026-11-09 00:05:36 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-09 00:05:36 s/libero.py:517 Restricting to task_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO 2026-11-09 00:05:36 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-09 00:05:36 s/libero.py:517 Restricting to task_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO 2026-11-09 00:05:36 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-09 00:05:36 s/libero.py:517 Restricting to task_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO 2026-11-09 00:05:36 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-09 00:05:36 s/libero.py:517 Restricting to task_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO 2026-11-09 00:05:36 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-09 00:05:36 s/libero.py:517 Restricting to task_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO 2026-11-09 00:05:36 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-09 00:05:36 s/libero.py:517 Restricting to task_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO 2026-11-09 00:05:36 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-09 00:05:36 s/libero.py:517 Restricting to task_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO 2026-11-09 00:05:36 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-09 00:05:36 s/libero.py:517 Restricting to task_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO 2026-11-09 00:05:36 s/libero.py:510 Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+INFO 2026-11-09 00:05:36 s/libero.py:517 Restricting to task_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO 2026-11-09 00:05:36 bot_eval.py:862 Making policy.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING 2026-11-09 00:05:36 s/_http.py:1023 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Loading  HuggingFaceTB/SmolVLM2-500M-Video-Instruct weights ...
+Reducing the number of VLM layers to 16 ...
+Loading weights from local directory
+Assets already downloaded at /home/shree/.cache/libero/assets
+                                                                                                                    [A[timed_eval] episode 1: success=False wall=25.28s steps=520
+                                                                                                                    [A[timed_eval] episode 2: success=False wall=25.42s steps=520
+                                                                                                                      [A[timed_eval] episode 3: success=True wall=14.94s steps=271
+                                                                                                                    [A[timed_eval] episode 4: success=False wall=25.36s steps=520
+                                                                                                                    [A[timed_eval] episode 5: success=False wall=27.55s steps=520
+                                                                                                                    [A[timed_eval] episode 6: success=False wall=25.08s steps=520
+                                                                                                                      [A[timed_eval] episode 7: success=True wall=12.94s steps=235
+                                                                                                                      [A[timed_eval] episode 8: success=True wall=12.9s steps=242
+                                                                                                                    [A[timed_eval] episode 9: success=False wall=24.87s steps=520
+                                                                                                                      [A[timed_eval] episode 10: success=True wall=12.99s steps=234
+                                                                                                                      [A[timed_eval] episode 11: success=True wall=10.44s steps=241
+                                                                                                                      [A[timed_eval] episode 12: success=True wall=10.09s steps=229
+                                                                                                                      [A[timed_eval] episode 13: success=True wall=10.54s steps=244
+                                                                                                                    [A[timed_eval] episode 14: success=False wall=21.0s steps=520
+                                                                                                                    [A[timed_eval] episode 15: success=False wall=26.89s steps=520
+                                                                                                                      [A[timed_eval] episode 16: success=True wall=11.32s steps=222
+                                                                                                                    [A[timed_eval] episode 17: success=False wall=23.81s steps=520
+                                                                                                                      [A[timed_eval] episode 18: success=True wall=10.94s steps=214
+                                                                                                                      [A[timed_eval] episode 19: success=True wall=10.99s steps=217
+                                                                                                                      [A[timed_eval] episode 20: success=True wall=22.56s steps=246
+                                                                                                                    [A[timed_eval] episode 21: success=False wall=27.29s steps=520
+                                                                                                                    [A[timed_eval] episode 22: success=False wall=28.05s steps=520
+                                                                                                                    [A[timed_eval] episode 23: success=False wall=27.49s steps=520
+                                                                                                                      [A[timed_eval] episode 24: success=True wall=15.05s steps=225
+                                                                                                                    [A[timed_eval] episode 25: success=False wall=26.78s steps=520
+                                                                                                                    [A[timed_eval] episode 26: success=False wall=23.2s steps=520
+                                                                                                                    [A[timed_eval] episode 27: success=False wall=22.1s steps=520
+                                                                                                                      [A[timed_eval] episode 28: success=True wall=9.27s steps=174
+                                                                                                                    [A[timed_eval] episode 29: success=False wall=22.22s steps=520
+                                                                                                                      [A[timed_eval] episode 30: success=True wall=30.27s steps=503
+                                                                                                                    [A[timed_eval] episode 31: success=False wall=24.66s steps=520
+                                                                                                                      [A[timed_eval] episode 32: success=True wall=12.16s steps=216
+                                                                                                                      [A[timed_eval] episode 33: success=True wall=15.06s steps=282
+                                                                                                                    [A[timed_eval] episode 34: success=False wall=25.47s steps=520
+                                                                                                                    [A[timed_eval] episode 35: success=False wall=24.1s steps=520
+                                                                                                                      [A[timed_eval] episode 36: success=True wall=12.01s steps=242
+                                                                                                                      [A[timed_eval] episode 37: success=True wall=12.17s steps=251
+                                                                                                                    [A[timed_eval] episode 38: success=False wall=22.4s steps=520
+                                                                                                                    [A[timed_eval] episode 39: success=False wall=22.38s steps=520
+                                                                                                                      [A[timed_eval] episode 40: success=True wall=17.89s steps=373
+                                                                                                                      [A[timed_eval] episode 41: success=True wall=17.83s steps=405
+                                                                                                                      [A[timed_eval] episode 42: success=True wall=20.3s steps=461
+                                                                                                                    [A[timed_eval] episode 43: success=False wall=22.56s steps=520
+                                                                                                                    [A[timed_eval] episode 44: success=False wall=22.17s steps=520
+                                                                                                                      [A[timed_eval] episode 45: success=True wall=16.17s steps=254
+                                                                                                                      [A[timed_eval] episode 46: success=True wall=12.59s steps=252
+                                                                                                                      [A[timed_eval] episode 47: success=True wall=12.57s steps=251
+                                                                                                                      [A[timed_eval] episode 48: success=True wall=13.05s steps=266
+                                                                                                                      [A[timed_eval] episode 49: success=True wall=13.08s steps=266
+INFO 2026-11-09 00:22:42 bot_eval.py:908 Overall Aggregated Metrics:
+INFO 2026-11-09 00:22:42 bot_eval.py:909 {'avg_sum_reward': 0.52, 'avg_max_reward': 0.52, 'pc_success': 52.0, 'n_episodes': 50, 'n_success': 26, 'pc_success_ci95': [38.51174489004462, 65.20286471342195], 'eval_s': 999.3115553855896, 'eval_ep_s': 19.986231126785277, 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_4.mp4'], 'predicted_video_paths': []}
+INFO 2026-11-09 00:22:42 bot_eval.py:911 Success rate 52.0% (26/50 episodes, 95% Wilson interval 38.5% to 65.2%)
+INFO 2026-11-09 00:22:42 bot_eval.py:922 
+Aggregated Metrics for per_task:
+INFO 2026-11-09 00:22:42 bot_eval.py:923 [{'task_group': 'libero_10', 'task_id': 0, 'metrics': {'sum_rewards': [0.0, 0.0, 0.0, 1.0, 0.0], 'max_rewards': [0.0, 0.0, 0.0, 1.0, 0.0], 'successes': [False, False, False, True, False], 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_4.mp4'], 'predicted_video_paths': []}, 'n_episodes': 5, 'n_success': 1, 'pc_success': 20.0, 'pc_success_ci95': [3.6224108632430143, 62.44653702374745]}, {'task_group': 'libero_10', 'task_id': 1, 'metrics': {'sum_rewards': [0.0, 0.0, 1.0, 1.0, 0.0], 'max_rewards': [0.0, 0.0, 1.0, 1.0, 0.0], 'successes': [False, False, True, True, False], 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_4.mp4'], 'predicted_video_paths': []}, 'n_episodes': 5, 'n_success': 2, 'pc_success': 40.0, 'pc_success_ci95': [11.762077423264794, 76.9275718723987]}, {'task_group': 'libero_10', 'task_id': 2, 'metrics': {'sum_rewards': [1.0, 1.0, 1.0, 1.0, 0.0], 'max_rewards': [1.0, 1.0, 1.0, 1.0, 0.0], 'successes': [True, True, True, True, False], 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_4.mp4'], 'predicted_video_paths': []}, 'n_episodes': 5, 'n_success': 4, 'pc_success': 80.0, 'pc_success_ci95': [37.55346297625255, 96.37758913675698]}, {'task_group': 'libero_10', 'task_id': 3, 'metrics': {'sum_rewards': [0.0, 1.0, 0.0, 1.0, 1.0], 'max_rewards': [0.0, 1.0, 0.0, 1.0, 1.0], 'successes': [False, True, False, True, True], 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_4.mp4'], 'predicted_video_paths': []}, 'n_episodes': 5, 'n_success': 3, 'pc_success': 60.0, 'pc_success_ci95': [23.072428127601295, 88.2379225767352]}, {'task_group': 'libero_10', 'task_id': 4, 'metrics': {'sum_rewards': [1.0, 0.0, 0.0, 0.0, 1.0], 'max_rewards': [1.0, 0.0, 0.0, 0.0, 1.0], 'successes': [True, False, False, False, True], 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_4.mp4'], 'predicted_video_paths': []}, 'n_episodes': 5, 'n_success': 2, 'pc_success': 40.0, 'pc_success_ci95': [11.762077423264794, 76.9275718723987]}, {'task_group': 'libero_10', 'task_id': 5, 'metrics': {'sum_rewards': [0.0, 0.0, 0.0, 1.0, 0.0], 'max_rewards': [0.0, 0.0, 0.0, 1.0, 0.0], 'successes': [False, False, False, True, False], 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_4.mp4'], 'predicted_video_paths': []}, 'n_episodes': 5, 'n_success': 1, 'pc_success': 20.0, 'pc_success_ci95': [3.6224108632430143, 62.44653702374745]}, {'task_group': 'libero_10', 'task_id': 6, 'metrics': {'sum_rewards': [1.0, 0.0, 1.0, 1.0, 0.0], 'max_rewards': [1.0, 0.0, 1.0, 1.0, 0.0], 'successes': [True, False, True, True, False], 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_4.mp4'], 'predicted_video_paths': []}, 'n_episodes': 5, 'n_success': 3, 'pc_success': 60.0, 'pc_success_ci95': [23.072428127601295, 88.2379225767352]}, {'task_group': 'libero_10', 'task_id': 7, 'metrics': {'sum_rewards': [0.0, 1.0, 1.0, 0.0, 0.0], 'max_rewards': [0.0, 1.0, 1.0, 0.0, 0.0], 'successes': [False, True, True, False, False], 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_4.mp4'], 'predicted_video_paths': []}, 'n_episodes': 5, 'n_success': 2, 'pc_success': 40.0, 'pc_success_ci95': [11.762077423264794, 76.9275718723987]}, {'task_group': 'libero_10', 'task_id': 8, 'metrics': {'sum_rewards': [1.0, 1.0, 1.0, 0.0, 0.0], 'max_rewards': [1.0, 1.0, 1.0, 0.0, 0.0], 'successes': [True, True, True, False, False], 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_4.mp4'], 'predicted_video_paths': []}, 'n_episodes': 5, 'n_success': 3, 'pc_success': 60.0, 'pc_success_ci95': [23.072428127601295, 88.2379225767352]}, {'task_group': 'libero_10', 'task_id': 9, 'metrics': {'sum_rewards': [1.0, 1.0, 1.0, 1.0, 1.0], 'max_rewards': [1.0, 1.0, 1.0, 1.0, 1.0], 'successes': [True, True, True, True, True], 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_4.mp4'], 'predicted_video_paths': []}, 'n_episodes': 5, 'n_success': 5, 'pc_success': 100.0, 'pc_success_ci95': [56.551753521682535, 100.0]}]
+INFO 2026-11-09 00:22:42 bot_eval.py:922 
+Aggregated Metrics for per_group:
+INFO 2026-11-09 00:22:42 bot_eval.py:923 {'libero_10': {'avg_sum_reward': 0.52, 'avg_max_reward': 0.52, 'pc_success': 52.0, 'n_episodes': 50, 'n_success': 26, 'pc_success_ci95': [38.51174489004462, 65.20286471342195], 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_4.mp4'], 'predicted_video_paths': []}}
+INFO 2026-11-09 00:22:42 bot_eval.py:922 
+Aggregated Metrics for overall:
+INFO 2026-11-09 00:22:42 bot_eval.py:923 {'avg_sum_reward': 0.52, 'avg_max_reward': 0.52, 'pc_success': 52.0, 'n_episodes': 50, 'n_success': 26, 'pc_success_ci95': [38.51174489004462, 65.20286471342195], 'eval_s': 999.3115553855896, 'eval_ep_s': 19.986231126785277, 'video_paths': ['/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_0/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_1/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_2/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_3/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_4/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_5/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_6/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_7/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_8/eval_episode_4.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_0.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_1.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_2.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_3.mp4', '/home/shree/g05-lab/results/rerun50/rollout_smolvla/videos/libero_10_9/eval_episode_4.mp4'], 'predicted_video_paths': []}
+INFO 2026-11-09 00:22:42 bot_eval.py:941 End of eval
+[timed_eval] {"n_chunk_calls": 419, "first_call_s": 0.9728, "chunk_latency_ms_mean": 326.2, "chunk_latency_ms_median": 323.5, "chunk_latency_ms_p90": 328.4, "n_episodes_timed": 50, "episode_wall_s_mean": 19.62, "episode_wall_s_median": 21.55, "torch_max_allocated_mib": 922, "torch_max_reserved_mib": 956, "gpu": "NVIDIA L4"}

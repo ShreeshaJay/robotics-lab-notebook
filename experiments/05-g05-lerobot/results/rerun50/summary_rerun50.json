@@ -1,0 +1,974 @@
+{
+  "g05": {
+    "n_episodes": 50,
+    "n_success": 49,
+    "pc_success": 98.0,
+    "wilson_ci95_pc": [
+      89.5,
+      99.6
+    ],
+    "lerobot_overall": {
+      "pc_success": 98.0,
+      "pc_success_ci95": [
+        89.50455641036218,
+        99.64607407283539
+      ],
+      "eval_s": 1569.9631617069244,
+      "eval_ep_s": 31.399263243675232
+    },
+    "per_task": {
+      "0": {
+        "k": 5,
+        "n": 5
+      },
+      "1": {
+        "k": 5,
+        "n": 5
+      },
+      "2": {
+        "k": 5,
+        "n": 5
+      },
+      "3": {
+        "k": 5,
+        "n": 5
+      },
+      "4": {
+        "k": 5,
+        "n": 5
+      },
+      "5": {
+        "k": 5,
+        "n": 5
+      },
+      "6": {
+        "k": 5,
+        "n": 5
+      },
+      "7": {
+        "k": 5,
+        "n": 5
+      },
+      "8": {
+        "k": 5,
+        "n": 5
+      },
+      "9": {
+        "k": 4,
+        "n": 5
+      }
+    },
+    "episode_wall_s": {
+      "mean": 31.0,
+      "median": 28.7,
+      "min": 19.67,
+      "max": 79.92,
+      "success_mean": 30.5,
+      "failure_mean": 55.9
+    },
+    "chunk_latency_ms": {
+      "n": 1292,
+      "median": 619.7,
+      "mean": 621.1,
+      "p90": 628.2,
+      "p99": 661.1,
+      "max": 930.6,
+      "first_call_s": 41.124
+    },
+    "vram": {
+      "torch_max_allocated_mib": 11265,
+      "torch_max_reserved_mib": 12016,
+      "nvidia_smi_peak_mib": 12907,
+      "nvidia_smi_samples": 791
+    },
+    "episodes": [
+      {
+        "task_id": 0,
+        "episode": 0,
+        "success": true,
+        "steps": 267,
+        "wall_s": 79.92,
+        "chunk_calls": 27
+      },
+      {
+        "task_id": 0,
+        "episode": 1,
+        "success": true,
+        "steps": 250,
+        "wall_s": 28.95,
+        "chunk_calls": 25
+      },
+      {
+        "task_id": 0,
+        "episode": 2,
+        "success": true,
+        "steps": 249,
+        "wall_s": 29.52,
+        "chunk_calls": 25
+      },
+      {
+        "task_id": 0,
+        "episode": 3,
+        "success": true,
+        "steps": 266,
+        "wall_s": 30.81,
+        "chunk_calls": 27
+      },
+      {
+        "task_id": 0,
+        "episode": 4,
+        "success": true,
+        "steps": 274,
+        "wall_s": 32.8,
+        "chunk_calls": 28
+      },
+      {
+        "task_id": 1,
+        "episode": 0,
+        "success": true,
+        "steps": 248,
+        "wall_s": 31.83,
+        "chunk_calls": 25
+      },
+      {
+        "task_id": 1,
+        "episode": 1,
+        "success": true,
+        "steps": 245,
+        "wall_s": 28.83,
+        "chunk_calls": 25
+      },
+      {
+        "task_id": 1,
+        "episode": 2,
+        "success": true,
+        "steps": 245,
+        "wall_s": 28.47,
+        "chunk_calls": 25
+      },
+      {
+        "task_id": 1,
+        "episode": 3,
+        "success": true,
+        "steps": 248,
+        "wall_s": 29.0,
+        "chunk_calls": 25
+      },
+      {
+        "task_id": 1,
+        "episode": 4,
+        "success": true,
+        "steps": 242,
+        "wall_s": 28.44,
+        "chunk_calls": 25
+      },
+      {
+        "task_id": 2,
+        "episode": 0,
+        "success": true,
+        "steps": 230,
+        "wall_s": 27.25,
+        "chunk_calls": 23
+      },
+      {
+        "task_id": 2,
+        "episode": 1,
+        "success": true,
+        "steps": 239,
+        "wall_s": 25.12,
+        "chunk_calls": 24
+      },
+      {
+        "task_id": 2,
+        "episode": 2,
+        "success": true,
+        "steps": 235,
+        "wall_s": 25.4,
+        "chunk_calls": 24
+      },
+      {
+        "task_id": 2,
+        "episode": 3,
+        "success": true,
+        "steps": 247,
+        "wall_s": 26.12,
+        "chunk_calls": 25
+      },
+      {
+        "task_id": 2,
+        "episode": 4,
+        "success": true,
+        "steps": 230,
+        "wall_s": 24.55,
+        "chunk_calls": 23
+      },
+      {
+        "task_id": 3,
+        "episode": 0,
+        "success": true,
+        "steps": 225,
+        "wall_s": 28.9,
+        "chunk_calls": 23
+      },
+      {
+        "task_id": 3,
+        "episode": 1,
+        "success": true,
+        "steps": 214,
+        "wall_s": 24.87,
+        "chunk_calls": 22
+      },
+      {
+        "task_id": 3,
+        "episode": 2,
+        "success": true,
+        "steps": 219,
+        "wall_s": 24.62,
+        "chunk_calls": 22
+      },
+      {
+        "task_id": 3,
+        "episode": 3,
+        "success": true,
+        "steps": 219,
+        "wall_s": 24.92,
+        "chunk_calls": 22
+      },
+      {
+        "task_id": 3,
+        "episode": 4,
+        "success": true,
+        "steps": 221,
+        "wall_s": 25.4,
+        "chunk_calls": 23
+      },
+      {
+        "task_id": 4,
+        "episode": 0,
+        "success": true,
+        "steps": 227,
+        "wall_s": 39.17,
+        "chunk_calls": 23
+      },
+      {
+        "task_id": 4,
+        "episode": 1,
+        "success": true,
+        "steps": 219,
+        "wall_s": 28.61,
+        "chunk_calls": 22
+      },
+      {
+        "task_id": 4,
+        "episode": 2,
+        "success": true,
+        "steps": 216,
+        "wall_s": 28.65,
+        "chunk_calls": 22
+      },
+      {
+        "task_id": 4,
+        "episode": 3,
+        "success": true,
+        "steps": 225,
+        "wall_s": 29.16,
+        "chunk_calls": 23
+      },
+      {
+        "task_id": 4,
+        "episode": 4,
+        "success": true,
+        "steps": 224,
+        "wall_s": 29.57,
+        "chunk_calls": 23
+      },
+      {
+        "task_id": 5,
+        "episode": 0,
+        "success": true,
+        "steps": 179,
+        "wall_s": 26.32,
+        "chunk_calls": 18
+      },
+      {
+        "task_id": 5,
+        "episode": 1,
+        "success": true,
+        "steps": 250,
+        "wall_s": 27.94,
+        "chunk_calls": 25
+      },
+      {
+        "task_id": 5,
+        "episode": 2,
+        "success": true,
+        "steps": 184,
+        "wall_s": 21.67,
+        "chunk_calls": 19
+      },
+      {
+        "task_id": 5,
+        "episode": 3,
+        "success": true,
+        "steps": 165,
+        "wall_s": 19.92,
+        "chunk_calls": 17
+      },
+      {
+        "task_id": 5,
+        "episode": 4,
+        "success": true,
+        "steps": 161,
+        "wall_s": 19.67,
+        "chunk_calls": 17
+      },
+      {
+        "task_id": 6,
+        "episode": 0,
+        "success": true,
+        "steps": 212,
+        "wall_s": 33.06,
+        "chunk_calls": 22
+      },
+      {
+        "task_id": 6,
+        "episode": 1,
+        "success": true,
+        "steps": 222,
+        "wall_s": 27.04,
+        "chunk_calls": 23
+      },
+      {
+        "task_id": 6,
+        "episode": 2,
+        "success": true,
+        "steps": 305,
+        "wall_s": 35.86,
+        "chunk_calls": 31
+      },
+      {
+        "task_id": 6,
+        "episode": 3,
+        "success": true,
+        "steps": 213,
+        "wall_s": 26.29,
+        "chunk_calls": 22
+      },
+      {
+        "task_id": 6,
+        "episode": 4,
+        "success": true,
+        "steps": 221,
+        "wall_s": 27.23,
+        "chunk_calls": 23
+      },
+      {
+        "task_id": 7,
+        "episode": 0,
+        "success": true,
+        "steps": 231,
+        "wall_s": 29.12,
+        "chunk_calls": 24
+      },
+      {
+        "task_id": 7,
+        "episode": 1,
+        "success": true,
+        "steps": 235,
+        "wall_s": 26.91,
+        "chunk_calls": 24
+      },
+      {
+        "task_id": 7,
+        "episode": 2,
+        "success": true,
+        "steps": 235,
+        "wall_s": 26.59,
+        "chunk_calls": 24
+      },
+      {
+        "task_id": 7,
+        "episode": 3,
+        "success": true,
+        "steps": 242,
+        "wall_s": 27.43,
+        "chunk_calls": 25
+      },
+      {
+        "task_id": 7,
+        "episode": 4,
+        "success": true,
+        "steps": 250,
+        "wall_s": 27.58,
+        "chunk_calls": 25
+      },
+      {
+        "task_id": 8,
+        "episode": 0,
+        "success": true,
+        "steps": 388,
+        "wall_s": 42.82,
+        "chunk_calls": 39
+      },
+      {
+        "task_id": 8,
+        "episode": 1,
+        "success": true,
+        "steps": 389,
+        "wall_s": 40.98,
+        "chunk_calls": 39
+      },
+      {
+        "task_id": 8,
+        "episode": 2,
+        "success": true,
+        "steps": 380,
+        "wall_s": 40.41,
+        "chunk_calls": 38
+      },
+      {
+        "task_id": 8,
+        "episode": 3,
+        "success": true,
+        "steps": 377,
+        "wall_s": 40.21,
+        "chunk_calls": 38
+      },
+      {
+        "task_id": 8,
+        "episode": 4,
+        "success": true,
+        "steps": 408,
+        "wall_s": 43.78,
+        "chunk_calls": 41
+      },
+      {
+        "task_id": 9,
+        "episode": 0,
+        "success": true,
+        "steps": 259,
+        "wall_s": 33.81,
+        "chunk_calls": 26
+      },
+      {
+        "task_id": 9,
+        "episode": 1,
+        "success": false,
+        "steps": 520,
+        "wall_s": 55.91,
+        "chunk_calls": 52
+      },
+      {
+        "task_id": 9,
+        "episode": 2,
+        "success": true,
+        "steps": 260,
+        "wall_s": 29.49,
+        "chunk_calls": 26
+      },
+      {
+        "task_id": 9,
+        "episode": 3,
+        "success": true,
+        "steps": 262,
+        "wall_s": 30.12,
+        "chunk_calls": 27
+      },
+      {
+        "task_id": 9,
+        "episode": 4,
+        "success": true,
+        "steps": 265,
+        "wall_s": 29.86,
+        "chunk_calls": 27
+      }
+    ],
+    "timing_mismatches": 0
+  },
+  "smolvla": {
+    "n_episodes": 50,
+    "n_success": 26,
+    "pc_success": 52.0,
+    "wilson_ci95_pc": [
+      38.5,
+      65.2
+    ],
+    "lerobot_overall": {
+      "pc_success": 52.0,
+      "pc_success_ci95": [
+        38.51174489004462,
+        65.20286471342195
+      ],
+      "eval_s": 999.3115553855896,
+      "eval_ep_s": 19.986231126785277
+    },
+    "per_task": {
+      "0": {
+        "k": 1,
+        "n": 5
+      },
+      "1": {
+        "k": 2,
+        "n": 5
+      },
+      "2": {
+        "k": 4,
+        "n": 5
+      },
+      "3": {
+        "k": 3,
+        "n": 5
+      },
+      "4": {
+        "k": 2,
+        "n": 5
+      },
+      "5": {
+        "k": 1,
+        "n": 5
+      },
+      "6": {
+        "k": 3,
+        "n": 5
+      },
+      "7": {
+        "k": 2,
+        "n": 5
+      },
+      "8": {
+        "k": 3,
+        "n": 5
+      },
+      "9": {
+        "k": 5,
+        "n": 5
+      }
+    },
+    "episode_wall_s": {
+      "mean": 19.6,
+      "median": 21.6,
+      "min": 9.27,
+      "max": 44.64,
+      "success_mean": 14.2,
+      "failure_mean": 25.4
+    },
+    "chunk_latency_ms": {
+      "n": 418,
+      "median": 323.5,
+      "mean": 326.2,
+      "p90": 328.4,
+      "p99": 417.1,
+      "max": 459.3,
+      "first_call_s": 0.9728
+    },
+    "vram": {
+      "torch_max_allocated_mib": 922,
+      "torch_max_reserved_mib": 956,
+      "nvidia_smi_peak_mib": 2061,
+      "nvidia_smi_samples": 514
+    },
+    "episodes": [
+      {
+        "task_id": 0,
+        "episode": 0,
+        "success": false,
+        "steps": 520,
+        "wall_s": 44.64,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 0,
+        "episode": 1,
+        "success": false,
+        "steps": 520,
+        "wall_s": 25.28,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 0,
+        "episode": 2,
+        "success": false,
+        "steps": 520,
+        "wall_s": 25.42,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 0,
+        "episode": 3,
+        "success": true,
+        "steps": 271,
+        "wall_s": 14.94,
+        "chunk_calls": 6
+      },
+      {
+        "task_id": 0,
+        "episode": 4,
+        "success": false,
+        "steps": 520,
+        "wall_s": 25.36,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 1,
+        "episode": 0,
+        "success": false,
+        "steps": 520,
+        "wall_s": 27.55,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 1,
+        "episode": 1,
+        "success": false,
+        "steps": 520,
+        "wall_s": 25.08,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 1,
+        "episode": 2,
+        "success": true,
+        "steps": 235,
+        "wall_s": 12.94,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 1,
+        "episode": 3,
+        "success": true,
+        "steps": 242,
+        "wall_s": 12.9,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 1,
+        "episode": 4,
+        "success": false,
+        "steps": 520,
+        "wall_s": 24.87,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 2,
+        "episode": 0,
+        "success": true,
+        "steps": 234,
+        "wall_s": 12.99,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 2,
+        "episode": 1,
+        "success": true,
+        "steps": 241,
+        "wall_s": 10.44,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 2,
+        "episode": 2,
+        "success": true,
+        "steps": 229,
+        "wall_s": 10.09,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 2,
+        "episode": 3,
+        "success": true,
+        "steps": 244,
+        "wall_s": 10.54,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 2,
+        "episode": 4,
+        "success": false,
+        "steps": 520,
+        "wall_s": 21.0,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 3,
+        "episode": 0,
+        "success": false,
+        "steps": 520,
+        "wall_s": 26.89,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 3,
+        "episode": 1,
+        "success": true,
+        "steps": 222,
+        "wall_s": 11.32,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 3,
+        "episode": 2,
+        "success": false,
+        "steps": 520,
+        "wall_s": 23.81,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 3,
+        "episode": 3,
+        "success": true,
+        "steps": 214,
+        "wall_s": 10.94,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 3,
+        "episode": 4,
+        "success": true,
+        "steps": 217,
+        "wall_s": 10.99,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 4,
+        "episode": 0,
+        "success": true,
+        "steps": 246,
+        "wall_s": 22.56,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 4,
+        "episode": 1,
+        "success": false,
+        "steps": 520,
+        "wall_s": 27.29,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 4,
+        "episode": 2,
+        "success": false,
+        "steps": 520,
+        "wall_s": 28.05,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 4,
+        "episode": 3,
+        "success": false,
+        "steps": 520,
+        "wall_s": 27.49,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 4,
+        "episode": 4,
+        "success": true,
+        "steps": 225,
+        "wall_s": 15.05,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 5,
+        "episode": 0,
+        "success": false,
+        "steps": 520,
+        "wall_s": 26.78,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 5,
+        "episode": 1,
+        "success": false,
+        "steps": 520,
+        "wall_s": 23.2,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 5,
+        "episode": 2,
+        "success": false,
+        "steps": 520,
+        "wall_s": 22.1,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 5,
+        "episode": 3,
+        "success": true,
+        "steps": 174,
+        "wall_s": 9.27,
+        "chunk_calls": 4
+      },
+      {
+        "task_id": 5,
+        "episode": 4,
+        "success": false,
+        "steps": 520,
+        "wall_s": 22.22,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 6,
+        "episode": 0,
+        "success": true,
+        "steps": 503,
+        "wall_s": 30.27,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 6,
+        "episode": 1,
+        "success": false,
+        "steps": 520,
+        "wall_s": 24.66,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 6,
+        "episode": 2,
+        "success": true,
+        "steps": 216,
+        "wall_s": 12.16,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 6,
+        "episode": 3,
+        "success": true,
+        "steps": 282,
+        "wall_s": 15.06,
+        "chunk_calls": 6
+      },
+      {
+        "task_id": 6,
+        "episode": 4,
+        "success": false,
+        "steps": 520,
+        "wall_s": 25.47,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 7,
+        "episode": 0,
+        "success": false,
+        "steps": 520,
+        "wall_s": 24.1,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 7,
+        "episode": 1,
+        "success": true,
+        "steps": 242,
+        "wall_s": 12.01,
+        "chunk_calls": 5
+      },
+      {
+        "task_id": 7,
+        "episode": 2,
+        "success": true,
+        "steps": 251,
+        "wall_s": 12.17,
+        "chunk_calls": 6
+      },
+      {
+        "task_id": 7,
+        "episode": 3,
+        "success": false,
+        "steps": 520,
+        "wall_s": 22.4,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 7,
+        "episode": 4,
+        "success": false,
+        "steps": 520,
+        "wall_s": 22.38,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 8,
+        "episode": 0,
+        "success": true,
+        "steps": 373,
+        "wall_s": 17.89,
+        "chunk_calls": 8
+      },
+      {
+        "task_id": 8,
+        "episode": 1,
+        "success": true,
+        "steps": 405,
+        "wall_s": 17.83,
+        "chunk_calls": 9
+      },
+      {
+        "task_id": 8,
+        "episode": 2,
+        "success": true,
+        "steps": 461,
+        "wall_s": 20.3,
+        "chunk_calls": 10
+      },
+      {
+        "task_id": 8,
+        "episode": 3,
+        "success": false,
+        "steps": 520,
+        "wall_s": 22.56,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 8,
+        "episode": 4,
+        "success": false,
+        "steps": 520,
+        "wall_s": 22.17,
+        "chunk_calls": 11
+      },
+      {
+        "task_id": 9,
+        "episode": 0,
+        "success": true,
+        "steps": 254,
+        "wall_s": 16.17,
+        "chunk_calls": 6
+      },
+      {
+        "task_id": 9,
+        "episode": 1,
+        "success": true,
+        "steps": 252,
+        "wall_s": 12.59,
+        "chunk_calls": 6
+      },
+      {
+        "task_id": 9,
+        "episode": 2,
+        "success": true,
+        "steps": 251,
+        "wall_s": 12.57,
+        "chunk_calls": 6
+      },
+      {
+        "task_id": 9,
+        "episode": 3,
+        "success": true,
+        "steps": 266,
+        "wall_s": 13.05,
+        "chunk_calls": 6
+      },
+      {
+        "task_id": 9,
+        "episode": 4,
+        "success": true,
+        "steps": 266,
+        "wall_s": 13.08,
+        "chunk_calls": 6
+      }
+    ],
+    "timing_mismatches": 0
+  }
+}

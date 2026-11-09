@@ -37,6 +37,16 @@ sudo apt-get update
 sudo apt-get install -y --no-install-recommends \
   git ffmpeg build-essential cmake python3.12 python3.12-venv python3.12-dev \
   libegl1 libgl1 libglx0 libgles2 libglib2.0-0 libosmesa6 libxrender1 libsm6
+# The Deep Learning VM driver install registers no NVIDIA EGL vendor library, so robosuite fails with
+# "Cannot initialize a EGL device display". Install the GL/EGL userspace that exactly matches the running driver.
+DRV=$(nvidia-smi --query-gpu=driver_version --format=csv,noheader | head -1)
+DRV_MAJOR=${DRV%%.*}
+GL_PKG_VER=$(apt-cache madison "libnvidia-gl-${DRV_MAJOR}-server" | awk -v v="$DRV" '$3 ~ "^"v"-" {print $3}' | sort -u | tail -1 || true)
+if [ -n "$GL_PKG_VER" ]; then
+  sudo apt-get install -y --no-install-recommends "libnvidia-gl-${DRV_MAJOR}-server=${GL_PKG_VER}"
+else
+  echo "WARNING: no libnvidia-gl-${DRV_MAJOR}-server build matching driver $DRV; EGL rendering may fail"
+fi
 
 echo "== venv 1: lerobot"
 python3.12 -m venv "$WORK/.venv-lerobot"
@@ -56,18 +66,20 @@ printf "assets: %s\nbddl_files: %s\ndatasets: %s\ninit_states: %s\n" \
 ln -sfn "$HOME/.libero/assets" "$HOME/.cache/libero/assets"
 cat "$HOME/.libero/config.yaml"
 
+if [ "${SKIP_VLLM:-0}" != "1" ]; then   # SKIP_VLLM=1: rollouts only (no annotation), saves about 10 min
 echo "== venv 2: vLLM server for lerobot-annotate"
 python3.12 -m venv "$WORK/.venv-vllm"
 "$WORK/.venv-vllm/bin/python" -m pip install --upgrade "pip==25.3"
 "$WORK/.venv-vllm/bin/pip" install "vllm==${VLLM_VERSION}"
+fi
 
 echo "== freeze (for the write-up)"
 mkdir -p "$WORK/results"
 "$WORK/.venv-lerobot/bin/pip" freeze > "$WORK/results/freeze-lerobot.txt"
-"$WORK/.venv-vllm/bin/pip" freeze > "$WORK/results/freeze-vllm.txt"
+[ -x "$WORK/.venv-vllm/bin/pip" ] && "$WORK/.venv-vllm/bin/pip" freeze > "$WORK/results/freeze-vllm.txt"
 "$WORK/.venv-lerobot/bin/python" -c "import importlib.metadata as m, torch, transformers; print('lerobot', m.version('lerobot'), 'torch', torch.__version__, 'transformers', transformers.__version__, 'cuda ok:', torch.cuda.is_available())"
 "$WORK/.venv-lerobot/bin/python" -c "from lerobot.policies.g05 import configuration_g05; print('g05 policy module importable')"
-"$WORK/.venv-vllm/bin/vllm" --version
+[ -x "$WORK/.venv-vllm/bin/vllm" ] && "$WORK/.venv-vllm/bin/vllm" --version
 
 df -h "$WORK"
 echo "Setup done. Next: read the G0.5 Community License, then run: python3 run.py --help"

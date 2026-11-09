@@ -1,0 +1,23 @@
+{
+  "cmd": [
+    "/home/shree/g05-lab/.venv-lerobot/bin/python",
+    "-I",
+    "/home/shree/exp05/timed_eval.py",
+    "/home/shree/g05-lab/results/rerun50/timing_smolvla.json",
+    "--policy.path=/home/shree/g05-lab/checkpoints/smolvla_libero",
+    "--env.control_mode=relative",
+    "--rename_map={\"observation.images.image\": \"observation.images.camera1\", \"observation.images.image2\": \"observation.images.camera2\"}",
+    "--policy.device=cuda",
+    "--env.type=libero",
+    "--env.task=libero_10",
+    "--env.task_ids=[0,1,2,3,4,5,6,7,8,9]",
+    "--env.init_states=true",
+    "--eval.batch_size=1",
+    "--eval.n_episodes=5",
+    "--seed=0",
+    "--output_dir=/home/shree/g05-lab/results/rerun50/rollout_smolvla"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 1039.6,
+  "peak_gpu_mib": 2061
+}

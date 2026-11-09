@@ -1,0 +1,50 @@
+{"episode_seq": 0, "wall_s": 44.64, "chunk_calls": 11, "chunk_ms": [972.8, 325.3, 319.3, 321.6, 329.0, 324.8, 323.0, 318.8, 317.8, 319.6, 319.6], "success": false, "steps": 520}
+{"episode_seq": 1, "wall_s": 25.28, "chunk_calls": 11, "chunk_ms": [441.2, 323.3, 326.4, 325.9, 326.4, 323.5, 322.1, 321.9, 323.3, 323.9, 322.4], "success": false, "steps": 520}
+{"episode_seq": 2, "wall_s": 25.42, "chunk_calls": 11, "chunk_ms": [450.0, 325.7, 326.4, 325.7, 320.1, 319.8, 323.8, 328.6, 324.8, 322.3, 321.3], "success": false, "steps": 520}
+{"episode_seq": 3, "wall_s": 14.94, "chunk_calls": 6, "chunk_ms": [417.1, 322.7, 321.9, 325.2, 323.5, 321.3], "success": true, "steps": 271}
+{"episode_seq": 4, "wall_s": 25.36, "chunk_calls": 11, "chunk_ms": [324.1, 323.5, 324.3, 322.1, 322.9, 322.4, 322.6, 324.3, 322.6, 323.0, 321.6], "success": false, "steps": 520}
+{"episode_seq": 5, "wall_s": 27.55, "chunk_calls": 11, "chunk_ms": [331.1, 324.6, 323.4, 324.0, 323.6, 323.9, 320.3, 320.0, 321.1, 322.2, 325.7], "success": false, "steps": 520}
+{"episode_seq": 6, "wall_s": 25.08, "chunk_calls": 11, "chunk_ms": [443.4, 322.1, 328.3, 323.0, 322.9, 325.7, 319.4, 322.7, 321.5, 322.3, 323.2], "success": false, "steps": 520}
+{"episode_seq": 7, "wall_s": 12.94, "chunk_calls": 5, "chunk_ms": [459.3, 325.2, 324.1, 324.8, 329.6], "success": true, "steps": 235}
+{"episode_seq": 8, "wall_s": 12.9, "chunk_calls": 5, "chunk_ms": [325.0, 322.9, 320.2, 328.0, 322.7], "success": true, "steps": 242}
+{"episode_seq": 9, "wall_s": 24.87, "chunk_calls": 11, "chunk_ms": [323.9, 320.0, 323.9, 319.9, 320.6, 317.6, 322.0, 323.2, 322.6, 318.2, 320.5], "success": false, "steps": 520}
+{"episode_seq": 10, "wall_s": 12.99, "chunk_calls": 5, "chunk_ms": [327.3, 325.0, 323.3, 326.4, 318.5], "success": true, "steps": 234}
+{"episode_seq": 11, "wall_s": 10.44, "chunk_calls": 5, "chunk_ms": [325.5, 326.3, 322.3, 323.3, 319.5], "success": true, "steps": 241}
+{"episode_seq": 12, "wall_s": 10.09, "chunk_calls": 5, "chunk_ms": [331.8, 324.2, 323.3, 324.6, 322.5], "success": true, "steps": 229}
+{"episode_seq": 13, "wall_s": 10.54, "chunk_calls": 5, "chunk_ms": [328.0, 327.0, 332.0, 322.2, 319.9], "success": true, "steps": 244}
+{"episode_seq": 14, "wall_s": 21.0, "chunk_calls": 11, "chunk_ms": [335.8, 322.8, 323.8, 322.8, 320.5, 318.1, 317.3, 320.7, 318.1, 319.3, 318.1], "success": false, "steps": 520}
+{"episode_seq": 15, "wall_s": 26.89, "chunk_calls": 11, "chunk_ms": [323.9, 321.3, 326.8, 319.5, 319.2, 326.2, 321.9, 319.5, 319.4, 322.5, 320.3], "success": false, "steps": 520}
+{"episode_seq": 16, "wall_s": 11.32, "chunk_calls": 5, "chunk_ms": [327.0, 330.4, 317.4, 320.1, 318.8], "success": true, "steps": 222}
+{"episode_seq": 17, "wall_s": 23.81, "chunk_calls": 11, "chunk_ms": [326.7, 326.1, 320.8, 324.8, 320.9, 320.0, 323.8, 317.9, 321.5, 324.4, 326.6], "success": false, "steps": 520}
+{"episode_seq": 18, "wall_s": 10.94, "chunk_calls": 5, "chunk_ms": [319.7, 320.4, 319.9, 322.4, 320.2], "success": true, "steps": 214}
+{"episode_seq": 19, "wall_s": 10.99, "chunk_calls": 5, "chunk_ms": [325.1, 320.6, 323.0, 324.4, 323.2], "success": true, "steps": 217}
+{"episode_seq": 20, "wall_s": 22.56, "chunk_calls": 5, "chunk_ms": [321.2, 320.0, 320.4, 320.9, 320.0], "success": true, "steps": 246}
+{"episode_seq": 21, "wall_s": 27.29, "chunk_calls": 11, "chunk_ms": [326.6, 327.6, 320.0, 320.8, 320.7, 322.2, 320.7, 319.9, 318.6, 318.4, 319.0], "success": false, "steps": 520}
+{"episode_seq": 22, "wall_s": 28.05, "chunk_calls": 11, "chunk_ms": [327.4, 321.2, 320.3, 326.0, 321.8, 321.9, 317.9, 319.0, 320.0, 321.0, 324.4], "success": false, "steps": 520}
+{"episode_seq": 23, "wall_s": 27.49, "chunk_calls": 11, "chunk_ms": [323.9, 324.7, 322.0, 322.6, 321.6, 323.7, 322.7, 322.3, 330.1, 329.3, 344.2], "success": false, "steps": 520}
+{"episode_seq": 24, "wall_s": 15.05, "chunk_calls": 5, "chunk_ms": [331.2, 332.4, 333.4, 335.4, 341.8], "success": true, "steps": 225}
+{"episode_seq": 25, "wall_s": 26.78, "chunk_calls": 11, "chunk_ms": [330.7, 324.9, 325.5, 327.3, 330.2, 327.0, 326.3, 326.3, 329.3, 331.1, 329.7], "success": false, "steps": 520}
+{"episode_seq": 26, "wall_s": 23.2, "chunk_calls": 11, "chunk_ms": [334.3, 334.1, 328.1, 325.6, 328.2, 330.6, 324.9, 325.6, 322.4, 322.7, 323.0], "success": false, "steps": 520}
+{"episode_seq": 27, "wall_s": 22.1, "chunk_calls": 11, "chunk_ms": [324.0, 325.2, 324.3, 324.1, 324.4, 324.5, 323.1, 321.5, 323.0, 323.2, 325.4], "success": false, "steps": 520}
+{"episode_seq": 28, "wall_s": 9.27, "chunk_calls": 4, "chunk_ms": [323.5, 322.4, 323.5, 325.5], "success": true, "steps": 174}
+{"episode_seq": 29, "wall_s": 22.22, "chunk_calls": 11, "chunk_ms": [326.9, 323.2, 318.9, 321.2, 324.9, 324.6, 323.9, 322.7, 327.6, 324.5, 324.2], "success": false, "steps": 520}
+{"episode_seq": 30, "wall_s": 30.27, "chunk_calls": 11, "chunk_ms": [326.1, 328.2, 320.9, 322.3, 325.2, 323.1, 320.4, 319.9, 319.2, 319.8, 325.2], "success": true, "steps": 503}
+{"episode_seq": 31, "wall_s": 24.66, "chunk_calls": 11, "chunk_ms": [324.1, 325.0, 321.8, 321.2, 322.6, 323.0, 322.8, 320.5, 321.5, 323.8, 326.0], "success": false, "steps": 520}
+{"episode_seq": 32, "wall_s": 12.16, "chunk_calls": 5, "chunk_ms": [325.4, 322.4, 326.7, 326.9, 325.8], "success": true, "steps": 216}
+{"episode_seq": 33, "wall_s": 15.06, "chunk_calls": 6, "chunk_ms": [328.7, 322.4, 322.8, 321.7, 322.5, 324.9], "success": true, "steps": 282}
+{"episode_seq": 34, "wall_s": 25.47, "chunk_calls": 11, "chunk_ms": [322.4, 324.1, 320.7, 317.4, 317.6, 318.9, 320.4, 322.7, 320.1, 322.1, 325.6], "success": false, "steps": 520}
+{"episode_seq": 35, "wall_s": 24.1, "chunk_calls": 11, "chunk_ms": [325.2, 321.9, 323.9, 327.9, 324.6, 321.3, 324.0, 320.4, 323.7, 321.4, 325.3], "success": false, "steps": 520}
+{"episode_seq": 36, "wall_s": 12.01, "chunk_calls": 5, "chunk_ms": [456.9, 325.4, 325.3, 324.4, 325.3], "success": true, "steps": 242}
+{"episode_seq": 37, "wall_s": 12.17, "chunk_calls": 6, "chunk_ms": [323.3, 324.1, 323.1, 325.8, 323.9, 323.4], "success": true, "steps": 251}
+{"episode_seq": 38, "wall_s": 22.4, "chunk_calls": 11, "chunk_ms": [329.4, 319.3, 325.9, 323.6, 321.3, 326.1, 324.2, 322.1, 323.7, 321.9, 320.8], "success": false, "steps": 520}
+{"episode_seq": 39, "wall_s": 22.38, "chunk_calls": 11, "chunk_ms": [390.3, 318.9, 318.4, 319.6, 328.2, 324.1, 316.8, 322.7, 321.8, 317.6, 318.4], "success": false, "steps": 520}
+{"episode_seq": 40, "wall_s": 17.89, "chunk_calls": 8, "chunk_ms": [330.0, 329.2, 328.5, 324.6, 325.9, 323.3, 323.6, 321.0], "success": true, "steps": 373}
+{"episode_seq": 41, "wall_s": 17.83, "chunk_calls": 9, "chunk_ms": [400.1, 321.4, 322.6, 318.7, 324.6, 322.6, 320.6, 324.7, 325.3], "success": true, "steps": 405}
+{"episode_seq": 42, "wall_s": 20.3, "chunk_calls": 10, "chunk_ms": [406.3, 325.5, 328.4, 325.1, 331.4, 325.8, 326.0, 326.0, 320.9, 317.4], "success": true, "steps": 461}
+{"episode_seq": 43, "wall_s": 22.56, "chunk_calls": 11, "chunk_ms": [362.8, 324.4, 325.6, 322.2, 316.9, 321.4, 318.2, 318.7, 320.5, 325.5, 321.6], "success": false, "steps": 520}
+{"episode_seq": 44, "wall_s": 22.17, "chunk_calls": 11, "chunk_ms": [395.0, 324.4, 321.6, 326.3, 325.2, 326.3, 324.1, 322.2, 323.7, 323.1, 319.4], "success": false, "steps": 520}
+{"episode_seq": 45, "wall_s": 16.17, "chunk_calls": 6, "chunk_ms": [326.5, 324.7, 328.4, 326.1, 326.3, 322.0], "success": true, "steps": 254}
+{"episode_seq": 46, "wall_s": 12.59, "chunk_calls": 6, "chunk_ms": [325.8, 324.7, 325.8, 321.7, 324.7, 321.3], "success": true, "steps": 252}
+{"episode_seq": 47, "wall_s": 12.57, "chunk_calls": 6, "chunk_ms": [323.9, 324.1, 325.8, 324.2, 324.4, 321.8], "success": true, "steps": 251}
+{"episode_seq": 48, "wall_s": 13.05, "chunk_calls": 6, "chunk_ms": [321.7, 327.1, 326.5, 327.9, 325.9, 325.4], "success": true, "steps": 266}
+{"episode_seq": 49, "wall_s": 13.08, "chunk_calls": 6, "chunk_ms": [327.3, 326.1, 321.4, 326.8, 325.8, 323.6], "success": true, "steps": 266}

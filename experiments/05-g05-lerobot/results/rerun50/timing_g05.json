@@ -1,0 +1,13 @@
+{
+  "n_chunk_calls": 1293,
+  "first_call_s": 41.124,
+  "chunk_latency_ms_mean": 621.1,
+  "chunk_latency_ms_median": 619.7,
+  "chunk_latency_ms_p90": 628.2,
+  "n_episodes_timed": 50,
+  "episode_wall_s_mean": 31.02,
+  "episode_wall_s_median": 28.74,
+  "torch_max_allocated_mib": 11265,
+  "torch_max_reserved_mib": 12016,
+  "gpu": "NVIDIA L4"
+}

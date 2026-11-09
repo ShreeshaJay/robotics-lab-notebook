@@ -1,6 +1,6 @@
 # 05 · G0.5 VLA in LeRobot: subtasks and boxes before acting
 
-**Date:** planned 2026-11-07, run 2026-11-08 · **Track:** Robot learning · **Status:** run, results below · **Spend:** about $0.40 (0.74 h of one Spot L4 VM)
+**Date:** planned 2026-11-07, run 2026-11-08 (smoke test, then a 50-episode rerun) · **Track:** Robot learning · **Status:** run, results below · **Spend:** about $1.00 in total (0.74 h + 1.09 h of one Spot L4 VM)
 
 ## Goal
 
@@ -23,7 +23,84 @@ LeRobot source at `v0.7.0` / main `d490e472`.
 
 ## Results (run on 2026-11-08)
 
-### Side by side on LIBERO-10 (same episodes)
+### 50-episode rerun (2026-11-08)
+
+All 10 `libero_10` tasks × 5 episodes = **50 episodes per model**, on one Spot L4 (g2-standard-8, us-central1-a).
+Same settings as the smoke test below: `--seed=0`, `--env.init_states=true`, batch size 1, relative control, G0.5 at
+512x512 with its camera mapping, SmolVLA at 360x360 with `--rename_map`. Both models therefore saw identical initial
+states (episode *i* of task *t* is the same scene for both). Same checkpoints (`g05_libero@9b7ee7d7`,
+`smolvla_libero@a24f1f38`) and lerobot 0.7.0. The first 2 episodes of tasks 0 to 2 reproduce the smoke test exactly
+(G0.5 6/6, SmolVLA 2/6 on those six).
+
+| Task | Instruction | G0.5 | SmolVLA |
+|-|-|-|-|
+| 0 | put both the alphabet soup and the tomato sauce in the basket | 5/5 | 1/5 |
+| 1 | put both the cream cheese box and the butter in the basket | 5/5 | 2/5 |
+| 2 | turn on the stove and put the moka pot on it | 5/5 | 4/5 |
+| 3 | put the black bowl in the bottom drawer of the cabinet and close it | 5/5 | 3/5 |
+| 4 | put the white mug on the left plate and put the yellow and white mug on the right plate | 5/5 | 2/5 |
+| 5 | pick up the book and place it in the back compartment of the caddy | 5/5 | 1/5 |
+| 6 | put the white mug on the plate and put the chocolate pudding to the right of the plate | 5/5 | 3/5 |
+| 7 | put both the alphabet soup and the cream cheese box in the basket | 5/5 | 2/5 |
+| 8 | put both moka pots on the stove | 5/5 | 3/5 |
+| 9 | put the yellow and white mug in the microwave and close it | 4/5 | 5/5 |
+| **All** | | **49/50 (98%)**, Wilson 95% CI 89.5 to 99.6% | **26/50 (52%)**, Wilson 95% CI 38.5 to 65.2% |
+
+| | G0.5 | SmolVLA |
+|-|-|-|
+| Latency per action chunk, steady state (n calls) | median **620 ms**, p90 628, p99 661, max 931 (1,292) | median **324 ms**, p90 328, p99 417, max 459 (418) |
+| First call (compile and warm-up) | 41 s | 1.0 s |
+| Chunk calls per episode (mean) | 25.9 (replans every 10 actions) | 8.4 (50 actions per chunk) |
+| Wall time per episode, mean (median) | 31.0 s (28.7 s); 30.0 s without the warm-up episode | 19.6 s (21.6 s) |
+| Wall time, successes / failures | 30.5 s / 55.9 s (the one failure ran the full 520 steps) | 14.2 s / 25.4 s |
+| Steps to success (mean) | 249 | 270 |
+| Peak VRAM, policy process (`torch.cuda.max_memory_allocated`) | 11.0 GiB (reserved 11.7 GiB) | 0.9 GiB (reserved 0.9 GiB) |
+| Peak VRAM, whole GPU (`nvidia-smi` every 2 s, includes EGL rendering) | 12.6 GiB (12,907 MiB) | 2.0 GiB (2,061 MiB) |
+| Whole `lerobot-eval` run (load, 50 episodes, video encode) | 26.7 min | 17.3 min |
+
+How this changes the 6-episode conclusion:
+
+- **The ranking holds, and now it is credible.** The confidence intervals no longer overlap (G0.5's lower bound is
+  89.5%, SmolVLA's upper bound 65.2%). The gap is about 46 percentage points.
+- **SmolVLA is better than the smoke test suggested:** 52% overall, not 33%. Tasks 0 and 1, which it failed 4/4 in
+  the smoke test, are 1/5 and 2/5 here. Its weakest tasks are 0 and 5 (1/5 each). It is perfect on task 9.
+- **G0.5 is not perfect.** Its one failure is task 9, episode 1 (mug into the microwave and close it), an initial
+  state that SmolVLA solved. G0.5 is ahead on 9 of 10 tasks, not on every scene.
+- **Latency and memory did not change** (620 vs 641 ms median for G0.5, 324 vs 336 ms for SmolVLA, same VRAM peaks).
+  Mean wall time per G0.5 episode fell from 41 s to 31 s because its 41 s warm-up is spread over 50 episodes
+  instead of 6.
+- Per task, 5 episodes still give wide intervals (5/5 is 56.6 to 100%). Per-task differences between the two
+  models are suggestive only; the overall numbers are the credible part.
+
+Files:
+
+- Videos (320 px wide, under 140 KB each, gitignored by `*.mp4`): `results/rerun50/g05_libero10_task5_ep0_success.mp4`,
+  `results/rerun50/g05_libero10_task9_ep1_failure.mp4` and `results/rerun50/smolvla_libero10_task9_ep1_success.mp4`
+  (the same initial state as the G0.5 failure).
+- Raw data in `results/rerun50/`: `eval_info_{g05,smolvla}.json` (lerobot-eval output), `timing_*.json`,
+  `timing_*.episodes.jsonl` (per-episode wall time, steps, success and every chunk latency),
+  `summary_rerun50.json` and `per_task_rerun50.csv` (from `summarize_rerun.py`), `logs/rollout_*.log`
+  (progress-bar lines removed), `logs/rollout_*.nvsmi.csv` (GPU memory and utilization every 2 s) and
+  `freeze-lerobot.txt`. The per-episode success in the JSONL matches `eval_info.json` for all 100 episodes.
+
+**Cost of the rerun.** VM lifetime 23:46:47 to about 00:52:20 UTC = **1.09 h**. At $0.5108/h Spot that is
+**$0.56**; the 200 GB pd-balanced disk adds about $0.04. **Total about $0.60** against a $10 cap. Time split: 12 min
+setup (`setup.sh` with `SKIP_VLLM=1`, including one failed start), 5 min fetch, 17 min SmolVLA, 27 min G0.5,
+3 min to copy results and delete. The VM and its disk were deleted afterwards; `gcloud compute instances list`
+and `gcloud compute disks list` both returned 0 items.
+
+**Reproduce the rerun** (on the VM, after `create_vm.sh`):
+
+```bash
+export G05_LICENSE_ACK=reviewed-g05-community-license   # only after a human has read and accepted the license
+SKIP_VLLM=1 bash setup.sh                                # rollouts only; also installs the matching libnvidia-gl
+export TASK_IDS=0-9 N_EPS=5 RUN_TAG=rerun50
+python3 run.py fetch && python3 run.py rollout_smolvla && python3 run.py rollout
+# copy results/rerun50 back (no MP4s in git), then locally:
+python summarize_rerun.py results/rerun50
+```
+
+### Smoke test: side by side on LIBERO-10 (6 episodes)
 
 Both policies ran on `libero_10` tasks 0, 1 and 2, two episodes each (6 episodes), `--seed=0`,
 `--env.init_states=true` (fixed LIBERO initial states), batch size 1, on one L4. Each used its own documented
@@ -44,7 +121,8 @@ camera setup: G0.5 at 512x512 with its camera-name mapping, SmolVLA at the defau
 | Peak VRAM, whole GPU (`nvidia-smi`, includes EGL rendering) | 12.6 GiB | 1.8 GiB |
 | Wall time per episode (sim + render + policy) | 41 s | 23 s |
 
-- 6 episodes is a smoke test, not a benchmark: the confidence intervals overlap only barely. G0.5 wins on all three
+- 6 episodes is a smoke test, not a benchmark: the confidence intervals overlap only barely. The 50-episode
+  rerun above supersedes these success rates. G0.5 wins on all three
   tasks; SmolVLA fails tasks 0 and 1 in both episodes.
 - "Zero-shot" means no fine-tuning by me. Both checkpoints were themselves trained on LIBERO data.
 - Latency is the policy call that refills the action queue (`G05Policy._run_inference`,
@@ -77,7 +155,7 @@ camera setup: G0.5 at 512x512 with its camera-name mapping, SmolVLA at the defau
 - Files: `results/annotated/subtasks.json` (all subtasks and sample Q/A per episode), 4 annotated PNGs,
   `results/annotations_raw.json`, `results/logs/annotate.log`.
 
-### Steps actually run
+### Steps actually run (smoke test)
 
 1. `create_vm.sh` with `PROJECT=… NAME=scout-vla-l4 HOURS=3 SPOT=1 ZONE=us-central1-a` and
    **`IMAGE_FAMILY=common-cu129-ubuntu-2404-nvidia-580`**. The script's default image family is Ubuntu 22.04, which
@@ -102,13 +180,14 @@ camera setup: G0.5 at 512x512 with its camera-name mapping, SmolVLA at the defau
 
 | Problem | Cause | Fix |
 |-|-|-|
-| `ImportError: Cannot initialize a EGL device display` in robosuite | The Deep Learning VM's driver install has the compute libraries but no NVIDIA GL/EGL vendor library; only Mesa's EGL was registered | `sudo apt-get install libnvidia-gl-580-server=580.178.04-0ubuntu0.24.04.1` (exact match to the running driver). After that `MUJOCO_GL=egl` worked |
+| `ImportError: Cannot initialize a EGL device display` in robosuite | The Deep Learning VM's driver install has the compute libraries but no NVIDIA GL/EGL vendor library; only Mesa's EGL was registered | `sudo apt-get install libnvidia-gl-580-server=580.178.04-0ubuntu0.24.04.1` (exact match to the running driver). After that `MUJOCO_GL=egl` worked. For the rerun, `setup.sh` does this itself |
+| Rerun: the first `setup.sh` attempt exited silently right after the apt step | The new driver-version lookup piped `apt-cache madison` into `awk '{...; exit}'`. The early exit gave `apt-cache` a SIGPIPE, which `set -o pipefail` turned into a script exit | Let `awk` read all input, then `sort -u`, `tail -1` and `\|\| true`. Cost about 2 min |
 | G0.5: `Checkpoint feature shape mismatch for observation.state: expected (7,), got (8,)` with the documented `lerobot-eval` command | lerobot 0.7.0's `validate_checkpoint` compares LIBERO's 8-D state with the checkpoint's 7-D state, although G0.5's own preprocessor drops the second gripper value (`raw_state[..., :7]`) | `timed_eval.py` tolerates exactly that one error for `policy.type=g05` and re-raises everything else. Worth an upstream issue |
 | vLLM server died at start-up: `FileNotFoundError: 'ninja'` | vLLM 0.33.0 JIT-builds a FlashInfer top-k/top-p sampler, which needs `ninja` on `PATH` and a CUDA 13 `nvcc` | `env VLLM_USE_FLASHINFER_SAMPLER=0` in front of the serve command (`run.py`) |
 | `draw_boxes.py` first run: `KeyError: 'timestamp'` | `language_events` rows carry no timestamp; it comes from the frame row they sit on | Take the timestamp from the frame |
 | `run.py` refuses every stage until the vLLM venv exists | Start-up check in `main()` | I ran `fetch` and the rollouts by importing the stage functions, so they overlapped with the vLLM install |
 
-### Cost
+### Cost (smoke test)
 
 - VM lifetime 19:08:09 to 19:52:23 UTC = **0.74 h**. At the g2-standard-8 Spot rate of $0.5108/h, that is **about $0.38**.
 - The 200 GB pd-balanced disk adds about $0.02 for that time. Egress was under 2 MB.
@@ -121,7 +200,8 @@ camera setup: G0.5 at 512x512 with its camera-name mapping, SmolVLA at the defau
   deployment and fits "evaluate on a cloud GPU" better.
   The non-commercial license also covers its outputs.
 - SmolVLA is about 12x lighter in memory and about 10x cheaper per executed action. It is Apache-2.0, so it is the
-  practical baseline for anything you ship or redistribute. On the hardest LIBERO suite it fails 2 of these 3 tasks.
+  practical baseline for anything you ship or redistribute. On the hardest LIBERO suite it solves about half the
+  episodes (26/50 in the rerun), against 49/50 for G0.5.
 - `lerobot-eval` with fixed init states plus a small timing wrapper is enough for an apples-to-apples policy
   comparison in about 7 minutes of GPU time. The harness, not the models, is the reusable part.
 - The open annotation pipeline runs on one L4 with a 4B VLM in about 5 minutes for 3 short episodes. Boxes are
@@ -316,4 +396,5 @@ Not done:
 - Any fine-tune.
 - Annotation with a larger VLM.
 
-New files: `timed_eval.py` (chunk latency and VRAM around `lerobot-eval`) and `draw_boxes.py` (annotated PNGs and a subtask dump).
+New files: `timed_eval.py` (chunk latency, per-episode timing and VRAM around `lerobot-eval`), `draw_boxes.py`
+(annotated PNGs and a subtask dump) and `summarize_rerun.py` (per-task table, Wilson CIs, latency and VRAM for the rerun).
