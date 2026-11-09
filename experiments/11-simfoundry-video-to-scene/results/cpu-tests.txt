@@ -1,0 +1,74 @@
+# SimFoundry CPU test run, commit 9e34ebefcd020583fbb755a8b57268dce78eca26, Windows 11, Python 3.11.9 venv
+# pins: pytest==8.3.4 numpy==1.26.4 omegaconf==2.3.0 hydra-core==1.3.2 pillow==10.4.0 opencv-python-headless==4.10.0.84 trimesh==4.4.9 scipy==1.13.1
+# env: no Gemini/OpenAI/HF keys, GOOGLE_APPLICATION_CREDENTIALS pointed at a missing file, empty CLOUDSDK_CONFIG, HF_HUB_OFFLINE=1
+
+## Run 1: documented four-file subset
+20 passed, 1 skipped in 2.64s
+
+## Run 2: 16 more light-dependency test files
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:126: in import_module
+E   ModuleNotFoundError: No module named 'torch'
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:126: in import_module
+E   ModuleNotFoundError: No module named 'torch'
+simfoundry\pipeline\frame_selection.py:649: ModuleNotFoundError: No module named 'open3d'
+simfoundry\pipeline\frame_selection.py:649: ModuleNotFoundError: No module named 'open3d'
+simfoundry\pipeline\frame_selection.py:649: ModuleNotFoundError: No module named 'open3d'
+simfoundry\pipeline\frame_selection.py:649: ModuleNotFoundError: No module named 'open3d'
+simfoundry\pipeline\frame_selection.py:649: ModuleNotFoundError: No module named 'open3d'
+simfoundry\pipeline\frame_selection.py:649: ModuleNotFoundError: No module named 'open3d'
+simfoundry\models\vlm.py:11: ModuleNotFoundError: No module named 'openai'
+simfoundry\models\vlm.py:11: ModuleNotFoundError: No module named 'openai'
+simfoundry\models\vlm.py:11: ModuleNotFoundError: No module named 'openai'
+simfoundry\models\vlm.py:11: ModuleNotFoundError: No module named 'openai'
+simfoundry\models\vlm.py:11: ModuleNotFoundError: No module named 'openai'
+simfoundry\models\vlm.py:11: ModuleNotFoundError: No module named 'openai'
+simfoundry\models\vlm.py:11: ModuleNotFoundError: No module named 'openai'
+tests\test_front_canonicalization.py:117: assert "error: No mo... 'matplotlib'" == 'rotated'
+tests\test_front_canonicalization.py:134: assert "error: No mo... 'matplotlib'" == 'rotated'
+tests\test_front_canonicalization.py:144: assert (None is None and "error: No mo... 'matplotlib'" == 'ambiguous'
+tests\test_task_config_resolution.py:58: assert 'task/nv_desk/missing.yaml' in "no task config for task_name='missing'; tried C:\\Users\\shree\\AppData\\Local\\Temp\\pytest-of-shre
+simfoundry\utils\processing_utils.py:12: ModuleNotFoundError: No module named 'torch'
+simfoundry\utils\processing_utils.py:12: ModuleNotFoundError: No module named 'torch'
+tests\test_articulation_path_sanitizing.py:63: AssertionError: assert 'C:\\Users\\s...aptop/results' == 'C:\\Users\\s...ptop\\results'
+tests\test_articulation_path_sanitizing.py:74: AssertionError: assert 'C:\\Users\\s...aptop/results' == 'C:\\Users\\s...ptop\\results'
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\pathlib.py:1116: FileExistsError: [WinError 183] Cannot create a file when that
+tests\test_task_geometry.py:43: ModuleNotFoundError: No module named 'torch'
+FAILED tests/test_frame_selection.py::test_select_canonical_frame_picks_the_best_heuristic_frame
+FAILED tests/test_frame_selection.py::test_select_canonical_frame_lets_the_vlm_override_the_shortlist
+FAILED tests/test_frame_selection.py::test_select_canonical_frame_falls_back_when_the_vlm_declines
+FAILED tests/test_frame_selection.py::test_select_canonical_frame_reports_why_every_frame_was_rejected
+FAILED tests/test_frame_selection.py::test_select_canonical_frame_strides_long_captures
+FAILED tests/test_frame_selection.py::test_selection_round_trips_through_disk
+FAILED tests/test_frame_selection.py::test_refine_with_vlm_parses_the_answer[Option 2 shows the marker largest.\nANSWER: 2-5]
+FAILED tests/test_frame_selection.py::test_refine_with_vlm_parses_the_answer[ANSWER: [3]-1]
+FAILED tests/test_frame_selection.py::test_refine_with_vlm_parses_the_answer[blah blah ANSWER: 1 -7]
+FAILED tests/test_frame_selection.py::test_refine_with_vlm_declines_on_an_unusable_answer[I like option two]
+FAILED tests/test_frame_selection.py::test_refine_with_vlm_declines_on_an_unusable_answer[ANSWER: 9]
+FAILED tests/test_frame_selection.py::test_refine_with_vlm_declines_on_an_unusable_answer[ANSWER: 0]
+FAILED tests/test_frame_selection.py::test_refine_with_vlm_survives_a_failed_call
+FAILED tests/test_front_canonicalization.py::test_canonicalize_front_refines_yaw
+FAILED tests/test_front_canonicalization.py::test_canonicalize_front_refine_falls_back_to_coarse
+FAILED tests/test_front_canonicalization.py::test_canonicalize_front_ambiguous_and_error
+FAILED tests/test_task_config_resolution.py::test_nothing_found_names_every_path_it_tried
+FAILED tests/test_atomic_artifact_publish.py::test_watcher_ignores_a_partial_artifact
+FAILED tests/test_atomic_artifact_publish.py::test_watcher_ignores_a_partial_json_whose_suffix_still_matches
+FAILED tests/test_articulation_path_sanitizing.py::test_writer_and_reader_agree_on_a_capitalized_scene
+FAILED tests/test_articulation_path_sanitizing.py::test_legacy_unsanitized_layout_is_still_found
+FAILED tests/test_articulation_path_sanitizing.py::test_sanitized_layout_wins_when_both_exist
+FAILED tests/test_task_geometry.py::TestXYOverlapFraction::test_works_with_torch_tensors
+ERROR tests/test_stream_subsequence.py
+ERROR tests/test_stage5_iteration_gaps.py
+23 failed, 132 passed, 5 skipped, 2 errors in 5.92s
+
+## Run 3: pipeline A dry run (prints the stage plan, executes nothing)
+WARNING: articulation was requested but stage 9 is not available in this release; continuing without it.
+[Stage 1b] Process raw video
+[Stage 2] Run depth backend
+[Stage 3] Segment ground plane
+[Stage 4] Unify world frame
+[Stage 58] dry-run: would run streaming subsequence
+[Stage 10] Compile scene
+[Stage 11] Make sim-ready objects
+[Stage 12] Stabilize physics
+[Stage 13] Import USD assets
+[Stage 14] Create OmniGibson scene

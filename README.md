@@ -17,6 +17,7 @@ Each experiment folder has a README with the goal, the exact steps, pinned versi
 | 08 | ASPIRE: LLM coding agents write robot skills | Agentic tooling | partly (CPU + one API call, $0.003) | $12.11/task with Sonnet 5.5 confirmed; Haiku-written drawer program passes the static check; sim run needs a GPU |
 | 09 | RoboColosseum: blind real-robot evals | Evals | read ($0) | Reusable protocol (blind A/B, milestones, Rasch ranking); 20 LeRobot v3.0 demo sets, eval rollouts not found |
 | 10 | Nebius Physical AI Workbench: agent-run sim-to-real loop | Agentic tooling | read ($0) | Solid 14-stage plumbing but their own run scored 0/64; repo tells agents not to add cost limits |
+| 11 | SimFoundry: one tabletop video to a physics-ready scene | Simulation | read + CPU tests ($0) | Tabletop only; colliders, mass and joints; Gemini required; default models non-commercial; GPU plan ~$4.50–8 |
 
 ## Ground rules
 - Public sample data only; each experiment notes its data source and license.
