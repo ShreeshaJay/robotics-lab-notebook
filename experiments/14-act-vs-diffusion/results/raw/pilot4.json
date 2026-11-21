@@ -1,0 +1,292 @@
+{
+ "name": "pilot4",
+ "chain": [
+  {
+   "name": "pilot-diffusion-pusht",
+   "spec": {
+    "name": "pilot-diffusion-pusht",
+    "evals": [
+     {
+      "env": "pusht",
+      "n_episodes": 10,
+      "batch_size": 10,
+      "seed": 1000,
+      "overrides": [],
+      "tag": "pilot"
+     }
+    ]
+   },
+   "gpu": "NVIDIA A10, 23028 MiB, 610.57.04",
+   "lerobot": "0.6.1",
+   "evals": [
+    {
+     "tag": "pilot",
+     "returncode": 0,
+     "wall_s": 87.37096238136292,
+     "cmd": [
+      "python",
+      "/root/t3/t3_launch.py",
+      "eval",
+      "--policy.path=/ckpts/runs/pilot-diffusion-pusht/checkpoints/last/pretrained_model",
+      "--env.type=pusht",
+      "--eval.n_episodes=10",
+      "--eval.batch_size=10",
+      "--seed=1000",
+      "--output_dir=/ckpts/evals/pilot-diffusion-pusht/pilot",
+      "--policy.device=cuda"
+     ],
+     "info": {
+      "per_task": [
+       {
+        "task_group": "pusht",
+        "task_id": 0,
+        "metrics": {
+         "sum_rewards": [
+          37.073796939872395,
+          0.0,
+          0.22200756496401539,
+          66.27951145681374,
+          0.0,
+          0.0,
+          40.29843904947448,
+          0.0,
+          0.8743341757611001,
+          82.64318115717307
+         ],
+         "max_rewards": [
+          0.2050797681663079,
+          0.0,
+          0.024912108574916846,
+          0.36488720142717423,
+          0.0,
+          0.0,
+          0.18089744312326897,
+          0.0,
+          0.025320787587739407,
+          0.2761228873343205
+         ],
+         "successes": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+         ],
+         "video_paths": [
+          "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_0.mp4",
+          "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_1.mp4",
+          "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_2.mp4",
+          "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_3.mp4",
+          "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_4.mp4",
+          "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_5.mp4",
+          "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_6.mp4",
+          "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_7.mp4",
+          "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_8.mp4",
+          "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_9.mp4"
+         ],
+         "predicted_video_paths": []
+        }
+       }
+      ],
+      "per_group": {
+       "pusht": {
+        "avg_sum_reward": 22.73912703440588,
+        "avg_max_reward": 0.10772201962137277,
+        "pc_success": 0.0,
+        "n_episodes": 10,
+        "video_paths": [
+         "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_0.mp4",
+         "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_1.mp4",
+         "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_2.mp4",
+         "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_3.mp4",
+         "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_4.mp4",
+         "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_5.mp4",
+         "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_6.mp4",
+         "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_7.mp4",
+         "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_8.mp4",
+         "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_9.mp4"
+        ],
+        "predicted_video_paths": []
+       }
+      },
+      "overall": {
+       "avg_sum_reward": 22.73912703440588,
+       "avg_max_reward": 0.10772201962137277,
+       "pc_success": 0.0,
+       "n_episodes": 10,
+       "eval_s": 63.35076832771301,
+       "eval_ep_s": 6.335076904296875,
+       "video_paths": [
+        "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_0.mp4",
+        "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_1.mp4",
+        "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_2.mp4",
+        "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_3.mp4",
+        "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_4.mp4",
+        "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_5.mp4",
+        "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_6.mp4",
+        "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_7.mp4",
+        "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_8.mp4",
+        "/ckpts/evals/pilot-diffusion-pusht/pilot/videos/pusht_0/eval_episode_9.mp4"
+       ],
+       "predicted_video_paths": []
+      }
+     }
+    }
+   ],
+   "rate_usd_per_s": 0.00039392,
+   "gl": "egl",
+   "job_wall_s": 89.69768285751343,
+   "job_cost_usd": 0.03533371123123169
+  },
+  {
+   "name": "pilot-act-pusht",
+   "spec": {
+    "name": "pilot-act-pusht",
+    "evals": [
+     {
+      "env": "pusht",
+      "n_episodes": 10,
+      "batch_size": 10,
+      "seed": 1000,
+      "overrides": [],
+      "tag": "pilot"
+     }
+    ]
+   },
+   "gpu": "NVIDIA A10, 23028 MiB, 610.57.04",
+   "lerobot": "0.6.1",
+   "evals": [
+    {
+     "tag": "pilot",
+     "returncode": 0,
+     "wall_s": 38.449432373046875,
+     "cmd": [
+      "python",
+      "/root/t3/t3_launch.py",
+      "eval",
+      "--policy.path=/ckpts/runs/pilot-act-pusht/checkpoints/last/pretrained_model",
+      "--env.type=pusht",
+      "--eval.n_episodes=10",
+      "--eval.batch_size=10",
+      "--seed=1000",
+      "--output_dir=/ckpts/evals/pilot-act-pusht/pilot",
+      "--policy.device=cuda"
+     ],
+     "info": {
+      "per_task": [
+       {
+        "task_group": "pusht",
+        "task_id": 0,
+        "metrics": {
+         "sum_rewards": [
+          0.24165476279359915,
+          0.0,
+          7.833339714926426,
+          76.0633248104613,
+          53.35087201488077,
+          0.0,
+          48.436081443486685,
+          0.0,
+          0.11326002403047601,
+          164.62618808234134
+         ],
+         "max_rewards": [
+          0.016161635587489693,
+          0.0,
+          0.10639580445352456,
+          0.5400727942136457,
+          0.34125827948649456,
+          0.0,
+          0.16606024972757055,
+          0.0,
+          0.009497182275987639,
+          0.6158004944491163
+         ],
+         "successes": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+         ],
+         "video_paths": [
+          "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_0.mp4",
+          "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_1.mp4",
+          "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_2.mp4",
+          "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_3.mp4",
+          "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_4.mp4",
+          "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_5.mp4",
+          "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_6.mp4",
+          "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_7.mp4",
+          "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_8.mp4",
+          "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_9.mp4"
+         ],
+         "predicted_video_paths": []
+        }
+       }
+      ],
+      "per_group": {
+       "pusht": {
+        "avg_sum_reward": 35.06647208529206,
+        "avg_max_reward": 0.17952464401938295,
+        "pc_success": 0.0,
+        "n_episodes": 10,
+        "video_paths": [
+         "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_0.mp4",
+         "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_1.mp4",
+         "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_2.mp4",
+         "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_3.mp4",
+         "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_4.mp4",
+         "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_5.mp4",
+         "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_6.mp4",
+         "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_7.mp4",
+         "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_8.mp4",
+         "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_9.mp4"
+        ],
+        "predicted_video_paths": []
+       }
+      },
+      "overall": {
+       "avg_sum_reward": 35.06647208529206,
+       "avg_max_reward": 0.17952464401938295,
+       "pc_success": 0.0,
+       "n_episodes": 10,
+       "eval_s": 18.09422278404236,
+       "eval_ep_s": 1.8094223737716675,
+       "video_paths": [
+        "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_0.mp4",
+        "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_1.mp4",
+        "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_2.mp4",
+        "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_3.mp4",
+        "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_4.mp4",
+        "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_5.mp4",
+        "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_6.mp4",
+        "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_7.mp4",
+        "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_8.mp4",
+        "/ckpts/evals/pilot-act-pusht/pilot/videos/pusht_0/eval_episode_9.mp4"
+       ],
+       "predicted_video_paths": []
+      }
+     }
+    }
+   ],
+   "rate_usd_per_s": 0.00039392,
+   "gl": "egl",
+   "job_wall_s": 40.57016587257385,
+   "job_cost_usd": 0.01598139974052429
+  }
+ ],
+ "gpu": "NVIDIA A10, 23028 MiB, 610.57.04",
+ "job_wall_s": 134.06941556930542,
+ "job_cost_usd": 0.052812624181060794
+}

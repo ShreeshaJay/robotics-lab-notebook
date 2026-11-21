@@ -1,0 +1,53 @@
+{
+  "libero_10": {
+    "usable_frac": 0.9979501128423459,
+    "usable_strict_frac": 0.9072327508894342,
+    "idle_frac": 0.002049887157654062,
+    "regrasp_episode_frac": 0.079155672823219,
+    "lost_frac_by_reason": {
+      "integrity": 0.0,
+      "failed_episode": 0.0,
+      "empty_task_label": 0.0,
+      "duplicate": 0.0,
+      "too_short": 0.0,
+      "idle_time": 0.002049887157654062
+    },
+    "full_hours": 2.818583333333333,
+    "full_usable_hours": 2.8128055555555553,
+    "video_streams": 2
+  },
+  "fineart": {
+    "usable_frac": 0.9557260479222568,
+    "usable_strict_frac": 0.4363470224415646,
+    "idle_frac": 0.042685602325106535,
+    "regrasp_episode_frac": 0.4740834386852086,
+    "lost_frac_by_reason": {
+      "integrity": 0.0,
+      "failed_episode": 0.0,
+      "empty_task_label": 0.0,
+      "duplicate": 0.0016426543711356226,
+      "too_short": 0.0,
+      "idle_time": 0.04263129770660734
+    },
+    "full_hours": 1717.9120370370372,
+    "full_usable_hours": 1641.8532818354813,
+    "video_streams": 4
+  },
+  "droid": {
+    "usable_frac": 0.6656983344173193,
+    "usable_strict_frac": 0.544053782769234,
+    "idle_frac": 0.07197580748411152,
+    "regrasp_episode_frac": 0.12795969773299748,
+    "lost_frac_by_reason": {
+      "integrity": 0.0,
+      "failed_episode": 0.15446713132958123,
+      "empty_task_label": 0.1378787335631042,
+      "duplicate": 0.0,
+      "too_short": 0.0001374186797222948,
+      "idle_time": 0.04181838201027312
+    },
+    "full_hours": 511.6736111111111,
+    "full_usable_hours": 340.6202706819618,
+    "video_streams": 3
+  }
+}

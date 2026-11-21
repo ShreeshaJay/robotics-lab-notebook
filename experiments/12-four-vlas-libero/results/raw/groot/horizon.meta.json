@@ -1,0 +1,62 @@
+[
+  {
+    "tag": "horizon",
+    "shard": 0,
+    "gpu": "NVIDIA L4",
+    "load_s": 16.7,
+    "torch_max_allocated_mib": 6094,
+    "torch_max_reserved_mib": 6228,
+    "nvidia_smi_peak_mib": 12003,
+    "container_s": 309.0
+  },
+  {
+    "tag": "horizon",
+    "shard": 1,
+    "gpu": "NVIDIA A10",
+    "load_s": 13.3,
+    "torch_max_allocated_mib": 6094,
+    "torch_max_reserved_mib": 6228,
+    "nvidia_smi_peak_mib": 11798,
+    "container_s": 312.5
+  },
+  {
+    "tag": "horizon",
+    "shard": 2,
+    "gpu": "NVIDIA A10",
+    "load_s": 13.5,
+    "torch_max_allocated_mib": 6094,
+    "torch_max_reserved_mib": 6228,
+    "nvidia_smi_peak_mib": 11799,
+    "container_s": 251.4
+  },
+  {
+    "tag": "horizon",
+    "shard": 3,
+    "gpu": "NVIDIA A10",
+    "load_s": 12.7,
+    "torch_max_allocated_mib": 6094,
+    "torch_max_reserved_mib": 6228,
+    "nvidia_smi_peak_mib": 11799,
+    "container_s": 250.2
+  },
+  {
+    "tag": "horizon",
+    "shard": 4,
+    "gpu": "NVIDIA A10G",
+    "load_s": 17.8,
+    "torch_max_allocated_mib": 6094,
+    "torch_max_reserved_mib": 6228,
+    "nvidia_smi_peak_mib": 12005,
+    "container_s": 301.8
+  },
+  {
+    "tag": "horizon",
+    "shard": 5,
+    "gpu": "NVIDIA A10G",
+    "load_s": 18.9,
+    "torch_max_allocated_mib": 6094,
+    "torch_max_reserved_mib": 6228,
+    "nvidia_smi_peak_mib": 12003,
+    "container_s": 319.0
+  }
+]

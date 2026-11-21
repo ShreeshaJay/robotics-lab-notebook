@@ -1,0 +1,12 @@
+[
+  {
+    "tag": "smoke",
+    "shard": 0,
+    "gpu": "NVIDIA L4",
+    "load_s": 20.1,
+    "torch_max_allocated_mib": 6015,
+    "torch_max_reserved_mib": 6096,
+    "nvidia_smi_peak_mib": 6947,
+    "container_s": 39.0
+  }
+]

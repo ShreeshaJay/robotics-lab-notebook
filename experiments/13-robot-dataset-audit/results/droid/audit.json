@@ -1,0 +1,5845 @@
+{
+  "dataset": "droid",
+  "repo": "lerobot/droid_1.0.1",
+  "revision": "71da9dcba338f53889907ac5762a2ebc6c2e55ff",
+  "license": "apache-2.0 (HF tag)",
+  "kind": "in-the-wild teleop (Franka, many labs)",
+  "fps": 15.0,
+  "codebase_version": "v3.0",
+  "robot_type": "Franka",
+  "slice": {
+    "episodes": 3970,
+    "frames": 1171602,
+    "hours": 21.69633333333333,
+    "data_files": [
+      "file-000.parquet",
+      "file-042.parquet",
+      "file-077.parquet",
+      "file-085.parquet"
+    ],
+    "unreferenced_local_data_files": [
+      "file-154.parquet"
+    ]
+  },
+  "lengths_full_meta": {
+    "n_episodes": 95658,
+    "hours": 511.6736111111111,
+    "mean_s": 19.25636120345397,
+    "cv": 0.7798769572324704,
+    "lt_1s": 382,
+    "p5": 5.933333333333334,
+    "p25": 10.133333333333333,
+    "p50": 14.766666666666666,
+    "p75": 22.866666666666667,
+    "p95": 49.2
+  },
+  "lengths_slice": {
+    "cv": 0.7677884161751635,
+    "p5": 6.066666666666666,
+    "p25": 10.333333333333334,
+    "p50": 15.1,
+    "p75": 23.8,
+    "p95": 50.903333333333315
+  },
+  "idle": {
+    "time_weighted_frac": 0.07197580748411152,
+    "episode_median_frac": 0.05084745762711865,
+    "lead_idle_s_median": 0.5,
+    "trail_idle_s_median": 0.0,
+    "pauses_per_min": 1.5947395105163702,
+    "eef_idle_frac_1cm": 0.152582131944168
+  },
+  "smoothness": {
+    "sparc_median": -1.989374049517516,
+    "state_jerk_median": 0.1076941259743288,
+    "action_jerk_median": 0.34397131651781543,
+    "jump_rate_median": 0.0,
+    "jump_rate_p99": 0.012310767051204206
+  },
+  "gripper": {
+    "closes_per_episode_median": 1.0,
+    "closes_per_min": 4.295656716188605,
+    "regrasp_episode_frac": 0.12795969773299748,
+    "regrasps_per_episode": 0.20171457387796268,
+    "empty_close_episode_frac": 0.3702770780856423,
+    "active_episode_frac": 0.9011598587997983,
+    "static_episode_frac": 0.012090680100755667,
+    "sign_corr_median": 0.9973004913346959,
+    "sign_negative_frac": 0.0
+  },
+  "integrity": {
+    "ts_gaps": 0,
+    "ts_nonmono": 0,
+    "fi_noncontig": 0,
+    "has_nan": 0,
+    "meta_len_mismatch": 0
+  },
+  "duplicates": {
+    "exact_copies": 0,
+    "near_copies": 0,
+    "near_dup_threshold": 0.02,
+    "nn_dist": {
+      "p1": 0.16832841321106576,
+      "p5": 0.28499635181911515,
+      "p50": 0.471435467590152,
+      "p95": 0.8856604145735227
+    }
+  },
+  "task_consistency": {
+    "applicable": false,
+    "flagged": 0,
+    "flagged_frac": null
+  },
+  "success": {
+    "labelled": true,
+    "failed_frac": 0.1748110831234257
+  },
+  "language": {
+    "empty_instruction_frac": 0.22115869017632242
+  },
+  "hygiene": {
+    "n_tasks": 49630,
+    "n_empty": 1,
+    "episodes_with_empty_task": 20918,
+    "episodes_with_empty_task_frac": 0.21867486253110038,
+    "n_whitespace_issues": 293,
+    "whitespace_examples": [
+      "Remove all the paper trash from the table and put them in the bin  on the left",
+      "Put the green bottle and the transparent bottle with the red lid  in the transparent box",
+      "Move the pump bottle to the right side of  the countertop",
+      "Remove  the blue block from on top of the other and then put it in the bowl",
+      "Pick up the silver spoon from the countertop and place it on top of the  container with a blue lid",
+      "Remove the two drips from the grey cup, put them  on table and then  put the grey cup in the whitish cup",
+      "Get the marker from the colourless  cup and place it on the table",
+      "Pick up the lid and close the  bowl",
+      "Pour the contents in the  blue cup on the left into the blue cup on the right",
+      "Lift the spoon in the sink, rinse it at the  tap and then put it to the left in the sink",
+      "Press the J  button on the keyboard",
+      "Lift the blue small cube on the top most left  from the table and put it in the green bowl",
+      "Take the marker out of the cup and put  it on the table",
+      "Pack the first disposable cup into the second then  both into the third cup and put all into the fourth cup",
+      "Remove the white container from inside  the coffee maker and put on top of the coffee maker",
+      "Pick up the marker from the black cup and put it on the table, then move the silver bowl  backward",
+      "Remove the black pen  from the mug",
+      "Push the black bin lid fully  downwards",
+      "Pick up the spoon from the countertop, scoop some powder from the bowl and put the scooped  powder in the other bowl",
+      "Remove everything from the plastic and  put them in the box",
+      "Pick up the green block  and put it in the bowl",
+      "Pick up the marker from the bowl,  use the marker to draw a smiley face on the whiteboard, put the marker in the bowl",
+      "Take the pen out of the cup and put it in  the center of the table",
+      "Pick up the marker  from the cup and put it on the table",
+      "Pick up the towel from the table  and clean the plate",
+      "Remove the toy moose from the top of the  brown box, place the white towel on top of the box, remove the white object from the top of the box, place the blue sponge on the box, remove the radish from the top of the box, put the eraser on the box",
+      "Move the cramp staple remover  to the left",
+      "Put the yellow block into the  bowl",
+      "Remove the  lid of the orange cup then put on the table",
+      "Lift one tomato  ketchup  and put it on the kitchen countertop",
+      "Pick up the clothes from the box and put them on the headrest of  the chair",
+      "Pick up the white spoon,  and then place it in the blue bowl",
+      "Move the green towel to  the left",
+      "Fold the T-shit  on the table",
+      "Take a bottle out of  the carrier bag",
+      "Move the object from  the left to the right",
+      "Move the grey clothing and put it on  top of the capes in the right corner",
+      "Remove the denim jacket from the back of the black  chair and place it on the seat of the chair",
+      "Pour some of the contents of the jug into the  bowl",
+      "Press the top orange button on the microwave oven controlling  panel of the stove",
+      "Remove the marker from the measuring cup and put it  on the table",
+      "Open the lid of the cardboard  box",
+      "Use the  black trivet mat to lift the lid from the pot and put it on the stove",
+      "Remove  the lid from the jar and place it on the table",
+      "Pick up all  the fruits from the table  and put 5 fruits in the bowl to the right and 4 fruits into the bowl to the left",
+      "Move the block from the pile blocks  and put it on the table",
+      "Make the brown object  to the left lie flat on the table and then put the car plush toy on top of it",
+      "Push the  toaster lever down",
+      "Remove three potato chips from the grey  plate and put them in the orange cup, pour the chips out of the orange cup and onto the grey plate",
+      "Put the plate and  the cup in the microwave",
+      "Move the piece of  paper towel near the bin to the right",
+      "Move the  whiteboard marker side to side",
+      "Pull  out one tissue square from the tissue box",
+      "Put the marker in the  bowl",
+      "Put the Fanta and Coke cans  on the grey tray",
+      "Remove a white plate from the dishes drying rack and place it in the  sink",
+      "Put one  plate from the right on top of the plate on the left.",
+      "Pick up the white, orange , white-brown  and green objects from the bowl and put them in the cup near the banana plush toy",
+      "Remove the moose toy,  the beetroot plushy and the duster from the plastic",
+      "Pick up the green cup from the table and pour its contents in the silver  cup.",
+      "Put the lemon in the bowl on the windowsill  then put the sock on the nightstand",
+      "Remove the  book from the black bag",
+      "Turn  on the second switch from the right end of the extension cord",
+      "Move the bottle closest  to you backwards",
+      "Put the dark blue cup inside the black bowl then  stack the light blue cup then the orange cup into the dark blue cup and put the black fork in the orange cup",
+      "Put the orange  and green blocks into the black bowl",
+      "Pick up  all the fruit plush toy from the table and put them in the two black bowl",
+      "Put the  cable in the storage box",
+      "Pick up  the screwdriver from the table and put it in the first segment of the tray",
+      "Put the black lid in the  cup",
+      "Move the cube to the right, remove the green object from the bowl and put it on the  shelf",
+      "Put the first fork from  the right in the cutlery box",
+      "Remove the green marker from the green bowl,  draw a smiley face on the whiteboard using the green marker, put the green marker in the bowl",
+      "Open the top part of the fridge and put  the black bottle and the sponge inside",
+      "Take the pen off of the blue bowl and  put it on wooden plate",
+      "take the cup from the  kitchen holder and put it in the sink",
+      "Spill the transparent bowl is content on a white lid, then spill the white lid is content  in a light brown plate",
+      "Move the black object to the  front of the table",
+      "Move the orange can to the right  the gray can to the left and the red can forward from the tray",
+      "Pick up the mango and  green fruit plush toy from the box and put them on the black tray",
+      "Pick up the knife from the yellow plate and put it in the  knife holder on the dish rack",
+      "Pick up the marker from the bowl  and put it on the table",
+      "Put the blue sponge in the pot in the  sink",
+      "Put the can with the blue lid on the other  and move the bottle case to the left",
+      "Remove the orange silicon spatula from the  basket and put in the metal jug",
+      "Remove the small white and black ring from the tray and put it on the table on the  blue right",
+      "Pour the contents from the  white cup into the glass cup then put the white cup on the table",
+      "Use the white towel to slide the things on the counter to the left  and then put the towel in the white bin",
+      "Place the bottle  with a brown lid on the table",
+      "Lift the lunch box on top and put it  on the dish rack in the dishwasher",
+      "Put the cup in the sink, then  open the tap then close it, then take out the cup from the sink",
+      "Move  the bottle forward",
+      "Put the tea spoon on the red towel fold it and then put it in the  open drawer",
+      "Lift the pillow case cover on the left and put it on top of the  book and remote",
+      "Move the pan to to the front big plate on the stove and then put the green  towel on the pan",
+      "Open the  right door of the middle shelf",
+      "Put the block in the  bowl",
+      "Take the spoon from the basket,  use it to stir the contents of the  green bowl  and the put it back in the basket",
+      "Slide the blue block backwards, pick up the light green block and  put it on top of the darker green block",
+      "Remove the spoon from the blue mug and place  it on the napkin on the table",
+      "Take the marker from the cup and put it on the  table",
+      "Hang the white cloth on the  wooden bard",
+      "Put the black  inside the sink",
+      "Put the  blue can opener in the open drawer",
+      "Pick up the wipe and clean the part of the  table near the box",
+      "Put the  green pen in the light blue cup",
+      "Pick up the marker from the table and  put it in the cup",
+      "Press the black middle  key on the keyboard",
+      "Remove the orange plush toy, yellow container, strawberry plush toy from the plastic, put them on the table,  lift the white towel, peach and pink shirt and put them in the plastic",
+      "Take the blue block  out of bowl",
+      "Remove the red hat  and the black hat from the stand and put the black hat on the table and the red hat on top of the black hat.",
+      "Put the shoe on the table, then turn both shoes to the  right",
+      "Remove a folk  from the drawer",
+      "Spread the objects that are on the table, where the orange object and pink cloth moved to the right, white towel and smaller rope to remain on the center, light pink object and bigger rope moved to  the left",
+      "Remove the blue block from the white bowl on the right and put it  in the white bowl with blue markings on the left",
+      "Remove the wooden spatula with a hole in it from the microwave and put it on the  coffee machine",
+      "Fold the cloth on  the countertop into a triangle twice",
+      "Unfold  the towel once",
+      "Put the apple into  the bowl",
+      "Pick up the object from the table and put it in the carton  box",
+      "Move the white shoe from the bottom to the top shelf of  the shoe rack",
+      "Put the lunch boxes  together in one pile",
+      "Close the top  drawer of the file cabinet",
+      "Pick up the yellow can and pour some of the substance into the  clear square lunch box",
+      "Remove the wooden spatula from the basket and put in  the spoon holder",
+      "Remove a bottle from the left compartment of the tray and put it on the  table",
+      "Twist the lid of the bottle clockwise  and anticlockwise",
+      "Remove  a blue packet from the blue box and put it on the table",
+      "Put the orange pen inside the orange cup and  she is now using grade 5",
+      "Slide the brown pot handle to the right,  put the lid on the covered pot, and then put the pot with a black handle on the right front plate",
+      "Remove the beetroot plushie from  the white bowl and put it on the table",
+      "Remove the strawberry, the sponge and the beetroot plushy from the  and put them on the basket",
+      "Move the object to the  left",
+      "Pick up the orange and yellow objects from the table  and put them in the two cups",
+      "Slide the white mug to the right,  pour the contents in the white mug into the bowl",
+      "Use the marker to write the letter K  on the whiteboard",
+      "Open the bottom drawer of the file cabinet  to the right",
+      "Pick up the light pink shirt and put it on top of the yellow container, pick up the pink shirt with the yellow container and  and lift them upwards then put them back on the white basket, pick up the light pink shirt only and put it on the table",
+      "Pick up the teeth brush and  put it in the silver cup",
+      "Get the towel and clean the slight part of the  kitchen unit base top",
+      "Unhang the white towel from  the black frame",
+      "Take the marker from the table and place it  in the white bowl",
+      "Move the bowl to the  left",
+      "Move the purple and orange object one after the other  from the black plate to the gray plate",
+      "Remove the white lid from the  container and put it on the table",
+      "Pick the object from the table and put it in the  cup",
+      "Remove the lid from the spice shaker on the first shelf to the left and put it on the  kitchen countertop",
+      "Put the marker  in the bowl",
+      "Remove the red can bottle from the opaque bowl  and put it on the kitchen countertop",
+      "Use the cloth to wipe the  book",
+      "Put the yellow box  on the green piece on the left",
+      "Take the spoon with the white and blue handle from the blue plate and  place it in the utensils compartment of the draining rack",
+      "Remove the salt shaker from the white bowl and put it  to the right on the countertop",
+      "Lift the food pack from  the stove and put it on the towel",
+      "Pour some of the objects from the jag  to the red bowl",
+      "Pick up the small white object from the table and put it in the orange  plate.",
+      "Remove the black slotted ladle from the holder and put it on top of the  black pot",
+      "Remove all the paper trash from the base top and put them in the  mixed paper bin on the left",
+      "Pick up the object from the bowl  and put it on the table",
+      "Put the tomato inside the  silver bowl",
+      "Remove one bottle from the bottom part of the tray and place it on the  clear lid",
+      "Close the detergent compartment of the washing machine on the  right",
+      "Pick up the orange token from the table and put it on the wooden  holder.",
+      "Put the bowl into the other  bowl",
+      "Take the black marker out of the pot and place it on the left side of the  table",
+      "Pick up the yellow object from the table  and put it in the pot",
+      "Remove the object from the smaller  toy tower and put it on top of the larger toy tower",
+      "Place one slice of bread from the  glass bowl inside the toaster",
+      "Press the leftmost button on the stove  fun on and off",
+      "Remove the  pen from the bowl",
+      "Put the marker  in the pot",
+      "Close the bottom drawer of the file cabinet on  the right side",
+      "Turn the  k-cup over",
+      "Remove the white container from the bottom right of the  seasoning rack and put it on the top of the seasoning rack",
+      "Use the light blue scoop to scoop up some objects from the  blue bowl",
+      "Remove the object from the stove and put  it in the pot in the sink",
+      "Put the brown plush toy and towel  in the plastic",
+      "Pick up one brown paper plate and put it in front of the red chair  on the table",
+      "Put the blue object  inside the drawer and close it",
+      "Put  the black tongs in the dish rack",
+      "Turn the marker  from facing right to the left",
+      "Pick up the yellow bowl put it in pink bowl, pick the green object put in the stacked  cups",
+      "Put one spoon on top of each of the  coffee cups at the front of the counter.",
+      "Put the toy  into the silver pot.",
+      "Open the drawer fully,  pick up the carton box and put it in the drawer and close the drawer",
+      "Put the strawberry plush toy and pumpkin plush toy  on the kitchen cabinet.",
+      "Slide the bottom black knob on the toaster horizontally  from right to left",
+      "Put the yellow bottle in the second open  drawer",
+      "Turn  the fleece over",
+      "Pour  some of the contents in the clear jar into the red bowl",
+      "Put the watermelon  plush toy in the open drawer",
+      "Move the bottle with the orange lid from the stove and put it on the counter top then remove the wooden spoon from inside the left  pot and put it on the pot",
+      "Unpack the white and brown bowls, put the  one on top to the right and the second  to the left on the kitchen countertop",
+      "Open the lid of the coffee maker and close it, remove the cup from the  coffee maker and clean it with the towel",
+      "Put the yellow  triangle block on top of the yellow cube",
+      "Pick up the  bottle and put it in the jug",
+      "Remove the marker from the cup and put it on the  table",
+      "Lift the lunch box from  the towel  and pour the sweets on the towel",
+      "Open the cabinet door and put some of the fruits plush toy inside  and close it",
+      "Take the marker from the  cup and put it on the table",
+      "Remove the paper cup from the other paper cup and put it on the  tray",
+      "Move the curtain to  the right",
+      "Move the  red marker to the right",
+      "Flip the blue scoop on the left side of the paper plate to make the  scoop bowl face downwards on the table",
+      "Lift the scissors to the right  from the table and put it in the black stationary cup",
+      "Slide the tap to the center of the sink and press down the  tap handle",
+      "Put the blue  building block on top of the lime green building block",
+      "Place the crumpled napkin on the right  in the bin",
+      "Pick up the green object from the table  and put it in the bowl",
+      "Push the left side of the shoe rack  on the table forward slightly",
+      "Stack up the cups inside the black bowl then put  the fork inside the blue cup",
+      "Pick up the lid from the table and close the  bottle",
+      "Pick up the blue ring from the tray and put  it on the table",
+      "Remove the wooden spoon from the basket and put it in the spoon  holder.",
+      "Pick up the carrot plush toy from the stove and put it in the silver bowl      that is in the sink",
+      "Press the on/off  button on the kettle.",
+      "Pick up the yellow, green and orange objects and put them in the  silver cup then pick up the other three orange objects and put them in the orange cup",
+      "Pour the  contents of the white bowl into the black bowl",
+      "Pour the contents from the box into the black  then put the box on the counter",
+      "Pick up the orange cup from the table  and put it in the bowl",
+      "Remove the marker from the cup and put it on the table , and then move the cup  to the center",
+      "Take the lid from  the blue pot and put it at the left of the stove",
+      "Move the small glass object from the right side of the table to the bottom left  corner",
+      "Pick up the orange cloth from the box and put it on the headrest of the chair, then pick up the black cloth  from the headrest of the chair and put it in the box",
+      "Put the red block  on top of the green block",
+      "Take the fruit pineapple toy from the black tray and put it in the orange  box",
+      "Pick up the plastic, book and black cloth and put them in the  box",
+      "Put the  items on the table into the plastic bag",
+      "Put the shirts and toy moose inside the  white basket",
+      "open  up the drawer and place an object in there and it was not done smoothly",
+      "Move the doll  backwards",
+      "Move the contact lens holder  closer to the edge of the table",
+      "Remove some content from the coffee can and put them in the measuring cup, remove the measuring cup from the  upside down positioned frost cold cup top, flip the frost cold cup to position it upright on the table",
+      "Remove a tissue from the box and put it on  the table",
+      "Pull the utensil holding bucket  slightly backwards",
+      "Pick up the silver fork from the  white kitchen paper on the kitchen counter and put it on the pink lunch box lid",
+      "Remove the  lid  from the glass food container  and put it on the table",
+      "Remove the apple and orange plush toy from the bowl put them on the table, get the two yellow plush  blocks from the plate and put them in the  bowl",
+      "Put the full water bottle in between the tape and the empty one on the top part  of the counter",
+      "Pick up one yellow cup and put it in the other yellow cup, pick the  orange cup and put it in the stacked yellow cups, pick up the blue cup and put it in the stacked orange cup",
+      "Take the red lid off the tupperware  then remove the object in it and place it on the counter top",
+      "Fold the red and white  cloth neatly",
+      "Remove the marker from the white cup and  put it on the table",
+      "Put  the cube on the circular block",
+      "clean up  when doing the task",
+      "Lift the tissue roll in front and  place it to the right",
+      "Pick up  all the white ropes from the orange chair and put them in the white basket",
+      "Pick one  bottle on the table and put it on the tray",
+      "Lift the blue bowl and  pour the ball into the orange bowl",
+      "Move some of the objects from the white cup and put them in  the bowl",
+      "Close  the  left kitchen drawer",
+      "Put the green bear  toy in the green bowl",
+      "Remove the two cups from the shoe box at the same time and put them on the table at the same time, Pick up the clear cup and  put it in the metallic cup",
+      "Lift the straw from the table and put it the  cup",
+      "Remove  the cans from the tray and put them on the counter.",
+      "Pick up the spoon and scoop some of the objects from  the  red bowl and put them in the measuring cup, then put the spoon on the table",
+      "Put the orange object in the brown box, then remove the purple and yellow objects and  put them on the table",
+      "Put the salt shaker in the open  drawer",
+      "Open the  topmost drawer",
+      "Move the cup to the left and  put the marker inside the mug cup",
+      "Put the green and red decorating ribbons in the  empty stationary holder to the right",
+      "Move the black object to the top of the  shelf",
+      "Put the blue bowl on top of  the cup",
+      "Put the pear plushy in the  basket",
+      "Pick up one silver spoon from the open drawer and put it  on the sheet of kitchen paper on the kitchen counter",
+      "Put the spice shaker on the white towel, remove  it and put it upright on the countertop",
+      "Open the drawer on the left and put the orange can in the drawer  then push the drawer closed.",
+      "Put the yellow towel, the pink and  peach shirt in the box  and the green towel respectively",
+      "Pick up one slice of bread from the glass bowl  and place it in the toaster",
+      "Move the  fluffy bear to the left",
+      "Remove the package on the right in the bottom refrigerator freezer  and place it at the edge of the freezer drawer",
+      "Pick up the bottle from the shelf and put it on the kitchen  board",
+      "Put the orange and green blocks in the bowl one at  time",
+      "Pick up the ring utensil set  from the countertop and put it in the pot",
+      "Press the third keyboard button on the front  left",
+      "Remove the silver bowl from the transparent lunch box , put it on the chopping board and put the brown  object in the silver bowl",
+      "Open the second drawer in the second position  to the right",
+      "Pick up the top light blue measuring cup and turn it  one hundred and eighty degrees until the handles on both measuring cups are aligned",
+      "Pick up the spoon from the bucket  and put it in the bowl",
+      "Move the green packet from the plate  to the mini oven",
+      "Pour some of  the contents in the clear bowl on the right into the bowl on the left.",
+      "Pick up the open water bottle and pour its contents  into the small black pot",
+      "Put the black bowl  on top of the brown bowl",
+      "Turn on the third slot button  of the extension cord  from  the right side",
+      "Take the pen out of the white bowl and put it  on the table away from the bowl",
+      "Put the book on the left in the black box, put the grape toy in the box, remove the book from the  box then put the strawberry toy in the box",
+      "pick up an object and put it on another  position",
+      "Pick up the paper glue from the table  and put it in the cup",
+      "Lift the faucet handle upwards and then  push it downwards",
+      "Take the towel and clean the central part of the  bathing room sink, and then hang back the towel",
+      "Move the object from the orange cup to the  light green bowl",
+      "Pick up the green maker from the right of the kitchen counter and  place it in front of the red mug on the kitchen counter",
+      "Put the  grey bowl on the stove, then remove the serve spoon from the bowl"
+    ],
+    "n_control_chars": 2,
+    "n_duplicate_groups_after_normalisation": 1090,
+    "duplicate_examples": [
+      [
+        "Remove the yellow toy from the green bowl and put it on the table.",
+        "Remove the yellow toy from the green bowl and put it on the table"
+      ],
+      [
+        "Close the open drawer",
+        "Close the open drawer."
+      ],
+      [
+        "Put the towel in the bowl",
+        "Put the towel in the bowl."
+      ],
+      [
+        "Put the marker in the pot",
+        "Put the marker  in the pot"
+      ],
+      [
+        "Remove the blue block from the top of the stack",
+        "Remove the blue block from the top of the stack."
+      ],
+      [
+        "Put the orange object in the bowl",
+        "Put the orange object in the bowl."
+      ],
+      [
+        "Use the towel to wipe the counter.",
+        "Use the towel to wipe the counter"
+      ],
+      [
+        "Open the right door of the cabinet",
+        "Open the right door of the cabinet."
+      ],
+      [
+        "Open the top right drawer",
+        "Open the top right drawer."
+      ],
+      [
+        "Put the lid on the glass jar.",
+        "Put the lid on the glass jar"
+      ],
+      [
+        "Remove the marker from the mug",
+        "Remove the marker from the mug."
+      ],
+      [
+        "Open the chest drawer",
+        "Open the chest drawer."
+      ],
+      [
+        "Close the right cabinet door",
+        "Close the right cabinet door."
+      ],
+      [
+        "Move the bowl to the left",
+        "Move the bowl to the left.",
+        "Move the bowl to the  left"
+      ],
+      [
+        "Open the oven door",
+        "Open the oven door."
+      ],
+      [
+        "Close the drawer",
+        "close the drawer",
+        "Close the drawer."
+      ],
+      [
+        "Press the switch on the stove",
+        "Press the switch on the stove."
+      ],
+      [
+        "Wipe the plate with the blue towel",
+        "Wipe the plate with the blue towel."
+      ],
+      [
+        "Put the lid on the pot",
+        "Put the lid on the pot."
+      ],
+      [
+        "Open the topmost drawer.",
+        "Open the topmost drawer",
+        "Open the  topmost drawer"
+      ],
+      [
+        "Remove the glass lid from the black pot.",
+        "Remove the glass lid from the black pot"
+      ],
+      [
+        "Close the open upper cabinet",
+        "Close the open upper cabinet."
+      ],
+      [
+        "Press a button on the microwave",
+        "press a button on the microwave",
+        "Press a button on the microwave."
+      ],
+      [
+        "Use the towel to wipe the pan",
+        "Use the towel to wipe the pan."
+      ],
+      [
+        "Remove the marker from the cup",
+        "Remove the marker from the cup."
+      ],
+      [
+        "Put the silver lid on the silver pot.",
+        "Put the silver lid on the silver pot"
+      ],
+      [
+        "Close the oven door",
+        "Close the oven door."
+      ],
+      [
+        "Remove the marker from the cup and put it on the table",
+        "Remove the marker from the cup and put it on the  table"
+      ],
+      [
+        "Close the open upper cabinet door",
+        "Close the open upper cabinet door."
+      ],
+      [
+        "Turn off the toaster",
+        "turn off the toaster"
+      ],
+      [
+        "Press the top button on the right side of the stove",
+        "Press the top button on the right side of the stove."
+      ],
+      [
+        "Open the microwave door",
+        "Open the microwave door.",
+        "open the microwave door"
+      ],
+      [
+        "Move the cup to the left.",
+        "Move the cup to the left"
+      ],
+      [
+        "Move the cloth",
+        "move the cloth"
+      ],
+      [
+        "Open the cabinet door",
+        "open the cabinet door"
+      ],
+      [
+        "Move the basket to the left",
+        "Move the basket to the left."
+      ],
+      [
+        "Stack the cups together",
+        "Stack the cups together."
+      ],
+      [
+        "Press the top orange button on the microwave oven controlling panel of the stove",
+        "Press the top orange button on the microwave oven controlling  panel of the stove"
+      ],
+      [
+        "Use the towel to wipe the table",
+        "Use the towel to wipe the table."
+      ],
+      [
+        "Put the marker inside the mug.",
+        "Put the marker inside the mug"
+      ],
+      [
+        "Put the marker on the table",
+        "Put the marker on the table."
+      ],
+      [
+        "Put the pen in the bowl",
+        "put the pen in the bowl"
+      ],
+      [
+        "Put the glass lid on top of the black pot",
+        "Put the glass lid on top of the black pot."
+      ],
+      [
+        "Close the microwave door",
+        "Close the microwave door.",
+        "close the microwave door"
+      ],
+      [
+        "Put the orange block on top of the green block",
+        "Put the orange block on top of the green block."
+      ],
+      [
+        "Close the top drawer of the cabinet",
+        "Close the top drawer of the cabinet."
+      ],
+      [
+        "Unfold the towel",
+        "Unfold the towel."
+      ],
+      [
+        "Pick up the blue packet of doritos and put it in the clear bowl",
+        "Pick up the blue packet of Doritos and put it in the clear bowl"
+      ],
+      [
+        "Move the marker to the right",
+        "Move the marker to the right."
+      ],
+      [
+        "Move the pencil to the left",
+        "Move the pencil to the left."
+      ],
+      [
+        "No action",
+        "No Action",
+        "no action"
+      ],
+      [
+        "Press a button on the coffeemaker.",
+        "Press a button on the coffeemaker"
+      ],
+      [
+        "Remove the green toy from the green bowl.",
+        "Remove the green toy from the green bowl"
+      ],
+      [
+        "Press a button on the coffee maker",
+        "Press a button on the coffee maker."
+      ],
+      [
+        "Open the toaster oven door",
+        "Open the toaster oven door."
+      ],
+      [
+        "Turn on the toaster",
+        "turn on the toaster"
+      ],
+      [
+        "Press a key on the keyboard",
+        "Press a key on the keyboard."
+      ],
+      [
+        "Put the blue container in the plastic bag",
+        "Put the blue container in the plastic bag."
+      ],
+      [
+        "Take the marker out of the mug and put it on the table",
+        "Take the marker out of the mug and put it on the table."
+      ],
+      [
+        "Pick up the green object from the table and put it in the bowl",
+        "Pick up the green object from the table  and put it in the bowl"
+      ],
+      [
+        "Remove the lid from the black pot",
+        "Remove the lid from the black pot."
+      ],
+      [
+        "Put the banana on the table",
+        "Put the banana on the table."
+      ],
+      [
+        "Move the bowl forward",
+        "Move the bowl forward."
+      ],
+      [
+        "Turn on the light",
+        "turn on the light"
+      ],
+      [
+        "Put the bowl in the sink",
+        "Put the bowl in the sink."
+      ],
+      [
+        "Move the towel to the left",
+        "Move the towel to the left."
+      ],
+      [
+        "Put the pen in the cup",
+        "Put the pen in the cup["
+      ],
+      [
+        "Rotate the black chair",
+        "Rotate the black chair."
+      ],
+      [
+        "Close the laptop",
+        "Close the laptop.",
+        "close the laptop"
+      ],
+      [
+        "Remove the pink plate from the blue bowl",
+        "Remove the pink plate from the blue bowl."
+      ],
+      [
+        "Fold the white towel",
+        "Fold the white towel."
+      ],
+      [
+        "Open the brown box.",
+        "Open the brown box"
+      ],
+      [
+        "Open the cabinet door on the right",
+        "Open the cabinet door on the right."
+      ],
+      [
+        "Remove one bottle from the box",
+        "Remove one bottle from the box."
+      ],
+      [
+        "Remove the marker from the mug and put it on the table",
+        "Remove the marker from the mug and put it on the table."
+      ],
+      [
+        "Push the faucet handle upwards",
+        "Push the faucet handle upwards."
+      ],
+      [
+        "Use the eraser from the table to wipe the whiteboard.",
+        "Use the eraser from the table to wipe the whiteboard,"
+      ],
+      [
+        "Move the curtain to the right",
+        "Move the curtain to  the right"
+      ],
+      [
+        "Close the coffeemaker",
+        "Close the coffeemaker."
+      ],
+      [
+        "Open the right cabinet door",
+        "Open the right cabinet door."
+      ],
+      [
+        "Move the black bowl to the left",
+        "Move the black bowl to the left."
+      ],
+      [
+        "Remove the blue container from the plastic bag and put it on the table",
+        "Remove the blue container from the plastic bag and put it on the table."
+      ],
+      [
+        "Use the cloth to wipe the table",
+        "Use the cloth to wipe the table."
+      ],
+      [
+        "Close the curtain",
+        "Close the curtain."
+      ],
+      [
+        "Use the spatula to stir the contents in the bowl",
+        "Use the spatula to stir the contents in the bowl."
+      ],
+      [
+        "Use the towel to wipe the plate",
+        "Use the towel to wipe the plate."
+      ],
+      [
+        "Press the escape key on the keyboard",
+        "Press the escape key on the keyboard."
+      ],
+      [
+        "Close the door",
+        "Close the door."
+      ],
+      [
+        "Open the tap faucet",
+        "Open the tap faucet."
+      ],
+      [
+        "Put the glass lid on the black pot.",
+        "Put the glass lid on the black pot"
+      ],
+      [
+        "Put the screwdriver in the drawer and close the drawer",
+        "Put the screwdriver in the drawer and close the drawer."
+      ],
+      [
+        "Put the cable in the storage box",
+        "Put the  cable in the storage box"
+      ],
+      [
+        "Flip the switch on the wall",
+        "Flip the switch on the wall."
+      ],
+      [
+        "Turn on the third switch from the left",
+        "Turn on the third switch from the left."
+      ],
+      [
+        "Move the bottle to the left.",
+        "Move the bottle to the left"
+      ],
+      [
+        "Move the cup forward",
+        "Move the cup forward."
+      ],
+      [
+        "Open the lid of the plastic container.",
+        "Open the lid of the plastic container"
+      ],
+      [
+        "Put the bowl on top of the microwave",
+        "Put the bowl on top of the microwave."
+      ],
+      [
+        "Close the toaster oven door",
+        "Close the toaster oven door."
+      ],
+      [
+        "Close the silver bin.",
+        "Close the silver bin"
+      ],
+      [
+        "Wipe the table with the yellow towel",
+        "Wipe the table with the yellow towel."
+      ],
+      [
+        "Put the green can in the sink.",
+        "Put the green can in the sink"
+      ],
+      [
+        "Put the green block inside the black bowl",
+        "Put the green block inside the black bowl."
+      ],
+      [
+        "Close the top drawer of the file cabinet",
+        "Close the top  drawer of the file cabinet"
+      ],
+      [
+        "Unfold the yellow towel.",
+        "Unfold the yellow towel"
+      ],
+      [
+        "Push the right lever on the toaster downwards",
+        "Push the right lever on the toaster downwards."
+      ],
+      [
+        "Take the marker out of the mug.",
+        "Take the marker out of the mug"
+      ],
+      [
+        "Put the green block inside the bowl",
+        "Put the green block inside the bowl."
+      ],
+      [
+        "Open the upper cabinet door.",
+        "Open the upper cabinet door"
+      ],
+      [
+        "Put the pen in the mug",
+        "Put the pen in the mug."
+      ],
+      [
+        "Put the marker in the bowl",
+        "Put the marker in the  bowl",
+        "Put the marker  in the bowl"
+      ],
+      [
+        "Move the black cable to the right.",
+        "Move the black cable to the right"
+      ],
+      [
+        "Remove the plate from the dishwasher",
+        "Remove the plate from the dishwasher."
+      ],
+      [
+        "Open the faucet",
+        "Open the faucet."
+      ],
+      [
+        "Move the cup to the right",
+        "Move the cup to the right."
+      ],
+      [
+        "Pick up the pen from the table and put it in the silver pot.",
+        "Pick up the pen from the table and put it in the silver pot"
+      ],
+      [
+        "Put one red sachet on the counter.",
+        "Put one red sachet on the counter"
+      ],
+      [
+        "Pick up the marker from the bowl and put it on the table",
+        "Pick up the marker from the bowl  and put it on the table"
+      ],
+      [
+        "Pick up the lid from the table and put it on the black pot.",
+        "Pick up the lid from the table and put it on the black pot"
+      ],
+      [
+        "Unfold the green cloth",
+        "Unfold the green cloth."
+      ],
+      [
+        "Pick up the orange and yellow objects from the table and put them in the two cups",
+        "Pick up the orange and yellow objects from the table  and put them in the two cups"
+      ],
+      [
+        "Open the lid on the coffeemaker chamber.",
+        "Open the lid on the coffeemaker chamber"
+      ],
+      [
+        "Press the left button on the mouse",
+        "Press the left button on the mouse."
+      ],
+      [
+        "Press a button on the keyboard",
+        "Press a button on the keyboard.",
+        "press a button on the keyboard"
+      ],
+      [
+        "Move the white bowl forward",
+        "Move the white bowl forward."
+      ],
+      [
+        "Move the grey towel to the right",
+        "Move the grey towel to the right."
+      ],
+      [
+        "Move the mug to the right",
+        "Move the mug to the right."
+      ],
+      [
+        "Pick up the marker from the cup and put it on the table",
+        "Pick up the marker  from the cup and put it on the table"
+      ],
+      [
+        "Remove the orange spoon from the drawer",
+        "Remove the orange spoon from the drawer."
+      ],
+      [
+        "Move the blue bowl to the right.",
+        "Move the blue bowl to the right"
+      ],
+      [
+        "Move the spray bottle to the left.",
+        "Move the spray bottle to the left"
+      ],
+      [
+        "Move the mug to the left",
+        "Move the mug to the left."
+      ],
+      [
+        "Put the orange block in the box.",
+        "Put the orange block in the box"
+      ],
+      [
+        "Take the towel out of the bowl.",
+        "Take the towel out of the bowl"
+      ],
+      [
+        "Remove one tissue square from the tissue box",
+        "Remove one tissue square from the tissue box."
+      ],
+      [
+        "Press a button on the kettle.",
+        "Press a button on the kettle"
+      ],
+      [
+        "Press a button on the remote control",
+        "Press a button on the remote control."
+      ],
+      [
+        "Move the white object forward.",
+        "Move the white object forward"
+      ],
+      [
+        "Move the mug forwards",
+        "Move the mug forwards."
+      ],
+      [
+        "Remove the lid from the pot",
+        "Remove the lid from the pot.",
+        "remove the lid from the pot"
+      ],
+      [
+        "Move the green towel to the right.",
+        "Move the green towel to the right"
+      ],
+      [
+        "Close the bin",
+        "Close the bin."
+      ],
+      [
+        "Move the marker forward",
+        "Move the marker forward."
+      ],
+      [
+        "Push the faucet handle to the right.",
+        "Push the faucet handle to the right"
+      ],
+      [
+        "Remove the lid from the silver pot",
+        "Remove the lid from the silver pot."
+      ],
+      [
+        "Remove the roll on stick from the plastic bag and put it on the table",
+        "Remove the roll-on stick from the plastic bag and put it on the table"
+      ],
+      [
+        "Move the faucet to the left",
+        "Move the faucet to the left."
+      ],
+      [
+        "Remove the silver lid from the silver pot",
+        "Remove the silver lid from the silver pot."
+      ],
+      [
+        "Turn on the third switch from the right.",
+        "Turn on the third switch from the right"
+      ],
+      [
+        "Move the plush toy from right to left.",
+        "Move the plush toy from right to left"
+      ],
+      [
+        "Turn off the kettle.",
+        "Turn off the kettle"
+      ],
+      [
+        "Fold the towel on the table",
+        "Fold the towel on the table."
+      ],
+      [
+        "Put the white ropes inside the blue box",
+        "Put the white ropes inside the blue box."
+      ],
+      [
+        "Turn off the right light switch.",
+        "Turn off the right light switch"
+      ],
+      [
+        "Move the cup backwards",
+        "Move the cup backwards."
+      ],
+      [
+        "Put the orange ring on the table",
+        "Put the orange ring on the table."
+      ],
+      [
+        "Move the marker to the left",
+        "Move the marker to the left."
+      ],
+      [
+        "Remove the purple object from the plate.",
+        "Remove the purple object from the plate"
+      ],
+      [
+        "Move the white bowl to the right.",
+        "Move the white bowl to the right"
+      ],
+      [
+        "Push down the toaster lever",
+        "Push down the toaster lever."
+      ],
+      [
+        "Move the pot to the left",
+        "Move the pot to the left."
+      ],
+      [
+        "Fold the t-shirt",
+        "Fold the T-shirt"
+      ],
+      [
+        "Move the wooden tray to the left.",
+        "Move the wooden tray to the left"
+      ],
+      [
+        "Close the clear container",
+        "Close the clear container."
+      ],
+      [
+        "Push the toaster lever down",
+        "Push the  toaster lever down"
+      ],
+      [
+        "Put the apple in the bowl",
+        "Put the apple in the bowl."
+      ],
+      [
+        "Put the marker into the cup",
+        "Put the marker into the cup."
+      ],
+      [
+        "Close the faucet.",
+        "Close the faucet"
+      ],
+      [
+        "Open the tap",
+        "open the tap"
+      ],
+      [
+        "Open the lid of the white bin",
+        "Open the lid of the white bin."
+      ],
+      [
+        "Turn off the light",
+        "turn off the light"
+      ],
+      [
+        "Move the bottle forward",
+        "Move  the bottle forward",
+        "Move the bottle forward."
+      ],
+      [
+        "Unfold the white towel.",
+        "Unfold the white towel"
+      ],
+      [
+        "Close the cabinet door",
+        "Close the cabinet door.",
+        "close the cabinet door"
+      ],
+      [
+        "Put the lid on the pan",
+        "Put the lid on the pan."
+      ],
+      [
+        "Put the marker into the mug.",
+        "Put the marker into the mug"
+      ],
+      [
+        "Move the yellow plush toy to the right",
+        "Move the yellow plush toy to the right."
+      ],
+      [
+        "Put the cans on the grey tray.",
+        "Put the cans on the grey tray"
+      ],
+      [
+        "Place the lid on the pot",
+        "place the lid on the pot"
+      ],
+      [
+        "Put the marker inside the cup",
+        "Put the marker inside the cup."
+      ],
+      [
+        "Put the glass lid on the pot",
+        "Put the glass lid on the pot."
+      ],
+      [
+        "Twist the knob on the stove",
+        "Twist the knob on the stove."
+      ],
+      [
+        "Push the faucet to the left",
+        "Push the faucet to the left."
+      ],
+      [
+        "Move the black object to the right",
+        "Move the black object to the right."
+      ],
+      [
+        "Close the lid of the rice cooker.",
+        "Close the lid of the rice cooker"
+      ],
+      [
+        "Take the can out of the sink",
+        "Take the can out of the sink."
+      ],
+      [
+        "Unfold the grey towel",
+        "Unfold the grey towel."
+      ],
+      [
+        "Open the silver bin.",
+        "Open the silver bin"
+      ],
+      [
+        "Open the toaster oven.",
+        "Open the toaster oven"
+      ],
+      [
+        "Move the white bowl to the left",
+        "Move the white bowl to the left."
+      ],
+      [
+        "Put the white lid on top of the clear container.",
+        "Put the white lid on top of the clear container"
+      ],
+      [
+        "Move the tap nozzle to the left",
+        "Move the tap nozzle to the left."
+      ],
+      [
+        "Put the bottle on top of the microwave",
+        "Put the bottle on top of the microwave."
+      ],
+      [
+        "Move the book forward",
+        "Move the book forward."
+      ],
+      [
+        "Use the white and red towel to wipe the black pan.",
+        "Use the white and red towel to wipe the black pan"
+      ],
+      [
+        "Move the black remote control to the right.",
+        "Move the black remote control to the right"
+      ],
+      [
+        "Place the coffee cup upright",
+        "Place the coffee cup upright."
+      ],
+      [
+        "Close the open cabinet door",
+        "Close the open cabinet door."
+      ],
+      [
+        "Close the black bin.",
+        "Close the black bin"
+      ],
+      [
+        "Press the orange button.",
+        "Press the orange button"
+      ],
+      [
+        "Put the yellow block on the table",
+        "Put the yellow block on the table."
+      ],
+      [
+        "Open the door",
+        "Open the door.",
+        "open the door"
+      ],
+      [
+        "Press the power button on the extension cord.",
+        "Press the power button on the extension cord"
+      ],
+      [
+        "Press a button on the dishwasher.",
+        "Press a button on the dishwasher"
+      ],
+      [
+        "Put the black object on top of the shelf",
+        "Put the black object on top of the shelf."
+      ],
+      [
+        "Pick up the lid and close the  bowl",
+        "Pick up the lid and close the bowl"
+      ],
+      [
+        "Push the faucet handle on the right forwards",
+        "Push the faucet handle on the right forwards."
+      ],
+      [
+        "Open the right door of the cabinet above the sink",
+        "Open the right door of the cabinet above the sink."
+      ],
+      [
+        "Move the blue towel to the left",
+        "Move the blue towel to the left."
+      ],
+      [
+        "Put the orange packet in the bowl",
+        "Put the orange packet in the bowl."
+      ],
+      [
+        "Put the lid on top of the glass jar.",
+        "Put the lid on top of the glass jar"
+      ],
+      [
+        "Move the object to the left",
+        "Move the object to the  left"
+      ],
+      [
+        "Turn off the left light switch",
+        "Turn off the left light switch."
+      ],
+      [
+        "Remove the marker from the bowl and put it on the table",
+        "Remove the marker from the bowl and put it on the table."
+      ],
+      [
+        "Unfold the towel on the table",
+        "Unfold the towel on the table."
+      ],
+      [
+        "Draw the curtain to the right",
+        "Draw the curtain to the right."
+      ],
+      [
+        "Fold the towel",
+        "Fold the towel.",
+        "fold the towel"
+      ],
+      [
+        "Put the green block into the bowl.",
+        "Put the green block into the bowl"
+      ],
+      [
+        "Put the yellow toy in the green bowl",
+        "Put the yellow toy in the green bowl."
+      ],
+      [
+        "Remove the coffee pod from the coffeemaker.",
+        "Remove the coffee pod from the coffeemaker"
+      ],
+      [
+        "Turn on the light switch.",
+        "Turn on the light switch"
+      ],
+      [
+        "Use the sponge to wipe the counter.",
+        "Use the sponge to wipe the counter"
+      ],
+      [
+        "Not action",
+        "Not Action"
+      ],
+      [
+        "Use the black eraser to wipe the whiteboard.",
+        "Use the black eraser to wipe the whiteboard"
+      ],
+      [
+        "Open the top drawer",
+        "Open the top drawer."
+      ],
+      [
+        "Put the can in the bowl",
+        "Put the can in the bowl."
+      ],
+      [
+        "Put the cloth on the table",
+        "Put the cloth on the table."
+      ],
+      [
+        "Put the blue marker in the black mug",
+        "Put the blue marker in the black mug."
+      ],
+      [
+        "Pick up the lid from the table and put it on the pot.",
+        "Pick up the lid from the table and put it on the pot",
+        "Pick up[ the lid from the table and put it on the pot"
+      ],
+      [
+        "Open the coffeemaker",
+        "Open the coffeemaker."
+      ],
+      [
+        "Press one key on the keyboard.",
+        "Press one key on the keyboard"
+      ],
+      [
+        "Fold the green towel from left to right.",
+        "Fold the green towel from left to right"
+      ],
+      [
+        "Move the yellow object to the left.",
+        "Move the yellow object to the left"
+      ],
+      [
+        "Open the microwave",
+        "Open the microwave."
+      ],
+      [
+        "Turn on the light switch on the left",
+        "Turn on the light switch on the left."
+      ],
+      [
+        "Open the red drawer",
+        "Open the red drawer."
+      ],
+      [
+        "Open the left cabinet door.",
+        "Open the left cabinet door"
+      ],
+      [
+        "Move the yellow object to the right",
+        "Move the yellow object to the right."
+      ],
+      [
+        "Move the mug backwards",
+        "Move the mug backwards."
+      ],
+      [
+        "Open the bin",
+        "Open the bin.",
+        "open the bin"
+      ],
+      [
+        "Close the left door of the top cabinet",
+        "Close the left door of the top cabinet."
+      ],
+      [
+        "Pour the contents in the bowl on the right into the bowl on the left.",
+        "Pour the contents in the bowl on the right into the bowl on the left"
+      ],
+      [
+        "Left click the mouse",
+        "Left-click the mouse"
+      ],
+      [
+        "Put one green hanger on the table.",
+        "Put one green hanger on the table"
+      ],
+      [
+        "Put the lid on the black pot",
+        "Put the lid on the black pot."
+      ],
+      [
+        "Move the blue bottle forwards",
+        "Move the blue bottle forwards."
+      ],
+      [
+        "Pick up the marker and put it in the bowl",
+        "Pick up the marker and put it in the bowl.",
+        "pick up the marker and put it in the bowl"
+      ],
+      [
+        "Press the button on the coffee machine",
+        "Press The button on the coffee machine"
+      ],
+      [
+        "Put the orange block on top of the yellow block.",
+        "Put the orange block on top of the yellow block"
+      ],
+      [
+        "Pick up the pen from the table and put it in the bowl",
+        "Pick up the pen from the table and put it in the bowl."
+      ],
+      [
+        "Put the masking tape on the plate",
+        "Put the masking tape on the plate."
+      ],
+      [
+        "Pick up the marker and put it in the mug",
+        "Pick up the marker and put it in the mug."
+      ],
+      [
+        "Move the corn to the left",
+        "Move the corn to the left."
+      ],
+      [
+        "Put the marker inside the bowl.",
+        "Put the marker inside the bowl"
+      ],
+      [
+        "Move the box to the right",
+        "Move the box to the right."
+      ],
+      [
+        "Slide the glass door to the right.",
+        "Slide the glass door to the right"
+      ],
+      [
+        "Fold the green towel",
+        "Fold the green towel."
+      ],
+      [
+        "Take the marker out of the cup and put it on the table",
+        "Take the marker out of the cup and put  it on the table"
+      ],
+      [
+        "Put the pink block on the table",
+        "Put the pink block on the table."
+      ],
+      [
+        "Open the bottom drawer of the cabinet to the right",
+        "Open the bottom drawer of the cabinet to the right."
+      ],
+      [
+        "Put the pink lid on the blue bowl",
+        "Put the pink lid on the blue bowl."
+      ],
+      [
+        "Take the marker from the cup and put it on the table",
+        "Take the marker from the cup and put it on the  table",
+        "Take the marker from the  cup and put it on the table"
+      ],
+      [
+        "Pick up the bottle and put it on the table.",
+        "Pick up the bottle and put it on the table"
+      ],
+      [
+        "Move the bottle to the right",
+        "Move the bottle to the right."
+      ],
+      [
+        "Press the button to open the kettle lid",
+        "Press the button to open the kettle lid."
+      ],
+      [
+        "Remove the glass lid from the pot.",
+        "Remove the glass lid from the pot"
+      ],
+      [
+        "Push the ball to the right",
+        "Push the ball to the right."
+      ],
+      [
+        "Put the block in the bowl",
+        "Put the block in the  bowl"
+      ],
+      [
+        "Turn off the air conditioner.",
+        "Turn off the air conditioner"
+      ],
+      [
+        "Move the blue bowl to the left",
+        "Move the blue bowl to the left."
+      ],
+      [
+        "Close the book",
+        "Close the book.",
+        "close the book"
+      ],
+      [
+        "Turn off the lamp",
+        "Turn off the lamp."
+      ],
+      [
+        "Put the lid on the spray bottle.",
+        "Put the lid on the spray bottle"
+      ],
+      [
+        "Put the orange cup in the black bowl",
+        "Put the orange cup in the black bowl."
+      ],
+      [
+        "Pour the contents in the cup into the bowl",
+        "Pour the contents in the cup into the bowl."
+      ],
+      [
+        "Move the grey towel forwards.",
+        "Move the grey towel forwards"
+      ],
+      [
+        "Put the spray bottle into the sink",
+        "Put the spray bottle into the sink."
+      ],
+      [
+        "Take the lid off of the pot",
+        "take the lid off of the pot"
+      ],
+      [
+        "Turn off the light switch",
+        "Turn off the light switch."
+      ],
+      [
+        "Push the faucet to the left side of the sink.",
+        "Push the faucet to the left side of the sink"
+      ],
+      [
+        "Close the trash can lid",
+        "Close the trash can lid."
+      ],
+      [
+        "Move the white mug to the right",
+        "Move the white mug to the right."
+      ],
+      [
+        "Move the white mug forwards",
+        "Move the white mug forwards."
+      ],
+      [
+        "Move the jar to the right",
+        "Move the jar to the right."
+      ],
+      [
+        "Put the orange packet in the black bowl",
+        "Put the orange packet in the black bowl."
+      ],
+      [
+        "Close the top drawer",
+        "Close the top drawer."
+      ],
+      [
+        "Push down the lever on the toaster",
+        "Push down the lever on the toaster."
+      ],
+      [
+        "Open the cupboard door",
+        "open the cupboard door"
+      ],
+      [
+        "Remove the pen from the bowl",
+        "Remove the pen from the bowl.",
+        "Remove the  pen from the bowl"
+      ],
+      [
+        "Press a button on the washing machine on the right",
+        "Press a button on the washing machine on the right."
+      ],
+      [
+        "Press a button on the right side of the microwave",
+        "Press a button on the right side of the microwave."
+      ],
+      [
+        "Press the switch on the handle of the kettle",
+        "Press the switch on the handle of the kettle."
+      ],
+      [
+        "Pick up the blue lid from the wooden holder and put it on the table.",
+        "Pick up the blue lid from the wooden holder and put it on the table"
+      ],
+      [
+        "Put the towel on the chair.",
+        "Put the towel on the chair"
+      ],
+      [
+        "Press the button on the toaster",
+        "Press the button on the toaster."
+      ],
+      [
+        "Open the top drawer of the cabinet",
+        "Open the top drawer of the cabinet."
+      ],
+      [
+        "Put the orange cup inside the black bowl",
+        "Put the orange cup inside the black bowl."
+      ],
+      [
+        "Switch on the toaster",
+        "switch on the toaster"
+      ],
+      [
+        "Pick up the lid from the pot and put it on the table.",
+        "Pick up the lid from the pot and put it on the table"
+      ],
+      [
+        "Push the faucet handle downwards",
+        "Push the faucet handle downwards."
+      ],
+      [
+        "Fold the cloth on the table",
+        "Fold the cloth on the table."
+      ],
+      [
+        "Move the grey cup to the right",
+        "Move the grey cup to the right."
+      ],
+      [
+        "Move the blue book to the right.",
+        "Move the blue book to the right"
+      ],
+      [
+        "Move the green towel to the left",
+        "Move the green towel to  the left",
+        "Move the green towel to the left."
+      ],
+      [
+        "Move the masking tape to the right.",
+        "Move the masking tape to the right"
+      ],
+      [
+        "Move the remote control to the left",
+        "Move the remote control to the left."
+      ],
+      [
+        "Close the coffee maker",
+        "Close the coffee maker."
+      ],
+      [
+        "Remove the glass lid from the top of the black pot.",
+        "Remove the glass lid from the top of the black pot"
+      ],
+      [
+        "Pick up the towel from the table and put it on the tripod.",
+        "Pick up the towel from the table and put it on the tripod"
+      ],
+      [
+        "Put two pieces of candy in the red cup.",
+        "Put two pieces of candy in the red cup"
+      ],
+      [
+        "Open the cube-shaped wooden object",
+        "open the cube-shaped wooden object"
+      ],
+      [
+        "Move the silver fork to the right",
+        "Move the silver fork to the right."
+      ],
+      [
+        "Use the blue towel to wipe the table.",
+        "Use the blue towel to wipe the table"
+      ],
+      [
+        "Put the glass lid on the pan.",
+        "Put the glass lid on the pan"
+      ],
+      [
+        "Turn off the coffee maker",
+        "Turn off the coffee maker."
+      ],
+      [
+        "Turn off the coffeemaker",
+        "Turn off the coffeemaker."
+      ],
+      [
+        "Pick up the square plush toy from the table and put it in the box",
+        "Pick up the square plush toy from the table and put it in the box."
+      ],
+      [
+        "Use the cloth to wipe the counter",
+        "Use the cloth to wipe the counter."
+      ],
+      [
+        "Put the marker in the blue cup",
+        "put the marker in the blue cup"
+      ],
+      [
+        "Open the closet door.",
+        "open the closet door",
+        "Open the closet door"
+      ],
+      [
+        "Turn off the extension cable",
+        "Turn Off the extension cable"
+      ],
+      [
+        "Open the curtain",
+        "Open the curtain."
+      ],
+      [
+        "Remove the lid from the pot and put it on the table",
+        "Remove the lid from the pot and put it on the table."
+      ],
+      [
+        "Move the lamp backwards.",
+        "Move the lamp backwards"
+      ],
+      [
+        "Put the green block in the box",
+        "Put the green block in the box."
+      ],
+      [
+        "Push the lever on the toaster downwards",
+        "Push the lever on the toaster downwards."
+      ],
+      [
+        "Put the Rubik's cube on top of the shelf",
+        "Put the Rubik's cube on top of the shelf."
+      ],
+      [
+        "Put the orange can on the bottom shelf",
+        "Put the orange can on the bottom shelf."
+      ],
+      [
+        "Move the orange object backwards.",
+        "Move the orange object backwards"
+      ],
+      [
+        "Put the rubber band around the jar.",
+        "Put the rubber band around the jar",
+        "Put the rubber band around the jar.."
+      ],
+      [
+        "Move the kettle to the left.",
+        "Move the kettle to the left"
+      ],
+      [
+        "Stack the two clear bowls together.",
+        "Stack the two clear bowls together"
+      ],
+      [
+        "Close the bottom drawer of the cabinet to the left",
+        "Close the bottom drawer of the cabinet to the left."
+      ],
+      [
+        "Move the black object to the left",
+        "Move the black object to the left."
+      ],
+      [
+        "Push the towel to the left.",
+        "Push the towel to the left"
+      ],
+      [
+        "Move the Sharpie to the table",
+        "Move the sharpie to the table"
+      ],
+      [
+        "Put the block inside the black bowl.",
+        "Put the block inside the black bowl"
+      ],
+      [
+        "Move the silver bowl to the left",
+        "Move the silver bowl to the left."
+      ],
+      [
+        "Pick up the green block from the table and put it in the black bowl.",
+        "Pick up the green block from the table and put it in the black bowl"
+      ],
+      [
+        "Draw the curtain closed",
+        "Draw the curtain closed."
+      ],
+      [
+        "Put the can on the silver object.",
+        "Put the can on the silver object"
+      ],
+      [
+        "Put the yellow ring on the orange stand",
+        "Put the yellow ring on the orange stand."
+      ],
+      [
+        "Move the white towel to the right.",
+        "Move the white towel to the right"
+      ],
+      [
+        "Remove the can from the bowl",
+        "Remove the can from the bowl."
+      ],
+      [
+        "Fold the green towel from right to left",
+        "Fold the green towel from right to left."
+      ],
+      [
+        "Put the orange ring in the box",
+        "Put the orange ring in the box."
+      ],
+      [
+        "Unfold the towel once",
+        "Unfold  the towel once"
+      ],
+      [
+        "Close the glass door",
+        "Close the glass door."
+      ],
+      [
+        "Press a button on the toaster.",
+        "Press a button on the toaster"
+      ],
+      [
+        "Remove the spoon from the bowl",
+        "Remove the spoon from the bowl."
+      ],
+      [
+        "Remove the pen from the green cup.",
+        "Remove the pen from the green cup"
+      ],
+      [
+        "Open the box",
+        "open the box"
+      ],
+      [
+        "Put the blue object in the drawer and close the drawer",
+        "Put the blue object in the drawer and close the drawer."
+      ],
+      [
+        "Open the right door of the top cabinet.",
+        "Open the right door of the top cabinet"
+      ],
+      [
+        "Pick up the pen from the cup and place it on the table",
+        "Pick up the pen from the cup and place it on the table."
+      ],
+      [
+        "Pick up the orange cup from the table and pour its contents in the bowl",
+        "Pick up the orange cup from the table and pour its contents in the bowl."
+      ],
+      [
+        "Close the lid of the black bin",
+        "Close the lid of the black bin."
+      ],
+      [
+        "Remove the lid from the blue bottle.",
+        "Remove the lid from the blue bottle"
+      ],
+      [
+        "Close the right door of the top cabinet",
+        "Close the right door of the top cabinet."
+      ],
+      [
+        "Open the file",
+        "open the file"
+      ],
+      [
+        "Move the faucet to the center of the sink.",
+        "Move the faucet to the center of the sink"
+      ],
+      [
+        "Close the lid of the electric kettle.",
+        "Close the lid of the electric kettle"
+      ],
+      [
+        "Remove the black pen  from the mug",
+        "Remove the black pen from the mug"
+      ],
+      [
+        "Remove the X shaped block from the top of the stack",
+        "Remove the X-shaped block from the top of the stack."
+      ],
+      [
+        "Open the top drawer on the left",
+        "Open the top drawer on the left."
+      ],
+      [
+        "Pick up the pen from the mug cup and put it on the table.",
+        "Pick up the pen from the mug cup and put it on the table"
+      ],
+      [
+        "Close the top drawer of the cabinet to the right.",
+        "Close the top drawer of the cabinet to the right"
+      ],
+      [
+        "Move the gray towel to the left",
+        "Move the Gray towel to the left"
+      ],
+      [
+        "Slide the glass door to the left.",
+        "Slide the glass door to the left"
+      ],
+      [
+        "Put the pen inside the container",
+        "Put the pen inside the container."
+      ],
+      [
+        "Turn on the chandelier",
+        "Turn on the chandelier."
+      ],
+      [
+        "Fold the white towel into a triangle twice",
+        "Fold the white towel into a triangle twice."
+      ],
+      [
+        "Put all the bottles and the orange plushie surrounding the white plate, on the white plate",
+        "Put all the bottles and the orange plushie surrounding the white plate on the white plate"
+      ],
+      [
+        "Put the black clothing on the table.",
+        "Put the black clothing on the table"
+      ],
+      [
+        "Close the door of the microwave.",
+        "Close the door of the microwave"
+      ],
+      [
+        "Put the black shirt on the chair.",
+        "Put the black shirt on the chair"
+      ],
+      [
+        "Pull out one tissue square from the tissue box.",
+        "Pull  out one tissue square from the tissue box",
+        "Pull out one tissue square from the tissue box"
+      ],
+      [
+        "Move the black bag to the left",
+        "Move the black bag to the left."
+      ],
+      [
+        "Put the screwdriver in the drawer then close it",
+        "Put the screwdriver in the drawer then close it.",
+        "Put the screwdriver in the drawer, then close it"
+      ],
+      [
+        "Remove the marker from the bowl.",
+        "Remove the marker from the bowl"
+      ],
+      [
+        "Open the laptop",
+        "Open the laptop."
+      ],
+      [
+        "Move the blue bowl forward",
+        "Move the blue bowl forward."
+      ],
+      [
+        "Close the microwave.",
+        "Close the microwave"
+      ],
+      [
+        "Put the rubber band on the jar.",
+        "Put the rubber band on the jar"
+      ],
+      [
+        "Move the yellow cup to the right",
+        "Move the yellow cup to the right."
+      ],
+      [
+        "Pick up the yellow object from the table and put it in the pot",
+        "Pick up the yellow object from the table  and put it in the pot"
+      ],
+      [
+        "Remove the pen from the cup",
+        "Remove the pen from the cup."
+      ],
+      [
+        "Move the keyboard to the right",
+        "Move the keyboard to the right."
+      ],
+      [
+        "Put the blue ring on the table",
+        "Put the blue ring on the table."
+      ],
+      [
+        "Turn on the kettle",
+        "turn on the kettle"
+      ],
+      [
+        "Stack up the paper cups",
+        "stack up the paper cups"
+      ],
+      [
+        "Put the marker into the plastic cup.",
+        "Put the marker into the plastic cup"
+      ],
+      [
+        "Pick up the pen from the table and put it in the cup.",
+        "Pick up the pen from the table and put it in the cup"
+      ],
+      [
+        "Press a button on the white device",
+        "Press a button on the white device."
+      ],
+      [
+        "Press a button on the stove",
+        "Press a button on the stove."
+      ],
+      [
+        "Open the white and green bin.",
+        "Open the white and green bin"
+      ],
+      [
+        "Use the white and blue towel on the right to wipe the black pan",
+        "Use the white and blue towel on the right to wipe the black pan."
+      ],
+      [
+        "Fold the towel three times over",
+        "Fold the towel three times over."
+      ],
+      [
+        "Put the orange toy in the green bowl",
+        "Put the orange toy in the green bowl."
+      ],
+      [
+        "Move the towel to the right",
+        "Move the towel to the right."
+      ],
+      [
+        "Open the bottom fridge door.",
+        "Open the bottom fridge door"
+      ],
+      [
+        "Open the left door on the middle cabinet",
+        "Open the left door on the middle cabinet."
+      ],
+      [
+        "Put the white foam in the brown box.",
+        "Put the white foam in the brown box"
+      ],
+      [
+        "Open the top left drawer",
+        "Open the top left drawer."
+      ],
+      [
+        "Close the topmost drawer on the left",
+        "Close the topmost drawer on the left."
+      ],
+      [
+        "Move the tape dispenser to the left.",
+        "Move the tape dispenser to the left"
+      ],
+      [
+        "Remove the black object from the plastic.",
+        "Remove the black object from the plastic"
+      ],
+      [
+        "Pick up the lid from the black pot and put it on the table",
+        "Pick up the lid from the black pot and put it on the table."
+      ],
+      [
+        "Put the black lid on the rice cooker",
+        "Put the black lid on the rice cooker."
+      ],
+      [
+        "Push the lever on the silver toaster downwards.",
+        "Push the lever on the silver toaster downwards"
+      ],
+      [
+        "Put the yellow pepper in the orange pan.",
+        "Put the yellow pepper in the orange pan"
+      ],
+      [
+        "Close the kettle lid",
+        "Close the kettle lid."
+      ],
+      [
+        "Move the white mug backwards.",
+        "Move the white mug backwards"
+      ],
+      [
+        "Put the orange packet in the sink",
+        "Put the orange packet in the sink."
+      ],
+      [
+        "Move the green towel forward",
+        "Move the green towel forward."
+      ],
+      [
+        "Move the silver cup to the left.",
+        "Move the silver cup to the left"
+      ],
+      [
+        "Close the left cabinet door.",
+        "Close the left cabinet door"
+      ],
+      [
+        "Move the light green bowl to the left",
+        "Move the light-green bowl to the left"
+      ],
+      [
+        "Open the right drawer of the cabinet",
+        "Open the right drawer of the cabinet."
+      ],
+      [
+        "Pick up the orange object and put it in the bowl.",
+        "Pick up the orange object and put it in the bowl"
+      ],
+      [
+        "Move the silver bowl forward",
+        "Move the silver bowl forward."
+      ],
+      [
+        "Put the red lid on the clear bowl.",
+        "Put the red lid on the clear bowl"
+      ],
+      [
+        "Move the silver spoon to the right.",
+        "Move the silver spoon to the right"
+      ],
+      [
+        "Pour the liquid from the blue bowl into the sink.",
+        "Pour the liquid from the blue bowl into the sink"
+      ],
+      [
+        "Move the can to the left",
+        "Move the can to the left."
+      ],
+      [
+        "Move the white bowl to the center of the table",
+        "Move the white bowl to the center of the table."
+      ],
+      [
+        "Move the glass jar to the left.",
+        "Move the glass jar to the left"
+      ],
+      [
+        "Open the topmost drawer on the right",
+        "Open the topmost drawer on the right."
+      ],
+      [
+        "Fold the yellow towel from bottom to top.",
+        "Fold the yellow towel from bottom to top"
+      ],
+      [
+        "Pick up the white towel from the table and put it on the black tripod",
+        "Pick up the white towel from the table and put it on the black tripod."
+      ],
+      [
+        "Put the blue toy in the green bowl",
+        "Put the blue toy in the green bowl."
+      ],
+      [
+        "Put the salt cellar in the white pot.",
+        "Put the salt cellar in the white pot"
+      ],
+      [
+        "Pick up the pen from the black mug cup and put it on the table.",
+        "Pick up the pen from the black mug cup and put it on the table"
+      ],
+      [
+        "Move the donut to the left.",
+        "Move the donut to the left"
+      ],
+      [
+        "Pick up the orange cup and put it in the black bowl",
+        "Pick up the orange cup and put it in the black bowl."
+      ],
+      [
+        "Put some rubber bands on the white plate",
+        "Put some rubber bands on the white plate."
+      ],
+      [
+        "Move the basketball to the right",
+        "Move the basketball to the right."
+      ],
+      [
+        "Put the green packet in the sink.",
+        "Put the green packet in the sink"
+      ],
+      [
+        "Use the cloth to wipe the plate",
+        "Use the cloth to wipe the plate."
+      ],
+      [
+        "Pick up the cup from the table and slightly move it to the left.",
+        "Pick up the cup from the table and slightly move it to the left"
+      ],
+      [
+        "Put the green packet inside the sink.",
+        "Put the green packet inside the sink"
+      ],
+      [
+        "Fold the t-shirt on the table",
+        "Fold the T-shirt on the table"
+      ],
+      [
+        "Move the clear bowl to the right",
+        "Move the clear bowl to the right."
+      ],
+      [
+        "Remove the lid from the glass jar.",
+        "Remove the lid from the glass jar"
+      ],
+      [
+        "Open the trash can",
+        "Open the trash can."
+      ],
+      [
+        "Press a button on the white remote control.",
+        "Press a button on the white remote control"
+      ],
+      [
+        "Open the bottom drawer of the file cabinet to the right",
+        "Open the bottom drawer of the file cabinet  to the right"
+      ],
+      [
+        "Put the blue block on the table",
+        "Put the blue block on the table."
+      ],
+      [
+        "Use the marker to write on the whiteboard",
+        "use the marker to write on the whiteboard"
+      ],
+      [
+        "Put the blocks inside the black bowl.",
+        "Put the blocks inside the black bowl"
+      ],
+      [
+        "Move the red basket to the left.",
+        "Move the red basket to the left"
+      ],
+      [
+        "Move the box backwards.",
+        "Move the box backwards"
+      ],
+      [
+        "Press a button on the coffee machine",
+        "press a button on the coffee machine"
+      ],
+      [
+        "Remove the lid from the blue pot.",
+        "Remove the lid from the blue pot"
+      ],
+      [
+        "Remove a tissue from the box and put it on the table",
+        "Remove a tissue from the box and put it on  the table"
+      ],
+      [
+        "Put the red can in the black bowl.",
+        "Put the red can in the black bowl"
+      ],
+      [
+        "Open and close the scissors",
+        "Open and close the scissors."
+      ],
+      [
+        "Remove the bowl from the microwave.",
+        "Remove the bowl from the microwave"
+      ],
+      [
+        "Pick up the pen from the bowl and put it on the table.",
+        "Pick up the pen from the bowl and put it on the table"
+      ],
+      [
+        "Push the faucet to the center of the sink.",
+        "Push the faucet to the center of the sink"
+      ],
+      [
+        "Close the white and green bin.",
+        "Close the white and green bin"
+      ],
+      [
+        "Remove the marker from the silver pot.",
+        "Remove the marker from the silver pot"
+      ],
+      [
+        "Pick up the yellow object from the table and put it in the white bowl",
+        "Pick up the yellow object from the table and put it in the white bowl."
+      ],
+      [
+        "Put the blue bowl on the table.",
+        "Put the blue bowl on the table"
+      ],
+      [
+        "Put the container on the drying rack.",
+        "Put the container on the drying rack"
+      ],
+      [
+        "Unfold the blue towel",
+        "Unfold the blue towel."
+      ],
+      [
+        "Move the tap nozzle to the right",
+        "Move the tap nozzle to the right."
+      ],
+      [
+        "Move the purple bottle to the left.",
+        "Move the purple bottle to the left"
+      ],
+      [
+        "Open the lid of the electric kettle",
+        "Open the lid of the electric kettle."
+      ],
+      [
+        "Release the lever on the toaster upwards",
+        "Release the lever on the toaster upwards."
+      ],
+      [
+        "Remove the towel from the bowl",
+        "Remove the towel from the bowl."
+      ],
+      [
+        "Move the blue bowl backwards",
+        "Move the blue bowl backwards."
+      ],
+      [
+        "Open the first drawer from the right.",
+        "Open the first drawer from the right"
+      ],
+      [
+        "Move the soap bottle backwards",
+        "Move the soap bottle backwards."
+      ],
+      [
+        "Open the drawer on the left",
+        "Open the drawer on the left."
+      ],
+      [
+        "Move the glass cup to the right.",
+        "Move the glass cup to the right"
+      ],
+      [
+        "Put the green packet in the bowl.",
+        "Put the green packet in the bowl"
+      ],
+      [
+        "Unstack the cups",
+        "Unstack the cups."
+      ],
+      [
+        "Separate all the objects on the table.",
+        "Separate all the objects on the table"
+      ],
+      [
+        "Put the silver lid on top of the silver pot",
+        "Put the silver lid on top of the silver pot."
+      ],
+      [
+        "Pick up the blue block, put it in the drawer and close the drawer.",
+        "Pick up the blue block, put it in the drawer, and close the drawer."
+      ],
+      [
+        "Put the paper towel roll on the silver stand.",
+        "Put the paper towel roll on the silver stand"
+      ],
+      [
+        "Draw the curtain open",
+        "Draw the curtain open."
+      ],
+      [
+        "Put the red can in the sink.",
+        "Put the red can in the sink"
+      ],
+      [
+        "Remove the objects in the plastic and put them on the table",
+        "Remove the objects in the plastic and put them on the table."
+      ],
+      [
+        "Flip the book over.",
+        "Flip the book over"
+      ],
+      [
+        "Pick up the pen from the table and place it in the bowl.",
+        "Pick up the pen from the table and place it in the bowl,"
+      ],
+      [
+        "Unfold the T-shirt on the table",
+        "Unfold the T-shirt on the table."
+      ],
+      [
+        "Put the yellow block into the  bowl",
+        "Put the yellow block into the bowl"
+      ],
+      [
+        "Close the file",
+        "close the file"
+      ],
+      [
+        "Put the two cans on the tray",
+        "Put the two cans on the tray."
+      ],
+      [
+        "Move the black box to the right",
+        "Move the black box to the right."
+      ],
+      [
+        "Pour the contents in the clear bowl into the white bowl.",
+        "Pour the contents in the clear bowl into the white bowl"
+      ],
+      [
+        "Move the silver pot backwards",
+        "Move the silver pot backwards."
+      ],
+      [
+        "Move the blue cup to the left",
+        "Move the blue cup to the left."
+      ],
+      [
+        "Move the green towel backwards",
+        "Move the green towel backwards."
+      ],
+      [
+        "Move the yellow block to the right",
+        "Move the yellow block to the right."
+      ],
+      [
+        "Hang the cloth on the wooden object.",
+        "Hang the cloth on the wooden object"
+      ],
+      [
+        "wipe the counter",
+        "Wipe the counter"
+      ],
+      [
+        "Move the clear cup to the right",
+        "Move the clear cup to the right."
+      ],
+      [
+        "Pour the contents in the container into the bowl",
+        "Pour the contents in the container into the bowl."
+      ],
+      [
+        "Turn off the light switch on the right",
+        "Turn off the light switch on the right."
+      ],
+      [
+        "Fold the towel once from right to left",
+        "Fold the towel once from right to left."
+      ],
+      [
+        "Put the towel on the counter.",
+        "Put the towel on the counter"
+      ],
+      [
+        "Pick up the pen from the table and put it in the white cup",
+        "Pick up the pen from the table and put it in the white cup."
+      ],
+      [
+        "Move the pan to the back left plate",
+        "Move the pan to the back left plate."
+      ],
+      [
+        "Pick up the clothes from the box and put them on the headrest of  the chair",
+        "Pick up the clothes from the box and put them on the headrest of the chair"
+      ],
+      [
+        "Turn the top knob on the oven to the left.",
+        "Turn the top knob on the oven to the left"
+      ],
+      [
+        "Remove the glue stick from the mug and put it on the table",
+        "Remove the glue-stick from the mug and put it on the table."
+      ],
+      [
+        "Pick up the clothes from the table and put them in the box",
+        "Pick up the clothes from the table and put them in the box."
+      ],
+      [
+        "Move the glass lid to the left",
+        "Move the glass lid to the left."
+      ],
+      [
+        "Flip the light switch.",
+        "Flip the light switch"
+      ],
+      [
+        "Press a button on the grey remote.",
+        "Press a button on the grey remote"
+      ],
+      [
+        "Fold the yellow towel in half from bottom to top",
+        "Fold the yellow towel in half from bottom to top."
+      ],
+      [
+        "Put the blue cup on top of the shelf",
+        "Put the blue cup on top of the shelf."
+      ],
+      [
+        "Pour the contents in the jug into the red bowl",
+        "Pour the contents in the jug into the red bowl."
+      ],
+      [
+        "Move the blue bottle to the left",
+        "Move the blue bottle to the left."
+      ],
+      [
+        "Remove the glass lid from the pan.",
+        "Remove the glass lid from the pan"
+      ],
+      [
+        "Move the tissue box to the left.",
+        "Move the tissue box to the left"
+      ],
+      [
+        "Fold the towel into a triangle twice",
+        "Fold the towel into a triangle twice."
+      ],
+      [
+        "Push the faucet to the right",
+        "Push the faucet to the right."
+      ],
+      [
+        "Turn the knob to the right",
+        "Turn the knob to the right."
+      ],
+      [
+        "Open the doors of the topmost cabinet",
+        "Open the doors of the topmost cabinet."
+      ],
+      [
+        "Close the oven",
+        "Close the oven."
+      ],
+      [
+        "Remove the lid from the coffee cup",
+        "Remove the lid from the coffee cup."
+      ],
+      [
+        "Switch off the stove light",
+        "Switch off the stove light."
+      ],
+      [
+        "Put the cup into the bowl.",
+        "Put the cup into the bowl"
+      ],
+      [
+        "Put the packet on the bottom shelf",
+        "Put the packet on the bottom shelf."
+      ],
+      [
+        "Move the object from the left to the right",
+        "Move the object from  the left to the right"
+      ],
+      [
+        "Open the book",
+        "open the book"
+      ],
+      [
+        "Close the tap faucet.",
+        "Close the tap faucet"
+      ],
+      [
+        "Pick up the white bottle and put it on the shelf.",
+        "Pick up the white bottle and put it on the shelf"
+      ],
+      [
+        "Put the marker into the bowl.",
+        "Put the marker into the bowl"
+      ],
+      [
+        "Slide the grey towel to the right.",
+        "Slide the grey towel to the right"
+      ],
+      [
+        "Draw the curtain to the left.",
+        "Draw the curtain to the left"
+      ],
+      [
+        "Press the top red button on the right side of the stove",
+        "Press the top red button on the right side of the stove."
+      ],
+      [
+        "Put the green ring in the box.",
+        "Put the green ring in the box"
+      ],
+      [
+        "Untangle the rope",
+        "Untangle the rope."
+      ],
+      [
+        "Remove the yellow object from the pot",
+        "Remove the yellow object from the pot."
+      ],
+      [
+        "Put the green block on the table",
+        "Put the green block on the table."
+      ],
+      [
+        "Put the block into the bowl",
+        "Put the block into the bowl."
+      ],
+      [
+        "Close the left and right cabinet doors respectively",
+        "Close the left and right cabinet doors, respectively"
+      ],
+      [
+        "Put the red can inside the sink.",
+        "Put the red can inside the sink"
+      ],
+      [
+        "Move the yellow block to the left.",
+        "Move the yellow block to the left"
+      ],
+      [
+        "Put the blue object inside the drawer and close it",
+        "Put the blue object  inside the drawer and close it"
+      ],
+      [
+        "Move the orange bowl to the left.",
+        "Move the orange bowl to the left"
+      ],
+      [
+        "Pick up the orange toy from the table and put it in the silver pot.",
+        "Pick up the orange toy from the table and put it in the silver pot"
+      ],
+      [
+        "Move the basket forward",
+        "Move the basket forward."
+      ],
+      [
+        "Remove the brown object from the basket.",
+        "Remove the brown object from the basket"
+      ],
+      [
+        "Open the right upper cabinet door",
+        "Open the right upper cabinet door."
+      ],
+      [
+        "Put the transparent kettle on the stove",
+        "put the transparent kettle on the stove"
+      ],
+      [
+        "Put the orange packet on the right side of the bottom shelf.",
+        "Put the orange packet on the right side of the bottom shelf"
+      ],
+      [
+        "Move the container to the left",
+        "Move the container to the left."
+      ],
+      [
+        "Remove the blue and white container from the orange plastic bag and put it on the table",
+        "Remove the blue and white container from the orange plastic bag and put it on the table."
+      ],
+      [
+        "Take the marker out of the mug and put it on the counter",
+        "Take the marker out of the mug and put it on the counter."
+      ],
+      [
+        "Fold the white towel in half from right to left",
+        "Fold the white towel in half from right to left."
+      ],
+      [
+        "Move the blue bottle to the right",
+        "Move the blue bottle to the right."
+      ],
+      [
+        "Put the packet in the bowl",
+        "Put the packet in the bowl."
+      ],
+      [
+        "Open the right door of the cabinet on the left.",
+        "Open the right door of the cabinet on the left"
+      ],
+      [
+        "Move the green towel forwards.",
+        "Move the green towel forwards"
+      ],
+      [
+        "Open the left middle cabinet door.",
+        "Open the left middle cabinet door"
+      ],
+      [
+        "Close the middle drawer",
+        "Close the middle drawer."
+      ],
+      [
+        "Move the green can to the right.",
+        "Move the green can to the right"
+      ],
+      [
+        "Pour some of the contents of the jug into the  bowl",
+        "Pour some of the contents of the jug into the bowl"
+      ],
+      [
+        "Open the right door of the cabinet on the far right.",
+        "Open the right door of the cabinet on the far right"
+      ],
+      [
+        "Put the marker into the black cup",
+        "Put the marker into the black cup."
+      ],
+      [
+        "Fold the towel in half from left to right",
+        "Fold the towel in half from left to right."
+      ],
+      [
+        "Put the straw in the cup",
+        "Put the straw in the cup."
+      ],
+      [
+        "Remove the green packet from the sink",
+        "Remove the green packet from the sink."
+      ],
+      [
+        "Fold the shirt on the table.",
+        "Fold the shirt on the table"
+      ],
+      [
+        "Move the lamp to the right",
+        "Move the lamp to the right."
+      ],
+      [
+        "Close the lid of the container.",
+        "Close the lid of the container"
+      ],
+      [
+        "Move the faucet to the right",
+        "Move the faucet to the right."
+      ],
+      [
+        "Close the lid on the clear container",
+        "Close the lid on the clear container."
+      ],
+      [
+        "Open the lid of the cardboard  box",
+        "Open the lid of the cardboard box"
+      ],
+      [
+        "Pick up the pen from the table and move it slightly to the right",
+        "Pick up the pen from the table and move it slightly to the right."
+      ],
+      [
+        "Use the napkin to wipe the table",
+        "Use the napkin to wipe the table."
+      ],
+      [
+        "Close the red drawer.",
+        "Close the red drawer"
+      ],
+      [
+        "Close the drawer on the left.",
+        "Close the drawer on the left"
+      ],
+      [
+        "Put the ropes in the box one at a time",
+        "Put the ropes in the box, one at a time"
+      ],
+      [
+        "Remove the lid from the bottle",
+        "Remove the lid from the bottle."
+      ],
+      [
+        "Turn on the light switch on the right",
+        "Turn on the light switch on the right."
+      ],
+      [
+        "Move the lid from the blue pot to the black pot",
+        "Move the lid from the blue pot to the black pot."
+      ],
+      [
+        "Fold the towel in half from right to left",
+        "Fold the towel in half from right to left."
+      ],
+      [
+        "Move the silver pot to the left",
+        "Move the silver pot to the left."
+      ],
+      [
+        "Remove the pen from the mug",
+        "Remove the pen from the mug."
+      ],
+      [
+        "Open the top drawer of the bottom cabinet.",
+        "Open the top drawer of the bottom cabinet"
+      ],
+      [
+        "Put the white lid on the white bottle",
+        "Put the white lid on the white bottle."
+      ],
+      [
+        "Move the glass cup to the left.",
+        "Move the glass cup to the left"
+      ],
+      [
+        "Stack the four cups together.",
+        "Stack the four cups together"
+      ],
+      [
+        "Press a button on the black device",
+        "Press a button on the black device."
+      ],
+      [
+        "Move the nozzle to the left",
+        "Move the nozzle to the left."
+      ],
+      [
+        "Move the coffee cup lid to the right.",
+        "Move the coffee cup lid to the right"
+      ],
+      [
+        "Fold the yellow cloth in half from right to left.",
+        "Fold the yellow cloth in half from right to left"
+      ],
+      [
+        "Move the mug forward",
+        "Move the mug forward."
+      ],
+      [
+        "Move the clear cup to the left.",
+        "Move the clear cup to the left"
+      ],
+      [
+        "Pick up the pen and place it in the bowl",
+        "Pick up the pen and place it in the bowl."
+      ],
+      [
+        "Place the yellow block upright",
+        "Place the yellow block upright."
+      ],
+      [
+        "Put the white spoon on the white plate.",
+        "Put the white spoon on the white plate"
+      ],
+      [
+        "Move the paper towel roll to the left",
+        "Move the paper towel roll to the left."
+      ],
+      [
+        "Separate the objects on the table.",
+        "Separate the objects on the table"
+      ],
+      [
+        "Open all the cabinet doors",
+        "Open all the cabinet doors."
+      ],
+      [
+        "Move the paper towel roll to the right",
+        "Move the paper towel roll to the right."
+      ],
+      [
+        "Put the black object in the bowl.",
+        "Put the black object in the bowl"
+      ],
+      [
+        "Press down on the pump bottle.",
+        "Press down on the pump bottle"
+      ],
+      [
+        "Open the left door of the top cabinet",
+        "Open the left door of the top cabinet."
+      ],
+      [
+        "Put the yellow object inside the orange pan",
+        "Put the yellow object inside the orange pan."
+      ],
+      [
+        "Push in the basket of the air fryer",
+        "Push in the basket of the air fryer."
+      ],
+      [
+        "Move the cup from left to right",
+        "Move the cup from left to right."
+      ],
+      [
+        "Put the packet in the black bowl",
+        "Put the packet in the black bowl."
+      ],
+      [
+        "Put the black packet on the bottom shelf.",
+        "Put the black packet on the bottom shelf"
+      ],
+      [
+        "Put the coca cola bottle in the blue bag",
+        "Put the Coca-Cola bottle in the blue bag"
+      ],
+      [
+        "Open the coffeemaker chamber",
+        "Open the coffeemaker chamber."
+      ],
+      [
+        "Put the blue cloth on the backrest of the chair",
+        "Put the blue cloth on the backrest of the chair."
+      ],
+      [
+        "Put the remote control on the backrest of the sofa.",
+        "Put the remote control on the backrest of the sofa"
+      ],
+      [
+        "Move the orange plush toy to the left.",
+        "Move the orange plush toy to the left"
+      ],
+      [
+        "Move the coffee cup to the left",
+        "Move the coffee cup to the left."
+      ],
+      [
+        "Stack the bowls together",
+        "Stack the bowls together."
+      ],
+      [
+        "Close the second drawer from the top",
+        "Close the second drawer from the top."
+      ],
+      [
+        "Put the green object inside the bowl.",
+        "Put the green object inside the bowl"
+      ],
+      [
+        "Move the blue object to the right",
+        "Move the blue object to the right."
+      ],
+      [
+        "Use the eraser to clean the whiteboard.",
+        "Use the eraser to clean the whiteboard"
+      ],
+      [
+        "Close the open drawer on the right.",
+        "Close the open drawer on the right"
+      ],
+      [
+        "Put the white bottle in the orange plastic bag.",
+        "Put the white bottle in the orange plastic bag"
+      ],
+      [
+        "Align the rope with the black object.",
+        "Align the rope with the black object"
+      ],
+      [
+        "Open the glass door",
+        "Open the glass door."
+      ],
+      [
+        "Open the blue box",
+        "Open the blue box."
+      ],
+      [
+        "Press one button on the black remote control.",
+        "Press one button on the black remote control"
+      ],
+      [
+        "Close the blinds.",
+        "Close the blinds"
+      ],
+      [
+        "Put the green block into the black bowl",
+        "Put the green block into the black bowl."
+      ],
+      [
+        "Pick up the pen from the bowl and place it on the table.",
+        "Pick up the pen from the bowl and place it on the table"
+      ],
+      [
+        "Remove the object from the mug.",
+        "Remove the object from the mug"
+      ],
+      [
+        "Move the silver bowl to the right",
+        "Move the silver bowl to the right."
+      ],
+      [
+        "Move the box to the left",
+        "Move the box to the left."
+      ],
+      [
+        "Slide the grey towel to the left",
+        "Slide the grey towel to the left."
+      ],
+      [
+        "Put the clear bowl in the sink.",
+        "Put the clear bowl in the sink"
+      ],
+      [
+        "Put the orange block on the table",
+        "Put the orange block on the table."
+      ],
+      [
+        "Move the napkin to the right",
+        "Move the napkin to the right."
+      ],
+      [
+        "Turn the knob on the far right to the right",
+        "Turn the knob on the far right to the right."
+      ],
+      [
+        "Move the can from left to right.",
+        "Move the can from left to right"
+      ],
+      [
+        "Put the white towel in the black basket.",
+        "Put the white towel in the black basket"
+      ],
+      [
+        "Put the orange object inside the bowl",
+        "Put the orange object inside the bowl."
+      ],
+      [
+        "Move the orange towel forwards",
+        "Move the orange towel forwards."
+      ],
+      [
+        "Move the blue towel backwards",
+        "Move the blue towel backwards."
+      ],
+      [
+        "Move the black mug to the left",
+        "Move the black mug to the left."
+      ],
+      [
+        "Put the blue object into the drawer then close the drawer",
+        "Put the blue object into the drawer then close the drawer."
+      ],
+      [
+        "Put the banana in the box",
+        "Put the banana in the box."
+      ],
+      [
+        "Put the green pen in the blue cup",
+        "Put the green pen in the blue cup."
+      ],
+      [
+        "Remove the cups from the tray",
+        "Remove the cups from the tray."
+      ],
+      [
+        "Turn off the light above the stove.",
+        "Turn off the light above the stove"
+      ],
+      [
+        "Use the towel to wipe the sink",
+        "Use the towel to wipe the sink."
+      ],
+      [
+        "Move the lid to the left",
+        "Move the lid to the left."
+      ],
+      [
+        "Pick up the square plush toy on the left and put it in the box.",
+        "Pick up the square plush toy on the left and put it in the box"
+      ],
+      [
+        "Put the white towel in the basket.",
+        "Put the white towel in the basket"
+      ],
+      [
+        "Close the second drawer from the left",
+        "Close the second drawer from the left."
+      ],
+      [
+        "Open the topmost drawer on the left",
+        "Open the topmost drawer on the left."
+      ],
+      [
+        "Put the plum in the green bowl.",
+        "Put the plum in the green bowl"
+      ],
+      [
+        "Put the can in the sink",
+        "Put the can in the sink."
+      ],
+      [
+        "Close the open cabinet doors",
+        "Close the open cabinet doors."
+      ],
+      [
+        "Move the wooden box to the left.",
+        "Move the wooden box to the left"
+      ],
+      [
+        "Slide the green towel to the right",
+        "Slide the green towel to the right."
+      ],
+      [
+        "Move the broken mug to the right.",
+        "Move the broken mug to the right"
+      ],
+      [
+        "Put the packet in the sink",
+        "Put the packet in the sink."
+      ],
+      [
+        "Close the upper cabinet door.",
+        "Close the upper cabinet door"
+      ],
+      [
+        "Pick up the black cable and put it in the box.",
+        "Pick up the black cable and put it in the box"
+      ],
+      [
+        "Open the drawer on the right",
+        "Open the drawer on the right."
+      ],
+      [
+        "Put the brown object in the sink.",
+        "Put the brown object in the sink"
+      ],
+      [
+        "Stir the contents in the white bowl.",
+        "Stir the contents in the white bowl"
+      ],
+      [
+        "Push the faucet handle backwards",
+        "Push the faucet handle backwards."
+      ],
+      [
+        "Put the red can on the bottom shelf",
+        "Put the red can on the bottom shelf."
+      ],
+      [
+        "Put the lid on the teapot",
+        "Put the lid on the teapot."
+      ],
+      [
+        "Take the packet out of the sink",
+        "Take the packet out of the sink."
+      ],
+      [
+        "Put the chopstick in the Bowl",
+        "Put the chopstick in the bowl"
+      ],
+      [
+        "Pour the contents from the clear bowl into the white bowl",
+        "Pour the contents from the clear bowl into the white bowl."
+      ],
+      [
+        "Close the left door of the cabinet.",
+        "Close the left door of the cabinet"
+      ],
+      [
+        "Move the white hanger to the left",
+        "Move the white hanger to the left."
+      ],
+      [
+        "Put the clear ring on the orange stand",
+        "Put the clear ring on the orange stand."
+      ],
+      [
+        "Pick up the pen from the yellow cup and put it on the table.",
+        "Pick up the pen from the yellow cup and put it on the table"
+      ],
+      [
+        "Close the left door of the cabinet on the right.",
+        "Close the left door of the cabinet on the right"
+      ],
+      [
+        "wipe the bowl with the tissue",
+        "Wipe the bowl with the tissue"
+      ],
+      [
+        "Remove the marker from the white mug",
+        "Remove the marker from the white mug."
+      ],
+      [
+        "Put the objects on top of the box on to the table and the objects on the table on top of the box",
+        "Put the objects on top of the box on to the table and the objects on the table on top of the box."
+      ],
+      [
+        "Put the star shaped toy in the bowl",
+        "Put the star-shaped toy in the bowl"
+      ],
+      [
+        "Open the book on the table",
+        "Open the book on the table."
+      ],
+      [
+        "Put the orange block on the blue block",
+        "Put the.orange block on the blue block"
+      ],
+      [
+        "Pick up the lid, and then place it on the pot",
+        "Pick up the lid and then place it on the pot"
+      ],
+      [
+        "Close the door of the cabinet",
+        "Close the door of the cabinet."
+      ],
+      [
+        "Move the black mug to the right",
+        "Move the black mug to the right."
+      ],
+      [
+        "Move the lid forward.",
+        "Move the lid forward"
+      ],
+      [
+        "Place the glass lid on the pot.",
+        "Place the glass lid on the pot"
+      ],
+      [
+        "Pour the contents in the bowl on the left into the bowl on the right.",
+        "Pour the contents in the bowl on the left into the bowl on the right"
+      ],
+      [
+        "Pick up the object from the stove and put it in the pot, that is in the sink",
+        "Pick up the object from the stove and put it in the pot that is in the sink"
+      ],
+      [
+        "Move the white bowl backwards",
+        "Move the white bowl backwards."
+      ],
+      [
+        "Move the bowl",
+        "move the bowl"
+      ],
+      [
+        "Remove the marker from the yellow cup.",
+        "Remove the marker from the yellow cup"
+      ],
+      [
+        "Put the black bowl inside the microwave.",
+        "Put the black bowl inside the microwave"
+      ],
+      [
+        "Remove the tissue from the box.",
+        "Remove the tissue from the box"
+      ],
+      [
+        "Open the blue book.",
+        "Open the blue book"
+      ],
+      [
+        "Move the purple pen to the left",
+        "Move the purple pen to the left."
+      ],
+      [
+        "Put the orange  and green blocks into the black bowl",
+        "Put the orange and green blocks into the black bowl"
+      ],
+      [
+        "Flip the switch on the electric kettle.",
+        "Flip the switch on the electric kettle"
+      ],
+      [
+        "Remove the marker from the plastic cup",
+        "Remove the marker from the plastic cup."
+      ],
+      [
+        "Put the can on top of the silver object.",
+        "Put the can on top of the silver object"
+      ],
+      [
+        "Move the pillow",
+        "move the pillow"
+      ],
+      [
+        "Remove the white lid from the clear container",
+        "Remove the white lid from the clear container."
+      ],
+      [
+        "Move the lamp to the left.",
+        "Move the lamp to the left"
+      ],
+      [
+        "Put the black lid on the black pot",
+        "Put the black lid on the black pot."
+      ],
+      [
+        "Put the brown packet inside the sink.",
+        "Put the brown packet inside the sink"
+      ],
+      [
+        "Move the towel to the chair on the left then back to the chair on the right",
+        "Move the towel to the chair on the left, then back to the chair on the right"
+      ],
+      [
+        "Move the blue cup backwards.",
+        "Move the blue cup backwards"
+      ],
+      [
+        "Move the black pot forwards.",
+        "Move the black pot forwards"
+      ],
+      [
+        "Open the shower door",
+        "Open the shower door."
+      ],
+      [
+        "Use the white napkin to wipe the table.",
+        "Use the white napkin to wipe the table"
+      ],
+      [
+        "Close the toaster oven.",
+        "Close the toaster oven"
+      ],
+      [
+        "Fold the purple folder.",
+        "Fold the purple folder"
+      ],
+      [
+        "Put the orange object inside the cup.",
+        "Put the orange object inside the cup"
+      ],
+      [
+        "Remove the black and grey object from the box and put it on the table.",
+        "Remove the black and grey object from the box and put it on the table"
+      ],
+      [
+        "Pick up the object from the bowl and put it on the table",
+        "Pick up the object from the bowl  and put it on the table"
+      ],
+      [
+        "Open the left upper cabinet door.",
+        "Open the left upper cabinet door"
+      ],
+      [
+        "Put the cans on the tray.",
+        "Put the cans on the tray"
+      ],
+      [
+        "Move the salt cellar to the right side of the counter",
+        "Move the salt cellar to the right side of the counter."
+      ],
+      [
+        "Remove the pen from the open drawer and put it on the counter",
+        "Remove the pen from the open drawer and put it on the counter."
+      ],
+      [
+        "Use the towel to wipe the countertop",
+        "Use the towel to wipe the countertop."
+      ],
+      [
+        "Turn on the fourth switch on the extension cable",
+        "Turn on the fourth switch on the extension cable."
+      ],
+      [
+        "Move the black cable to the left",
+        "Move the black cable to the left."
+      ],
+      [
+        "Pick up the marker from the table and put it in the cup",
+        "Pick up the marker from the table and  put it in the cup"
+      ],
+      [
+        "open the shower curtain",
+        "Open the shower curtain"
+      ],
+      [
+        "Close the lid of the white bin",
+        "Close the lid of the white bin."
+      ],
+      [
+        "Fold the yellow cloth",
+        "Fold the yellow cloth."
+      ],
+      [
+        "Open the left door of the cabinet.",
+        "Open the left door of the cabinet"
+      ],
+      [
+        "Remove the marker from the blue cup.",
+        "Remove the marker from the blue cup"
+      ],
+      [
+        "Pick up the lid off the silver pot and put it on the table.",
+        "Pick up the lid off the silver pot and put it on the table"
+      ],
+      [
+        "Open the white door.",
+        "Open the white door"
+      ],
+      [
+        "Put the coca cola bottle on top of the microwave",
+        "Put the Coca Cola bottle on top of the microwave."
+      ],
+      [
+        "Pick up the pen from the cup and put it on the table.",
+        "Pick up the pen from the cup and put it on the table"
+      ],
+      [
+        "Put the tape on the counter",
+        "Put the tape on the counter."
+      ],
+      [
+        "Put the green plush toy in the silver pot.",
+        "Put the green plush toy in the silver pot"
+      ],
+      [
+        "Open the cabinet drawer",
+        "Open the cabinet drawer."
+      ],
+      [
+        "Open the right cupboard",
+        "Open the right cupboard."
+      ],
+      [
+        "Remove the lid from the flusk.",
+        "Remove the lid from the flusk"
+      ],
+      [
+        "Close the shower door.",
+        "Close the shower door"
+      ],
+      [
+        "Remove the spoon from the mug",
+        "Remove the spoon from the mug."
+      ],
+      [
+        "Open the lid on the bin",
+        "Open the lid on the bin."
+      ],
+      [
+        "Put the marker into the silver pot.",
+        "Put the marker into the silver pot"
+      ],
+      [
+        "Put the strawberry in the box.",
+        "Put the strawberry in the box"
+      ],
+      [
+        "Fold the towel from right to left",
+        "Fold the towel from right to left."
+      ],
+      [
+        "Turn off the fourth switch from the left",
+        "Turn off the fourth switch from the left."
+      ],
+      [
+        "Turn on the left light switch",
+        "Turn on the left light switch."
+      ],
+      [
+        "Put the clear ring on the table.",
+        "Put the clear ring on the table"
+      ],
+      [
+        "Remove the white bottle from the plastic bag and put it on the table.",
+        "Remove the white bottle from the plastic bag and put it on the table"
+      ],
+      [
+        "Close the purple book",
+        "Close the purple book."
+      ],
+      [
+        "Move the red mug to the left.",
+        "Move the red mug to the left"
+      ],
+      [
+        "Pick up the glue stick from the yellow cup and put it on the table",
+        "Pick up the glue stick from the yellow cup and put it on the table."
+      ],
+      [
+        "Turn the iron to the left",
+        "Turn the iron to the left."
+      ],
+      [
+        "Put the blue cup in the sink.",
+        "Put the blue cup in the sink"
+      ],
+      [
+        "Move the carrot to the right",
+        "Move the carrot to the right."
+      ],
+      [
+        "Remove some rubber bands from the plastic",
+        "Remove some rubber bands from the plastic."
+      ],
+      [
+        "Push the lamp downwards.",
+        "Push the lamp downwards"
+      ],
+      [
+        "Switch on the stove light",
+        "Switch on the stove light."
+      ],
+      [
+        "Remove the paper towel roll from the holder",
+        "Remove the paper towel roll from the holder."
+      ],
+      [
+        "pull out the dishwasher rack",
+        "Pull out the dishwasher rack"
+      ],
+      [
+        "Move the clear plastic to the left",
+        "Move the clear plastic to the left."
+      ],
+      [
+        "Remove the green object from the bowl",
+        "Remove the green object from the bowl."
+      ],
+      [
+        "Turn on the coffeemaker.",
+        "Turn on the coffeemaker"
+      ],
+      [
+        "Open the second drawer from the top",
+        "Open the second drawer from the top."
+      ],
+      [
+        "Move the plate forward",
+        "Move the plate forward."
+      ],
+      [
+        "Put the marker on the towel, fold the towel and then put the folded towel in the box",
+        "Put the marker on the towel, fold the towel, and then put the folded towel in the box"
+      ],
+      [
+        "turn on the coffee machine",
+        "Turn on the coffee machine"
+      ],
+      [
+        "Move the grey towel to the left",
+        "Move the grey towel to the left.",
+        "move the grey towel to the left"
+      ],
+      [
+        "Put the wooden spoon in the silver bowl.",
+        "Put the wooden spoon in the silver bowl"
+      ],
+      [
+        "Remove the orange toy from the green bowl and put it on the table",
+        "Remove the orange toy from the green bowl and put it on the table."
+      ],
+      [
+        "Pick up the pen from the silver pot and put it on the table",
+        "Pick up the pen from the silver pot and put it on the table."
+      ],
+      [
+        "Open the upper cabinet door on the left",
+        "Open the upper cabinet door on the left."
+      ],
+      [
+        "Move the green cup to the right",
+        "Move the Green cup to the right"
+      ],
+      [
+        "Open the right door.",
+        "Open the right door"
+      ],
+      [
+        "Pile up all the objects on the table",
+        "Pile up all the objects on the table."
+      ],
+      [
+        "Remove one bottle from the tray and place it on the table",
+        "Remove one bottle from the tray and place it on the table."
+      ],
+      [
+        "Move the blue block forwards.",
+        "Move the blue block forwards"
+      ],
+      [
+        "Use the black towel to wipe the table",
+        "Use the black towel to wipe the table."
+      ],
+      [
+        "Press down the stapler",
+        "Press down the stapler."
+      ],
+      [
+        "Remove the yellow block from the top of the stack",
+        "Remove the yellow block from the top of the stack."
+      ],
+      [
+        "Pick up the orange block from the table and put it on top of the green block.",
+        "Pick up the orange block from the table and put it on top of the green block"
+      ],
+      [
+        "Put the lid on the clear bowl",
+        "Put the lid on the clear bowl."
+      ],
+      [
+        "Pour the contents from the orange cup into the bowl.",
+        "Pour the contents from the orange cup into the bowl"
+      ],
+      [
+        "Put the yellow packet in the sink.",
+        "Put the yellow packet in the sink"
+      ],
+      [
+        "Move the sausage pillow to the right",
+        "Move the sausage pillow to the right."
+      ],
+      [
+        "Press the red button.",
+        "Press the red button"
+      ],
+      [
+        "Press the button on the washing machine",
+        "Press the button on the washing machine."
+      ],
+      [
+        "Open the green container",
+        "Open the green container."
+      ],
+      [
+        "remove the lid from the pan",
+        "Remove the lid from the pan",
+        "Remove the lid from the pan."
+      ],
+      [
+        "Put the green can inside the sink",
+        "Put the green can inside the sink."
+      ],
+      [
+        "Put the carrot in the basket.",
+        "Put the carrot in the basket"
+      ],
+      [
+        "push the drawer",
+        "Push the drawer"
+      ],
+      [
+        "Close the door of the washing machine",
+        "close the door of the washing machine"
+      ],
+      [
+        "Open the top left and right cabinet doors respectively",
+        "Open the top left and right cabinet doors, respectively"
+      ],
+      [
+        "Put the red bull can on the metal object",
+        "Put the Red bull can on the metal object"
+      ],
+      [
+        "Use the chopsticks to stir the contents in the bowl.",
+        "Use the chopsticks to stir the contents in the bowl"
+      ],
+      [
+        "Put the toy into the silver pot.",
+        "Put the toy  into the silver pot."
+      ],
+      [
+        "Move the white towel to the left",
+        "Move the white towel to the left."
+      ],
+      [
+        "Press two keys on the keyboard",
+        "Press two keys on the keyboard."
+      ],
+      [
+        "Remove the marker from the wooden tray",
+        "Remove the marker from the wooden tray."
+      ],
+      [
+        "Move the basket to the right",
+        "Move the basket to the right."
+      ],
+      [
+        "Remove the pen from the blue cup and put it on the table",
+        "Remove the pen from the blue cup and put it on the table."
+      ],
+      [
+        "Open the  right door of the middle shelf",
+        "Open the right door of the middle shelf"
+      ],
+      [
+        "Put the lid on the white pot.",
+        "Put the lid on the white pot"
+      ],
+      [
+        "Move the black eraser forwards.",
+        "Move the black eraser forwards"
+      ],
+      [
+        "Put the screwdriver in the drawer",
+        "Put the screwdriver in the drawer."
+      ],
+      [
+        "Remove the blue toy from the green bowl and put it on the table",
+        "Remove the blue toy from the green bowl and put it on the table."
+      ],
+      [
+        "Use the silver spoon to stir the contents in the red bowl",
+        "Use the silver spoon to stir the contents in the red bowl."
+      ],
+      [
+        "Press the button on the handle of the kettle",
+        "Press the button on the handle of the kettle."
+      ],
+      [
+        "Move the coffee cup on the left to the right",
+        "Move the coffee cup on the left to the right."
+      ],
+      [
+        "Move the pan to the right.",
+        "Move the pan to the right"
+      ],
+      [
+        "Open the middle drawer",
+        "Open the middle drawer."
+      ],
+      [
+        "Press the top button on the right",
+        "Press the top button on the right."
+      ],
+      [
+        "Fold the yellow cloth in half.",
+        "Fold the yellow cloth in half"
+      ],
+      [
+        "Press one black key on the piano",
+        "Press one black key on the piano."
+      ],
+      [
+        "Put the spoon inside the mug",
+        "Put the spoon inside the mug."
+      ],
+      [
+        "Remove the towels from the basket",
+        "Remove the towels from the basket."
+      ],
+      [
+        "Move the white box to the left.",
+        "Move the white box to the left"
+      ],
+      [
+        "Remove the marker from the black mug",
+        "Remove the marker from the black mug."
+      ],
+      [
+        "Open the window.",
+        "Open the window"
+      ],
+      [
+        "Close the blue book",
+        "Close the blue book."
+      ],
+      [
+        "Close the shower curtain",
+        "close the shower curtain"
+      ],
+      [
+        "Move the grey cup backwards",
+        "Move the grey cup backwards."
+      ],
+      [
+        "Pick up the white plate from the countertop and put it in the dishwasher",
+        "Pick up the white plate from the countertop and put it in the dishwasher."
+      ],
+      [
+        "Remove the lid from the cooker.",
+        "Remove the lid from the cooker"
+      ],
+      [
+        "Turn on the air conditioner.",
+        "Turn on the air conditioner"
+      ],
+      [
+        "Pour the contents in the red bowl into the silver bowl",
+        "Pour the contents in the red bowl into the silver bowl."
+      ],
+      [
+        "Move the pump bottle forwards",
+        "Move the pump bottle forwards."
+      ],
+      [
+        "straighten out the cloth",
+        "Straighten out the cloth"
+      ],
+      [
+        "Put the pen into the white cup.",
+        "Put the pen into the white cup"
+      ],
+      [
+        "Move the blue cup on the left to the right.",
+        "Move the blue cup on the left to the right"
+      ],
+      [
+        "Remove the marker from the glass.",
+        "Remove the marker from the glass"
+      ],
+      [
+        "Pick up the blue object and put it on the table",
+        "Pick up the blue object and put it on the table."
+      ],
+      [
+        "Put the orange packet on the counter.",
+        "Put the orange packet on the counter"
+      ],
+      [
+        "Move the blue object to the left.",
+        "Move the blue object to the left"
+      ],
+      [
+        "Put the donut on the plate",
+        "Put the donut on the plate."
+      ],
+      [
+        "Put the lint roller in the basket",
+        "Put the lint roller in the basket."
+      ],
+      [
+        "Remove the marker from the pot",
+        "Remove the marker from the pot."
+      ],
+      [
+        "Pick up the pen from the table and put it in the light blue bowl",
+        "Pick up the pen from the table and put it in the light blue bowl."
+      ],
+      [
+        "Put the white spoon in the coffee cup on the left",
+        "Put the white spoon in the coffee cup on the left."
+      ],
+      [
+        "Put the marker on the green towel then wrap the marker in the towel and put it in the box",
+        "Put the marker on the green towel, then wrap the marker in the towel and put it in the box"
+      ],
+      [
+        "Move the black chair to the left.",
+        "Move the black chair to the left"
+      ],
+      [
+        "Put the shirt on the chair.",
+        "Put the shirt on the chair"
+      ],
+      [
+        "Close the lid on the bin",
+        "Close the lid on the bin."
+      ],
+      [
+        "Pick up the white cloth and put it on the table",
+        "Pick up the white cloth and put it on the table."
+      ],
+      [
+        "Pick up the silver lid and put it on the silver pot",
+        "Pick up the silver lid and put it on the silver pot."
+      ],
+      [
+        "Place the glass lid on the black pot.",
+        "Place the glass lid on the black pot"
+      ],
+      [
+        "Open the door of the cabinet.",
+        "Open the door of the cabinet"
+      ],
+      [
+        "Put the blue block on top of the yellow block.",
+        "Put the blue block on top of the yellow block"
+      ],
+      [
+        "Slide the closet door to the right",
+        "Slide the closet door to the right."
+      ],
+      [
+        "Push the faucet handle to the left.",
+        "Push the faucet handle to the left"
+      ],
+      [
+        "Close the left door of the middle cabinet.",
+        "Close the left door of the middle cabinet"
+      ],
+      [
+        "Press three buttons on the stove",
+        "Press three buttons on the stove."
+      ],
+      [
+        "Fold the yellow towel",
+        "Fold the yellow towel."
+      ],
+      [
+        "Open the lid on the kettle",
+        "Open the lid on the kettle."
+      ],
+      [
+        "Put the red wagon on the table.",
+        "Put the red wagon on the table"
+      ],
+      [
+        "Put the yellow packet in the bowl.",
+        "Put the yellow packet in the bowl"
+      ],
+      [
+        "Press the on/off button.",
+        "Press the on/off button"
+      ],
+      [
+        "Separate the items on the table",
+        "Separate the items on the table."
+      ],
+      [
+        "Turn the orange object to the left",
+        "Turn the orange object to the left."
+      ],
+      [
+        "Remove the green packet from the sink and put it on the counter",
+        "Remove the green packet from the sink and put it on the counter."
+      ],
+      [
+        "Close the top drawer of the cabinet to the left",
+        "Close the top drawer of the cabinet to the left."
+      ],
+      [
+        "Write on the whiteboard",
+        "write on the whiteboard"
+      ],
+      [
+        "Open the top fridge door",
+        "Open the top fridge door."
+      ],
+      [
+        "Move the towel backwards",
+        "Move the towel backwards."
+      ],
+      [
+        "Use the towel to wipe the tabletop",
+        "Use the towel to wipe the tabletop."
+      ],
+      [
+        "Put the grey block in the box",
+        "Put the grey block in the box."
+      ],
+      [
+        "Open the left door of the cabinet on the right",
+        "Open the left door of the cabinet on the right."
+      ],
+      [
+        "Move the yellow cylinder to the left",
+        "Move the yellow cylinder to the left."
+      ],
+      [
+        "Turn off the fourth switch on the extension cable",
+        "Turn off the fourth switch on the extension cable."
+      ],
+      [
+        "Put the black mug on top of the microwave",
+        "Put the black mug on top of the microwave."
+      ],
+      [
+        "Put the apple into  the bowl",
+        "Put the apple into the bowl",
+        "Put the apple into the bowl."
+      ],
+      [
+        "Put the straw inside the mug",
+        "Put the straw inside the mug."
+      ],
+      [
+        "Put the orange object inside the box.",
+        "Put the orange object inside the box"
+      ],
+      [
+        "Fold the towel twice",
+        "Fold the towel twice."
+      ],
+      [
+        "Remove the apple from the box and put it on the table.",
+        "Remove the apple from the box and put it on the table"
+      ],
+      [
+        "Close the top right drawer",
+        "Close the top right drawer."
+      ],
+      [
+        "Remove the yellow block from the bowl",
+        "Remove the yellow block from the bowl."
+      ],
+      [
+        "Remove one bottle from the tray",
+        "Remove one bottle from the tray."
+      ],
+      [
+        "Put the wooden spatula in the silver holder",
+        "Put the wooden spatula in the silver holder."
+      ],
+      [
+        "Put the water bottles into the plastic bag.",
+        "Put the water bottles into the plastic bag"
+      ],
+      [
+        "Put the red bowl in the microwave",
+        "Put the red bowl in the microwave."
+      ],
+      [
+        "Press a button on the alarm clock.",
+        "Press a button on the alarm clock"
+      ],
+      [
+        "Press a button on the black remote control",
+        "Press a button on the black remote control."
+      ],
+      [
+        "Put the strawberry in the green bowl",
+        "Put the strawberry in the green bowl."
+      ],
+      [
+        "Move the blue box to the left.",
+        "Move the blue box to the left"
+      ],
+      [
+        "Stack the two blocks together.",
+        "Stack the two blocks together"
+      ],
+      [
+        "Move the white towel backwards",
+        "Move the white towel backwards."
+      ],
+      [
+        "Push down on the pump bottle",
+        "Push down on the pump bottle."
+      ],
+      [
+        "Move the hanger to the right",
+        "Move the hanger to the right."
+      ],
+      [
+        "Put the lemon in the box.",
+        "Put the lemon in the box"
+      ],
+      [
+        "Move the red cup to the right",
+        "Move the red cup to the right."
+      ],
+      [
+        "Put the bottle in the middle of the table",
+        "put the bottle in the middle of the table"
+      ],
+      [
+        "Put the ropes inside the box.",
+        "Put the ropes inside the box"
+      ],
+      [
+        "Use the napkin to wipe the counter",
+        "Use the napkin to wipe the counter."
+      ],
+      [
+        "Pick up the black object and put it in the open drawer",
+        "Pick up the black object and put it in the open drawer."
+      ],
+      [
+        "Move the clear bottle to the right.",
+        "Move the clear bottle to the right"
+      ],
+      [
+        "Put the orange cup on the counter",
+        "Put the orange cup on the counter."
+      ],
+      [
+        "Turn off the light switch on the left.",
+        "Turn off the light switch on the left"
+      ],
+      [
+        "Move the black object to the top of the shelf",
+        "Move the black object to the top of the shelf.",
+        "Move the black object to the top of the  shelf"
+      ],
+      [
+        "Move the brown object to the right.",
+        "Move the brown object to the right"
+      ],
+      [
+        "Close the left kitchen drawer",
+        "Close  the  left kitchen drawer"
+      ],
+      [
+        "Move the white mug forward",
+        "Move the white mug forward."
+      ],
+      [
+        "Put the white container in the orange plastic bag.",
+        "Put the white container in the orange plastic bag"
+      ],
+      [
+        "Put the orange rings inside the clear cup. put the blue ring inside the white cup",
+        "Put the orange rings inside the clear cup, put the blue ring inside the white cup"
+      ],
+      [
+        "Put the blue packet in the sink",
+        "Put the blue packet in the sink."
+      ],
+      [
+        "Put the green ring on the orange stand",
+        "Put the green ring on the orange stand."
+      ],
+      [
+        "Put the orange pepper in the silver bowl",
+        "Put the orange pepper in the silver bowl."
+      ],
+      [
+        "Put the pen on the wooden tray",
+        "Put the pen on the wooden tray."
+      ],
+      [
+        "Turn on the laptop.",
+        "Turn on the laptop"
+      ],
+      [
+        "Close the door of the microwave oven.",
+        "Close the door of the microwave oven"
+      ],
+      [
+        "Fold the white cloth in half",
+        "fold the white cloth in half"
+      ],
+      [
+        "Put the white spoon in the yellow bowl.",
+        "Put the white spoon in the yellow bowl"
+      ],
+      [
+        "Remove the white object from the bowl.",
+        "Remove the white object from the bowl"
+      ],
+      [
+        "Put the black bin in the grey bin",
+        "Put the black bin in the grey bin."
+      ],
+      [
+        "Move the pan backwards",
+        "Move the pan backwards."
+      ],
+      [
+        "Use the towel on the left to wipe the black pan.",
+        "Use the towel on the left to wipe the black pan"
+      ],
+      [
+        "Put the blue masking tape on the table",
+        "Put the blue masking tape on the table."
+      ],
+      [
+        "Move the picture frame to the right",
+        "Move the picture frame to the right."
+      ],
+      [
+        "Place the iron upright",
+        "Place the iron upright."
+      ],
+      [
+        "Remove the lid from the silver object.",
+        "Remove the lid from the silver object"
+      ],
+      [
+        "Put the knife into the drawer.",
+        "Put the knife into the drawer"
+      ],
+      [
+        "Close the bottom drawer of the cabinet to the right",
+        "Close the bottom drawer of the cabinet to the right."
+      ],
+      [
+        "Pour the contents in the orange cup onto the grey plate.",
+        "Pour the contents in the orange cup onto the grey plate"
+      ],
+      [
+        "Move the wooden block to the right",
+        "Move the wooden block to the right."
+      ],
+      [
+        "Right click the mouse.",
+        "Right click the mouse",
+        "Right-click the mouse"
+      ],
+      [
+        "Fold the blue towel",
+        "Fold the blue towel."
+      ],
+      [
+        "Put the orange can inside the sink.",
+        "Put the orange can inside the sink"
+      ],
+      [
+        "Put the green can in the black bowl",
+        "Put the green can in the black bowl."
+      ],
+      [
+        "Put the yellow block on top of the green block.",
+        "Put the yellow block on top of the green block"
+      ],
+      [
+        "Open the second drawer from the left",
+        "Open the second drawer from the left."
+      ],
+      [
+        "Close the topmost drawer on the right.",
+        "Close the topmost drawer on the right"
+      ],
+      [
+        "Use the towel on the left to wipe the pan",
+        "Use the towel on the left to wipe the pan."
+      ],
+      [
+        "Put the pen into the bowl.",
+        "Put the pen into the bowl"
+      ],
+      [
+        "Move the pliers to the left",
+        "Move the pliers to the left."
+      ],
+      [
+        "Use the cloth to wipe the  book",
+        "Use the cloth to wipe the book"
+      ],
+      [
+        "Remove the items from the plastic bag and put them on the table",
+        "Remove the items from the plastic bag and put them on the table."
+      ],
+      [
+        "Move the silver stand backwards",
+        "Move the silver stand backwards."
+      ],
+      [
+        "Move the water bottle to the right",
+        "Move the water bottle to the right."
+      ],
+      [
+        "Put the coffee pod in the coffeemaker.",
+        "Put the coffee pod in the coffeemaker"
+      ],
+      [
+        "Put the black packet inside the sink",
+        "Put the black packet inside the sink."
+      ],
+      [
+        "Move the black box to the left.",
+        "Move the black box to the left"
+      ],
+      [
+        "Use the blue sponge to wipe the white plate",
+        "Use the blue sponge to wipe the white plate."
+      ],
+      [
+        "Remove the glass lid from the silver pot.",
+        "Remove the glass lid from the silver pot"
+      ],
+      [
+        "Move the orange can to the left",
+        "Move the orange can to the left."
+      ],
+      [
+        "Push the faucet handle forwards",
+        "Push the faucet handle forwards."
+      ],
+      [
+        "Put the black masking tape on the plate.",
+        "Put the black masking tape on the plate"
+      ],
+      [
+        "Put the silver fork on the white plate.",
+        "Put the silver fork on the white plate"
+      ],
+      [
+        "Put the white book on the top shelf",
+        "Put the white book on the top shelf."
+      ],
+      [
+        "Move the white cloth to the left.",
+        "Move the white cloth to the left"
+      ],
+      [
+        "Unfold the white and red towel",
+        "Unfold the white and red towel."
+      ],
+      [
+        "turn on the lights",
+        "Turn on the lights"
+      ],
+      [
+        "Put the white plate on the dishrack",
+        "Put the white plate on the dishrack."
+      ],
+      [
+        "Move the block to the right.",
+        "Move the block to the right"
+      ],
+      [
+        "Put the black bowl on top of the brown bowl",
+        "Put the black bowl  on top of the brown bowl"
+      ],
+      [
+        "Place one slice of bread from the glass bowl inside the toaster",
+        "Place one slice of bread from the  glass bowl inside the toaster"
+      ],
+      [
+        "Separate the cups",
+        "separate the cups"
+      ],
+      [
+        "Put the black object on the top shelf",
+        "Put the black object on the top shelf."
+      ],
+      [
+        "Put the green bear toy in the green bowl",
+        "Put the green bear  toy in the green bowl"
+      ],
+      [
+        "Put all the objects on the table into the plastic bag",
+        "Put all the objects on the table into the plastic bag."
+      ],
+      [
+        "Pick up the lid from the table and close the bottle",
+        "Pick up the lid from the table and close the  bottle"
+      ],
+      [
+        "Put the wooden bowl on the sofa",
+        "Put the wooden bowl on the sofa."
+      ],
+      [
+        "Remove the toy from the pot and put it in the sink.",
+        "Remove the toy from the pot and put it in the sink"
+      ],
+      [
+        "Pour the contents in the orange cup into the bowl.",
+        "Pour the contents in the orange cup into the bowl"
+      ],
+      [
+        "Put the black hanger in the basket",
+        "Put the black hanger in the basket."
+      ],
+      [
+        "Flick up the light switch",
+        "Flick up the light switch."
+      ],
+      [
+        "Move the white bottle forward",
+        "Move the white bottle forward."
+      ],
+      [
+        "Put the tomato inside the  silver bowl",
+        "Put the tomato inside the silver bowl"
+      ],
+      [
+        "Put the block in the black bowl.",
+        "Put the block in the black bowl"
+      ],
+      [
+        "Place the white mug upright",
+        "Place the white mug upright."
+      ],
+      [
+        "Remove the paper towel roll from the silver stand.",
+        "Remove the paper towel roll from the silver stand"
+      ],
+      [
+        "Place the glass lid on top of the black pot",
+        "Place the glass lid on top of the black pot."
+      ],
+      [
+        "Open the bottom cabinet door",
+        "Open the bottom cabinet door."
+      ],
+      [
+        "Remove the yellow toy from the bowl and put it on the table",
+        "Remove the yellow toy from the bowl and put it on the table."
+      ],
+      [
+        "Remove the cans from the tray and put them on the counter",
+        "Remove  the cans from the tray and put them on the counter."
+      ],
+      [
+        "Move the grey bear backwards.",
+        "Move the grey bear backwards"
+      ],
+      [
+        "Put the red ring in the box",
+        "Put the red ring in the box."
+      ],
+      [
+        "Unfold the napkin",
+        "Unfold the napkin."
+      ],
+      [
+        "Push the lever on the toaster down",
+        "Push the lever on the toaster down."
+      ],
+      [
+        "Turn the lock on the door",
+        "Turn the lock on the door."
+      ],
+      [
+        "Move the white hanger to the bottom rail.",
+        "Move the white hanger to the bottom rail"
+      ],
+      [
+        "Put the clear cup in the clear container",
+        "Put the clear cup in the clear container."
+      ],
+      [
+        "Close the cupboard drawer.",
+        "Close the cupboard drawer"
+      ],
+      [
+        "Fold the grey towel on the table in half",
+        "Fold the grey towel on the table in half."
+      ],
+      [
+        "Move the white clip to the right",
+        "Move the white clip to the right."
+      ],
+      [
+        "Put the silver spoon in the white mug",
+        "Put the silver spoon in the white mug."
+      ],
+      [
+        "Put the black and white ring on the orange stand.",
+        "Put the black and white ring on the orange stand"
+      ],
+      [
+        "Remove the salt shaker from the pot",
+        "Remove the salt shaker from the pot."
+      ],
+      [
+        "Remove the marker from the glass and put it on the table",
+        "Remove the marker from the glass and put it on the table."
+      ],
+      [
+        "Move the orange towel backwards",
+        "Move the orange towel backwards."
+      ],
+      [
+        "Put the pink hanger on the rack",
+        "Put the pink hanger on the rack."
+      ],
+      [
+        "Pour some of the contents in the clear jar into the red bowl",
+        "Pour  some of the contents in the clear jar into the red bowl"
+      ],
+      [
+        "Slide the blue towel slightly to the right",
+        "Slide the blue towel slightly to the right."
+      ],
+      [
+        "Move the black hanger to the bottom rail",
+        "Move the black hanger to the bottom rail."
+      ],
+      [
+        "Put the bowl on the table.",
+        "Put the bowl on the table"
+      ],
+      [
+        "Open the tap then close it",
+        "Open the tap, then close it"
+      ],
+      [
+        "Fold the towel on the table in half",
+        "Fold the towel on the table in half."
+      ],
+      [
+        "Remove the green straw from the mug and put it on the table",
+        "Remove the green straw from the mug and put it on the table."
+      ],
+      [
+        "Place the lid on the glass jar",
+        "Place the lid on the glass jar."
+      ],
+      [
+        "Move the nozzle from right to left.",
+        "Move the nozzle from right to left"
+      ],
+      [
+        "Put the orange ring on the orange stand.",
+        "Put the orange ring on the orange stand"
+      ],
+      [
+        "Move the clear container to the left",
+        "Move the clear container to the left."
+      ],
+      [
+        "Move the grey tape to the right",
+        "Move the grey tape to the right."
+      ],
+      [
+        "Put the orange cup into the bowl.",
+        "Put the orange cup into the bowl"
+      ],
+      [
+        "Press the on/off button on the kettle.",
+        "Press the on/off  button on the kettle."
+      ],
+      [
+        "Pick up the blue object from the wooden holder and put it on the table",
+        "Pick up the blue object from the wooden holder and put it on the table."
+      ],
+      [
+        "Move the tissue box to the right",
+        "Move the tissue box to the right."
+      ],
+      [
+        "Pick up the orange cup and place it in the black bowl.",
+        "Pick up the orange cup and place it in the black bowl"
+      ],
+      [
+        "Put the white book on top of the blue book.",
+        "Put the white book on top of the blue book"
+      ],
+      [
+        "Open the tap, and then close it",
+        "Open the tap and then close it"
+      ],
+      [
+        "Remove the orange packet from the sink and put it on the counter",
+        "Remove the orange packet from the sink and put it on the counter."
+      ],
+      [
+        "Open the blinds.",
+        "Open the blinds"
+      ],
+      [
+        "Move the purple plush toy to the right.",
+        "Move the purple plush toy to the right"
+      ],
+      [
+        "Right-click on the mouse",
+        "Right click on the mouse"
+      ],
+      [
+        "Lift up the tap faucet.",
+        "Lift up the tap faucet"
+      ],
+      [
+        "Put the blue cloth in the basket",
+        "Put the blue cloth in the basket."
+      ],
+      [
+        "Put the yellow block in the green bowl",
+        "Put the yellow block in the green bowl."
+      ],
+      [
+        "Pick up the blue toy from the table and put it in the green bowl",
+        "Pick up the blue toy from the table and put it in the green bowl."
+      ],
+      [
+        "Remove the clothes from the backrest of the chair and put them on the seat.",
+        "Remove the clothes from the backrest of the chair and put them on the seat"
+      ],
+      [
+        "Slide the towel to the left then to the right.",
+        "Slide the towel to the left then to the right"
+      ],
+      [
+        "Press a button on the air conditioner",
+        "Press a button on the air conditioner."
+      ],
+      [
+        "Place the water bottle on the right upright.",
+        "Place the water bottle on the right upright"
+      ],
+      [
+        "Press the switch on the left side of the stove.",
+        "Press the switch on the left side of the stove"
+      ],
+      [
+        "Place the yellow block on its side.",
+        "Place the yellow block on its side"
+      ],
+      [
+        "Put the carrot on the silver pan",
+        "Put the carrot on the silver pan."
+      ],
+      [
+        "Pour some contents from the orange cup into the bowl.",
+        "Pour some contents from the orange cup into the bowl"
+      ],
+      [
+        "Move the cable to the right",
+        "Move the cable to the right."
+      ],
+      [
+        "Remove the black bin from the grey bin",
+        "Remove the black bin from the grey bin."
+      ],
+      [
+        "Pick up the paper glue from the table and put it in the cup",
+        "Pick up the paper glue from the table  and put it in the cup"
+      ],
+      [
+        "Wipe the table with the white towel",
+        "Wipe the table with the white towel."
+      ],
+      [
+        "Open the right door of the upper cabinet on the left.",
+        "Open the right door of the upper cabinet on the left"
+      ],
+      [
+        "Move the stacked cups to the right.",
+        "Move the stacked cups to the right"
+      ],
+      [
+        "Move the silver bowl backwards",
+        "Move the silver bowl backwards."
+      ],
+      [
+        "Move the bin to the right",
+        "Move the bin to the right."
+      ],
+      [
+        "Press a button on the black speaker",
+        "Press a button on the black speaker."
+      ],
+      [
+        "Unfold the towel on the counter",
+        "Unfold the towel on the counter."
+      ],
+      [
+        "Close the two top drawers.",
+        "Close the two top drawers"
+      ],
+      [
+        "Move the brush to the left",
+        "Move the brush to the left."
+      ],
+      [
+        "Open the top part of the coffee maker.",
+        "Open the top part of the coffee maker"
+      ],
+      [
+        "Remove the straw from the can",
+        "Remove the straw from the can."
+      ],
+      [
+        "Move the clear bowl to the left.",
+        "Move the clear bowl to the left"
+      ],
+      [
+        "Press the space key on the keyboard",
+        "Press the space key on the keyboard."
+      ],
+      [
+        "Put the glass lid on the silver pot",
+        "Put the glass lid on the silver pot."
+      ],
+      [
+        "Move the masking tape to the left.",
+        "Move the masking tape to the left"
+      ],
+      [
+        "Use the marker to write on the paper",
+        "Use the marker to write on the paper."
+      ],
+      [
+        "Use the wooden spoon to stir the black pan.",
+        "Use the wooden spoon to stir the black pan"
+      ],
+      [
+        "Stack the blue cup on top of the orange cup.",
+        "Stack the blue cup on top of the orange cup"
+      ],
+      [
+        "Remove the salt cellar from the white pot.",
+        "Remove the salt cellar from the white pot"
+      ],
+      [
+        "Pick up the blue ring from the tray and put  it on the table",
+        "Pick up the blue ring from the tray and put it on the table"
+      ],
+      [
+        "Pick up one slice of bread from the glass bowl and put it in the toaster.",
+        "Pick up one slice of bread from the glass bowl and put it in the toaster"
+      ],
+      [
+        "Remove the objects from the plastic and put them on the table",
+        "Remove the objects from the plastic and put them on the table."
+      ],
+      [
+        "Open the left door of the upper cabinet on the right",
+        "Open the left door of the upper cabinet on the right."
+      ],
+      [
+        "Remove the screwdriver from the tray",
+        "Remove the screwdriver from the tray."
+      ],
+      [
+        "Use the tissue to wipe the table",
+        "Use the tissue to wipe the table."
+      ],
+      [
+        "Remove the marker from the green cup.",
+        "Remove the marker from the green cup"
+      ],
+      [
+        "Put the yellow block into the blue cup.",
+        "Put the yellow block into the blue cup"
+      ],
+      [
+        "Put the red block  on top of the green block",
+        "Put the red block on top of the green block"
+      ],
+      [
+        "Put the orange can in the left sink",
+        "Put the orange can in the left sink."
+      ],
+      [
+        "Use the wooden spoon to stir the contents in the white bowl",
+        "Use the wooden spoon to stir the contents in the white bowl."
+      ],
+      [
+        "Push the faucet to the right side of the sink",
+        "Push the faucet to the right side of the sink."
+      ],
+      [
+        "Put the green plush toy in the red bowl",
+        "Put the green plush toy in the red bowl."
+      ],
+      [
+        "Remove the rope from the chair and put it in the box",
+        "Remove the rope from the chair and put it in the box."
+      ],
+      [
+        "Pick up the pen from the light blue bowl and put it on the table.",
+        "Pick up the pen from the light blue bowl and put it on the table"
+      ],
+      [
+        "Remove the packet from the left sink",
+        "Remove the packet from the left sink."
+      ],
+      [
+        "Open the left door",
+        "Open the left door."
+      ],
+      [
+        "Move the plastic bag to the left",
+        "Move the plastic bag to the left."
+      ],
+      [
+        "Put the black packet on top of the microwave.",
+        "Put the black packet on top of the microwave"
+      ],
+      [
+        "Remove all the objects from the plastic and put them on the table.",
+        "Remove all the objects from the plastic and put them on the table"
+      ],
+      [
+        "Move the pot to the right side of the stove",
+        "Move the Pot to the right side of the stove"
+      ],
+      [
+        "Cover the pan on the right with the silver lid",
+        "cover the pan on the right with the silver lid"
+      ],
+      [
+        "Move the spatula to the left.",
+        "Move the spatula to the left"
+      ],
+      [
+        "Put the orange cup into the black bowl",
+        "Put the orange cup into the black bowl."
+      ],
+      [
+        "Move the black bin to the right",
+        "Move the black bin to the right."
+      ],
+      [
+        "Untangle the ropes on the table.",
+        "Untangle the ropes on the table"
+      ],
+      [
+        "Fold the trousers on the table",
+        "Fold the trousers on the table."
+      ],
+      [
+        "Move the water bottle to the left.",
+        "Move the water bottle to the left"
+      ],
+      [
+        "Move the marker from left to right.",
+        "Move the marker from left to right"
+      ],
+      [
+        "Put the green packet in the black bowl",
+        "Put the green packet in the black bowl."
+      ],
+      [
+        "Remove the lid from the glass container.",
+        "Remove the lid from the glass container"
+      ],
+      [
+        "Pick up the cup from the table and put it in the bowl.",
+        "Pick up the cup from the table and put it in the bowl"
+      ],
+      [
+        "Press one white key on the piano",
+        "Press one white key on the piano."
+      ],
+      [
+        "Move the small pot to the right",
+        "Move the small pot to the right."
+      ],
+      [
+        "Turn on the fourth switch from the left on the extension cable.",
+        "Turn on the fourth switch from the left on the extension cable"
+      ],
+      [
+        "Hang the paper bags on the stand.",
+        "Hang the paper bags on the stand"
+      ],
+      [
+        "Close the right drawer.",
+        "Close the right drawer"
+      ],
+      [
+        "Put the blue cup in the blue bowl",
+        "Put the blue cup in the blue bowl."
+      ],
+      [
+        "Push the towel backwards",
+        "Push the towel backwards."
+      ],
+      [
+        "Close the lid on the kettle.",
+        "Close the lid on the kettle"
+      ],
+      [
+        "Put the small green block in the green bowl.",
+        "Put the small green block in the green bowl"
+      ]
+    ],
+    "n_near_duplicate_groups": 216,
+    "near_duplicate_examples": [
+      [
+        "close the open drawer",
+        "close the open drawers",
+        "close the opened drawer"
+      ],
+      [
+        "move the pillow to the right",
+        "move the pillows to the right"
+      ],
+      [
+        "close the open upper cabinet door",
+        "close the open upper cabinet doors"
+      ],
+      [
+        "put the paper in the bin to the right",
+        "put the papers in the bin to the right"
+      ],
+      [
+        "move the cup to the left",
+        "move the cups to the left"
+      ],
+      [
+        "press the button on the black object",
+        "press the buttons on the black object"
+      ],
+      [
+        "open the cabinet door",
+        "open the cabinet doors"
+      ],
+      [
+        "move the bowl forward",
+        "move the bowl forwards"
+      ],
+      [
+        "turn on the light",
+        "turn on the lights"
+      ],
+      [
+        "move the bottle backward",
+        "move the bottle backwards"
+      ],
+      [
+        "move the curtain to the right",
+        "move the curtains to the right"
+      ],
+      [
+        "close the curtain",
+        "close the curtains"
+      ],
+      [
+        "move the cup to the right",
+        "move the cups to the right"
+      ],
+      [
+        "move the cup forward",
+        "move the cup forwards"
+      ],
+      [
+        "put the object on the table in the plastic bag",
+        "put the objects on the table in the plastic bag"
+      ],
+      [
+        "remove the object from the plastic bag and put them on the white basket",
+        "remove the objects from the plastic bag and put them on the white basket"
+      ],
+      [
+        "close the cabinet",
+        "close the cabinets"
+      ],
+      [
+        "move the white bowl forward",
+        "move the white bowl forwards"
+      ],
+      [
+        "put the block in the cup",
+        "put the blocks in the cup"
+      ],
+      [
+        "press a button on the remot control",
+        "press a button on the remote control"
+      ],
+      [
+        "move the mug forward",
+        "move the mug forwards"
+      ],
+      [
+        "place the marker in the bowl",
+        "plcae the marker in the bowl"
+      ],
+      [
+        "move the marker forward",
+        "move the marker forwards"
+      ],
+      [
+        "put the bowl upright",
+        "put the bowls upright"
+      ],
+      [
+        "put the block in the bowl",
+        "put the blocks in the bowl"
+      ],
+      [
+        "use the chopstick to stir in the white bowl",
+        "use the chopsticks to stir in the white bowl"
+      ],
+      [
+        "move the cup backward",
+        "move the cup backwards"
+      ],
+      [
+        "turn off the light",
+        "turn off the lights"
+      ],
+      [
+        "put the fork in the cup",
+        "put the forks in the cup"
+      ],
+      [
+        "close the cabinet door",
+        "close the cabinet doors"
+      ],
+      [
+        "put the green block on top of the yellow block",
+        "put the green block on top of the yellow blocks"
+      ],
+      [
+        "press the button on the keyboard",
+        "press the buttons on the keyboard"
+      ],
+      [
+        "move the curtain to the left",
+        "move the curtains to the left"
+      ],
+      [
+        "close the open cabinet door",
+        "close the open cabinet doors",
+        "close the opened cabinet door"
+      ],
+      [
+        "stir the content of the bowl",
+        "stir the contents of the bowl"
+      ],
+      [
+        "put the cup upright",
+        "put the cups upright"
+      ],
+      [
+        "move the white plate forward",
+        "move the white plate forwards"
+      ],
+      [
+        "place the block in the bowl",
+        "place the blocks in the bowl"
+      ],
+      [
+        "put the black cloth on the table",
+        "put the black clothing on the table"
+      ],
+      [
+        "open the top cabinet door",
+        "open the top cabinet doors"
+      ],
+      [
+        "turn on the light switch",
+        "turn on the light switches"
+      ],
+      [
+        "draw the curtain",
+        "draw the curtains"
+      ],
+      [
+        "pick the clothes and put them on the back rest of the chair",
+        "pick the cloths and put them on the back rest of the chair"
+      ],
+      [
+        "move the mug backward",
+        "move the mug backwards"
+      ],
+      [
+        "remove the cup from the plate",
+        "remove the cups from the plate"
+      ],
+      [
+        "move the blue bottle forward",
+        "move the blue bottle forwards"
+      ],
+      [
+        "put the orange block on top of the yellow block",
+        "put the orange block on top of the yellow blocks"
+      ],
+      [
+        "move the white mug forward",
+        "move the white mug forwards"
+      ],
+      [
+        "close the top drawer",
+        "close the top drawers"
+      ],
+      [
+        "open the cupboard door",
+        "open the cupboard doors"
+      ],
+      [
+        "put the pillow upright against the armrest",
+        "put the pillows upright against the armrest"
+      ],
+      [
+        "move the white object to the left",
+        "move the white objects to the left"
+      ],
+      [
+        "open the curtain",
+        "open the curtains"
+      ],
+      [
+        "pick up the object from the plastic and put them on the table",
+        "pick up the objects from the plastic and put them on the table"
+      ],
+      [
+        "put the block inside the black bowl",
+        "put the blocks inside the black bowl"
+      ],
+      [
+        "turn on the light switch on the wall",
+        "turn on the lights switch on the wall"
+      ],
+      [
+        "move the pan forward",
+        "move the pan forwards"
+      ],
+      [
+        "close the cupboard door",
+        "close the cupboard doors"
+      ],
+      [
+        "put the pillow upright",
+        "put the pillows upright"
+      ],
+      [
+        "place the cup directly onto the counter",
+        "place the cups directly onto the counter"
+      ],
+      [
+        "move the blue cloth to the right",
+        "move the blue clothing to the right"
+      ],
+      [
+        "separate the silver pots",
+        "seperate the silver pots"
+      ],
+      [
+        "move the spoon forward",
+        "move the spoon forwards"
+      ],
+      [
+        "rotate the first rod forward",
+        "rotate the first rod forwards"
+      ],
+      [
+        "move the yellow mug forward",
+        "move the yellow mug forwards"
+      ],
+      [
+        "move the blue bowl forward",
+        "move the blue bowl forwards"
+      ],
+      [
+        "put the black object in the drawer and close it",
+        "put the black objects in the drawer and close it"
+      ],
+      [
+        "move the bowl backward",
+        "move the bowl backwards"
+      ],
+      [
+        "move the white mug backward",
+        "move the white mug backwards"
+      ],
+      [
+        "move the green towel forward",
+        "move the green towel forwards"
+      ],
+      [
+        "move the tray forward",
+        "move the tray forwards"
+      ],
+      [
+        "pick up the orange object and put it in the bowl",
+        "pick up the orange objects and put it in the bowl"
+      ],
+      [
+        "put the towel on the table",
+        "put the towels on the table"
+      ],
+      [
+        "put the cloth in the basket",
+        "put the clothes in the basket"
+      ],
+      [
+        "move the blue cup forward",
+        "move the blue cup forwards"
+      ],
+      [
+        "press the button on the dishwasher",
+        "press the buttons on the dishwasher"
+      ],
+      [
+        "put the measuring spoon in the pot",
+        "put the measuring spoons in the pot"
+      ],
+      [
+        "put the cloth in the box",
+        "put the clothes in the box"
+      ],
+      [
+        "close the open cabinet drawer",
+        "close the opened cabinet drawer"
+      ],
+      [
+        "remove the black object from the box",
+        "remove the black objects from the box"
+      ],
+      [
+        "draw the curtain open",
+        "draw the curtains open"
+      ],
+      [
+        "put the white hanger on the counter",
+        "put the white hangers on the counter"
+      ],
+      [
+        "open the top cupboard door",
+        "open the top cupboard doors"
+      ],
+      [
+        "move the tape backward",
+        "move the tape backwards"
+      ],
+      [
+        "move the yellow object backward",
+        "move the yellow object backwards"
+      ],
+      [
+        "put the can on the tray",
+        "put the cans on the tray"
+      ],
+      [
+        "put the packet in the bowl",
+        "put the packets in the bowl"
+      ],
+      [
+        "pull the curtain to the left",
+        "pull the curtains to the left"
+      ],
+      [
+        "pick up the light green ring and stack it on the ring stacking stand",
+        "pick up the light green ring and stack it on the rings stacking stand"
+      ],
+      [
+        "put the shirt inside the basket",
+        "put the shirts inside the basket"
+      ],
+      [
+        "pour the content in the clear bowl onto the blue towel",
+        "pour the contents in the clear bowl onto the blue towel"
+      ],
+      [
+        "put the block into the bowl",
+        "put the blocks into the bowl"
+      ],
+      [
+        "put the blue object in the drawer and close it",
+        "put the blue objects in the drawer and close it"
+      ],
+      [
+        "move the fork from the plate to the table",
+        "move the forks from the plate to the table"
+      ],
+      [
+        "move the basket forward",
+        "move the basket forwards"
+      ],
+      [
+        "put the cup on the counter",
+        "put the cups on the counter"
+      ],
+      [
+        "put the block inside the bowl",
+        "put the blocks inside the bowl"
+      ],
+      [
+        "close the middle drawer",
+        "close the middle drawers"
+      ],
+      [
+        "put the spoon on the plate",
+        "put the spoons on the plate"
+      ],
+      [
+        "put the cup into the sink",
+        "put the cups into the sink"
+      ],
+      [
+        "move the orange towel forward",
+        "move the orange towel forwards"
+      ],
+      [
+        "move the paper towel to the right",
+        "move the paper towels to the right"
+      ],
+      [
+        "move the black cup forward",
+        "move the black cup forwards"
+      ],
+      [
+        "remove the object from the tray",
+        "remove the objects from the tray"
+      ],
+      [
+        "close the door of the top cabinet",
+        "close the doors of the top cabinet"
+      ],
+      [
+        "move the orange packet forward",
+        "move the orange packet forwards"
+      ],
+      [
+        "move the measuring tape backward",
+        "move the measuring tape backwards"
+      ],
+      [
+        "pull the cardboard box forward",
+        "pull the cardboard box forwards"
+      ],
+      [
+        "put the marker on the plate",
+        "put the markers on the plate"
+      ],
+      [
+        "put the object on the table onto the tray",
+        "put the objects on the table onto the tray"
+      ],
+      [
+        "turn the knob on the toy stove",
+        "turn the knobs on the toy stove"
+      ],
+      [
+        "move the green block forward",
+        "move the green block forwards"
+      ],
+      [
+        "move the napkin to the right",
+        "move the napkins to the right"
+      ],
+      [
+        "put the glue stick in the basket",
+        "put the glue sticks in the basket"
+      ],
+      [
+        "use the chopstick to stir in the bowl",
+        "use the chopsticks to stir in the bowl"
+      ],
+      [
+        "move the cup slightly backward",
+        "move the cup slightly backwards"
+      ],
+      [
+        "put the blue object into the drawer then close the drawer",
+        "put the blue objects into the drawer then close the drawer"
+      ],
+      [
+        "turn off the light above the stove",
+        "turn off the lights above the stove"
+      ],
+      [
+        "move the banana forward",
+        "move the banana forwards"
+      ],
+      [
+        "move the cardboard box forward",
+        "move the cardboard box forwards"
+      ],
+      [
+        "move the can backward",
+        "move the can backwards"
+      ],
+      [
+        "close the top cabinet door",
+        "close the top cabinet doors"
+      ],
+      [
+        "move the silver pot forward",
+        "move the silver pot forwards"
+      ],
+      [
+        "put the yellow object in the bowl",
+        "put the yellow objects in the bowl"
+      ],
+      [
+        "move the basket to the center of the table",
+        "move the basket to the centre of the table"
+      ],
+      [
+        "pick the object in the plastic bag and put them on the table",
+        "pick the objects in the plastic bag and put them on the table"
+      ],
+      [
+        "put the paper cup on the microwave",
+        "put the paper cups on the microwave"
+      ],
+      [
+        "close the open door",
+        "close the open doors"
+      ],
+      [
+        "use the white napkin to wipe the tabletop",
+        "use the white napkins to wipe the tabletop"
+      ],
+      [
+        "put the sock in the bag",
+        "put the socks in the bag"
+      ],
+      [
+        "remove the block from the bowl",
+        "remove the blocks from the bowl"
+      ],
+      [
+        "move the marker backward",
+        "move the marker backwards"
+      ],
+      [
+        "put the snack packet into the bowl",
+        "put the snack paket into the bowl"
+      ],
+      [
+        "open the cabinet",
+        "open the cabinets"
+      ],
+      [
+        "open the topmost drawer fully",
+        "open the topmost drawers fully"
+      ],
+      [
+        "move the pen backward",
+        "move the pen backwards"
+      ],
+      [
+        "pick up the pack of snack and put it in the sink",
+        "pick up the pack of snacks and put it in the sink"
+      ],
+      [
+        "move the white cup backwards",
+        "move the white cups backwards"
+      ],
+      [
+        "move the yellow mug to the center of the table",
+        "move the yellow mug to the centre of the table"
+      ],
+      [
+        "move the shirts and towel to the top of the box",
+        "move the shirts and towels to the top of the box"
+      ],
+      [
+        "move the pillow on the sofa",
+        "move the pillows on the sofa"
+      ],
+      [
+        "pick up the pieces of paper from the countertop and put them in the right bin",
+        "pick up the pieces of papers from the countertop and put them in the right bin"
+      ],
+      [
+        "move the blue block forward",
+        "move the blue block forwards"
+      ],
+      [
+        "open the door of the kitchen cabinet",
+        "open the doors of the kitchen cabinet"
+      ],
+      [
+        "pour the content from the orange cup into the bowl",
+        "pour the contents from the orange cup into the bowl"
+      ],
+      [
+        "slide the green cloth backward",
+        "slide the green cloth backwards"
+      ],
+      [
+        "close the topmost drawer",
+        "close the topmost drawers"
+      ],
+      [
+        "remove the towel from the basket",
+        "remove the towels from the basket"
+      ],
+      [
+        "put the yellow rings in the clear cup and the orange rings in the white cup",
+        "put the yellow rings in the clear cup and the orange rings in the white cups"
+      ],
+      [
+        "move the black and white pillow to the left",
+        "move the black and white pillows to the left"
+      ],
+      [
+        "move the glass cup forward",
+        "move the glass cup forwards"
+      ],
+      [
+        "move the blue sponge forward",
+        "move the blue sponge forwards"
+      ],
+      [
+        "put the green and orange block in the black bowl",
+        "put the green and orange blocks in the black bowl"
+      ],
+      [
+        "put the pen in the grey bowl",
+        "put the pens in the grey bowl"
+      ],
+      [
+        "move the black marker forward",
+        "move the black marker forwards"
+      ],
+      [
+        "close the kitchen cabinet door",
+        "close the kitchen cabinet doors"
+      ],
+      [
+        "stack the cap on the bed",
+        "stack the caps on the bed"
+      ],
+      [
+        "move the marker to the center of the table",
+        "move the marker to the centre of the table"
+      ],
+      [
+        "push the faucet handle forward",
+        "push the faucet handle forwards"
+      ],
+      [
+        "use the paper towel to wipe the counter top",
+        "use the paper towels to wipe the counter top"
+      ],
+      [
+        "put the blue block on top of the yellow block",
+        "put the blue block on top of the yellow blocks"
+      ],
+      [
+        "move the cap to the right",
+        "move the caps to the right"
+      ],
+      [
+        "switch off the light switch on the wall",
+        "switch off the lights switch on the wall"
+      ],
+      [
+        "put the tea bag in the box",
+        "put the tea bags in the box"
+      ],
+      [
+        "remove the object from the plastic",
+        "remove the objects from the plastic"
+      ],
+      [
+        "move the object forward toward the left",
+        "move the object forward towards the left"
+      ],
+      [
+        "put the straw inside the mug",
+        "put the straws inside the mug"
+      ],
+      [
+        "remove the block from the basket",
+        "remove the blocks from the basket"
+      ],
+      [
+        "close the door of the cupboard",
+        "close the doors of the cupboard"
+      ],
+      [
+        "press the key on the keyboard",
+        "press the keys on the keyboard"
+      ],
+      [
+        "put the yellow object inside the wooden box",
+        "put the yellow objects inside the wooden box"
+      ],
+      [
+        "remove one green hanger from the rail and put it on the table",
+        "remove one green hanger from the railing and put it on the table"
+      ],
+      [
+        "pick the clothes on the table and put them in the box",
+        "pick the cloths on the table and put them in the box"
+      ],
+      [
+        "open the upper part of the cabinet door",
+        "open the upper part of the cabinet doors"
+      ],
+      [
+        "put the trainer on the table",
+        "put the trainers on the table"
+      ],
+      [
+        "flip the switch of the socket on the right",
+        "flip the switches of the socket on the right"
+      ],
+      [
+        "put the white pieces of paper in the right bin",
+        "put the white pieces of papers in the right bin"
+      ],
+      [
+        "close the open oven door",
+        "close the opened oven door"
+      ],
+      [
+        "fold the white cloth in half",
+        "fold the white clothing in half"
+      ],
+      [
+        "turn on the light above the stove",
+        "turn on the lights above the stove"
+      ],
+      [
+        "remove the item from the plastic bag and put them on the white basket",
+        "remove the items from the plastic bag and put them on the white basket"
+      ],
+      [
+        "put the orange objects in the white cup and the blue object in the glass cup",
+        "put the orange objects in the white cup and the blue objects in the glass cup"
+      ],
+      [
+        "put the green block on the yellow block",
+        "put the green block on the yellow blocks"
+      ],
+      [
+        "turn the cup around",
+        "turn the cups around"
+      ],
+      [
+        "move the green block backward",
+        "move the green block backwards"
+      ],
+      [
+        "pick up the clothes and put them in the box",
+        "pick up the cloths and put them in the box"
+      ],
+      [
+        "move the blue towel forward",
+        "move the blue towel forwards"
+      ],
+      [
+        "put the cup upside down",
+        "put the cups upside down"
+      ],
+      [
+        "slide the towel backward",
+        "slide the towel backwards"
+      ],
+      [
+        "put the green and orange can on the tray",
+        "put the green and orange cans on the tray"
+      ],
+      [
+        "use the spoon to stir the content in the white bowl",
+        "use the spoon to stir the contents in the white bowl"
+      ],
+      [
+        "remove the marker from the white plate",
+        "remove the markers from the white plate"
+      ],
+      [
+        "put the orange ring on the wooden board",
+        "put the orange rings on the wooden board"
+      ],
+      [
+        "remove the fork from the cup",
+        "remove the forks from the cup"
+      ],
+      [
+        "move the measuring cup to the right",
+        "move the measuring cups to the right"
+      ],
+      [
+        "put the orange and green block in the bowl",
+        "put the orange and green blocks in the bowl"
+      ],
+      [
+        "move the yellow block backward",
+        "move the yellow block backwards"
+      ],
+      [
+        "put the spoon in the pot",
+        "put the spoons in the pot"
+      ],
+      [
+        "put all the white pieces of paper in the left bin",
+        "put all the white pieces of papers in the left bin"
+      ],
+      [
+        "hang the cloth on the back of the chair",
+        "hang the cloths on the back of the chair"
+      ],
+      [
+        "open the cupboard and put the yellow and green object inside",
+        "open the cupboard and put the yellow and green objects inside"
+      ],
+      [
+        "press the left light switch on the wall",
+        "press the left lights switch on the wall"
+      ],
+      [
+        "rotate the third rod forward",
+        "rotate the third rod forwards"
+      ],
+      [
+        "use the white napkin on the left to wipe the counter",
+        "use the white napkins on the left to wipe the counter"
+      ],
+      [
+        "put the cloth in the laundry bag",
+        "put the clothes in the laundry bag"
+      ],
+      [
+        "remove the object from the basket",
+        "remove the objects from the basket"
+      ],
+      [
+        "put the object on the table into the box",
+        "put the objects on the table into the box"
+      ],
+      [
+        "press the button on the calculator",
+        "press the buttons on the calculator"
+      ],
+      [
+        "remove the snack bar from the sink and place it on the counter top",
+        "remove the snacks bar from the sink and place it on the counter top"
+      ],
+      [
+        "move the black cable forward",
+        "move the black cable forwards"
+      ],
+      [
+        "put the fork into the utensil organizer",
+        "put the forks into the utensil organizer"
+      ],
+      [
+        "put the plush toy in the box",
+        "put the plush toys in the box"
+      ],
+      [
+        "stir the bowl with the straw",
+        "stir the bowl with the straws"
+      ],
+      [
+        "use the fork to mix the content in the bowl",
+        "use the fork to mix the contents in the bowl"
+      ],
+      [
+        "remove the cup from the bowl",
+        "remove the cups from the bowl"
+      ],
+      [
+        "close the bottom cabinet door",
+        "close the bottom cabinet doors"
+      ]
+    ],
+    "n_typo_words": 49,
+    "typo_examples": {
+      "abcde": "abide",
+      "armest": "arrest",
+      "bandaids": "bandaid",
+      "bedsheet": "bedsheets",
+      "botte": "bottle",
+      "bule": "blue",
+      "caan": "can",
+      "carboard": "cardboard",
+      "centre": "center",
+      "chapstick": "chopstick",
+      "colour": "color",
+      "colourless": "colorless",
+      "dorito": "doritos",
+      "egde": "edge",
+      "flusk": "flush",
+      "frech": "french",
+      "geen": "been",
+      "headbend": "headband",
+      "jenga": "jenna",
+      "legos": "legs",
+      "microw": "micro",
+      "multicolour": "multicolor",
+      "oreos": "ores",
+      "organisation": "organization",
+      "organise": "organize",
+      "organiser": "organizer",
+      "paket": "packet",
+      "plcae": "place",
+      "pootle": "poodle",
+      "poots": "boots",
+      "popcorns": "popcorn",
+      "potatoe": "potato",
+      "ppick": "pick",
+      "rall": "all",
+      "remot": "remote",
+      "rubrik": "rurik",
+      "sacket": "jacket",
+      "satchet": "hatchet",
+      "seperate": "separate",
+      "stachet": "sachet",
+      "tabe": "take",
+      "tazo": "taco",
+      "thats": "that",
+      "thermo": "thermos",
+      "tricep": "triceps",
+      "tshirt": "shirt",
+      "versa": "verse",
+      "youn": "you",
+      "ziplock": "ziploc"
+    },
+    "n_tasks_with_typo_candidates": 190,
+    "word_count_median": 10.0,
+    "tasks_without_episodes": 0,
+    "episode_task_not_in_table": 0
+  },
+  "coverage": {
+    "n_tasks_with_episodes": 49629,
+    "gini_episodes": 0.319287001442596,
+    "effective_n_tasks": 28885.249441372656,
+    "max_episodes_per_task": 299,
+    "median_episodes_per_task": 1.0,
+    "tasks_with_lt5_episodes": 48222,
+    "tasks_with_1_episode": 43164,
+    "top_task_share": 0.004000535188654001,
+    "top10pct_tasks_episode_share": 0.3822584961198823,
+    "slice_tasks": 2784
+  },
+  "usable": {
+    "definition": "usable = sum over episodes that pass integrity, success (if labelled), non-empty task, not a duplicate copy and >=1 s of motion, of (duration - idle time in still runs >= 0.5 s). Strict also drops episodes with a re-grasp.",
+    "slice_raw_hours": 21.69633333333333,
+    "usable_hours": 14.443212962962964,
+    "usable_frac": 0.6656983344173193,
+    "usable_strict_hours": 11.803972222222223,
+    "usable_strict_frac": 0.544053782769234,
+    "lost_frac_by_reason": {
+      "integrity": 0.0,
+      "failed_episode": 0.15446713132958123,
+      "empty_task_label": 0.1378787335631042,
+      "duplicate": 0.0,
+      "too_short": 0.0001374186797222948,
+      "idle_time": 0.04181838201027312
+    },
+    "lost_frac_retry_strict": 0.12164455164808528,
+    "full_dataset_hours": 511.6736111111111,
+    "full_dataset_usable_hours_extrapolated": 340.6202706819618
+  },
+  "meta_stats_duplicates": {
+    "available": true,
+    "n_episodes": 95658,
+    "duplicate_copies": 96,
+    "duplicate_frac": 0.0010035752367810323,
+    "duplicate_hours_frac": 0.00044302692236352205,
+    "example_groups": [
+      [
+        3997,
+        25899
+      ],
+      [
+        80912,
+        95021
+      ],
+      [
+        31804,
+        71551
+      ],
+      [
+        5417,
+        40924
+      ],
+      [
+        51895,
+        77904
+      ],
+      [
+        55206,
+        61729
+      ],
+      [
+        35008,
+        45038
+      ],
+      [
+        37100,
+        82218
+      ],
+      [
+        18345,
+        31317
+      ],
+      [
+        43796,
+        76215
+      ]
+    ]
+  },
+  "notes": [],
+  "scales": {
+    "vel": [
+      0.028156058635763332,
+      0.05149474640200895,
+      0.028134709520120198,
+      0.046065347845827914,
+      0.046222419778575205,
+      0.05270040397088589,
+      0.054859381932851545
+    ],
+    "pos_std": [
+      0.3182483018484674,
+      0.5162297533860194,
+      0.28531867262642596,
+      0.5008201772724297,
+      0.5300883388865083,
+      0.46730472125184064,
+      0.7400671859035958
+    ],
+    "act": [
+      0.031236071768074455,
+      0.055207252448211105,
+      0.03180743286960515,
+      0.051581721711541205,
+      0.052538602874069695,
+      0.0582808940664827,
+      0.06186241478960568
+    ],
+    "grip_cmd": [
+      [
+        0.0,
+        0.9988986849784851
+      ]
+    ],
+    "grip_state": [
+      [
+        0.0,
+        0.9911894202232361
+      ]
+    ]
+  },
+  "audit_seconds": 154.2
+}

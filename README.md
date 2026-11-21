@@ -18,6 +18,9 @@ Each experiment folder has a README with the goal, the exact steps, pinned versi
 | 09 | RoboColosseum: blind real-robot evals | Evals | read ($0) | Reusable protocol (blind A/B, milestones, Rasch ranking); 20 LeRobot v3.0 demo sets, eval rollouts not found |
 | 10 | Nebius Physical AI Workbench: agent-run sim-to-real loop | Agentic tooling | read ($0) | Solid 14-stage plumbing but their own run scored 0/64; repo tells agents not to add cost limits |
 | 11 | SimFoundry: one tabletop video to a physics-ready scene | Simulation | read + CPU tests ($0) | Tabletop only; colliders, mass and joints; Gemini required; default models non-commercial; GPU plan ~$4.50–8 |
+| 12 | Four VLAs on the same 50 LIBERO-10 episodes (G0.5, GR00T N1.7, SmolVLA, PEAR) | Robot learning | done (Modal L4/A10/B200, ~$52) | G0.5 98%, GR00T 90%, SmolVLA 52%, PEAR 74% of 35 finished (52% counting unfinished as failures); paired McNemar can separate overlapping intervals; 50 to 60% needs 155 paired episodes |
+| 13 | Auditing robot datasets before training (LIBERO, FineART, DROID) | Robot data | done (CPU, ~$0) | Usable share LIBERO 99.8%, FineART 95.6%, DROID 66.6%; injected corruptions caught 49/49; DROID about $13.52 per usable hour |
+| 14 | ACT vs Diffusion Policy vs flow matching, trained from scratch | Robot learning | done (Modal A10G, ~$34) | PushT: ACT 30%, diffusion 56%, flow 61%; ALOHA insertion: ACT 72%, diffusion 36% (ranking flips); diffusion fails at 1 denoising step, flow keeps 40% |
 
 ## Ground rules
 - Public sample data only; each experiment notes its data source and license.

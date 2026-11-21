@@ -1,0 +1,173 @@
+{
+  "tag": "resume",
+  "gpu": "NVIDIA B200",
+  "conc": 11,
+  "container_s": 8738,
+  "startup_s": 240,
+  "episodes_s": 8498,
+  "stopped_by_operator": "2026-11-21T03:38:43Z",
+  "reason": "budget: 7 long episodes in flight with the KV cache 95%+ full (generation 180-280 tok/s); stopped to stay under the $60 ceiling",
+  "completed": 12,
+  "unfinished_at_stop": [
+    {
+      "task_id": 1,
+      "episode": 2,
+      "condition": "main"
+    },
+    {
+      "task_id": 3,
+      "episode": 0,
+      "condition": "main"
+    },
+    {
+      "task_id": 3,
+      "episode": 1,
+      "condition": "main"
+    },
+    {
+      "task_id": 3,
+      "episode": 2,
+      "condition": "main"
+    },
+    {
+      "task_id": 3,
+      "episode": 4,
+      "condition": "main"
+    },
+    {
+      "task_id": 7,
+      "episode": 4,
+      "condition": "main"
+    },
+    {
+      "task_id": 8,
+      "episode": 1,
+      "condition": "main"
+    },
+    {
+      "task_id": 8,
+      "episode": 2,
+      "condition": "main"
+    },
+    {
+      "task_id": 8,
+      "episode": 3,
+      "condition": "main"
+    },
+    {
+      "task_id": 8,
+      "episode": 4,
+      "condition": "main"
+    },
+    {
+      "task_id": 9,
+      "episode": 0,
+      "condition": "main"
+    },
+    {
+      "task_id": 9,
+      "episode": 1,
+      "condition": "main"
+    },
+    {
+      "task_id": 9,
+      "episode": 2,
+      "condition": "main"
+    },
+    {
+      "task_id": 9,
+      "episode": 3,
+      "condition": "main"
+    },
+    {
+      "task_id": 9,
+      "episode": 4,
+      "condition": "main"
+    },
+    {
+      "task_id": 4,
+      "episode": 0,
+      "condition": "counterfactual",
+      "instruction": "put the red mug on the left plate",
+      "alt_bddl": "libero_90/LIVING_ROOM_SCENE5_put_the_red_mug_on_the_left_plate.bddl"
+    },
+    {
+      "task_id": 4,
+      "episode": 1,
+      "condition": "counterfactual",
+      "instruction": "put the red mug on the left plate",
+      "alt_bddl": "libero_90/LIVING_ROOM_SCENE5_put_the_red_mug_on_the_left_plate.bddl"
+    },
+    {
+      "task_id": 5,
+      "episode": 0,
+      "condition": "counterfactual",
+      "instruction": "pick up the book and place it in the front compartment of the caddy",
+      "alt_bddl": "libero_90/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_front_compartment_of_the_caddy.bddl"
+    },
+    {
+      "task_id": 5,
+      "episode": 1,
+      "condition": "counterfactual",
+      "instruction": "pick up the book and place it in the front compartment of the caddy",
+      "alt_bddl": "libero_90/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_front_compartment_of_the_caddy.bddl"
+    },
+    {
+      "task_id": 6,
+      "episode": 1,
+      "condition": "counterfactual",
+      "instruction": "put the red mug on the plate",
+      "alt_bddl": "libero_90/LIVING_ROOM_SCENE6_put_the_red_mug_on_the_plate.bddl"
+    },
+    {
+      "task_id": 7,
+      "episode": 0,
+      "condition": "counterfactual",
+      "instruction": "pick up the ketchup and put it in the basket",
+      "alt_bddl": "libero_90/LIVING_ROOM_SCENE1_pick_up_the_ketchup_and_put_it_in_the_basket.bddl"
+    },
+    {
+      "task_id": 7,
+      "episode": 1,
+      "condition": "counterfactual",
+      "instruction": "pick up the ketchup and put it in the basket",
+      "alt_bddl": "libero_90/LIVING_ROOM_SCENE1_pick_up_the_ketchup_and_put_it_in_the_basket.bddl"
+    },
+    {
+      "task_id": 0,
+      "episode": 0,
+      "condition": "perturb",
+      "perturb": true
+    },
+    {
+      "task_id": 3,
+      "episode": 0,
+      "condition": "perturb",
+      "perturb": true
+    },
+    {
+      "task_id": 5,
+      "episode": 0,
+      "condition": "perturb",
+      "perturb": true
+    },
+    {
+      "task_id": 7,
+      "episode": 0,
+      "condition": "perturb",
+      "perturb": true
+    },
+    {
+      "task_id": 8,
+      "episode": 0,
+      "condition": "perturb",
+      "perturb": true
+    },
+    {
+      "task_id": 9,
+      "episode": 0,
+      "condition": "perturb",
+      "perturb": true
+    }
+  ]
+}

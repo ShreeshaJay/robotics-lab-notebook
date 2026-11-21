@@ -1,0 +1,99 @@
+libero_10 spec written
+fineart spec written
+droid spec written
+[libero_10] loaded 379 episodes, 101,469 frames in 0.7s
+[libero_10] per-episode metrics done at 3.1s
+[libero_10] audit done in 4.9s
+libero_10 done in 10.2 s; gate: 15 / 15
+[fineart] loaded 791 episodes, 4,143,294 frames in 1.9s
+[fineart] per-episode metrics done at 11.3s
+[fineart] audit done in 15.2s
+fineart done in 25.6 s; gate: 9 / 15
+[droid] loaded 3970 episodes, 1,171,602 frames in 1.2s
+[droid] per-episode metrics done at 10.6s
+[droid] audit done in 154.2s
+droid done in 162.0 s; gate: 9 / 14
+[libero_10] loaded 379 episodes, 101,469 frames in 0.5s
+[libero_10] per-episode metrics done at 2.6s
+[libero_10] audit done in 4.1s
+[libero_10_corrupt] loaded 391 episodes, 104,246 frames in 0.1s
+[libero_10_corrupt] per-episode metrics done at 2.6s
+[libero_10_corrupt] audit done in 4.2s
+clean: {'schema': True, 'frame_index_contiguous': True, 'timestamps_regular': True, 'meta_length_matches': True, 'no_nan': True, 'dynamic_continuity': True, 'gripper_sign_convention': True, 'action_bounds': True, 'task_labels_clean': True, 'task_min_episodes': True, 'no_exact_duplicates': True, 'no_near_duplicates': True, 'task_trajectory_consistency': True, 'idle_fraction': True, 'episode_length': True}
+corrupt: {'schema': True, 'frame_index_contiguous': False, 'timestamps_regular': False, 'meta_length_matches': False, 'no_nan': True, 'dynamic_continuity': False, 'gripper_sign_convention': False, 'action_bounds': False, 'task_labels_clean': False, 'task_min_episodes': True, 'no_exact_duplicates': False, 'no_near_duplicates': False, 'task_trajectory_consistency': False, 'idle_fraction': True, 'episode_length': True}
+{'fault': 'drop_frames_naive', 'n_injected': 8, 'intended_check': 'timestamps_regular', 'caught_by_intended': 8, 'caught_by_any': 8, 'missed': [], 'checks_that_fired': {'frame_index_contiguous': 8, 'timestamps_regular': 8, 'meta_length_matches': 8, 'dynamic_continuity': 8}}
+{'fault': 'drop_frames_renumbered', 'n_injected': 8, 'intended_check': 'dynamic_continuity', 'caught_by_intended': 8, 'caught_by_any': 8, 'missed': [], 'checks_that_fired': {'dynamic_continuity': 8}}
+{'fault': 'flip_gripper_sign', 'n_injected': 8, 'intended_check': 'gripper_sign_convention', 'caught_by_intended': 8, 'caught_by_any': 8, 'missed': [], 'checks_that_fired': {'gripper_sign_convention': 8}}
+{'fault': 'mislabel_task', 'n_injected': 8, 'intended_check': 'task_trajectory_consistency', 'caught_by_intended': 8, 'caught_by_any': 8, 'missed': [], 'checks_that_fired': {'task_trajectory_consistency': 8}}
+{'fault': 'typo_task_string', 'n_injected': 5, 'intended_check': 'task_labels_clean', 'caught_by_intended': 5, 'caught_by_any': 5, 'missed': [], 'checks_that_fired': {'task_labels_clean': 5, 'task_trajectory_consistency': 5}}
+{'fault': 'duplicate_exact', 'n_injected': 8, 'intended_check': 'no_exact_duplicates', 'caught_by_intended': 8, 'caught_by_any': 8, 'missed': [], 'checks_that_fired': {'no_exact_duplicates': 8}}
+{'fault': 'duplicate_near', 'n_injected': 4, 'intended_check': 'no_near_duplicates', 'caught_by_intended': 4, 'caught_by_any': 4, 'missed': [], 'checks_that_fired': {'action_bounds': 4, 'no_near_duplicates': 4}}
+FP: {}
+{'fault': 'drop_frames_renumbered', 'param': 0.01, 'intended_check': 'dynamic_continuity', 'n_injected': 8, 'caught_by_intended': 0, 'caught_by_any_new_flag': 0, 'gate_failed': False, 'false_pos_unfaulted': 0}
+{'fault': 'drop_frames_renumbered', 'param': 0.02, 'intended_check': 'dynamic_continuity', 'n_injected': 8, 'caught_by_intended': 6, 'caught_by_any_new_flag': 6, 'gate_failed': True, 'false_pos_unfaulted': 0}
+{'fault': 'drop_frames_renumbered', 'param': 0.05, 'intended_check': 'dynamic_continuity', 'n_injected': 8, 'caught_by_intended': 8, 'caught_by_any_new_flag': 8, 'gate_failed': True, 'false_pos_unfaulted': 0}
+{'fault': 'mislabel_confusable', 'param': 0, 'intended_check': 'task_trajectory_consistency', 'n_injected': 8, 'caught_by_intended': 7, 'caught_by_any_new_flag': 7, 'gate_failed': True, 'false_pos_unfaulted': 1}
+{'fault': 'mislabel_confusable', 'param': 1, 'intended_check': 'task_trajectory_consistency', 'n_injected': 8, 'caught_by_intended': 6, 'caught_by_any_new_flag': 6, 'gate_failed': True, 'false_pos_unfaulted': 1}
+{'fault': 'mislabel_confusable', 'param': 2, 'intended_check': 'task_trajectory_consistency', 'n_injected': 8, 'caught_by_intended': 7, 'caught_by_any_new_flag': 7, 'gate_failed': True, 'false_pos_unfaulted': 0}
+{'fault': 'duplicate_near', 'param': 0.01, 'intended_check': 'no_near_duplicates', 'n_injected': 8, 'caught_by_intended': 8, 'caught_by_any_new_flag': 8, 'gate_failed': True, 'false_pos_unfaulted': 0}
+{'fault': 'duplicate_near', 'param': 0.02, 'intended_check': 'no_near_duplicates', 'n_injected': 8, 'caught_by_intended': 8, 'caught_by_any_new_flag': 8, 'gate_failed': True, 'false_pos_unfaulted': 0}
+{'fault': 'duplicate_near', 'param': 0.05, 'intended_check': 'no_near_duplicates', 'n_injected': 8, 'caught_by_intended': 0, 'caught_by_any_new_flag': 8, 'gate_failed': False, 'false_pos_unfaulted': 0}
+{'fault': 'duplicate_near', 'param': 0.1, 'intended_check': 'no_near_duplicates', 'n_injected': 8, 'caught_by_intended': 0, 'caught_by_any_new_flag': 8, 'gate_failed': False, 'false_pos_unfaulted': 0}
+{'fault': 'duplicate_time_shift', 'param': 5, 'intended_check': 'no_near_duplicates', 'n_injected': 8, 'caught_by_intended': 0, 'caught_by_any_new_flag': 0, 'gate_failed': False, 'false_pos_unfaulted': 0}
+{'fault': 'duplicate_time_shift', 'param': 20, 'intended_check': 'no_near_duplicates', 'n_injected': 8, 'caught_by_intended': 0, 'caught_by_any_new_flag': 0, 'gate_failed': False, 'false_pos_unfaulted': 0}
+{'fault': 'flip_gripper_partial', 'param': 0.25, 'intended_check': 'gripper_sign_convention', 'n_injected': 8, 'caught_by_intended': 0, 'caught_by_any_new_flag': 0, 'gate_failed': False, 'false_pos_unfaulted': 0}
+{'fault': 'flip_gripper_partial', 'param': 0.5, 'intended_check': 'gripper_sign_convention', 'n_injected': 8, 'caught_by_intended': 1, 'caught_by_any_new_flag': 1, 'gate_failed': True, 'false_pos_unfaulted': 0}
+                                                                                         task_id  smolvla_success  sparc_median  state_jerk_median  length_cv  n_episodes  grasps_per_episode  regrasp_frac
+task                                                                                                                                                                                                       
+put both the alphabet soup and the tomato sauce in the basket                                  0              0.2        -1.943              0.039      0.105          33               2.152         0.061
+put both the cream cheese box and the butter in the basket                                     1              0.4        -1.897              0.060      0.082          49               2.143         0.122
+turn on the stove and put the moka pot on it                                                   2              0.8        -1.835              0.039      0.102          41               2.049         0.049
+put the black bowl in the bottom drawer of the cabinet and close it                            3              0.6        -1.843              0.051      0.087          35               1.029         0.000
+put the white mug on the left plate and put the yellow and white mug on the right plate        4              0.4        -1.867              0.043      0.094          38               2.132         0.132
+pick up the book and place it in the back compartment of the caddy                             5              0.2        -2.066              0.037      0.120          41               1.000         0.000
+put the white mug on the plate and put the chocolate pudding to the right of the plate         6              0.6        -1.812              0.040      0.117          36               2.250         0.167
+put both the alphabet soup and the cream cheese box in the basket                              7              0.4        -1.919              0.056      0.088          43               2.093         0.093
+put both moka pots on the stove                                                                8              0.6        -1.824              0.032      0.091          29               2.103         0.069
+put the yellow and white mug in the microwave and close it                                     9              1.0        -2.031              0.070      0.166          34               1.118         0.088
+               metric    group  expected_sign  spearman_rho  perm_p_two_sided  direction_as_expected
+0        sparc_median  quality              1         0.467             0.180                   True
+1   state_jerk_median  quality             -1         0.206             0.560                  False
+2  action_jerk_median  quality             -1         0.231             0.515                  False
+3           length_cv  quality             -1         0.118             0.739                  False
+4          n_episodes    count              0        -0.259             0.464                   True
+5  grasps_per_episode    count              0        -0.193             0.585                   True
+6       length_mean_s    other              0         0.299             0.394                   True
+7        regrasp_frac    other             -1         0.053             0.885                  False
+8           idle_frac    other              0         0.623             0.062                   True
+9      nn_dist_median    other              0         0.598             0.073                   True
+| Metric | LIBERO-10 (sim) | FineART (lab teleop) | DROID 1.0.1 (in-the-wild teleop) |
+|-|-|-|-|
+| Source / robot / fps | sim / panda / 10 | lab teleop / aloha / 30 | in-the-wild teleop / Franka / 15 |
+| License (HF tag) | apache-2.0 | cc-by-4.0 | apache-2.0 |
+| Full dataset: episodes / hours | 379 / 2.8 | 40,543 / 1,717.9 | 95,658 / 511.7 |
+| Audited slice: episodes / hours | 379 / 2.8 | 791 / 38.4 | 3,970 / 21.7 |
+| Episode length median (CV) | 25.9 s (0.21) | 123.7 s (0.75) | 14.8 s (0.78) |
+| Idle time, time-weighted | 0.2% | 4.3% | 7.2% |
+| Lead / trail idle, median | 0.0 s / 0.0 s | 2.3 s / 3.0 s | 0.5 s / 0.0 s |
+| Mid-episode pauses per min | 0.05 | 0.64 | 1.59 |
+| SPARC median (higher = smoother) | -1.91 | -2.99 | -1.99 |
+| State jerk / action jerk (median, normalised) | 0.047 / 0.049 | 0.279 / 0.253 | 0.108 / 0.344 |
+| Grasps per minute | 4.07 | 1.76 | 4.30 |
+| Episodes with a re-grasp (retry proxy) | 7.9% | 47.4% | 12.8% |
+| Failed episodes (dataset flag) | not labelled | not labelled | 17.5% |
+| Episodes with empty task string (full) | 0.0% | 0.0% | 21.9% |
+| Exact duplicate copies (full, meta stats) | n/a | 1.3% | 0.1% |
+| Task strings / effective tasks / Gini | 10 / 10 / 0.08 | 151 / 90 / 0.54 | 49,630 / 28,885 / 0.32 |
+| Typo-candidate words / near-dup task groups | 0 / 0 | 6 / 1 | 49 / 216 |
+| **Usable share of raw time** | **99.8%** | **95.6%** | **66.6%** |
+| Usable share, strict (drop re-grasp episodes) | 90.7% | 43.6% | 54.4% |
+| Usable hours, full dataset (extrapolated) | 2.8 of 2.8 | 1,641.9 of 1,717.9 | 340.6 of 511.7 |
+| Dataset | Usable share | Price (per video-hour) | $ per usable hour, label everything | Same, all camera streams | Full dataset: label all vs audit first and label usable only |
+|-|-|-|-|-|-|
+| LIBERO-10 (sim) | 99.8% | Perceptron subtasks $9 | $9.02 | $18.04 (2 streams) | $25 vs $25 |
+| LIBERO-10 (sim) | 99.8% | Perceptron full stack $29 | $29.06 | $58.12 (2 streams) | $82 vs $82 |
+| FineART (lab teleop) | 95.6% | Perceptron subtasks $9 | $9.42 | $37.67 (4 streams) | $15,461 vs $14,777 |
+| FineART (lab teleop) | 95.6% | Perceptron full stack $29 | $30.34 | $121.37 (4 streams) | $49,819 vs $47,614 |
+| DROID 1.0.1 (in-the-wild teleop) | 66.6% | Perceptron subtasks $9 | $13.52 | $40.56 (3 streams) | $4,605 vs $3,066 |
+| DROID 1.0.1 (in-the-wild teleop) | 66.6% | Perceptron full stack $29 | $43.56 | $130.69 (3 streams) | $14,839 vs $9,878 |
+{'libero_10': 1.7, 'fineart': 0.4, 'droid': 7.1} audit wall-seconds per raw hour

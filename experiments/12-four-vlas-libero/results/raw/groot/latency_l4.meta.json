@@ -1,0 +1,12 @@
+[
+  {
+    "tag": "latency_l4",
+    "shard": 0,
+    "gpu": "NVIDIA L4",
+    "load_s": 20.1,
+    "torch_max_allocated_mib": 6094,
+    "torch_max_reserved_mib": 6228,
+    "nvidia_smi_peak_mib": 9321,
+    "container_s": 135.6
+  }
+]

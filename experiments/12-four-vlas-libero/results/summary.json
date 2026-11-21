@@ -1,0 +1,802 @@
+{
+  "main": {
+    "g05": {
+      "k": 49,
+      "n": 50,
+      "rate": 0.98,
+      "wilson95": [
+        0.895,
+        0.9965
+      ],
+      "per_task": {
+        "0": 5,
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5,
+        "7": 5,
+        "8": 5,
+        "9": 4
+      },
+      "source": "baseline rerun50 (saved)"
+    },
+    "groot": {
+      "k": 45,
+      "n": 50,
+      "rate": 0.9,
+      "wilson95": [
+        0.7864,
+        0.9565
+      ],
+      "per_task": {
+        "0": 5,
+        "1": 5,
+        "2": 5,
+        "3": 4,
+        "4": 5,
+        "5": 5,
+        "6": 5,
+        "7": 5,
+        "8": 2,
+        "9": 4
+      },
+      "source": "this tutorial"
+    },
+    "smolvla": {
+      "k": 26,
+      "n": 50,
+      "rate": 0.52,
+      "wilson95": [
+        0.3851,
+        0.652
+      ],
+      "per_task": {
+        "0": 1,
+        "1": 2,
+        "2": 4,
+        "3": 3,
+        "4": 2,
+        "5": 1,
+        "6": 3,
+        "7": 2,
+        "8": 3,
+        "9": 5
+      },
+      "source": "baseline rerun50 (saved)"
+    },
+    "pear": {
+      "k": 26,
+      "n": 35,
+      "rate": 0.7429,
+      "wilson95": [
+        0.5793,
+        0.8584
+      ],
+      "per_task": {
+        "0": 4,
+        "1": 4,
+        "2": 5,
+        "3": 0,
+        "4": 4,
+        "5": 2,
+        "6": 3,
+        "7": 4,
+        "8": 0,
+        "9": 0
+      },
+      "source": "this tutorial"
+    }
+  },
+  "latency_vram": {
+    "g05": {
+      "chunk_ms_median": 619.7,
+      "chunk_ms_p90": 628.2,
+      "n_chunks": 1292,
+      "torch_peak_mib": 11265,
+      "gpu_peak_mib": 12907,
+      "gpu": "L4 (GCP g2-standard-8)",
+      "pred_exec": "32 / 10"
+    },
+    "smolvla": {
+      "chunk_ms_median": 323.5,
+      "chunk_ms_p90": 328.4,
+      "n_chunks": 418,
+      "torch_peak_mib": 922,
+      "gpu_peak_mib": 2061,
+      "gpu": "L4 (GCP g2-standard-8)",
+      "pred_exec": "50 / 50"
+    },
+    "groot": {
+      "chunk_ms_median": 126.5,
+      "chunk_ms_p90": 131.5,
+      "n_chunks": 1749,
+      "torch_peak_mib": 6094,
+      "gpu_peak_mib": 11799,
+      "gpu": "NVIDIA A10 (Modal)",
+      "pred_exec": "16 / 8"
+    },
+    "pear": {
+      "chunk_ms_median": 24890.0,
+      "chunk_ms_p90": 169860.0,
+      "n_chunks": 899,
+      "torch_peak_mib": null,
+      "gpu_peak_mib": 172927,
+      "gpu": "B200 (Modal), vLLM, up to 16 episodes sharing the GPU",
+      "pred_exec": "1 waypoint / 1 (closed-loop controller, up to 100 native steps)",
+      "completion_tokens_per_turn_median": 857,
+      "turns_per_episode_median": 20
+    },
+    "same_gpu_chunk_ms_median": {
+      "L4": {
+        "g05": 619.7,
+        "smolvla": 323.5,
+        "groot": 210.8
+      },
+      "A10": {
+        "groot": 126.5,
+        "g05": 395.1,
+        "smolvla": 215.1
+      }
+    }
+  },
+  "ext1_horizon": {
+    "groot": {
+      "1": {
+        "k": 19,
+        "n": 20,
+        "rate": 0.95,
+        "wilson95": [
+          0.764,
+          0.991
+        ],
+        "action_jerk_mean": 0.0692,
+        "source": "this tutorial"
+      },
+      "4": {
+        "k": 19,
+        "n": 20,
+        "rate": 0.95,
+        "wilson95": [
+          0.764,
+          0.991
+        ],
+        "action_jerk_mean": 0.0656,
+        "source": "this tutorial"
+      },
+      "8": {
+        "k": 17,
+        "n": 20,
+        "rate": 0.85,
+        "wilson95": [
+          0.64,
+          0.948
+        ],
+        "action_jerk_mean": 0.0638,
+        "source": "this tutorial"
+      },
+      "16": {
+        "k": 18,
+        "n": 20,
+        "rate": 0.9,
+        "wilson95": [
+          0.699,
+          0.972
+        ],
+        "action_jerk_mean": 0.0612,
+        "source": "this tutorial"
+      }
+    },
+    "g05": {
+      "1": {
+        "k": 14,
+        "n": 20,
+        "rate": 0.7,
+        "wilson95": [
+          0.481,
+          0.855
+        ],
+        "action_jerk_mean": 0.0424,
+        "source": "this tutorial"
+      },
+      "4": {
+        "k": 18,
+        "n": 20,
+        "rate": 0.9,
+        "wilson95": [
+          0.699,
+          0.972
+        ],
+        "action_jerk_mean": 0.0547,
+        "source": "this tutorial"
+      },
+      "8": {
+        "k": 20,
+        "n": 20,
+        "rate": 1.0,
+        "wilson95": [
+          0.839,
+          1.0
+        ],
+        "action_jerk_mean": 0.054,
+        "source": "this tutorial"
+      },
+      "10": {
+        "k": 19,
+        "n": 20,
+        "rate": 0.95,
+        "wilson95": [
+          0.764,
+          0.991
+        ],
+        "action_jerk_mean": 0.0544,
+        "source": "this tutorial"
+      },
+      "32": {
+        "k": 20,
+        "n": 20,
+        "rate": 1.0,
+        "wilson95": [
+          0.839,
+          1.0
+        ],
+        "action_jerk_mean": 0.0524,
+        "source": "this tutorial"
+      }
+    },
+    "smolvla": {
+      "1": {
+        "k": 13,
+        "n": 20,
+        "rate": 0.65,
+        "wilson95": [
+          0.433,
+          0.819
+        ],
+        "action_jerk_mean": 0.0737,
+        "source": "this tutorial"
+      },
+      "4": {
+        "k": 14,
+        "n": 20,
+        "rate": 0.7,
+        "wilson95": [
+          0.481,
+          0.855
+        ],
+        "action_jerk_mean": 0.067,
+        "source": "this tutorial"
+      },
+      "8": {
+        "k": 14,
+        "n": 20,
+        "rate": 0.7,
+        "wilson95": [
+          0.481,
+          0.855
+        ],
+        "action_jerk_mean": 0.0624,
+        "source": "this tutorial"
+      },
+      "50": {
+        "k": 8,
+        "n": 20,
+        "rate": 0.4,
+        "wilson95": [
+          0.219,
+          0.613
+        ],
+        "action_jerk_mean": 0.0545,
+        "source": "this tutorial"
+      }
+    }
+  },
+  "ext2_counterfactual": {
+    "groot": {
+      "n": 18,
+      "n_finished": 18,
+      "counts": {
+        "instructed": 4,
+        "default": 11,
+        "neither": 3
+      },
+      "instructed_rate": 0.222,
+      "instructed_wilson95": [
+        0.09,
+        0.452
+      ],
+      "default_rate": 0.611,
+      "default_wilson95": [
+        0.386,
+        0.797
+      ],
+      "alt_partial_mean": 0.222,
+      "per_task": {
+        "0": "instructed",
+        "3": "default",
+        "6": "neither",
+        "2": "default",
+        "5": "default",
+        "9": "default",
+        "1": "instructed",
+        "4": "default",
+        "7": "default"
+      }
+    },
+    "pear": {
+      "n": 18,
+      "n_finished": 11,
+      "counts": {
+        "instructed": 11,
+        "unfinished": 7
+      },
+      "instructed_rate": 0.611,
+      "instructed_wilson95": [
+        0.386,
+        0.797
+      ],
+      "default_rate": 0.0,
+      "default_wilson95": [
+        0.0,
+        0.176
+      ],
+      "alt_partial_mean": 1.0,
+      "per_task": {
+        "3": "instructed",
+        "6": "instructed",
+        "0": "instructed",
+        "1": "instructed",
+        "2": "instructed",
+        "9": "instructed",
+        "4": "unfinished",
+        "5": "unfinished",
+        "7": "unfinished"
+      }
+    },
+    "g05": {
+      "n": 18,
+      "n_finished": 18,
+      "counts": {
+        "instructed": 6,
+        "neither": 8,
+        "default": 4
+      },
+      "instructed_rate": 0.333,
+      "instructed_wilson95": [
+        0.163,
+        0.563
+      ],
+      "default_rate": 0.222,
+      "default_wilson95": [
+        0.09,
+        0.452
+      ],
+      "alt_partial_mean": 0.333,
+      "per_task": {
+        "0": "instructed",
+        "1": "instructed",
+        "2": "neither",
+        "3": "neither",
+        "4": "neither",
+        "5": "default",
+        "6": "default",
+        "7": "instructed",
+        "9": "neither"
+      }
+    },
+    "smolvla": {
+      "n": 18,
+      "n_finished": 18,
+      "counts": {
+        "instructed": 3,
+        "neither": 13,
+        "default": 2
+      },
+      "instructed_rate": 0.167,
+      "instructed_wilson95": [
+        0.058,
+        0.392
+      ],
+      "default_rate": 0.111,
+      "default_wilson95": [
+        0.031,
+        0.328
+      ],
+      "alt_partial_mean": 0.167,
+      "per_task": {
+        "0": "instructed",
+        "1": "instructed",
+        "2": "neither",
+        "3": "neither",
+        "4": "neither",
+        "5": "default",
+        "6": "neither",
+        "7": "neither",
+        "9": "neither"
+      }
+    }
+  },
+  "ext3_failure_step": {
+    "g05": {
+      "n": 50,
+      "n_fail": 1,
+      "failed_step_counts": {
+        "step 1": 1
+      },
+      "fail_multistep": 1,
+      "fail_at_step1": 1,
+      "fail_at_step2plus": 0,
+      "mean_partial_credit_all": 0.98,
+      "mean_partial_credit_failures": 0.0,
+      "success_rate_this_run": 0.98,
+      "rerun_vs_saved_agreement": "50/50",
+      "rerun_k": 49
+    },
+    "groot": {
+      "n": 50,
+      "n_fail": 5,
+      "failed_step_counts": {
+        "step 2": 3,
+        "step 1": 2
+      },
+      "fail_multistep": 5,
+      "fail_at_step1": 2,
+      "fail_at_step2plus": 3,
+      "mean_partial_credit_all": 0.93,
+      "mean_partial_credit_failures": 0.3,
+      "success_rate_this_run": 0.9
+    },
+    "smolvla": {
+      "n": 50,
+      "n_fail": 30,
+      "failed_step_counts": {
+        "step 1": 8,
+        "step 2": 18,
+        "single-step task": 4
+      },
+      "fail_multistep": 26,
+      "fail_at_step1": 8,
+      "fail_at_step2plus": 18,
+      "mean_partial_credit_all": 0.58,
+      "mean_partial_credit_failures": 0.3,
+      "success_rate_this_run": 0.4,
+      "rerun_vs_saved_agreement": "40/50",
+      "rerun_k": 20
+    },
+    "pear": {
+      "n": 35,
+      "n_fail": 9,
+      "failed_step_counts": {
+        "step 2": 4,
+        "step 1": 2,
+        "single-step task": 3
+      },
+      "fail_multistep": 6,
+      "fail_at_step1": 2,
+      "fail_at_step2plus": 4,
+      "mean_partial_credit_all": 0.8,
+      "mean_partial_credit_failures": 0.2222,
+      "success_rate_this_run": 0.7429
+    }
+  },
+  "ext4_perturbation": {
+    "groot": {
+      "n": 10,
+      "clean_k": 9,
+      "perturbed_k": 9,
+      "clean_wilson95": [
+        0.596,
+        0.982
+      ],
+      "perturbed_wilson95": [
+        0.596,
+        0.982
+      ],
+      "drop_pts": 0.0,
+      "mcnemar": {
+        "a_only": 0,
+        "b_only": 0,
+        "p": 1.0
+      }
+    },
+    "pear": {
+      "n": 4,
+      "clean_k": 3,
+      "perturbed_k": 4,
+      "clean_wilson95": [
+        0.301,
+        0.954
+      ],
+      "perturbed_wilson95": [
+        0.51,
+        1.0
+      ],
+      "drop_pts": -25.0,
+      "mcnemar": {
+        "a_only": 0,
+        "b_only": 1,
+        "p": 1.0
+      }
+    },
+    "g05": {
+      "n": 10,
+      "clean_k": 10,
+      "perturbed_k": 9,
+      "clean_wilson95": [
+        0.722,
+        1.0
+      ],
+      "perturbed_wilson95": [
+        0.596,
+        0.982
+      ],
+      "drop_pts": 10.0,
+      "mcnemar": {
+        "a_only": 1,
+        "b_only": 0,
+        "p": 1.0
+      }
+    },
+    "smolvla": {
+      "n": 10,
+      "clean_k": 3,
+      "perturbed_k": 6,
+      "clean_wilson95": [
+        0.108,
+        0.603
+      ],
+      "perturbed_wilson95": [
+        0.313,
+        0.832
+      ],
+      "drop_pts": -30.0,
+      "mcnemar": {
+        "a_only": 2,
+        "b_only": 5,
+        "p": 0.453125
+      }
+    }
+  },
+  "ext5_paired": {
+    "n_common": 35,
+    "pairs": {
+      "g05_vs_groot": {
+        "n": 50,
+        "k_a": 49,
+        "k_b": 45,
+        "wilson_overlap": true,
+        "mcnemar": {
+          "a_only": 4,
+          "b_only": 0,
+          "p": 0.125
+        },
+        "bootstrap_episode": {
+          "diff": 0.08,
+          "ci95": [
+            0.02,
+            0.16
+          ],
+          "p_boot": 0.0304,
+          "unit": "episode"
+        },
+        "bootstrap_task_cluster": {
+          "diff": 0.08,
+          "ci95": [
+            0.0,
+            0.2
+          ],
+          "p_boot": 0.2188,
+          "unit": "task"
+        },
+        "separated_paired": false,
+        "separated_by_intervals": false
+      },
+      "g05_vs_smolvla": {
+        "n": 50,
+        "k_a": 49,
+        "k_b": 26,
+        "wilson_overlap": false,
+        "mcnemar": {
+          "a_only": 24,
+          "b_only": 1,
+          "p": 1.5497207641601562e-06
+        },
+        "bootstrap_episode": {
+          "diff": 0.46,
+          "ci95": [
+            0.3,
+            0.6
+          ],
+          "p_boot": 0.0,
+          "unit": "episode"
+        },
+        "bootstrap_task_cluster": {
+          "diff": 0.46,
+          "ci95": [
+            0.28,
+            0.62
+          ],
+          "p_boot": 0.0,
+          "unit": "task"
+        },
+        "separated_paired": true,
+        "separated_by_intervals": true
+      },
+      "g05_vs_pear": {
+        "n": 35,
+        "k_a": 35,
+        "k_b": 26,
+        "wilson_overlap": false,
+        "mcnemar": {
+          "a_only": 9,
+          "b_only": 0,
+          "p": 0.00390625
+        },
+        "bootstrap_episode": {
+          "diff": 0.2571428571428571,
+          "ci95": [
+            0.11428571428571428,
+            0.4
+          ],
+          "p_boot": 0.0,
+          "unit": "episode"
+        },
+        "bootstrap_task_cluster": {
+          "diff": 0.2571428571428571,
+          "ci95": [
+            0.10526315789473684,
+            0.44
+          ],
+          "p_boot": 0.0,
+          "unit": "task"
+        },
+        "separated_paired": true,
+        "separated_by_intervals": true
+      },
+      "groot_vs_smolvla": {
+        "n": 50,
+        "k_a": 45,
+        "k_b": 26,
+        "wilson_overlap": false,
+        "mcnemar": {
+          "a_only": 23,
+          "b_only": 4,
+          "p": 0.000310748815536499
+        },
+        "bootstrap_episode": {
+          "diff": 0.38,
+          "ci95": [
+            0.2,
+            0.56
+          ],
+          "p_boot": 0.0,
+          "unit": "episode"
+        },
+        "bootstrap_task_cluster": {
+          "diff": 0.38,
+          "ci95": [
+            0.16,
+            0.6
+          ],
+          "p_boot": 0.0014,
+          "unit": "task"
+        },
+        "separated_paired": true,
+        "separated_by_intervals": true
+      },
+      "groot_vs_pear": {
+        "n": 35,
+        "k_a": 34,
+        "k_b": 26,
+        "wilson_overlap": true,
+        "mcnemar": {
+          "a_only": 8,
+          "b_only": 0,
+          "p": 0.0078125
+        },
+        "bootstrap_episode": {
+          "diff": 0.22857142857142856,
+          "ci95": [
+            0.08571428571428572,
+            0.37142857142857144
+          ],
+          "p_boot": 0.0004,
+          "unit": "episode"
+        },
+        "bootstrap_task_cluster": {
+          "diff": 0.22857142857142856,
+          "ci95": [
+            0.08,
+            0.4
+          ],
+          "p_boot": 0.0008,
+          "unit": "task"
+        },
+        "separated_paired": true,
+        "separated_by_intervals": false
+      },
+      "smolvla_vs_pear": {
+        "n": 35,
+        "k_a": 16,
+        "k_b": 26,
+        "wilson_overlap": true,
+        "mcnemar": {
+          "a_only": 5,
+          "b_only": 15,
+          "p": 0.04138946533203125
+        },
+        "bootstrap_episode": {
+          "diff": -0.2857142857142857,
+          "ci95": [
+            -0.5142857142857142,
+            -0.05714285714285714
+          ],
+          "p_boot": 0.0224,
+          "unit": "episode"
+        },
+        "bootstrap_task_cluster": {
+          "diff": -0.2857142857142857,
+          "ci95": [
+            -0.47368421052631576,
+            -0.06060606060606061
+          ],
+          "p_boot": 0.0266,
+          "unit": "task"
+        },
+        "separated_paired": true,
+        "separated_by_intervals": false
+      }
+    }
+  },
+  "ext6_power_cost": {
+    "power_unpaired": {
+      "50->60": 388,
+      "70->80": 294,
+      "90->100": 74
+    },
+    "power_paired_examples": {
+      "discordant 10%": 77,
+      "discordant 20%": 155,
+      "discordant 30%": 234
+    },
+    "cost_per_success": {
+      "g05": {
+        "gpu": "L4",
+        "gpu_s_episodes": 1551,
+        "startup_s": null,
+        "dollars": 0.344,
+        "successes": 49,
+        "dollars_per_success": 0.007,
+        "gpu_s_per_success": 31.7
+      },
+      "groot": {
+        "gpu": "A10",
+        "gpu_s_episodes": 570,
+        "startup_s": null,
+        "dollars": 0.174,
+        "successes": 45,
+        "dollars_per_success": 0.0039,
+        "gpu_s_per_success": 12.7
+      },
+      "smolvla": {
+        "gpu": "L4",
+        "gpu_s_episodes": 981,
+        "startup_s": null,
+        "dollars": 0.218,
+        "successes": 26,
+        "dollars_per_success": 0.0084,
+        "gpu_s_per_success": 37.7
+      },
+      "pear": {
+        "gpu": "B200",
+        "gpu_s_episodes": 15807,
+        "startup_s": 626.7,
+        "dollars": 27.441,
+        "successes": 26,
+        "dollars_per_success": 1.0554,
+        "gpu_s_per_success": 608.0
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+PASSED tests/test_acceptance.py::test_check[schema]
+PASSED tests/test_acceptance.py::test_check[frame_index_contiguous]
+PASSED tests/test_acceptance.py::test_check[timestamps_regular]
+PASSED tests/test_acceptance.py::test_check[meta_length_matches]
+PASSED tests/test_acceptance.py::test_check[no_nan]
+PASSED tests/test_acceptance.py::test_check[gripper_sign_convention]
+PASSED tests/test_acceptance.py::test_check[action_bounds]
+PASSED tests/test_acceptance.py::test_check[no_exact_duplicates]
+PASSED tests/test_acceptance.py::test_check[no_near_duplicates]
+SKIPPED [1] tests\test_acceptance.py:17: task_trajectory_consistency not applicable to this dataset
+FAILED tests/test_acceptance.py::test_check[dynamic_continuity] - AssertionEr...
+FAILED tests/test_acceptance.py::test_check[task_labels_clean] - AssertionErr...
+FAILED tests/test_acceptance.py::test_check[task_min_episodes] - AssertionErr...
+FAILED tests/test_acceptance.py::test_check[idle_fraction] - AssertionError: ...
+FAILED tests/test_acceptance.py::test_check[episode_length] - AssertionError:...
+5 failed, 9 passed, 1 skipped in 159.92s (0:02:39)

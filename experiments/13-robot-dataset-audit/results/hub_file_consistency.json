@@ -1,0 +1,32 @@
+{
+  "libero_10": {
+    "hub_data_files": 147,
+    "hub_data_gb": 0.007762084,
+    "referenced_by_meta": 147,
+    "unreferenced_files": 0,
+    "unreferenced_gb": 0.0,
+    "unreferenced_first_last": [],
+    "referenced_but_missing": []
+  },
+  "fineart": {
+    "hub_data_files": 211,
+    "hub_data_gb": 25.1395099,
+    "referenced_by_meta": 211,
+    "unreferenced_files": 0,
+    "unreferenced_gb": 0.0,
+    "unreferenced_first_last": [],
+    "referenced_but_missing": []
+  },
+  "droid": {
+    "hub_data_files": 156,
+    "hub_data_gb": 14.345122263,
+    "referenced_by_meta": 86,
+    "unreferenced_files": 70,
+    "unreferenced_gb": 5.409870951,
+    "unreferenced_first_last": [
+      "data/chunk-000/file-086.parquet",
+      "data/chunk-000/file-155.parquet"
+    ],
+    "referenced_but_missing": []
+  }
+}

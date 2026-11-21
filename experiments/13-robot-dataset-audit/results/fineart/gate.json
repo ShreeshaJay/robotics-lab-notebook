@@ -1,0 +1,169 @@
+{
+  "schema": {
+    "passed": true,
+    "detail": "missing/mis-shaped: []; fps ok: True",
+    "n_flagged": 0,
+    "flagged_first_50": []
+  },
+  "frame_index_contiguous": {
+    "passed": true,
+    "detail": "0 episode(s) flagged (limit 0). frame_index must be 0..n-1 in row order.",
+    "n_flagged": 0,
+    "flagged_first_50": []
+  },
+  "timestamps_regular": {
+    "passed": true,
+    "detail": "0 episode(s) flagged (limit 0). No gap > 1.5/fps, strictly increasing.",
+    "n_flagged": 0,
+    "flagged_first_50": []
+  },
+  "meta_length_matches": {
+    "passed": true,
+    "detail": "0 episode(s) flagged (limit 0). meta/episodes length must equal data rows.",
+    "n_flagged": 0,
+    "flagged_first_50": []
+  },
+  "no_nan": {
+    "passed": true,
+    "detail": "0 episode(s) flagged (limit 0). No NaN/inf in action or state.",
+    "n_flagged": 0,
+    "flagged_first_50": []
+  },
+  "dynamic_continuity": {
+    "passed": true,
+    "detail": "0 episode(s) flagged (limit 0). Speed spikes vs both neighbours (hidden dropped frames): flag if > 0.02 per moving frame and at least 3 spikes.",
+    "n_flagged": 0,
+    "flagged_first_50": []
+  },
+  "gripper_sign_convention": {
+    "passed": true,
+    "detail": "0 episode(s) flagged (limit 0). corr(gripper command, gripper state 0.3 s later) >= 0.0.",
+    "n_flagged": 0,
+    "flagged_first_50": []
+  },
+  "action_bounds": {
+    "passed": true,
+    "detail": "0 episode(s) flagged (limit 0). Every action within the declared bounds.",
+    "n_flagged": 0,
+    "flagged_first_50": []
+  },
+  "task_labels_clean": {
+    "passed": false,
+    "detail": "0 episode(s) flagged (limit 0). No empty/whitespace/duplicate/near-duplicate task strings, no typo words (found: ['prefit', 'relplace', 'stevia', 'truvia', 'unhang', 'vace'], near-dup groups: 1, dup groups: 0). Task table clean: False.",
+    "n_flagged": 0,
+    "flagged_first_50": []
+  },
+  "task_min_episodes": {
+    "passed": false,
+    "detail": "5 episode(s) flagged (limit 0). Every task has >= 5 episodes in the full dataset (counted from meta/episodes).",
+    "n_flagged": 5,
+    "flagged_first_50": [
+      178,
+      40458,
+      40459,
+      40467,
+      40470
+    ]
+  },
+  "no_exact_duplicates": {
+    "passed": false,
+    "detail": "1 episode(s) flagged (limit 0). No episode is a byte-level copy of another.",
+    "n_flagged": 1,
+    "flagged_first_50": [
+      30449
+    ]
+  },
+  "no_near_duplicates": {
+    "passed": true,
+    "detail": "0 episode(s) flagged (limit 0). No episode within RMS 0.02 std of another (and length within 10%).",
+    "n_flagged": 0,
+    "flagged_first_50": []
+  },
+  "task_trajectory_consistency": {
+    "passed": false,
+    "detail": "161 episode(s) flagged (limit 0). Each episode's 5 nearest trajectories mostly share its task label.",
+    "n_flagged": 161,
+    "flagged_first_50": [
+      0,
+      3,
+      10,
+      11,
+      22,
+      27,
+      45,
+      47,
+      53,
+      56,
+      73,
+      83,
+      84,
+      87,
+      100,
+      110,
+      111,
+      112,
+      116,
+      119,
+      122,
+      130,
+      138,
+      140,
+      149,
+      154,
+      166,
+      167,
+      169,
+      173,
+      174,
+      178,
+      187,
+      193,
+      195,
+      197,
+      200,
+      202,
+      205,
+      209,
+      215,
+      217,
+      222,
+      224,
+      226,
+      228,
+      229,
+      230,
+      235,
+      10408
+    ]
+  },
+  "idle_fraction": {
+    "passed": false,
+    "detail": "5 episode(s) flagged (limit 0). Idle fraction per episode <= 0.25.",
+    "n_flagged": 5,
+    "flagged_first_50": [
+      3,
+      25,
+      141,
+      157,
+      10525
+    ]
+  },
+  "episode_length": {
+    "passed": false,
+    "detail": "11 episode(s) flagged (limit 0). Episode length within [2.0, 600.0] s.",
+    "n_flagged": 11,
+    "flagged_first_50": [
+      30415,
+      30433,
+      30461,
+      40455,
+      40458,
+      40459,
+      40464,
+      40465,
+      40467,
+      40469,
+      40470
+    ]
+  }
+}

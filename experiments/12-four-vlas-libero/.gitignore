@@ -1,0 +1,4 @@
+third_party/
+logs/
+*.mp4
+__pycache__/

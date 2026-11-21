@@ -1,0 +1,22 @@
+[
+  {
+    "tag": "perturb",
+    "shard": 0,
+    "gpu": "NVIDIA A10",
+    "load_s": 12.7,
+    "torch_max_allocated_mib": 6094,
+    "torch_max_reserved_mib": 6228,
+    "nvidia_smi_peak_mib": 9308,
+    "container_s": 99.2
+  },
+  {
+    "tag": "perturb",
+    "shard": 1,
+    "gpu": "NVIDIA A10",
+    "load_s": 13.1,
+    "torch_max_allocated_mib": 6092,
+    "torch_max_reserved_mib": 6228,
+    "nvidia_smi_peak_mib": 9040,
+    "container_s": 86.9
+  }
+]

@@ -1,0 +1,544 @@
+{
+  "manifest": {
+    "seed": 0,
+    "drop_frac": 0.1,
+    "source": "data/libero_10",
+    "faults": {
+      "drop_frames_naive": [
+        63,
+        230,
+        281,
+        36,
+        109,
+        248,
+        367,
+        235
+      ],
+      "drop_frames_renumbered": [
+        182,
+        303,
+        278,
+        55,
+        342,
+        236,
+        220,
+        160
+      ],
+      "flip_gripper_sign": [
+        155,
+        90,
+        267,
+        200,
+        92,
+        85,
+        261,
+        370
+      ],
+      "mislabel_task": [
+        39,
+        361,
+        164,
+        38,
+        354,
+        18,
+        329,
+        111
+      ],
+      "duplicate_exact": [
+        210,
+        226,
+        366,
+        75,
+        204,
+        190,
+        145,
+        355
+      ],
+      "duplicate_near": [
+        222,
+        293,
+        373,
+        203
+      ],
+      "typo_task_string": [
+        54,
+        70,
+        306,
+        341,
+        10
+      ]
+    },
+    "duplicate_copies": {
+      "379": {
+        "kind": "duplicate_exact",
+        "source_episode": 210
+      },
+      "380": {
+        "kind": "duplicate_exact",
+        "source_episode": 226
+      },
+      "381": {
+        "kind": "duplicate_exact",
+        "source_episode": 366
+      },
+      "382": {
+        "kind": "duplicate_exact",
+        "source_episode": 75
+      },
+      "383": {
+        "kind": "duplicate_exact",
+        "source_episode": 204
+      },
+      "384": {
+        "kind": "duplicate_exact",
+        "source_episode": 190
+      },
+      "385": {
+        "kind": "duplicate_exact",
+        "source_episode": 145
+      },
+      "386": {
+        "kind": "duplicate_exact",
+        "source_episode": 355
+      },
+      "387": {
+        "kind": "duplicate_near",
+        "source_episode": 222
+      },
+      "388": {
+        "kind": "duplicate_near",
+        "source_episode": 293
+      },
+      "389": {
+        "kind": "duplicate_near",
+        "source_episode": 373
+      },
+      "390": {
+        "kind": "duplicate_near",
+        "source_episode": 203
+      }
+    },
+    "mislabel_new_task": {
+      "39": 3,
+      "361": 9,
+      "164": 9,
+      "38": 0,
+      "354": 4,
+      "18": 8,
+      "329": 3,
+      "111": 4
+    },
+    "typo_task": "put both moka pots on the stvoe",
+    "faulty_episodes": {
+      "drop_frames_naive": [
+        63,
+        230,
+        281,
+        36,
+        109,
+        248,
+        367,
+        235
+      ],
+      "drop_frames_renumbered": [
+        182,
+        303,
+        278,
+        55,
+        342,
+        236,
+        220,
+        160
+      ],
+      "flip_gripper_sign": [
+        155,
+        90,
+        267,
+        200,
+        92,
+        85,
+        261,
+        370
+      ],
+      "mislabel_task": [
+        39,
+        361,
+        164,
+        38,
+        354,
+        18,
+        329,
+        111
+      ],
+      "typo_task_string": [
+        54,
+        70,
+        306,
+        341,
+        10
+      ],
+      "duplicate_exact": [
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386
+      ],
+      "duplicate_near": [
+        387,
+        388,
+        389,
+        390
+      ]
+    }
+  },
+  "clean_gate": {
+    "schema": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "missing/mis-shaped: []; fps ok: True"
+    },
+    "frame_index_contiguous": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). frame_index must be 0..n-1 in row order."
+    },
+    "timestamps_regular": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). No gap > 1.5/fps, strictly increasing."
+    },
+    "meta_length_matches": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). meta/episodes length must equal data rows."
+    },
+    "no_nan": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). No NaN/inf in action or state."
+    },
+    "dynamic_continuity": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). Speed spikes vs both neighbours (hidden dropped frames): flag if > 0.02 per moving frame and at least 3 spikes."
+    },
+    "gripper_sign_convention": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). corr(gripper command, gripper state 0.3 s later) >= 0.0."
+    },
+    "action_bounds": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). Every action within the declared bounds."
+    },
+    "task_labels_clean": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). No empty/whitespace/duplicate/near-duplicate task strings, no typo words (found: [], near-dup groups: 0, dup groups: 0). Task table clean: True."
+    },
+    "task_min_episodes": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). Every task has >= 5 episodes in the full dataset (counted from meta/episodes)."
+    },
+    "no_exact_duplicates": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). No episode is a byte-level copy of another."
+    },
+    "no_near_duplicates": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). No episode within RMS 0.02 std of another (and length within 10%)."
+    },
+    "task_trajectory_consistency": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). Each episode's 5 nearest trajectories mostly share its task label."
+    },
+    "idle_fraction": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). Idle fraction per episode <= 0.25."
+    },
+    "episode_length": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). Episode length within [2.0, 600.0] s."
+    }
+  },
+  "corrupt_gate": {
+    "schema": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "missing/mis-shaped: []; fps ok: True",
+      "flagged": []
+    },
+    "frame_index_contiguous": {
+      "passed": false,
+      "n_flagged": 8,
+      "detail": "8 episode(s) flagged (limit 0). frame_index must be 0..n-1 in row order.",
+      "flagged": [
+        36,
+        63,
+        109,
+        230,
+        235,
+        248,
+        281,
+        367
+      ]
+    },
+    "timestamps_regular": {
+      "passed": false,
+      "n_flagged": 8,
+      "detail": "8 episode(s) flagged (limit 0). No gap > 1.5/fps, strictly increasing.",
+      "flagged": [
+        36,
+        63,
+        109,
+        230,
+        235,
+        248,
+        281,
+        367
+      ]
+    },
+    "meta_length_matches": {
+      "passed": false,
+      "n_flagged": 8,
+      "detail": "8 episode(s) flagged (limit 0). meta/episodes length must equal data rows.",
+      "flagged": [
+        36,
+        63,
+        109,
+        230,
+        235,
+        248,
+        281,
+        367
+      ]
+    },
+    "no_nan": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). No NaN/inf in action or state.",
+      "flagged": []
+    },
+    "dynamic_continuity": {
+      "passed": false,
+      "n_flagged": 16,
+      "detail": "16 episode(s) flagged (limit 0). Speed spikes vs both neighbours (hidden dropped frames): flag if > 0.02 per moving frame and at least 3 spikes.",
+      "flagged": [
+        36,
+        55,
+        63,
+        109,
+        160,
+        182,
+        220,
+        230,
+        235,
+        236,
+        248,
+        278,
+        281,
+        303,
+        342,
+        367
+      ]
+    },
+    "gripper_sign_convention": {
+      "passed": false,
+      "n_flagged": 8,
+      "detail": "8 episode(s) flagged (limit 0). corr(gripper command, gripper state 0.3 s later) >= 0.0.",
+      "flagged": [
+        85,
+        90,
+        92,
+        155,
+        200,
+        261,
+        267,
+        370
+      ]
+    },
+    "action_bounds": {
+      "passed": false,
+      "n_flagged": 4,
+      "detail": "4 episode(s) flagged (limit 0). Every action within the declared bounds.",
+      "flagged": [
+        387,
+        388,
+        389,
+        390
+      ]
+    },
+    "task_labels_clean": {
+      "passed": false,
+      "n_flagged": 5,
+      "detail": "5 episode(s) flagged (limit 0). No empty/whitespace/duplicate/near-duplicate task strings, no typo words (found: ['stvoe'], near-dup groups: 1, dup groups: 0). Task table clean: False.",
+      "flagged": [
+        10,
+        54,
+        70,
+        306,
+        341
+      ]
+    },
+    "task_min_episodes": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). Every task has >= 5 episodes in the full dataset (counted from meta/episodes).",
+      "flagged": []
+    },
+    "no_exact_duplicates": {
+      "passed": false,
+      "n_flagged": 8,
+      "detail": "8 episode(s) flagged (limit 0). No episode is a byte-level copy of another.",
+      "flagged": [
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386
+      ]
+    },
+    "no_near_duplicates": {
+      "passed": false,
+      "n_flagged": 4,
+      "detail": "4 episode(s) flagged (limit 0). No episode within RMS 0.02 std of another (and length within 10%).",
+      "flagged": [
+        387,
+        388,
+        389,
+        390
+      ]
+    },
+    "task_trajectory_consistency": {
+      "passed": false,
+      "n_flagged": 13,
+      "detail": "13 episode(s) flagged (limit 0). Each episode's 5 nearest trajectories mostly share its task label.",
+      "flagged": [
+        10,
+        18,
+        38,
+        39,
+        54,
+        70,
+        111,
+        164,
+        306,
+        329,
+        341,
+        354,
+        361
+      ]
+    },
+    "idle_fraction": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). Idle fraction per episode <= 0.25.",
+      "flagged": []
+    },
+    "episode_length": {
+      "passed": true,
+      "n_flagged": 0,
+      "detail": "0 episode(s) flagged (limit 0). Episode length within [2.0, 600.0] s.",
+      "flagged": []
+    }
+  },
+  "per_fault": [
+    {
+      "fault": "drop_frames_naive",
+      "n_injected": 8,
+      "intended_check": "timestamps_regular",
+      "caught_by_intended": 8,
+      "caught_by_any": 8,
+      "missed": [],
+      "checks_that_fired": {
+        "frame_index_contiguous": 8,
+        "timestamps_regular": 8,
+        "meta_length_matches": 8,
+        "dynamic_continuity": 8
+      }
+    },
+    {
+      "fault": "drop_frames_renumbered",
+      "n_injected": 8,
+      "intended_check": "dynamic_continuity",
+      "caught_by_intended": 8,
+      "caught_by_any": 8,
+      "missed": [],
+      "checks_that_fired": {
+        "dynamic_continuity": 8
+      }
+    },
+    {
+      "fault": "flip_gripper_sign",
+      "n_injected": 8,
+      "intended_check": "gripper_sign_convention",
+      "caught_by_intended": 8,
+      "caught_by_any": 8,
+      "missed": [],
+      "checks_that_fired": {
+        "gripper_sign_convention": 8
+      }
+    },
+    {
+      "fault": "mislabel_task",
+      "n_injected": 8,
+      "intended_check": "task_trajectory_consistency",
+      "caught_by_intended": 8,
+      "caught_by_any": 8,
+      "missed": [],
+      "checks_that_fired": {
+        "task_trajectory_consistency": 8
+      }
+    },
+    {
+      "fault": "typo_task_string",
+      "n_injected": 5,
+      "intended_check": "task_labels_clean",
+      "caught_by_intended": 5,
+      "caught_by_any": 5,
+      "missed": [],
+      "checks_that_fired": {
+        "task_labels_clean": 5,
+        "task_trajectory_consistency": 5
+      }
+    },
+    {
+      "fault": "duplicate_exact",
+      "n_injected": 8,
+      "intended_check": "no_exact_duplicates",
+      "caught_by_intended": 8,
+      "caught_by_any": 8,
+      "missed": [],
+      "checks_that_fired": {
+        "no_exact_duplicates": 8
+      }
+    },
+    {
+      "fault": "duplicate_near",
+      "n_injected": 4,
+      "intended_check": "no_near_duplicates",
+      "caught_by_intended": 4,
+      "caught_by_any": 4,
+      "missed": [],
+      "checks_that_fired": {
+        "action_bounds": 4,
+        "no_near_duplicates": 4
+      }
+    }
+  ],
+  "false_positives_on_unfaulted_episodes": {}
+}

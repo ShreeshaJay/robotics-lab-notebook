@@ -1,0 +1,5 @@
+model,k,n,rate,wilson_lo,wilson_hi,chunk_ms_median,gpu_peak_mib,torch_peak_mib,gpu
+g05,49,50,0.98,0.895,0.9965,619.7,12907,11265,L4 (GCP g2-standard-8)
+groot,45,50,0.9,0.7864,0.9565,126.5,11799,6094,NVIDIA A10 (Modal)
+smolvla,26,50,0.52,0.3851,0.652,323.5,2061,922,L4 (GCP g2-standard-8)
+pear,26,35,0.7429,0.5793,0.8584,24890.0,172927,,"B200 (Modal), vLLM, up to 16 episodes sharing the GPU"

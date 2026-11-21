@@ -1,0 +1,1492 @@
+{
+ "meta": {
+  "model": "smolvla",
+  "mode": "cf:2",
+  "tag": "cf_2",
+  "exit": 0,
+  "container_s": 314.6,
+  "nvidia_smi_peak_mib": 2116,
+  "timing": {
+   "n_chunk_calls": 167,
+   "first_call_s": 1.1428,
+   "chunk_latency_ms_median": 209.2,
+   "n_episodes_timed": 18,
+   "torch_max_allocated_mib": 922,
+   "torch_max_reserved_mib": 956,
+   "gpu": "NVIDIA A10"
+  },
+  "libero_dir": "/usr/local/lib/python3.12/site-packages/libero/libero",
+  "log_tail": ""
+ },
+ "track": [
+  {
+   "task_id": 0,
+   "episode": 0,
+   "steps": 244,
+   "success": false,
+   "instruction_used": "put both the cream cheese box and the butter in the basket",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false,
+     false
+    ],
+    "alt_end": [
+     true,
+     true
+    ],
+    "alt_ever": [
+     true,
+     true
+    ],
+    "alt_done_step": 244
+   },
+   "outcome": "instructed",
+   "perturb_info": null
+  },
+  {
+   "task_id": 0,
+   "episode": 1,
+   "steps": 250,
+   "success": false,
+   "instruction_used": "put both the cream cheese box and the butter in the basket",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false,
+     false
+    ],
+    "alt_end": [
+     true,
+     true
+    ],
+    "alt_ever": [
+     true,
+     true
+    ],
+    "alt_done_step": 250
+   },
+   "outcome": "instructed",
+   "perturb_info": null
+  },
+  {
+   "task_id": 1,
+   "episode": 0,
+   "steps": 256,
+   "success": false,
+   "instruction_used": "put both the alphabet soup and the tomato sauce in the basket",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false,
+     false
+    ],
+    "alt_end": [
+     true,
+     true
+    ],
+    "alt_ever": [
+     true,
+     true
+    ],
+    "alt_done_step": 256
+   },
+   "outcome": "instructed",
+   "perturb_info": null
+  },
+  {
+   "task_id": 1,
+   "episode": 1,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "put both the alphabet soup and the tomato sauce in the basket",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false,
+     false
+    ],
+    "alt_end": [
+     false,
+     false
+    ],
+    "alt_ever": [
+     false,
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 2,
+   "episode": 0,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "put the frying pan on the stove",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 2,
+   "episode": 1,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "put the frying pan on the stove",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     true,
+     false
+    ],
+    "predicates_ever": [
+     true,
+     false
+    ],
+    "predicate_first_step": [
+     177,
+     null
+    ],
+    "steps_done_end": 1,
+    "ordered_prefix_done_end": 1,
+    "partial_credit": 0.5,
+    "max_simultaneous": 1,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 3,
+   "episode": 0,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "put the wine bottle on the wine rack",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 3,
+   "episode": 1,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "put the wine bottle on the wine rack",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 4,
+   "episode": 0,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "put the red mug on the left plate",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     true,
+     false
+    ],
+    "predicates_ever": [
+     true,
+     false
+    ],
+    "predicate_first_step": [
+     122,
+     null
+    ],
+    "steps_done_end": 1,
+    "ordered_prefix_done_end": 1,
+    "partial_credit": 0.5,
+    "max_simultaneous": 1,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 4,
+   "episode": 1,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "put the red mug on the left plate",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 5,
+   "episode": 0,
+   "steps": 181,
+   "success": true,
+   "instruction_used": "pick up the book and place it in the front compartment of the caddy",
+   "tracker": {
+    "n_predicates": 1,
+    "predicates_initial": [
+     false
+    ],
+    "predicates_end": [
+     true
+    ],
+    "predicates_ever": [
+     true
+    ],
+    "predicate_first_step": [
+     181
+    ],
+    "steps_done_end": 1,
+    "ordered_prefix_done_end": 1,
+    "partial_credit": 1.0,
+    "max_simultaneous": 1,
+    "default_done_step": 181,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "default",
+   "perturb_info": null
+  },
+  {
+   "task_id": 5,
+   "episode": 1,
+   "steps": 198,
+   "success": true,
+   "instruction_used": "pick up the book and place it in the front compartment of the caddy",
+   "tracker": {
+    "n_predicates": 1,
+    "predicates_initial": [
+     false
+    ],
+    "predicates_end": [
+     true
+    ],
+    "predicates_ever": [
+     true
+    ],
+    "predicate_first_step": [
+     198
+    ],
+    "steps_done_end": 1,
+    "ordered_prefix_done_end": 1,
+    "partial_credit": 1.0,
+    "max_simultaneous": 1,
+    "default_done_step": 198,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "default",
+   "perturb_info": null
+  },
+  {
+   "task_id": 6,
+   "episode": 0,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "put the red mug on the plate",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 6,
+   "episode": 1,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "put the red mug on the plate",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     true,
+     false
+    ],
+    "predicates_ever": [
+     true,
+     false
+    ],
+    "predicate_first_step": [
+     200,
+     null
+    ],
+    "steps_done_end": 1,
+    "ordered_prefix_done_end": 1,
+    "partial_credit": 0.5,
+    "max_simultaneous": 1,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 7,
+   "episode": 0,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "pick up the ketchup and put it in the basket",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 7,
+   "episode": 1,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "pick up the ketchup and put it in the basket",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 9,
+   "episode": 0,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "put the yellow and white mug to the front of the white mug",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  },
+  {
+   "task_id": 9,
+   "episode": 1,
+   "steps": 520,
+   "success": false,
+   "instruction_used": "put the yellow and white mug to the front of the white mug",
+   "tracker": {
+    "n_predicates": 2,
+    "predicates_initial": [
+     false,
+     false
+    ],
+    "predicates_end": [
+     false,
+     false
+    ],
+    "predicates_ever": [
+     false,
+     false
+    ],
+    "predicate_first_step": [
+     null,
+     null
+    ],
+    "steps_done_end": 0,
+    "ordered_prefix_done_end": 0,
+    "partial_credit": 0.0,
+    "max_simultaneous": 0,
+    "default_done_step": null,
+    "alt_initial": [
+     false
+    ],
+    "alt_end": [
+     false
+    ],
+    "alt_ever": [
+     false
+    ],
+    "alt_done_step": null
+   },
+   "outcome": "neither",
+   "perturb_info": null
+  }
+ ],
+ "episodes": [
+  {
+   "episode_seq": 0,
+   "wall_s": 25.49,
+   "chunk_calls": 5,
+   "chunk_ms": [
+    1142.8,
+    212.3,
+    222.6,
+    210.8,
+    205.2
+   ],
+   "success": true,
+   "steps": 244,
+   "action_jerk": 0.06954
+  },
+  {
+   "episode_seq": 1,
+   "wall_s": 8.86,
+   "chunk_calls": 5,
+   "chunk_ms": [
+    209.0,
+    207.6,
+    209.3,
+    235.9,
+    212.4
+   ],
+   "success": true,
+   "steps": 250,
+   "action_jerk": 0.07119
+  },
+  {
+   "episode_seq": 2,
+   "wall_s": 11.06,
+   "chunk_calls": 6,
+   "chunk_ms": [
+    208.9,
+    205.8,
+    206.1,
+    204.3,
+    208.7,
+    206.3
+   ],
+   "success": true,
+   "steps": 256,
+   "action_jerk": 0.05791
+  },
+  {
+   "episode_seq": 3,
+   "wall_s": 15.93,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    207.3,
+    206.8,
+    206.6,
+    206.3,
+    208.4,
+    205.5,
+    208.8,
+    206.2,
+    205.5,
+    204.8,
+    206.7
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.0775
+  },
+  {
+   "episode_seq": 4,
+   "wall_s": 16.38,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    205.6,
+    205.5,
+    205.5,
+    203.8,
+    215.3,
+    214.0,
+    208.0,
+    211.7,
+    214.7,
+    213.2,
+    213.5
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.05297
+  },
+  {
+   "episode_seq": 5,
+   "wall_s": 13.82,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    247.9,
+    211.2,
+    214.2,
+    207.8,
+    212.1,
+    210.2,
+    210.0,
+    209.2,
+    208.0,
+    212.8,
+    217.3
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.05367
+  },
+  {
+   "episode_seq": 6,
+   "wall_s": 17.14,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    209.6,
+    207.6,
+    206.4,
+    210.7,
+    208.8,
+    213.4,
+    212.9,
+    224.2,
+    218.6,
+    234.0,
+    226.5
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.04911
+  },
+  {
+   "episode_seq": 7,
+   "wall_s": 14.73,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    232.0,
+    209.7,
+    222.8,
+    210.3,
+    207.0,
+    208.3,
+    208.2,
+    214.6,
+    205.9,
+    210.0,
+    218.1
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.04947
+  },
+  {
+   "episode_seq": 8,
+   "wall_s": 24.0,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    208.4,
+    209.3,
+    211.4,
+    208.8,
+    209.8,
+    210.5,
+    213.3,
+    213.1,
+    210.0,
+    212.2,
+    210.5
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.04265
+  },
+  {
+   "episode_seq": 9,
+   "wall_s": 17.44,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    214.5,
+    211.7,
+    213.0,
+    208.5,
+    207.4,
+    211.0,
+    209.6,
+    209.9,
+    210.0,
+    207.6,
+    212.8
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.08407
+  },
+  {
+   "episode_seq": 10,
+   "wall_s": 9.49,
+   "chunk_calls": 4,
+   "chunk_ms": [
+    210.8,
+    210.6,
+    209.0,
+    215.3
+   ],
+   "success": false,
+   "steps": 181,
+   "action_jerk": 0.04106
+  },
+  {
+   "episode_seq": 11,
+   "wall_s": 6.49,
+   "chunk_calls": 4,
+   "chunk_ms": [
+    215.8,
+    213.7,
+    211.2,
+    209.8
+   ],
+   "success": false,
+   "steps": 198,
+   "action_jerk": 0.04532
+  },
+  {
+   "episode_seq": 12,
+   "wall_s": 18.72,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    214.5,
+    212.6,
+    214.4,
+    214.4,
+    206.7,
+    204.2,
+    202.9,
+    205.7,
+    225.3,
+    203.6,
+    207.5
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.06801
+  },
+  {
+   "episode_seq": 13,
+   "wall_s": 16.62,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    211.3,
+    210.5,
+    206.8,
+    224.6,
+    211.0,
+    228.2,
+    206.7,
+    207.3,
+    208.3,
+    203.8,
+    226.4
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.06104
+  },
+  {
+   "episode_seq": 14,
+   "wall_s": 15.91,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    228.5,
+    226.7,
+    205.7,
+    224.8,
+    203.2,
+    203.0,
+    205.5,
+    205.9,
+    207.8,
+    208.5,
+    207.3
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.08032
+  },
+  {
+   "episode_seq": 15,
+   "wall_s": 14.17,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    256.1,
+    206.2,
+    205.3,
+    204.5,
+    206.5,
+    211.9,
+    206.1,
+    205.7,
+    208.5,
+    203.0,
+    209.4
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.07781
+  },
+  {
+   "episode_seq": 16,
+   "wall_s": 17.31,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    212.4,
+    208.5,
+    212.6,
+    209.6,
+    203.8,
+    224.6,
+    203.8,
+    203.9,
+    203.4,
+    208.6,
+    208.8
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.05913
+  },
+  {
+   "episode_seq": 17,
+   "wall_s": 14.87,
+   "chunk_calls": 11,
+   "chunk_ms": [
+    212.2,
+    213.0,
+    203.9,
+    203.3,
+    225.4,
+    208.8,
+    207.7,
+    203.2,
+    204.1,
+    204.1,
+    208.5
+   ],
+   "success": false,
+   "steps": 520,
+   "action_jerk": 0.05981
+  }
+ ],
+ "eval_info": {
+  "per_task": [
+   {
+    "task_group": "libero_10",
+    "task_id": 0,
+    "metrics": {
+     "sum_rewards": [
+      0.0,
+      0.0
+     ],
+     "max_rewards": [
+      0.0,
+      0.0
+     ],
+     "successes": [
+      true,
+      true
+     ],
+     "video_paths": [
+      "/tmp/out_cf_2/videos/libero_10_0/eval_episode_0.mp4",
+      "/tmp/out_cf_2/videos/libero_10_0/eval_episode_1.mp4"
+     ],
+     "predicted_video_paths": []
+    },
+    "n_episodes": 2,
+    "n_success": 2,
+    "pc_success": 100.0,
+    "pc_success_ci95": [
+     34.23802275066532,
+     100.0
+    ]
+   },
+   {
+    "task_group": "libero_10",
+    "task_id": 1,
+    "metrics": {
+     "sum_rewards": [
+      0.0,
+      0.0
+     ],
+     "max_rewards": [
+      0.0,
+      0.0
+     ],
+     "successes": [
+      true,
+      false
+     ],
+     "video_paths": [
+      "/tmp/out_cf_2/videos/libero_10_1/eval_episode_0.mp4",
+      "/tmp/out_cf_2/videos/libero_10_1/eval_episode_1.mp4"
+     ],
+     "predicted_video_paths": []
+    },
+    "n_episodes": 2,
+    "n_success": 1,
+    "pc_success": 50.0,
+    "pc_success_ci95": [
+     9.453120573423075,
+     90.54687942657694
+    ]
+   },
+   {
+    "task_group": "libero_10",
+    "task_id": 2,
+    "metrics": {
+     "sum_rewards": [
+      0.0,
+      0.0
+     ],
+     "max_rewards": [
+      0.0,
+      0.0
+     ],
+     "successes": [
+      false,
+      false
+     ],
+     "video_paths": [
+      "/tmp/out_cf_2/videos/libero_10_2/eval_episode_0.mp4",
+      "/tmp/out_cf_2/videos/libero_10_2/eval_episode_1.mp4"
+     ],
+     "predicted_video_paths": []
+    },
+    "n_episodes": 2,
+    "n_success": 0,
+    "pc_success": 0.0,
+    "pc_success_ci95": [
+     0.0,
+     65.76197724933468
+    ]
+   },
+   {
+    "task_group": "libero_10",
+    "task_id": 3,
+    "metrics": {
+     "sum_rewards": [
+      0.0,
+      0.0
+     ],
+     "max_rewards": [
+      0.0,
+      0.0
+     ],
+     "successes": [
+      false,
+      false
+     ],
+     "video_paths": [
+      "/tmp/out_cf_2/videos/libero_10_3/eval_episode_0.mp4",
+      "/tmp/out_cf_2/videos/libero_10_3/eval_episode_1.mp4"
+     ],
+     "predicted_video_paths": []
+    },
+    "n_episodes": 2,
+    "n_success": 0,
+    "pc_success": 0.0,
+    "pc_success_ci95": [
+     0.0,
+     65.76197724933468
+    ]
+   },
+   {
+    "task_group": "libero_10",
+    "task_id": 4,
+    "metrics": {
+     "sum_rewards": [
+      0.0,
+      0.0
+     ],
+     "max_rewards": [
+      0.0,
+      0.0
+     ],
+     "successes": [
+      false,
+      false
+     ],
+     "video_paths": [
+      "/tmp/out_cf_2/videos/libero_10_4/eval_episode_0.mp4",
+      "/tmp/out_cf_2/videos/libero_10_4/eval_episode_1.mp4"
+     ],
+     "predicted_video_paths": []
+    },
+    "n_episodes": 2,
+    "n_success": 0,
+    "pc_success": 0.0,
+    "pc_success_ci95": [
+     0.0,
+     65.76197724933468
+    ]
+   },
+   {
+    "task_group": "libero_10",
+    "task_id": 5,
+    "metrics": {
+     "sum_rewards": [
+      1.0,
+      1.0
+     ],
+     "max_rewards": [
+      1.0,
+      1.0
+     ],
+     "successes": [
+      false,
+      false
+     ],
+     "video_paths": [
+      "/tmp/out_cf_2/videos/libero_10_5/eval_episode_0.mp4",
+      "/tmp/out_cf_2/videos/libero_10_5/eval_episode_1.mp4"
+     ],
+     "predicted_video_paths": []
+    },
+    "n_episodes": 2,
+    "n_success": 0,
+    "pc_success": 0.0,
+    "pc_success_ci95": [
+     0.0,
+     65.76197724933468
+    ]
+   },
+   {
+    "task_group": "libero_10",
+    "task_id": 6,
+    "metrics": {
+     "sum_rewards": [
+      0.0,
+      0.0
+     ],
+     "max_rewards": [
+      0.0,
+      0.0
+     ],
+     "successes": [
+      false,
+      false
+     ],
+     "video_paths": [
+      "/tmp/out_cf_2/videos/libero_10_6/eval_episode_0.mp4",
+      "/tmp/out_cf_2/videos/libero_10_6/eval_episode_1.mp4"
+     ],
+     "predicted_video_paths": []
+    },
+    "n_episodes": 2,
+    "n_success": 0,
+    "pc_success": 0.0,
+    "pc_success_ci95": [
+     0.0,
+     65.76197724933468
+    ]
+   },
+   {
+    "task_group": "libero_10",
+    "task_id": 7,
+    "metrics": {
+     "sum_rewards": [
+      0.0,
+      0.0
+     ],
+     "max_rewards": [
+      0.0,
+      0.0
+     ],
+     "successes": [
+      false,
+      false
+     ],
+     "video_paths": [
+      "/tmp/out_cf_2/videos/libero_10_7/eval_episode_0.mp4",
+      "/tmp/out_cf_2/videos/libero_10_7/eval_episode_1.mp4"
+     ],
+     "predicted_video_paths": []
+    },
+    "n_episodes": 2,
+    "n_success": 0,
+    "pc_success": 0.0,
+    "pc_success_ci95": [
+     0.0,
+     65.76197724933468
+    ]
+   },
+   {
+    "task_group": "libero_10",
+    "task_id": 9,
+    "metrics": {
+     "sum_rewards": [
+      0.0,
+      0.0
+     ],
+     "max_rewards": [
+      0.0,
+      0.0
+     ],
+     "successes": [
+      false,
+      false
+     ],
+     "video_paths": [
+      "/tmp/out_cf_2/videos/libero_10_9/eval_episode_0.mp4",
+      "/tmp/out_cf_2/videos/libero_10_9/eval_episode_1.mp4"
+     ],
+     "predicted_video_paths": []
+    },
+    "n_episodes": 2,
+    "n_success": 0,
+    "pc_success": 0.0,
+    "pc_success_ci95": [
+     0.0,
+     65.76197724933468
+    ]
+   }
+  ],
+  "per_group": {
+   "libero_10": {
+    "avg_sum_reward": 0.1111111111111111,
+    "avg_max_reward": 0.1111111111111111,
+    "pc_success": 16.666666666666664,
+    "n_episodes": 18,
+    "n_success": 3,
+    "pc_success_ci95": [
+     5.836576805861449,
+     39.22203810391572
+    ],
+    "video_paths": [
+     "/tmp/out_cf_2/videos/libero_10_0/eval_episode_0.mp4",
+     "/tmp/out_cf_2/videos/libero_10_0/eval_episode_1.mp4",
+     "/tmp/out_cf_2/videos/libero_10_1/eval_episode_0.mp4",
+     "/tmp/out_cf_2/videos/libero_10_1/eval_episode_1.mp4",
+     "/tmp/out_cf_2/videos/libero_10_2/eval_episode_0.mp4",
+     "/tmp/out_cf_2/videos/libero_10_2/eval_episode_1.mp4",
+     "/tmp/out_cf_2/videos/libero_10_3/eval_episode_0.mp4",
+     "/tmp/out_cf_2/videos/libero_10_3/eval_episode_1.mp4",
+     "/tmp/out_cf_2/videos/libero_10_4/eval_episode_0.mp4",
+     "/tmp/out_cf_2/videos/libero_10_4/eval_episode_1.mp4",
+     "/tmp/out_cf_2/videos/libero_10_5/eval_episode_0.mp4",
+     "/tmp/out_cf_2/videos/libero_10_5/eval_episode_1.mp4",
+     "/tmp/out_cf_2/videos/libero_10_6/eval_episode_0.mp4",
+     "/tmp/out_cf_2/videos/libero_10_6/eval_episode_1.mp4",
+     "/tmp/out_cf_2/videos/libero_10_7/eval_episode_0.mp4",
+     "/tmp/out_cf_2/videos/libero_10_7/eval_episode_1.mp4",
+     "/tmp/out_cf_2/videos/libero_10_9/eval_episode_0.mp4",
+     "/tmp/out_cf_2/videos/libero_10_9/eval_episode_1.mp4"
+    ],
+    "predicted_video_paths": []
+   }
+  },
+  "overall": {
+   "avg_sum_reward": 0.1111111111111111,
+   "avg_max_reward": 0.1111111111111111,
+   "pc_success": 16.666666666666664,
+   "n_episodes": 18,
+   "n_success": 3,
+   "pc_success_ci95": [
+    5.836576805861449,
+    39.22203810391572
+   ],
+   "eval_s": 289.9448103904724,
+   "eval_ep_s": 16.108045087920296,
+   "video_paths": [
+    "/tmp/out_cf_2/videos/libero_10_0/eval_episode_0.mp4",
+    "/tmp/out_cf_2/videos/libero_10_0/eval_episode_1.mp4",
+    "/tmp/out_cf_2/videos/libero_10_1/eval_episode_0.mp4",
+    "/tmp/out_cf_2/videos/libero_10_1/eval_episode_1.mp4",
+    "/tmp/out_cf_2/videos/libero_10_2/eval_episode_0.mp4",
+    "/tmp/out_cf_2/videos/libero_10_2/eval_episode_1.mp4",
+    "/tmp/out_cf_2/videos/libero_10_3/eval_episode_0.mp4",
+    "/tmp/out_cf_2/videos/libero_10_3/eval_episode_1.mp4",
+    "/tmp/out_cf_2/videos/libero_10_4/eval_episode_0.mp4",
+    "/tmp/out_cf_2/videos/libero_10_4/eval_episode_1.mp4",
+    "/tmp/out_cf_2/videos/libero_10_5/eval_episode_0.mp4",
+    "/tmp/out_cf_2/videos/libero_10_5/eval_episode_1.mp4",
+    "/tmp/out_cf_2/videos/libero_10_6/eval_episode_0.mp4",
+    "/tmp/out_cf_2/videos/libero_10_6/eval_episode_1.mp4",
+    "/tmp/out_cf_2/videos/libero_10_7/eval_episode_0.mp4",
+    "/tmp/out_cf_2/videos/libero_10_7/eval_episode_1.mp4",
+    "/tmp/out_cf_2/videos/libero_10_9/eval_episode_0.mp4",
+    "/tmp/out_cf_2/videos/libero_10_9/eval_episode_1.mp4"
+   ],
+   "predicted_video_paths": []
+  }
+ }
+}

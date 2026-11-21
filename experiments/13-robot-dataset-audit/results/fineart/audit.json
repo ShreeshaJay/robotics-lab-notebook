@@ -1,0 +1,278 @@
+{
+  "dataset": "fineart",
+  "repo": "lerobot/FineART",
+  "revision": "15746b76ddc21ffd38d73888fefe2e7a1496385b",
+  "license": "cc-by-4.0 (HF tag)",
+  "kind": "lab teleop (bimanual ALOHA-style)",
+  "fps": 30.0,
+  "codebase_version": "v3.0",
+  "robot_type": "aloha",
+  "slice": {
+    "episodes": 791,
+    "frames": 4143294,
+    "hours": 38.36383333333334,
+    "data_files": [
+      "file-000.parquet",
+      "file-052.parquet",
+      "file-105.parquet",
+      "file-157.parquet",
+      "file-210.parquet"
+    ],
+    "unreferenced_local_data_files": []
+  },
+  "lengths_full_meta": {
+    "n_episodes": 40543,
+    "hours": 1717.9120370370372,
+    "mean_s": 152.5413347145829,
+    "cv": 0.745494157801938,
+    "lt_1s": 0,
+    "p5": 54.1,
+    "p25": 87.86666666666666,
+    "p50": 123.7,
+    "p75": 180.96666666666667,
+    "p95": 337.0633333333334
+  },
+  "lengths_slice": {
+    "cv": 0.6659595214598841,
+    "p5": 64.35,
+    "p25": 107.91666666666667,
+    "p50": 150.16666666666666,
+    "p75": 213.5,
+    "p95": 317.81666666666666
+  },
+  "idle": {
+    "time_weighted_frac": 0.042685602325106535,
+    "episode_median_frac": 0.04445107398568019,
+    "lead_idle_s_median": 2.3,
+    "trail_idle_s_median": 3.0,
+    "pauses_per_min": 0.6403600613424969,
+    "eef_idle_frac_1cm": null
+  },
+  "smoothness": {
+    "sparc_median": -2.986646974579087,
+    "state_jerk_median": 0.2788831859196632,
+    "action_jerk_median": 0.2530441801775486,
+    "jump_rate_median": 0.0,
+    "jump_rate_p99": 0.0019643117405406542
+  },
+  "gripper": {
+    "closes_per_episode_median": 4.0,
+    "closes_per_min": 1.7633795719058312,
+    "regrasp_episode_frac": 0.4740834386852086,
+    "regrasps_per_episode": 1.436156763590392,
+    "empty_close_episode_frac": 0.7395701643489254,
+    "active_episode_frac": 1.0,
+    "static_episode_frac": 0.0,
+    "sign_corr_median": 0.9595515995540967,
+    "sign_negative_frac": 0.0
+  },
+  "integrity": {
+    "ts_gaps": 0,
+    "ts_nonmono": 0,
+    "fi_noncontig": 0,
+    "has_nan": 0,
+    "meta_len_mismatch": 0
+  },
+  "duplicates": {
+    "exact_copies": 1,
+    "near_copies": 0,
+    "near_dup_threshold": 0.02,
+    "nn_dist": {
+      "p1": 0.630658505718203,
+      "p5": 0.6961937748068022,
+      "p50": 0.9058962847699494,
+      "p95": 1.1071617746415807
+    }
+  },
+  "task_consistency": {
+    "applicable": true,
+    "flagged": 161,
+    "flagged_frac": 0.20353982300884957
+  },
+  "success": {
+    "labelled": false,
+    "failed_frac": 0.0
+  },
+  "language": {},
+  "hygiene": {
+    "n_tasks": 151,
+    "n_empty": 0,
+    "episodes_with_empty_task": 0,
+    "episodes_with_empty_task_frac": 0.0,
+    "n_whitespace_issues": 0,
+    "whitespace_examples": [],
+    "n_control_chars": 0,
+    "n_duplicate_groups_after_normalisation": 0,
+    "duplicate_examples": [],
+    "n_near_duplicate_groups": 1,
+    "near_duplicate_examples": [
+      [
+        "coil cords",
+        "coiling cords"
+      ]
+    ],
+    "n_typo_words": 6,
+    "typo_examples": {
+      "prefit": "profit",
+      "relplace": "replace",
+      "stevia": "stevie",
+      "truvia": "trivia",
+      "unhang": "unhand",
+      "vace": "face"
+    },
+    "n_tasks_with_typo_candidates": 5,
+    "word_count_median": 4.0,
+    "tasks_without_episodes": 0,
+    "episode_task_not_in_table": 0
+  },
+  "coverage": {
+    "n_tasks_with_episodes": 151,
+    "gini_episodes": 0.5381949963026746,
+    "effective_n_tasks": 90.3352372430532,
+    "max_episodes_per_task": 1323,
+    "median_episodes_per_task": 209.0,
+    "tasks_with_lt5_episodes": 21,
+    "tasks_with_1_episode": 10,
+    "top_task_share": 0.032632020324100335,
+    "top10pct_tasks_episode_share": 0.341341291961621,
+    "slice_tasks": 19
+  },
+  "usable": {
+    "definition": "usable = sum over episodes that pass integrity, success (if labelled), non-empty task, not a duplicate copy and >=1 s of motion, of (duration - idle time in still runs >= 0.5 s). Strict also drops episodes with a re-grasp.",
+    "slice_raw_hours": 38.36383333333334,
+    "usable_hours": 36.66531481481481,
+    "usable_frac": 0.9557260479222568,
+    "usable_strict_hours": 16.739944444444447,
+    "usable_strict_frac": 0.4363470224415646,
+    "lost_frac_by_reason": {
+      "integrity": 0.0,
+      "failed_episode": 0.0,
+      "empty_task_label": 0.0,
+      "duplicate": 0.0016426543711356226,
+      "too_short": 0.0,
+      "idle_time": 0.04263129770660734
+    },
+    "lost_frac_retry_strict": 0.5193790254806924,
+    "full_dataset_hours": 1717.9120370370372,
+    "full_dataset_usable_hours_extrapolated": 1641.8532818354813
+  },
+  "meta_stats_duplicates": {
+    "available": true,
+    "n_episodes": 40543,
+    "duplicate_copies": 519,
+    "duplicate_frac": 0.012801223392447525,
+    "duplicate_hours_frac": 0.01238382618866033,
+    "example_groups": [
+      [
+        1470,
+        1500
+      ],
+      [
+        1204,
+        1344
+      ],
+      [
+        37405,
+        37423
+      ],
+      [
+        32669,
+        32728
+      ],
+      [
+        27118,
+        27202
+      ],
+      [
+        9694,
+        9700,
+        9706
+      ],
+      [
+        21287,
+        21320,
+        21402
+      ],
+      [
+        1352,
+        1506
+      ],
+      [
+        33287,
+        33304
+      ],
+      [
+        19963,
+        20124
+      ]
+    ]
+  },
+  "notes": [
+    "Dims 5/12 are named *_gripper but span about -1.8..0.9 and behave like a rotary wrist joint; dims 6/13 (*_gripper_finger, 0..0.04) behave like finger opening. The audit treats 6/13 as the grippers."
+  ],
+  "scales": {
+    "vel": [
+      0.04448400572090093,
+      0.055314305733891456,
+      0.05076338286641115,
+      0.08070768673000389,
+      0.058100840596147986,
+      0.06743703438593401,
+      0.04726159494319843,
+      0.05662985096354739,
+      0.05687491234514047,
+      0.08395298432977531,
+      0.058812679792494056,
+      0.07199498708601355
+    ],
+    "pos_std": [
+      0.40875053638815056,
+      0.6047159423007836,
+      0.5304145197294438,
+      0.6026980036364358,
+      0.3567963353246789,
+      0.49743104491893536,
+      0.4045388491932394,
+      0.6184866269867523,
+      0.5892018549488971,
+      0.5998962919535878,
+      0.35991530118717996,
+      0.503791152624665
+    ],
+    "act": [
+      0.04587064007798893,
+      0.05758640013860977,
+      0.05335337291273115,
+      0.08800179593773502,
+      0.06624303781443507,
+      0.07321390923087341,
+      0.04868158506613801,
+      0.05907401860510636,
+      0.059585329709292395,
+      0.09155917673919153,
+      0.06735944377335212,
+      0.07768886084443757
+    ],
+    "grip_cmd": [
+      [
+        1.4585675671696663e-06,
+        0.03928879648447037
+      ],
+      [
+        2.103624865412712e-07,
+        0.03906712308526039
+      ]
+    ],
+    "grip_state": [
+      [
+        1.4585675671696663e-06,
+        0.03928879648447037
+      ],
+      [
+        2.103624865412712e-07,
+        0.03906712308526039
+      ]
+    ]
+  },
+  "audit_seconds": 15.2
+}

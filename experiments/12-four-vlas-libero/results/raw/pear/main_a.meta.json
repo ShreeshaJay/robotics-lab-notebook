@@ -1,0 +1,11 @@
+{
+  "tag": "main_a",
+  "gpu": "NVIDIA B200",
+  "conc": 16,
+  "container_s": 5191,
+  "episodes_s": 5038,
+  "startup_s": 153,
+  "stopped_by_operator": "2026-11-21T01:10:46Z",
+  "reason": "KV cache 92-98% full at 16 concurrent long episodes; preemption thrash cut generation to ~165 tok/s; restarted the unfinished episodes at lower concurrency",
+  "completed": 18
+}

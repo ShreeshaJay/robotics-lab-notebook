@@ -1,0 +1,14 @@
+{
+  "tag": "pilot",
+  "gpu": "NVIDIA B200",
+  "startup_s": 233.7,
+  "episodes_s": 1643.2,
+  "container_s": 1877.9,
+  "runner_exit": 0,
+  "conc": 5,
+  "nvidia_smi_peak_mib": 172927,
+  "vllm_kv_lines": [
+    "GPU KV cache size: 1,766,036 tokens",
+    "Maximum concurrency for 260,096 tokens per request: 6.79x"
+  ]
+}

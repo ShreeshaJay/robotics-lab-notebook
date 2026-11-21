@@ -1,0 +1,83 @@
+{
+  "source": "departments/tech-scout/research/2026-11-19_wave2/D_egodata.md, citing perceptron.inc/blog/introducing-perceptron-egocentric-1-0 (2026-11-04): list price per video-hour",
+  "assumptions": [
+    "A1: the egocentric-video price applies unchanged to robot camera video (Perceptron prices human egocentric video; robot footage is untested).",
+    "A2: one camera stream is labelled per robot-hour; the 'all streams' column multiplies by the video streams in info.json.",
+    "A3: the audited slice is representative of the full dataset (usable share extrapolated).",
+    "A4: auditing runs on a laptop CPU at $0 marginal cost; measured CPU wall-seconds per raw hour are reported."
+  ],
+  "rows": [
+    {
+      "dataset": "libero_10",
+      "price": "Perceptron subtasks",
+      "usd_per_video_hour": 9.0,
+      "usable_frac": 0.9979501128423459,
+      "usd_per_usable_hour": 9.018486880437681,
+      "usd_per_usable_hour_all_streams": 18.036973760875362,
+      "streams": 2,
+      "full_label_all_usd": 25.36725,
+      "full_label_usable_only_usd": 25.31525,
+      "audit_cpu_seconds_per_raw_hour": 1.7384619933181564
+    },
+    {
+      "dataset": "libero_10",
+      "price": "Perceptron full stack",
+      "usd_per_video_hour": 29.0,
+      "usable_frac": 0.9979501128423459,
+      "usd_per_usable_hour": 29.059568836965862,
+      "usd_per_usable_hour_all_streams": 58.119137673931725,
+      "streams": 2,
+      "full_label_all_usd": 81.73891666666667,
+      "full_label_usable_only_usd": 81.57136111111112,
+      "audit_cpu_seconds_per_raw_hour": 1.7384619933181564
+    },
+    {
+      "dataset": "fineart",
+      "price": "Perceptron subtasks",
+      "usd_per_video_hour": 9.0,
+      "usable_frac": 0.9557260479222568,
+      "usd_per_usable_hour": 9.416924462366545,
+      "usd_per_usable_hour_all_streams": 37.66769784946618,
+      "streams": 4,
+      "full_label_all_usd": 15461.208333333334,
+      "full_label_usable_only_usd": 14776.67953651933,
+      "audit_cpu_seconds_per_raw_hour": 0.3962064965701202
+    },
+    {
+      "dataset": "fineart",
+      "price": "Perceptron full stack",
+      "usd_per_video_hour": 29.0,
+      "usable_frac": 0.9557260479222568,
+      "usd_per_usable_hour": 30.343423267625532,
+      "usd_per_usable_hour_all_streams": 121.37369307050213,
+      "streams": 4,
+      "full_label_all_usd": 49819.44907407408,
+      "full_label_usable_only_usd": 47613.745173228956,
+      "audit_cpu_seconds_per_raw_hour": 0.3962064965701202
+    },
+    {
+      "dataset": "droid",
+      "price": "Perceptron subtasks",
+      "usd_per_video_hour": 9.0,
+      "usable_frac": 0.6656983344173193,
+      "usd_per_usable_hour": 13.519637251124614,
+      "usd_per_usable_hour_all_streams": 40.55891175337384,
+      "streams": 3,
+      "full_label_all_usd": 4605.0625,
+      "full_label_usable_only_usd": 3065.5824361376563,
+      "audit_cpu_seconds_per_raw_hour": 7.107191691376423
+    },
+    {
+      "dataset": "droid",
+      "price": "Perceptron full stack",
+      "usd_per_video_hour": 29.0,
+      "usable_frac": 0.6656983344173193,
+      "usd_per_usable_hour": 43.56327558695709,
+      "usd_per_usable_hour_all_streams": 130.68982676087126,
+      "streams": 3,
+      "full_label_all_usd": 14838.53472222222,
+      "full_label_usable_only_usd": 9877.987849776891,
+      "audit_cpu_seconds_per_raw_hour": 7.107191691376423
+    }
+  ]
+}
